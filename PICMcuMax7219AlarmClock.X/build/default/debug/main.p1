@@ -1,7 +1,9 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F2524 `(v ~T0 @X0 0 tf ]
+[v F2526 `(v ~T0 @X0 0 tf ]
 [p mainexit ]
-"73 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 73: void SYSTEM_Initialize(void);
+"74 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 74: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "46 ./MAX7219.h
 [; ;./MAX7219.h: 46: void matrixInit (void);
@@ -9,21 +11,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "48
 [; ;./MAX7219.h: 48: void clearDisplay (void);
 [v _clearDisplay `(v ~T0 @X0 0 ef ]
-"313 main.c
-[; ;main.c: 313: void loadTimeFromFlash(void);
+"46 ./main.h
+[; ;./main.h: 46: void loadTimeFromFlash(void);
 [v _loadTimeFromFlash `(v ~T0 @X0 0 ef ]
 "128 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 128: void TMR0_StartTimer(void);
 [v _TMR0_StartTimer `(v ~T0 @X0 0 ef ]
-"309
-[; ;./mcc_generated_files/tmr0.h: 309: _Bool TMR0_HasOverflowOccured(void);
-[v _TMR0_HasOverflowOccured `(a ~T0 @X0 0 ef ]
-"308 main.c
-[; ;main.c: 308: void displayTime(void);
-[v _displayTime `(v ~T0 @X0 0 ef ]
-"271 ./mcc_generated_files/tmr0.h
-[; ;./mcc_generated_files/tmr0.h: 271: void TMR0_Reload(void);
-[v _TMR0_Reload `(v ~T0 @X0 0 ef ]
 "6212 C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 6212:     struct {
 [s S271 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -43,12 +36,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6238
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 6238: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS270 ~T0 @X0 0 e@4082 ]
-"310 main.c
-[; ;main.c: 310: void checkButtons(void);
+"309 ./mcc_generated_files/tmr0.h
+[; ;./mcc_generated_files/tmr0.h: 309: _Bool TMR0_HasOverflowOccured(void);
+[v _TMR0_HasOverflowOccured `(a ~T0 @X0 0 ef ]
+"41 ./main.h
+[; ;./main.h: 41: void displayTime(void);
+[v _displayTime `(v ~T0 @X0 0 ef ]
+"271 ./mcc_generated_files/tmr0.h
+[; ;./mcc_generated_files/tmr0.h: 271: void TMR0_Reload(void);
+[v _TMR0_Reload `(v ~T0 @X0 0 ef ]
+"43 ./main.h
+[; ;./main.h: 43: void checkButtons(void);
 [v _checkButtons `(v ~T0 @X0 0 ef ]
+"48
+[; ;./main.h: 48: void processAlarm(void);
+[v _processAlarm `(v ~T0 @X0 0 ef ]
+"45
+[; ;./main.h: 45: void saveTimeToFlash(void);
+[v _saveTimeToFlash `(v ~T0 @X0 0 ef ]
 "58 ./MAX7219.h
 [; ;./MAX7219.h: 58: void printString (uint8_t *str);
 [v _printString `(v ~T0 @X0 0 ef1`*uc ]
+"49 ./main.h
+[; ;./main.h: 49: void triggerAlarm(void);
+[v _triggerAlarm `(v ~T0 @X0 0 ef ]
 "764 C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 764:     struct {
 [s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -88,15 +99,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"312 main.c
-[; ;main.c: 312: void saveTimeToFlash(void);
-[v _saveTimeToFlash `(v ~T0 @X0 0 ef ]
-"156 ./mcc_generated_files/memory.h
-[; ;./mcc_generated_files/memory.h: 156: void FLASH_WriteByte(uint32_t flashAddr, uint8_t *flashRdBufPtr, uint8_t byte);
-[v _FLASH_WriteByte `(v ~T0 @X0 0 ef3`ul`*uc`uc ]
-"98
+"98 ./mcc_generated_files/memory.h
 [; ;./mcc_generated_files/memory.h: 98: uint8_t FLASH_ReadByte(uint32_t flashAddr);
 [v _FLASH_ReadByte `(uc ~T0 @X0 0 ef1`ul ]
+"192
+[; ;./mcc_generated_files/memory.h: 192: int8_t FLASH_WriteBlock(uint32_t writeAddr, uint8_t *flashWrBufPtr);
+[v _FLASH_WriteBlock `(c ~T0 @X0 0 ef2`ul`*uc ]
 "54 C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -517,462 +525,961 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6515
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 6515: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"296 main.c
-[; ;main.c: 296: uint8_t bufferCol[4 * 8];
+"80 ./mcc_generated_files/eusart.h
+[; ;./mcc_generated_files/eusart.h: 80: void (*EUSART_TxDefaultInterruptHandler)(void);
+[v _EUSART_TxDefaultInterruptHandler `*F2524 ~T0 @X0 1 e ]
+"81
+[; ;./mcc_generated_files/eusart.h: 81: void (*EUSART_RxDefaultInterruptHandler)(void);
+[v _EUSART_RxDefaultInterruptHandler `*F2526 ~T0 @X0 1 e ]
+"9 main.c
+[; ;main.c: 9: uint8_t bufferCol[4 * 8];
 [v _bufferCol `uc ~T0 @X0 -> 32 `i e ]
-"299
-[; ;main.c: 299: uint8_t hours = 0;
+"12
+[; ;main.c: 12: uint8_t hours = 0;
 [v _hours `uc ~T0 @X0 1 e ]
 [i _hours
 -> -> 0 `i `uc
 ]
-"300
-[; ;main.c: 300: uint8_t minutes = 0;
+"13
+[; ;main.c: 13: uint8_t minutes = 0;
 [v _minutes `uc ~T0 @X0 1 e ]
 [i _minutes
 -> -> 0 `i `uc
 ]
-"301
-[; ;main.c: 301: uint8_t seconds = 0;
+"14
+[; ;main.c: 14: uint8_t seconds = 0;
 [v _seconds `uc ~T0 @X0 1 e ]
 [i _seconds
 -> -> 0 `i `uc
 ]
-"302
-[; ;main.c: 302: uint8_t alarmHours = 0;
+"15
+[; ;main.c: 15: uint8_t alarmHours = 0;
 [v _alarmHours `uc ~T0 @X0 1 e ]
 [i _alarmHours
 -> -> 0 `i `uc
 ]
-"303
-[; ;main.c: 303: uint8_t alarmMinutes = 0;
+"16
+[; ;main.c: 16: uint8_t alarmMinutes = 0;
 [v _alarmMinutes `uc ~T0 @X0 1 e ]
 [i _alarmMinutes
 -> -> 0 `i `uc
 ]
-"304
-[; ;main.c: 304: _Bool alarmSet = 0;
+"17
+[; ;main.c: 17: _Bool alarmSet = 0;
 [v _alarmSet `a ~T0 @X0 1 e ]
 [i _alarmSet
 -> -> 0 `i `a
 ]
-"305
-[; ;main.c: 305: _Bool alarmActive = 0;
+"18
+[; ;main.c: 18: _Bool alarmActive = 0;
 [v _alarmActive `a ~T0 @X0 1 e ]
 [i _alarmActive
 -> -> 0 `i `a
 ]
-"318
-[; ;main.c: 318: uint16_t blinkTimer = 0;
+"20
+[; ;main.c: 20: _Bool alarmTriggered = 0;
+[v _alarmTriggered `a ~T0 @X0 1 e ]
+[i _alarmTriggered
+-> -> 0 `i `a
+]
+"25
+[; ;main.c: 25: char uartBuffer[10];
+[v _uartBuffer `uc ~T0 @X0 -> 10 `i e ]
+"26
+[; ;main.c: 26: uint8_t uartBufferIndex = 0;
+[v _uartBufferIndex `uc ~T0 @X0 1 e ]
+[i _uartBufferIndex
+-> -> 0 `i `uc
+]
+"34
+[; ;main.c: 34: uint16_t blinkTimer = 0;
 [v _blinkTimer `us ~T0 @X0 1 e ]
 [i _blinkTimer
 -> -> 0 `i `us
 ]
-"319
-[; ;main.c: 319: _Bool displayBlinking = 0;
+"35
+[; ;main.c: 35: _Bool displayBlinking = 0;
 [v _displayBlinking `a ~T0 @X0 1 e ]
 [i _displayBlinking
 -> -> 0 `i `a
 ]
-"321
-[; ;main.c: 321: uint16_t button3PressTime = 0;
+"37
+[; ;main.c: 37: uint16_t button3PressTime = 0;
 [v _button3PressTime `us ~T0 @X0 1 e ]
 [i _button3PressTime
 -> -> 0 `i `us
 ]
-"322
-[; ;main.c: 322: _Bool isButton3Pressed = 0;
+"38
+[; ;main.c: 38: _Bool isButton3Pressed = 0;
 [v _isButton3Pressed `a ~T0 @X0 1 e ]
 [i _isButton3Pressed
 -> -> 0 `i `a
 ]
+"40
+[; ;main.c: 40: _Bool btTimeSet = 0;
+[v _btTimeSet `a ~T0 @X0 1 e ]
+[i _btTimeSet
+-> -> 0 `i `a
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"325
-[; ;main.c: 325: void main(void)
+"46
+[; ;main.c: 46: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"326
-[; ;main.c: 326: {
+"47
+[; ;main.c: 47: {
 {
 [e :U _main ]
 [f ]
-"327
-[; ;main.c: 327:     SYSTEM_Initialize();
+"48
+[; ;main.c: 48:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"328
-[; ;main.c: 328:     matrixInit();
+"49
+[; ;main.c: 49:     matrixInit();
 [e ( _matrixInit ..  ]
-"329
-[; ;main.c: 329:     clearDisplay();
+"50
+[; ;main.c: 50:     clearDisplay();
 [e ( _clearDisplay ..  ]
-"330
-[; ;main.c: 330:     loadTimeFromFlash();
+"51
+[; ;main.c: 51:     loadTimeFromFlash();
 [e ( _loadTimeFromFlash ..  ]
-"332
-[; ;main.c: 332:     TMR0_StartTimer();
+"53
+[; ;main.c: 53:     TMR0_StartTimer();
 [e ( _TMR0_StartTimer ..  ]
-"334
-[; ;main.c: 334:     while(1)
+"55
+[; ;main.c: 55:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"56
+[; ;main.c: 56:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"59
+[; ;main.c: 59:     while(1)
 [e :U 279 ]
-"335
-[; ;main.c: 335:     {
+"60
+[; ;main.c: 60:     {
 {
-"336
-[; ;main.c: 336:         if(TMR0_HasOverflowOccured())
+"61
+[; ;main.c: 61:         if(TMR0_HasOverflowOccured())
 [e $ ! != -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 281  ]
-"337
-[; ;main.c: 337:         {
+"62
+[; ;main.c: 62:         {
 {
-"338
-[; ;main.c: 338:             displayTime();
+"63
+[; ;main.c: 63:             displayTime();
 [e ( _displayTime ..  ]
-"340
-[; ;main.c: 340:             seconds++;
+"65
+[; ;main.c: 65:             seconds++;
 [e ++ _seconds -> -> 1 `i `uc ]
-"341
-[; ;main.c: 341:             if (seconds >= 60) {
+"66
+[; ;main.c: 66:             if (seconds >= 60) {
 [e $ ! >= -> _seconds `i -> 60 `i 282  ]
 {
-"342
-[; ;main.c: 342:                 seconds = 0;
+"67
+[; ;main.c: 67:                 seconds = 0;
 [e = _seconds -> -> 0 `i `uc ]
-"343
-[; ;main.c: 343:                 minutes++;
+"68
+[; ;main.c: 68:                 minutes++;
 [e ++ _minutes -> -> 1 `i `uc ]
-"344
-[; ;main.c: 344:                 if (minutes >= 60) {
+"69
+[; ;main.c: 69:                 if (minutes >= 60) {
 [e $ ! >= -> _minutes `i -> 60 `i 283  ]
 {
-"345
-[; ;main.c: 345:                     minutes = 0;
+"70
+[; ;main.c: 70:                     minutes = 0;
 [e = _minutes -> -> 0 `i `uc ]
-"346
-[; ;main.c: 346:                     hours++;
+"71
+[; ;main.c: 71:                     hours++;
 [e ++ _hours -> -> 1 `i `uc ]
-"347
-[; ;main.c: 347:                     if (hours >= 24) {
+"72
+[; ;main.c: 72:                     if (hours >= 24) {
 [e $ ! >= -> _hours `i -> 24 `i 284  ]
 {
-"348
-[; ;main.c: 348:                         hours = 0;
+"73
+[; ;main.c: 73:                         hours = 0;
 [e = _hours -> -> 0 `i `uc ]
-"349
-[; ;main.c: 349:                     }
+"74
+[; ;main.c: 74:                     }
 }
 [e :U 284 ]
-"350
-[; ;main.c: 350:                 }
+"75
+[; ;main.c: 75:                 }
 }
 [e :U 283 ]
-"351
-[; ;main.c: 351:             }
+"76
+[; ;main.c: 76:             }
 }
 [e :U 282 ]
-"352
-[; ;main.c: 352:             TMR0_Reload();
+"77
+[; ;main.c: 77:             TMR0_Reload();
 [e ( _TMR0_Reload ..  ]
-"353
-[; ;main.c: 353:             INTCONbits.TMR0IF = 0;
+"78
+[; ;main.c: 78:             INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"354
-[; ;main.c: 354:             TMR0_StartTimer();
+"79
+[; ;main.c: 79:             TMR0_StartTimer();
 [e ( _TMR0_StartTimer ..  ]
-"355
-[; ;main.c: 355:         }
+"80
+[; ;main.c: 80:         }
 }
 [e :U 281 ]
-"356
-[; ;main.c: 356:         displayTime();
+"81
+[; ;main.c: 81:         displayTime();
 [e ( _displayTime ..  ]
-"357
-[; ;main.c: 357:         checkButtons();
+"82
+[; ;main.c: 82:         checkButtons();
 [e ( _checkButtons ..  ]
-"358
-[; ;main.c: 358:     }
+"83
+[; ;main.c: 83:         processAlarm();
+[e ( _processAlarm ..  ]
+"84
+[; ;main.c: 84:         if(btTimeSet) {
+[e $ ! != -> _btTimeSet `i -> 0 `i 285  ]
+{
+"86
+[; ;main.c: 86:             if (uartBuffer[0] == 'H' && uartBuffer[3] == 'M' && uartBuffer[6] == ';')
+[e $ ! && && == -> *U + &U _uartBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _uartBuffer `ui `ux `ui -> 72 `ui == -> *U + &U _uartBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _uartBuffer `ui `ux `ui -> 77 `ui == -> *U + &U _uartBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _uartBuffer `ui `ux `ui -> 59 `ui 286  ]
+"87
+[; ;main.c: 87:             {
+{
+"89
+[; ;main.c: 89:                 uint8_t hours_pom = (uartBuffer[1] - '0') * 10 + (uartBuffer[2] - '0');
+[v _hours_pom `uc ~T0 @X0 1 a ]
+[e = _hours_pom -> + * - -> *U + &U _uartBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _uartBuffer `ui `ux `ui -> 48 `ui -> -> 10 `i `ui - -> *U + &U _uartBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _uartBuffer `ui `ux `ui -> 48 `ui `uc ]
+"92
+[; ;main.c: 92:                 uint8_t minutes_pom = (uartBuffer[4] - '0') * 10 + (uartBuffer[5] - '0');
+[v _minutes_pom `uc ~T0 @X0 1 a ]
+[e = _minutes_pom -> + * - -> *U + &U _uartBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _uartBuffer `ui `ux `ui -> 48 `ui -> -> 10 `i `ui - -> *U + &U _uartBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _uartBuffer `ui `ux `ui -> 48 `ui `uc ]
+"95
+[; ;main.c: 95:                 if (hours_pom < 24 && minutes_pom < 60)
+[e $ ! && < -> _hours_pom `i -> 24 `i < -> _minutes_pom `i -> 60 `i 287  ]
+"96
+[; ;main.c: 96:                 {
+{
+"98
+[; ;main.c: 98:                     hours = hours_pom;
+[e = _hours _hours_pom ]
+"99
+[; ;main.c: 99:                     minutes = minutes_pom;
+[e = _minutes _minutes_pom ]
+"100
+[; ;main.c: 100:                     displayTime();
+[e ( _displayTime ..  ]
+"101
+[; ;main.c: 101:                     saveTimeToFlash();
+[e ( _saveTimeToFlash ..  ]
+"102
+[; ;main.c: 102:                 }
+}
+[e :U 287 ]
+"103
+[; ;main.c: 103:             }
+}
+[e :U 286 ]
+"104
+[; ;main.c: 104:         }
+}
+[e :U 285 ]
+"105
+[; ;main.c: 105:     }
 }
 [e :U 278 ]
 [e $U 279  ]
 [e :U 280 ]
-"359
-[; ;main.c: 359: }
+"106
+[; ;main.c: 106: }
 [e :UE 277 ]
 }
-"362
-[; ;main.c: 362: void displayTime(void)
+"109
+[; ;main.c: 109: void displayTime(void)
 [v _displayTime `(v ~T0 @X0 1 ef ]
-"363
-[; ;main.c: 363: {
+"110
+[; ;main.c: 110: {
 {
 [e :U _displayTime ]
 [f ]
-"364
-[; ;main.c: 364:     char timeString[5];
+"111
+[; ;main.c: 111:     char timeString[5];
 [v _timeString `uc ~T0 @X0 -> 5 `i a ]
-"367
-[; ;main.c: 367:     timeString[0] = (hours / 10) + '0';
+"114
+[; ;main.c: 114:     timeString[0] = (hours / 10) + '0';
 [e = *U + &U _timeString * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeString `ui `ux -> + -> / -> _hours `i -> 10 `i `ui -> 48 `ui `uc ]
-"368
-[; ;main.c: 368:     timeString[1] = (hours % 10) + '0';
+"115
+[; ;main.c: 115:     timeString[1] = (hours % 10) + '0';
 [e = *U + &U _timeString * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeString `ui `ux -> + -> % -> _hours `i -> 10 `i `ui -> 48 `ui `uc ]
-"369
-[; ;main.c: 369:     timeString[2] = (minutes / 10) + '0';
+"116
+[; ;main.c: 116:     timeString[2] = (minutes / 10) + '0';
 [e = *U + &U _timeString * -> -> -> 2 `i `ui `ux -> -> # *U &U _timeString `ui `ux -> + -> / -> _minutes `i -> 10 `i `ui -> 48 `ui `uc ]
-"370
-[; ;main.c: 370:     timeString[3] = (minutes % 10) + '0';
+"117
+[; ;main.c: 117:     timeString[3] = (minutes % 10) + '0';
 [e = *U + &U _timeString * -> -> -> 3 `i `ui `ux -> -> # *U &U _timeString `ui `ux -> + -> % -> _minutes `i -> 10 `i `ui -> 48 `ui `uc ]
-"371
-[; ;main.c: 371:     timeString[4] = '\0';
+"118
+[; ;main.c: 118:     timeString[4] = '\0';
 [e = *U + &U _timeString * -> -> -> 4 `i `ui `ux -> -> # *U &U _timeString `ui `ux -> -> 0 `ui `uc ]
-"374
-[; ;main.c: 374:     uint8_t displayString[5];
+"121
+[; ;main.c: 121:     uint8_t displayString[5];
 [v _displayString `uc ~T0 @X0 -> 5 `i a ]
-"375
-[; ;main.c: 375:     for (int i = 0; i < 5; i++) {
+"122
+[; ;main.c: 122:     for (int i = 0; i < 5; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 286  ]
-[e $U 287  ]
-[e :U 286 ]
+[e $ < _i -> 5 `i 289  ]
+[e $U 290  ]
+[e :U 289 ]
 {
-"376
-[; ;main.c: 376:         displayString[i] = (uint8_t)timeString[i];
+"123
+[; ;main.c: 123:         displayString[i] = (uint8_t)timeString[i];
 [e = *U + &U _displayString * -> -> _i `ui `ux -> -> # *U &U _displayString `ui `ux -> *U + &U _timeString * -> -> _i `ui `ux -> -> # *U &U _timeString `ui `ux `uc ]
-"377
-[; ;main.c: 377:     }
+"124
+[; ;main.c: 124:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 286  ]
-[e :U 287 ]
-}
-"379
-[; ;main.c: 379:     printString(displayString);
-[e ( _printString (1 &U _displayString ]
-"380
-[; ;main.c: 380: }
-[e :UE 285 ]
-}
-"383
-[; ;main.c: 383: void blinkDisplay(void)
-[v _blinkDisplay `(v ~T0 @X0 1 ef ]
-"384
-[; ;main.c: 384: {
-{
-[e :U _blinkDisplay ]
-[f ]
-"385
-[; ;main.c: 385:     blinkTimer++;
-[e ++ _blinkTimer -> -> 1 `i `us ]
-"386
-[; ;main.c: 386:     if (blinkTimer >= 1000) {
-[e $ ! >= -> _blinkTimer `ui -> -> 1000 `i `ui 290  ]
-{
-"387
-[; ;main.c: 387:         blinkTimer = 0;
-[e = _blinkTimer -> -> 0 `i `us ]
-"388
-[; ;main.c: 388:         if (displayBlinking) {
-[e $ ! != -> _displayBlinking `i -> 0 `i 291  ]
-{
-"389
-[; ;main.c: 389:             clearDisplay();
-[e ( _clearDisplay ..  ]
-"390
-[; ;main.c: 390:         } else {
-}
-[e $U 292  ]
-[e :U 291 ]
-{
-"391
-[; ;main.c: 391:             displayTime();
-[e ( _displayTime ..  ]
-"392
-[; ;main.c: 392:         }
-}
-[e :U 292 ]
-"393
-[; ;main.c: 393:         displayBlinking = !displayBlinking;
-[e = _displayBlinking -> -> ! != -> _displayBlinking `i -> 0 `i `i `a ]
-"394
-[; ;main.c: 394:     }
-}
+[e $ < _i -> 5 `i 289  ]
 [e :U 290 ]
-"395
-[; ;main.c: 395: }
-[e :UE 289 ]
 }
-"398
-[; ;main.c: 398: void checkButtons(void)
+"126
+[; ;main.c: 126:     printString(displayString);
+[e ( _printString (1 &U _displayString ]
+"127
+[; ;main.c: 127: }
+[e :UE 288 ]
+}
+"129
+[; ;main.c: 129: void displayAlarmTime(void)
+[v _displayAlarmTime `(v ~T0 @X0 1 ef ]
+"130
+[; ;main.c: 130: {
+{
+[e :U _displayAlarmTime ]
+[f ]
+"131
+[; ;main.c: 131:     char alarmTimeString[5];
+[v _alarmTimeString `uc ~T0 @X0 -> 5 `i a ]
+"134
+[; ;main.c: 134:     alarmTimeString[0] = (alarmHours / 10) + '0';
+[e = *U + &U _alarmTimeString * -> -> -> 0 `i `ui `ux -> -> # *U &U _alarmTimeString `ui `ux -> + -> / -> _alarmHours `i -> 10 `i `ui -> 48 `ui `uc ]
+"135
+[; ;main.c: 135:     alarmTimeString[1] = (alarmHours % 10) + '0';
+[e = *U + &U _alarmTimeString * -> -> -> 1 `i `ui `ux -> -> # *U &U _alarmTimeString `ui `ux -> + -> % -> _alarmHours `i -> 10 `i `ui -> 48 `ui `uc ]
+"136
+[; ;main.c: 136:     alarmTimeString[2] = (alarmMinutes / 10) + '0';
+[e = *U + &U _alarmTimeString * -> -> -> 2 `i `ui `ux -> -> # *U &U _alarmTimeString `ui `ux -> + -> / -> _alarmMinutes `i -> 10 `i `ui -> 48 `ui `uc ]
+"137
+[; ;main.c: 137:     alarmTimeString[3] = (alarmMinutes % 10) + '0';
+[e = *U + &U _alarmTimeString * -> -> -> 3 `i `ui `ux -> -> # *U &U _alarmTimeString `ui `ux -> + -> % -> _alarmMinutes `i -> 10 `i `ui -> 48 `ui `uc ]
+"138
+[; ;main.c: 138:     alarmTimeString[4] = '\0';
+[e = *U + &U _alarmTimeString * -> -> -> 4 `i `ui `ux -> -> # *U &U _alarmTimeString `ui `ux -> -> 0 `ui `uc ]
+"141
+[; ;main.c: 141:     uint8_t displayString[5];
+[v _displayString `uc ~T0 @X0 -> 5 `i a ]
+"142
+[; ;main.c: 142:     for (int i = 0; i < 5; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 293  ]
+[e $U 294  ]
+[e :U 293 ]
+{
+"143
+[; ;main.c: 143:         displayString[i] = (uint8_t)alarmTimeString[i];
+[e = *U + &U _displayString * -> -> _i `ui `ux -> -> # *U &U _displayString `ui `ux -> *U + &U _alarmTimeString * -> -> _i `ui `ux -> -> # *U &U _alarmTimeString `ui `ux `uc ]
+"144
+[; ;main.c: 144:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 5 `i 293  ]
+[e :U 294 ]
+}
+"146
+[; ;main.c: 146:     printString(displayString);
+[e ( _printString (1 &U _displayString ]
+"147
+[; ;main.c: 147: }
+[e :UE 292 ]
+}
+"149
+[; ;main.c: 149: void processAlarm(void)
+[v _processAlarm `(v ~T0 @X0 1 ef ]
+"150
+[; ;main.c: 150: {
+{
+[e :U _processAlarm ]
+[f ]
+"152
+[; ;main.c: 152:     if (alarmSet && !alarmTriggered)
+[e $ ! && != -> _alarmSet `i -> 0 `i ! != -> _alarmTriggered `i -> 0 `i 297  ]
+"153
+[; ;main.c: 153:     {
+{
+"155
+[; ;main.c: 155:         if (hours == alarmHours && minutes == alarmMinutes)
+[e $ ! && == -> _hours `i -> _alarmHours `i == -> _minutes `i -> _alarmMinutes `i 298  ]
+"156
+[; ;main.c: 156:         {
+{
+"157
+[; ;main.c: 157:             triggerAlarm();
+[e ( _triggerAlarm ..  ]
+"158
+[; ;main.c: 158:             alarmTriggered = 1;
+[e = _alarmTriggered -> -> 1 `i `a ]
+"159
+[; ;main.c: 159:         }
+}
+[e :U 298 ]
+"160
+[; ;main.c: 160:     }
+}
+[e :U 297 ]
+"161
+[; ;main.c: 161: }
+[e :UE 296 ]
+}
+"164
+[; ;main.c: 164: void triggerAlarm(void)
+[v _triggerAlarm `(v ~T0 @X0 1 ef ]
+"165
+[; ;main.c: 165: {
+{
+[e :U _triggerAlarm ]
+[f ]
+"171
+[; ;main.c: 171:     unsigned int numCycles = 60000 / (2 * 500);
+[v _numCycles `ui ~T0 @X0 1 a ]
+[e = _numCycles -> / -> 60000 `l -> * -> 2 `i -> 500 `i `l `ui ]
+"173
+[; ;main.c: 173:     for (unsigned int i = 0; i < numCycles; i++)
+{
+[v _i `ui ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `ui ]
+[e $U 303  ]
+[e :U 300 ]
+"174
+[; ;main.c: 174:     {
+{
+"176
+[; ;main.c: 176:         if (!PORTBbits.RB2)
+[e $ ! ! != -> . . _PORTBbits 0 2 `i -> 0 `i 304  ]
+"177
+[; ;main.c: 177:         {
+{
+"178
+[; ;main.c: 178:             _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"179
+[; ;main.c: 179:             if (!PORTBbits.RB2)
+[e $ ! ! != -> . . _PORTBbits 0 2 `i -> 0 `i 305  ]
+"180
+[; ;main.c: 180:             {
+{
+"181
+[; ;main.c: 181:                 clearDisplay();
+[e ( _clearDisplay ..  ]
+"182
+[; ;main.c: 182:                 return;
+[e $UE 299  ]
+"183
+[; ;main.c: 183:             }
+}
+[e :U 305 ]
+"184
+[; ;main.c: 184:         }
+}
+[e :U 304 ]
+"187
+[; ;main.c: 187:         printString("ALARM");
+[e ( _printString (1 :s 1C ]
+"188
+[; ;main.c: 188:         _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"189
+[; ;main.c: 189:         clearDisplay();
+[e ( _clearDisplay ..  ]
+"190
+[; ;main.c: 190:         _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"191
+[; ;main.c: 191:     }
+}
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 303 ]
+[e $ < _i _numCycles 300  ]
+[e :U 301 ]
+}
+"195
+[; ;main.c: 195: }
+[e :UE 299 ]
+}
+"197
+[; ;main.c: 197: void clearAlarm(void)
+[v _clearAlarm `(v ~T0 @X0 1 ef ]
+"198
+[; ;main.c: 198: {
+{
+[e :U _clearAlarm ]
+[f ]
+"199
+[; ;main.c: 199:     alarmTriggered = 0;
+[e = _alarmTriggered -> -> 0 `i `a ]
+"200
+[; ;main.c: 200:     alarmSet = 0;
+[e = _alarmSet -> -> 0 `i `a ]
+"204
+[; ;main.c: 204: }
+[e :UE 306 ]
+}
+"208
+[; ;main.c: 208: void checkButtons(void)
 [v _checkButtons `(v ~T0 @X0 1 ef ]
-"399
-[; ;main.c: 399: {
+"209
+[; ;main.c: 209: {
 {
 [e :U _checkButtons ]
 [f ]
-"400
-[; ;main.c: 400:      if (!PORTBbits.RB0)
-[e $ ! ! != -> . . _PORTBbits 0 0 `i -> 0 `i 294  ]
-"401
-[; ;main.c: 401:     {
+"210
+[; ;main.c: 210:     static uint8_t button3PressCount = 0;
+[v F2609 `uc ~T0 @X0 1 s button3PressCount ]
+[i F2609
+-> -> 0 `i `uc
+]
+"211
+[; ;main.c: 211:     static uint16_t button3HoldTime = 0;
+[v F2610 `us ~T0 @X0 1 s button3HoldTime ]
+[i F2610
+-> -> 0 `i `us
+]
+"212
+[; ;main.c: 212:     static _Bool alarmSettingMode = 0;
+[v F2611 `a ~T0 @X0 1 s alarmSettingMode ]
+[i F2611
+-> -> 0 `i `a
+]
+"215
+[; ;main.c: 215:     if (!PORTBbits.RB0)
+[e $ ! ! != -> . . _PORTBbits 0 0 `i -> 0 `i 308  ]
+"216
+[; ;main.c: 216:     {
 {
-"402
-[; ;main.c: 402:         _delay((unsigned long)((100)*(8000000/4000.0)));
+"217
+[; ;main.c: 217:         _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"403
-[; ;main.c: 403:         if (!PORTBbits.RB0) {
-[e $ ! ! != -> . . _PORTBbits 0 0 `i -> 0 `i 295  ]
+"218
+[; ;main.c: 218:         if (!PORTBbits.RB0)
+[e $ ! ! != -> . . _PORTBbits 0 0 `i -> 0 `i 309  ]
+"219
+[; ;main.c: 219:         {
 {
-"404
-[; ;main.c: 404:             hours = (hours + 1) % 24;
+"220
+[; ;main.c: 220:             if (alarmSettingMode)
+[e $ ! != -> F2611 `i -> 0 `i 310  ]
+"221
+[; ;main.c: 221:             {
+{
+"222
+[; ;main.c: 222:                 alarmHours = (alarmHours + 1) % 24;
+[e = _alarmHours -> % + -> _alarmHours `i -> 1 `i -> 24 `i `uc ]
+"223
+[; ;main.c: 223:                 displayAlarmTime();
+[e ( _displayAlarmTime ..  ]
+"224
+[; ;main.c: 224:             }
+}
+[e $U 311  ]
+"225
+[; ;main.c: 225:             else
+[e :U 310 ]
+"226
+[; ;main.c: 226:             {
+{
+"227
+[; ;main.c: 227:                 hours = (hours + 1) % 24;
 [e = _hours -> % + -> _hours `i -> 1 `i -> 24 `i `uc ]
-"405
-[; ;main.c: 405:             displayTime();
+"228
+[; ;main.c: 228:                 displayTime();
 [e ( _displayTime ..  ]
-"406
-[; ;main.c: 406:         }
+"229
+[; ;main.c: 229:             }
 }
-[e :U 295 ]
-"407
-[; ;main.c: 407:     }
+[e :U 311 ]
+"230
+[; ;main.c: 230:         }
 }
-[e :U 294 ]
-"409
-[; ;main.c: 409:     if (!PORTBbits.RB1)
-[e $ ! ! != -> . . _PORTBbits 0 1 `i -> 0 `i 296  ]
-"410
-[; ;main.c: 410:     {
+[e :U 309 ]
+"231
+[; ;main.c: 231:     }
+}
+[e :U 308 ]
+"234
+[; ;main.c: 234:     if (!PORTBbits.RB1)
+[e $ ! ! != -> . . _PORTBbits 0 1 `i -> 0 `i 312  ]
+"235
+[; ;main.c: 235:     {
 {
-"411
-[; ;main.c: 411:         _delay((unsigned long)((100)*(8000000/4000.0)));
+"236
+[; ;main.c: 236:         _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"412
-[; ;main.c: 412:         if (!PORTBbits.RB1) {
-[e $ ! ! != -> . . _PORTBbits 0 1 `i -> 0 `i 297  ]
+"237
+[; ;main.c: 237:         if (!PORTBbits.RB1)
+[e $ ! ! != -> . . _PORTBbits 0 1 `i -> 0 `i 313  ]
+"238
+[; ;main.c: 238:         {
 {
-"413
-[; ;main.c: 413:             minutes = (minutes + 1) % 60;
+"239
+[; ;main.c: 239:             if (alarmSettingMode)
+[e $ ! != -> F2611 `i -> 0 `i 314  ]
+"240
+[; ;main.c: 240:             {
+{
+"241
+[; ;main.c: 241:                 alarmMinutes = (alarmMinutes + 1) % 60;
+[e = _alarmMinutes -> % + -> _alarmMinutes `i -> 1 `i -> 60 `i `uc ]
+"242
+[; ;main.c: 242:                 displayAlarmTime();
+[e ( _displayAlarmTime ..  ]
+"243
+[; ;main.c: 243:             }
+}
+[e $U 315  ]
+"244
+[; ;main.c: 244:             else
+[e :U 314 ]
+"245
+[; ;main.c: 245:             {
+{
+"246
+[; ;main.c: 246:                 minutes = (minutes + 1) % 60;
 [e = _minutes -> % + -> _minutes `i -> 1 `i -> 60 `i `uc ]
-"414
-[; ;main.c: 414:             displayTime();
+"247
+[; ;main.c: 247:                 displayTime();
 [e ( _displayTime ..  ]
-"415
-[; ;main.c: 415:         }
+"248
+[; ;main.c: 248:             }
 }
-[e :U 297 ]
-"416
-[; ;main.c: 416:     }
+[e :U 315 ]
+"249
+[; ;main.c: 249:         }
 }
-[e :U 296 ]
-"418
-[; ;main.c: 418:     if (!PORTBbits.RB2)
-[e $ ! ! != -> . . _PORTBbits 0 2 `i -> 0 `i 298  ]
-"419
-[; ;main.c: 419:     {
+[e :U 313 ]
+"250
+[; ;main.c: 250:     }
+}
+[e :U 312 ]
+"253
+[; ;main.c: 253:     if (!PORTBbits.RB2)
+[e $ ! ! != -> . . _PORTBbits 0 2 `i -> 0 `i 316  ]
+"254
+[; ;main.c: 254:     {
 {
-"420
-[; ;main.c: 420:         if (!isButton3Pressed) {
-[e $ ! ! != -> _isButton3Pressed `i -> 0 `i 299  ]
-{
-"422
-[; ;main.c: 422:             button3PressTime = 0;
-[e = _button3PressTime -> -> 0 `i `us ]
-"423
-[; ;main.c: 423:             isButton3Pressed = 1;
-[e = _isButton3Pressed -> -> 1 `i `a ]
-"424
-[; ;main.c: 424:         }
-}
-[e :U 299 ]
-"427
-[; ;main.c: 427:         _delay((unsigned long)((100)*(8000000/4000.0)));
+"255
+[; ;main.c: 255:         button3HoldTime += 100;
+[e =+ F2610 -> -> 100 `i `us ]
+"256
+[; ;main.c: 256:         _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"428
-[; ;main.c: 428:         button3PressTime += 100;
-[e =+ _button3PressTime -> -> 100 `i `us ]
-"430
-[; ;main.c: 430:         if (button3PressTime >= 3000) {
-[e $ ! >= -> _button3PressTime `ui -> -> 3000 `i `ui 300  ]
+"258
+[; ;main.c: 258:         if (button3HoldTime >= 3000)
+[e $ ! >= -> F2610 `ui -> -> 3000 `i `ui 317  ]
+"259
+[; ;main.c: 259:         {
 {
-"432
-[; ;main.c: 432:             saveTimeToFlash();
+"260
+[; ;main.c: 260:             if (!alarmTriggered)
+[e $ ! ! != -> _alarmTriggered `i -> 0 `i 318  ]
+"261
+[; ;main.c: 261:             {
+{
+"262
+[; ;main.c: 262:                 alarmSettingMode = 1;
+[e = F2611 -> -> 1 `i `a ]
+"263
+[; ;main.c: 263:                 displayAlarmTime();
+[e ( _displayAlarmTime ..  ]
+"265
+[; ;main.c: 265:                 while (!PORTBbits.RB2)
+[e $U 319  ]
+[e :U 320 ]
+"266
+[; ;main.c: 266:                 {
+{
+"267
+[; ;main.c: 267:                     if (!PORTBbits.RB0)
+[e $ ! ! != -> . . _PORTBbits 0 0 `i -> 0 `i 322  ]
+"268
+[; ;main.c: 268:                     {
+{
+"269
+[; ;main.c: 269:                         _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"270
+[; ;main.c: 270:                         alarmHours = (alarmHours + 1) % 24;
+[e = _alarmHours -> % + -> _alarmHours `i -> 1 `i -> 24 `i `uc ]
+"271
+[; ;main.c: 271:                         displayAlarmTime();
+[e ( _displayAlarmTime ..  ]
+"272
+[; ;main.c: 272:                     }
+}
+[e :U 322 ]
+"273
+[; ;main.c: 273:                     if (!PORTBbits.RB1)
+[e $ ! ! != -> . . _PORTBbits 0 1 `i -> 0 `i 323  ]
+"274
+[; ;main.c: 274:                     {
+{
+"275
+[; ;main.c: 275:                         _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"276
+[; ;main.c: 276:                         alarmMinutes = (alarmMinutes + 1) % 60;
+[e = _alarmMinutes -> % + -> _alarmMinutes `i -> 1 `i -> 60 `i `uc ]
+"277
+[; ;main.c: 277:                         displayAlarmTime();
+[e ( _displayAlarmTime ..  ]
+"278
+[; ;main.c: 278:                     }
+}
+[e :U 323 ]
+"279
+[; ;main.c: 279:                 }
+}
+[e :U 319 ]
+"265
+[; ;main.c: 265:                 while (!PORTBbits.RB2)
+[e $ ! != -> . . _PORTBbits 0 2 `i -> 0 `i 320  ]
+[e :U 321 ]
+"281
+[; ;main.c: 281:                 alarmSettingMode = 0;
+[e = F2611 -> -> 0 `i `a ]
+"282
+[; ;main.c: 282:                 alarmSet = 1;
+[e = _alarmSet -> -> 1 `i `a ]
+"283
+[; ;main.c: 283:                 displayTime();
+[e ( _displayTime ..  ]
+"284
+[; ;main.c: 284:             }
+}
+[e :U 318 ]
+"285
+[; ;main.c: 285:         }
+}
+[e $U 324  ]
+"286
+[; ;main.c: 286:         else
+[e :U 317 ]
+"287
+[; ;main.c: 287:         {
+{
+"288
+[; ;main.c: 288:             if (alarmTriggered)
+[e $ ! != -> _alarmTriggered `i -> 0 `i 325  ]
+"289
+[; ;main.c: 289:             {
+{
+"290
+[; ;main.c: 290:                 clearAlarm();
+[e ( _clearAlarm ..  ]
+"291
+[; ;main.c: 291:             }
+}
+[e :U 325 ]
+"292
+[; ;main.c: 292:         }
+}
+[e :U 324 ]
+"293
+[; ;main.c: 293:     }
+}
+[e $U 326  ]
+"294
+[; ;main.c: 294:     else
+[e :U 316 ]
+"295
+[; ;main.c: 295:     {
+{
+"296
+[; ;main.c: 296:         if (button3HoldTime < 3000)
+[e $ ! < -> F2610 `ui -> -> 3000 `i `ui 327  ]
+"297
+[; ;main.c: 297:         {
+{
+"298
+[; ;main.c: 298:             button3PressCount++;
+[e ++ F2609 -> -> 1 `i `uc ]
+"299
+[; ;main.c: 299:             if (button3PressCount == 5)
+[e $ ! == -> F2609 `i -> 5 `i 328  ]
+"300
+[; ;main.c: 300:             {
+{
+"301
+[; ;main.c: 301:                 saveTimeToFlash();
 [e ( _saveTimeToFlash ..  ]
-"433
-[; ;main.c: 433:             isButton3Pressed = 0;
-[e = _isButton3Pressed -> -> 0 `i `a ]
-"434
-[; ;main.c: 434:             blinkDisplay();
-[e ( _blinkDisplay ..  ]
-"435
-[; ;main.c: 435:         }
+"302
+[; ;main.c: 302:                 button3PressCount = 0;
+[e = F2609 -> -> 0 `i `uc ]
+"303
+[; ;main.c: 303:             }
 }
-[e :U 300 ]
-"436
-[; ;main.c: 436:     }
+[e :U 328 ]
+"304
+[; ;main.c: 304:         }
 }
-[e $U 301  ]
-"437
-[; ;main.c: 437:     else
-[e :U 298 ]
-"438
-[; ;main.c: 438:     {
-{
-"440
-[; ;main.c: 440:         isButton3Pressed = 0;
-[e = _isButton3Pressed -> -> 0 `i `a ]
-"441
-[; ;main.c: 441:     }
+[e :U 327 ]
+"305
+[; ;main.c: 305:         button3HoldTime = 0;
+[e = F2610 -> -> 0 `i `us ]
+"306
+[; ;main.c: 306:     }
 }
-[e :U 301 ]
-"442
-[; ;main.c: 442: }
-[e :UE 293 ]
+[e :U 326 ]
+"307
+[; ;main.c: 307: }
+[e :UE 307 ]
 }
-"444
-[; ;main.c: 444: void saveTimeToFlash(void)
+"311
+[; ;main.c: 311: void saveTimeToFlash(void)
 [v _saveTimeToFlash `(v ~T0 @X0 1 ef ]
-"445
-[; ;main.c: 445: {
+"312
+[; ;main.c: 312: {
 {
 [e :U _saveTimeToFlash ]
 [f ]
-"446
-[; ;main.c: 446:     uint32_t flashAddress = 0x1F80;
+"313
+[; ;main.c: 313:     uint32_t flashAddress = 0x1F80;
 [v _flashAddress `ul ~T0 @X0 1 a ]
 [e = _flashAddress -> -> -> 8064 `i `l `ul ]
-"447
-[; ;main.c: 447:     uint8_t timeData[2];
-[v _timeData `uc ~T0 @X0 -> 2 `i a ]
-"450
-[; ;main.c: 450:     timeData[0] = hours;
-[e = *U + &U _timeData * -> -> -> 0 `i `ui `ux -> -> # *U &U _timeData `ui `ux _hours ]
-"451
-[; ;main.c: 451:     timeData[1] = minutes;
-[e = *U + &U _timeData * -> -> -> 1 `i `ui `ux -> -> # *U &U _timeData `ui `ux _minutes ]
-"453
-[; ;main.c: 453:     FLASH_WriteByte(flashAddress, timeData, 2);
-[e ( _FLASH_WriteByte (3 , , _flashAddress &U _timeData -> -> 2 `i `uc ]
-"454
-[; ;main.c: 454: }
-[e :UE 302 ]
+"314
+[; ;main.c: 314:     uint8_t flashBuffer[64];
+[v _flashBuffer `uc ~T0 @X0 -> 64 `i a ]
+"317
+[; ;main.c: 317:     for (uint8_t i = 0; i < 64; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 64 `i 330  ]
+[e $U 331  ]
+[e :U 330 ]
+{
+"318
+[; ;main.c: 318:         flashBuffer[i] = FLASH_ReadByte(flashAddress + i);
+[e = *U + &U _flashBuffer * -> _i `ux -> -> # *U &U _flashBuffer `ui `ux ( _FLASH_ReadByte (1 + _flashAddress -> _i `ul ]
+"319
+[; ;main.c: 319:     }
 }
-"456
-[; ;main.c: 456: void loadTimeFromFlash(void)
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 64 `i 330  ]
+[e :U 331 ]
+}
+"322
+[; ;main.c: 322:     flashBuffer[0] = hours;
+[e = *U + &U _flashBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _flashBuffer `ui `ux _hours ]
+"323
+[; ;main.c: 323:     flashBuffer[1] = minutes;
+[e = *U + &U _flashBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _flashBuffer `ui `ux _minutes ]
+"326
+[; ;main.c: 326:     FLASH_WriteBlock(flashAddress, flashBuffer);
+[e ( _FLASH_WriteBlock (2 , _flashAddress &U _flashBuffer ]
+"327
+[; ;main.c: 327: }
+[e :UE 329 ]
+}
+"330
+[; ;main.c: 330: void loadTimeFromFlash(void)
 [v _loadTimeFromFlash `(v ~T0 @X0 1 ef ]
-"457
-[; ;main.c: 457: {
+"331
+[; ;main.c: 331: {
 {
 [e :U _loadTimeFromFlash ]
 [f ]
-"458
-[; ;main.c: 458:     uint32_t flashAddress = 0x1F80;
+"332
+[; ;main.c: 332:     uint32_t flashAddress = 0x1F80;
 [v _flashAddress `ul ~T0 @X0 1 a ]
 [e = _flashAddress -> -> -> 8064 `i `l `ul ]
-"459
-[; ;main.c: 459:     hours = FLASH_ReadByte(flashAddress);
+"333
+[; ;main.c: 333:     hours = FLASH_ReadByte(flashAddress);
 [e = _hours ( _FLASH_ReadByte (1 _flashAddress ]
-"460
-[; ;main.c: 460:     minutes = FLASH_ReadByte(flashAddress + 1);
+"334
+[; ;main.c: 334:     minutes = FLASH_ReadByte(flashAddress + 1);
 [e = _minutes ( _FLASH_ReadByte (1 + _flashAddress -> -> -> 1 `i `l `ul ]
-"461
-[; ;main.c: 461: }
-[e :UE 303 ]
+"337
+[; ;main.c: 337:     if (hours >= 24) hours = 0;
+[e $ ! >= -> _hours `i -> 24 `i 334  ]
+[e = _hours -> -> 0 `i `uc ]
+[e :U 334 ]
+"338
+[; ;main.c: 338:     if (minutes >= 60) minutes = 0;
+[e $ ! >= -> _minutes `i -> 60 `i 335  ]
+[e = _minutes -> -> 0 `i `uc ]
+[e :U 335 ]
+"339
+[; ;main.c: 339: }
+[e :UE 333 ]
 }
+"341
+[; ;main.c: 341: void btGetData(char rcv) {
+[v _btGetData `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _btGetData ]
+[v _rcv `uc ~T0 @X0 1 r1 ]
+[f ]
+"342
+[; ;main.c: 342:     if(rcv == 'H' && uartBufferIndex == 0) {
+[e $ ! && == -> _rcv `ui -> 72 `ui == -> _uartBufferIndex `i -> 0 `i 337  ]
+{
+"343
+[; ;main.c: 343:         uartBuffer[uartBufferIndex] = 'H';
+[e = *U + &U _uartBuffer * -> _uartBufferIndex `ux -> -> # *U &U _uartBuffer `ui `ux -> -> 72 `ui `uc ]
+"344
+[; ;main.c: 344:         uartBufferIndex++;
+[e ++ _uartBufferIndex -> -> 1 `i `uc ]
+"345
+[; ;main.c: 345:     }
+}
+[e $U 338  ]
+"346
+[; ;main.c: 346:     else if(uartBufferIndex != 0 && uartBufferIndex < 7) {
+[e :U 337 ]
+[e $ ! && != -> _uartBufferIndex `i -> 0 `i < -> _uartBufferIndex `i -> 7 `i 339  ]
+{
+"347
+[; ;main.c: 347:         uartBuffer[uartBufferIndex++] = rcv;
+[e = *U + &U _uartBuffer * -> ++ _uartBufferIndex -> -> 1 `i `uc `ux -> -> # *U &U _uartBuffer `ui `ux _rcv ]
+"348
+[; ;main.c: 348:     }
+}
+[e $U 340  ]
+"349
+[; ;main.c: 349:     else if(uartBufferIndex == 7) {
+[e :U 339 ]
+[e $ ! == -> _uartBufferIndex `i -> 7 `i 341  ]
+{
+"350
+[; ;main.c: 350:         if(rcv == ';') {
+[e $ ! == -> _rcv `ui -> 59 `ui 342  ]
+{
+"351
+[; ;main.c: 351:             uartBuffer[6] = ';';
+[e = *U + &U _uartBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _uartBuffer `ui `ux -> -> 59 `ui `uc ]
+"352
+[; ;main.c: 352:             uartBufferIndex = 0;
+[e = _uartBufferIndex -> -> 0 `i `uc ]
+"353
+[; ;main.c: 353:             btTimeSet = 1;
+[e = _btTimeSet -> -> 1 `i `a ]
+"354
+[; ;main.c: 354:         }
+}
+[e :U 342 ]
+"355
+[; ;main.c: 355:     }
+}
+[e :U 341 ]
+[e :U 340 ]
+[e :U 338 ]
+"356
+[; ;main.c: 356: }
+[e :UE 336 ]
+}
+[a 1C 65 76 65 82 77 0 ]

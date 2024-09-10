@@ -7,8 +7,8 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 1 "./MAX7219.h" 1
-# 34 "./MAX7219.h"
+# 1 "./main.h" 1
+# 36 "./main.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4479,8 +4479,10 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 34 "./MAX7219.h" 2
+# 36 "./main.h" 2
 
+# 1 "./MAX7219.h" 1
+# 35 "./MAX7219.h"
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "./mcc_generated_files/pin_manager.h" 1
@@ -4493,6 +4495,13 @@ void PIN_MANAGER_IOC(void);
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
 # 51 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 157 "./mcc_generated_files/interrupt_manager.h"
+void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager(void);
+# 169 "./mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 52 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/spi.h" 1
 # 54 "./mcc_generated_files/spi.h"
@@ -4515,14 +4524,14 @@ _Bool SPI_IsBufferFull(void);
 _Bool SPI_HasWriteCollisionOccured(void);
 # 263 "./mcc_generated_files/spi.h"
 void SPI_ClearWriteCollisionStatus(void);
-# 52 "./mcc_generated_files/mcc.h" 2
+# 53 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pwm2.h" 1
 # 96 "./mcc_generated_files/pwm2.h"
 void PWM2_Initialize(void);
 # 123 "./mcc_generated_files/pwm2.h"
 void PWM2_LoadDutyValue(uint16_t dutyValue);
-# 53 "./mcc_generated_files/mcc.h" 2
+# 54 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/memory.h" 1
 # 98 "./mcc_generated_files/memory.h"
@@ -4541,7 +4550,7 @@ void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
 uint8_t DATAEE_ReadByte(uint16_t bAdd);
 
 void MEMORY_Tasks(void);
-# 54 "./mcc_generated_files/mcc.h" 2
+# 55 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 102 "./mcc_generated_files/tmr2.h"
@@ -4558,7 +4567,7 @@ void TMR2_WriteTimer(uint8_t timerVal);
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 324 "./mcc_generated_files/tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
-# 55 "./mcc_generated_files/mcc.h" 2
+# 56 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr0.h" 1
 # 99 "./mcc_generated_files/tmr0.h"
@@ -4575,16 +4584,23 @@ void TMR0_WriteTimer(uint16_t timerVal);
 void TMR0_Reload(void);
 # 309 "./mcc_generated_files/tmr0.h"
 _Bool TMR0_HasOverflowOccured(void);
-# 56 "./mcc_generated_files/mcc.h" 2
+# 57 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart.h" 1
-# 76 "./mcc_generated_files/eusart.h"
+# 80 "./mcc_generated_files/eusart.h"
+void (*EUSART_TxDefaultInterruptHandler)(void);
+void (*EUSART_RxDefaultInterruptHandler)(void);
+
+
+
+
+
 void EUSART_Initialize(void);
-# 85 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_ready(void);
-# 94 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_rx_ready(void);
-# 103 "./mcc_generated_files/eusart.h"
+# 96 "./mcc_generated_files/eusart.h"
+uint8_t EUSART_is_tx_ready(void);
+# 105 "./mcc_generated_files/eusart.h"
+uint8_t EUSART_is_rx_ready(void);
+# 114 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
 
 
@@ -4593,12 +4609,40 @@ _Bool EUSART_is_tx_done(void);
 
 
 uint8_t EUSART_Read(void);
-# 119 "./mcc_generated_files/eusart.h"
+# 130 "./mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 57 "./mcc_generated_files/mcc.h" 2
-# 73 "./mcc_generated_files/mcc.h"
+
+
+
+
+
+
+void EUSART_Transmit_ISR(void);
+
+
+
+
+
+
+void EUSART_Receive_ISR(void);
+
+
+
+
+
+
+void EUSART_SetTxInterruptHandler(void* handler);
+
+
+
+
+
+
+void EUSART_SetRxInterruptHandler(void* handler);
+# 58 "./mcc_generated_files/mcc.h" 2
+# 74 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 86 "./mcc_generated_files/mcc.h"
+# 87 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 35 "./MAX7219.h" 2
 
@@ -4625,8 +4669,32 @@ void shiftchar (uint8_t ch, int delay);
 void scrollString (char *str, int delay);
 
 void printString (uint8_t *str);
+# 37 "./main.h" 2
+
+
+
+
+void displayTime(void);
+void setClock(void);
+void checkButtons(void);
+void blinkDisplay(void);
+void saveTimeToFlash(void);
+void loadTimeFromFlash(void);
+void displayAlarmTime(void);
+void processAlarm(void);
+void triggerAlarm(void);
+void clearAlarm(void);
+void btGetData(char rcv);
+void parseCommand(const char* command);
 # 1 "main.c" 2
-# 10 "main.c"
+
+
+
+
+
+
+
+
 uint8_t bufferCol[4 * 8];
 
 
@@ -4641,16 +4709,13 @@ _Bool alarmActive = 0;
 _Bool alarmTriggered = 0;
 
 
-void displayTime(void);
-void setClock(void);
-void checkButtons(void);
-void blinkDisplay(void);
-void saveTimeToFlash(void);
-void loadTimeFromFlash(void);
-void displayAlarmTime(void);
-void processAlarm(void);
-void triggerAlarm(void);
-void clearAlarm(void);
+
+
+char uartBuffer[10];
+uint8_t uartBufferIndex = 0;
+
+
+
 
 
 
@@ -4660,6 +4725,10 @@ _Bool displayBlinking = 0;
 
 uint16_t button3PressTime = 0;
 _Bool isButton3Pressed = 0;
+
+_Bool btTimeSet = 0;
+
+
 
 
 
@@ -4671,6 +4740,10 @@ void main(void)
     loadTimeFromFlash();
 
     TMR0_StartTimer();
+
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+
 
     while(1)
     {
@@ -4697,6 +4770,27 @@ void main(void)
         displayTime();
         checkButtons();
         processAlarm();
+        if(btTimeSet) {
+
+            if (uartBuffer[0] == 'H' && uartBuffer[3] == 'M' && uartBuffer[6] == ';')
+            {
+
+                uint8_t hours_pom = (uartBuffer[1] - '0') * 10 + (uartBuffer[2] - '0');
+
+
+                uint8_t minutes_pom = (uartBuffer[4] - '0') * 10 + (uartBuffer[5] - '0');
+
+
+                if (hours_pom < 24 && minutes_pom < 60)
+                {
+
+                    hours = hours_pom;
+                    minutes = minutes_pom;
+                    displayTime();
+                    saveTimeToFlash();
+                }
+            }
+        }
     }
 }
 
@@ -4931,4 +5025,21 @@ void loadTimeFromFlash(void)
 
     if (hours >= 24) hours = 0;
     if (minutes >= 60) minutes = 0;
+}
+
+void btGetData(char rcv) {
+    if(rcv == 'H' && uartBufferIndex == 0) {
+        uartBuffer[uartBufferIndex] = 'H';
+        uartBufferIndex++;
+    }
+    else if(uartBufferIndex != 0 && uartBufferIndex < 7) {
+        uartBuffer[uartBufferIndex++] = rcv;
+    }
+    else if(uartBufferIndex == 7) {
+        if(rcv == ';') {
+            uartBuffer[6] = ';';
+            uartBufferIndex = 0;
+            btTimeSet = 1;
+        }
+    }
 }

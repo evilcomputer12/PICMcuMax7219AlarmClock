@@ -1,4 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F2524 `(v ~T0 @X0 0 tf ]
+[v F2526 `(v ~T0 @X0 0 tf ]
 "1481 C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 1481:     struct {
 [s S67 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -441,10 +443,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6515
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 6515: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v F2551 `Cuc ~T0 @X0 -> 8 `i t ]
+"80 ./mcc_generated_files/eusart.h
+[; ;./mcc_generated_files/eusart.h: 80: void (*EUSART_TxDefaultInterruptHandler)(void);
+[v _EUSART_TxDefaultInterruptHandler `*F2524 ~T0 @X0 1 e ]
+"81
+[; ;./mcc_generated_files/eusart.h: 81: void (*EUSART_RxDefaultInterruptHandler)(void);
+[v _EUSART_RxDefaultInterruptHandler `*F2526 ~T0 @X0 1 e ]
+[v F2563 `Cuc ~T0 @X0 -> 8 `i t ]
 "13 ./Fonts.h
 [; ;./Fonts.h: 13: const uint8_t MAX7219_Dot_Matrix_font [256] [8] = {
-[v _MAX7219_Dot_Matrix_font `F2551 ~T0 @X0 -> 256 `i e ]
+[v _MAX7219_Dot_Matrix_font `F2563 ~T0 @X0 -> 256 `i e ]
 [i _MAX7219_Dot_Matrix_font
 :U ..
 :U ..
@@ -3120,8 +3128,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _flushBuffer ]
 [f ]
-[v F2561 `uc ~T0 @X0 -> 32 `i s ]
-[i F2561
+[v F2573 `uc ~T0 @X0 -> 32 `i s ]
+[i F2573
 :U ..
 "54
 [; ;MAX7219.c: 54:  uint8_t bufferRow[4*8] = {0};
@@ -3129,7 +3137,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _bufferRow `uc ~T0 @X0 -> 32 `i a ]
-[e = _bufferRow F2561 ]
+[e = _bufferRow F2573 ]
 "57
 [; ;MAX7219.c: 57:  for (int i=0; i<4*8; i++)
 {

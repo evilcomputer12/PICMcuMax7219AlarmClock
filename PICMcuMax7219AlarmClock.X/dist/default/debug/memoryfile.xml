@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/debug\test5.X.debug.hex">
+  <executable name="dist/default/debug\PICMcuMax7219AlarmClock.X.debug.hex">
     <memory name="program">
       <units>bytes</units>
       <length>65536</length>
-      <used>4914</used>
-      <free>60622</free>
+      <used>6234</used>
+      <free>59302</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>3936</length>
-      <used>175</used>
-      <free>3761</free>
+      <used>296</used>
+      <free>3640</free>
     </memory>
   </executable>
 </project>

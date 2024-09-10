@@ -49,6 +49,7 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
+#include "interrupt_manager.h"
 #include "spi.h"
 #include "pwm2.h"
 #include "memory.h"

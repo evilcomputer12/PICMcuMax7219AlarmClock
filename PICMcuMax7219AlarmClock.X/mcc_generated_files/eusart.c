@@ -49,15 +49,42 @@
 #include "eusart.h"
 
 /**
+  Section: Macro Declarations
+*/
+#define EUSART_TX_BUFFER_SIZE 8
+#define EUSART_RX_BUFFER_SIZE 8
+
+/**
+  Section: Global Variables
+*/
+
+volatile uint8_t eusartTxHead = 0;
+volatile uint8_t eusartTxTail = 0;
+volatile uint8_t eusartTxBuffer[EUSART_TX_BUFFER_SIZE];
+volatile uint8_t eusartTxBufferRemaining;
+
+volatile uint8_t eusartRxHead = 0;
+volatile uint8_t eusartRxTail = 0;
+volatile uint8_t eusartRxBuffer[EUSART_RX_BUFFER_SIZE];
+volatile uint8_t eusartRxCount;
+
+/**
   Section: EUSART APIs
 */
 
 void EUSART_Initialize(void)
 {
+    // disable interrupts before changing states
+    PIE1bits.RC1IE = 0;
+    PIE1bits.TX1IE = 0;
+    
+    EUSART_SetTxInterruptHandler(EUSART_Transmit_ISR);
+    EUSART_SetRxInterruptHandler(EUSART_Receive_ISR);
+
     // Set the EUSART module to the options selected in the user interface.
 
-    // ABDOVF no_overflow; CKTXP async_noninverted_sync_fallingedge; BRG16 16bit_generator; WUE enabled; ABDEN disabled; DTRXP not_inverted; 
-    BAUDCON = 0x0A;
+    // ABDOVF no_overflow; CKTXP async_noninverted_sync_fallingedge; BRG16 16bit_generator; WUE disabled; ABDEN disabled; DTRXP not_inverted; 
+    BAUDCON = 0x08;
 
     // SPEN enabled; RX9 8-bit; CREN enabled; ADDEN disabled; SREN disabled; 
     RCSTA = 0x90;
@@ -71,17 +98,28 @@ void EUSART_Initialize(void)
     // Baud Rate = 9600; 
     SPBRGH = 0x00;
 
+
+    // initializing the driver state
+    eusartTxHead = 0;
+    eusartTxTail = 0;
+    eusartTxBufferRemaining = sizeof(eusartTxBuffer);
+
+    eusartRxHead = 0;
+    eusartRxTail = 0;
+    eusartRxCount = 0;
+
+    // enable receive interrupt
+    PIE1bits.RC1IE = 1;
 }
 
-
-bool EUSART_is_tx_ready(void)
+uint8_t EUSART_is_tx_ready(void)
 {
-    return (PIR1bits.TX1IF && TXSTAbits.TXEN);
+    return eusartTxBufferRemaining;
 }
 
-bool EUSART_is_rx_ready(void)
+uint8_t EUSART_is_rx_ready(void)
 {
-    return PIR1bits.RC1IF;
+    return eusartRxCount;
 }
 
 bool EUSART_is_tx_done(void)
@@ -91,31 +129,94 @@ bool EUSART_is_tx_done(void)
 
 uint8_t EUSART_Read(void)
 {
-
-    while(!PIR1bits.RC1IF)
-    {
-    }
-
+    uint8_t readValue  = 0;
     
-    if(1 == RCSTAbits.OERR)
+    while(0 == eusartRxCount)
     {
-        // EUSART error - restart
-
-        RCSTAbits.SPEN = 0; 
-        RCSTAbits.SPEN = 1; 
     }
 
-    return RCREG;
+    readValue = eusartRxBuffer[eusartRxTail++];
+    if(sizeof(eusartRxBuffer) <= eusartRxTail)
+    {
+        eusartRxTail = 0;
+    }
+    PIE1bits.RC1IE = 0;
+    eusartRxCount--;
+    PIE1bits.RC1IE = 1;
+
+    return readValue;
 }
 
 void EUSART_Write(uint8_t txData)
 {
-    while(0 == PIR1bits.TX1IF)
+    while(0 == eusartTxBufferRemaining)
     {
     }
 
-    TXREG = txData;    // Write the data byte to the USART.
+    if(0 == PIE1bits.TX1IE)
+    {
+        TXREG = txData;
+    }
+    else
+    {
+        PIE1bits.TX1IE = 0;
+        eusartTxBuffer[eusartTxHead++] = txData;
+        if(sizeof(eusartTxBuffer) <= eusartTxHead)
+        {
+            eusartTxHead = 0;
+        }
+        eusartTxBufferRemaining--;
+    }
+    PIE1bits.TX1IE = 1;
 }
+
+void EUSART_Transmit_ISR(void)
+{
+
+    // add your EUSART interrupt custom code
+    if(sizeof(eusartTxBuffer) > eusartTxBufferRemaining)
+    {
+        TXREG = eusartTxBuffer[eusartTxTail++];
+        if(sizeof(eusartTxBuffer) <= eusartTxTail)
+        {
+            eusartTxTail = 0;
+        }
+        eusartTxBufferRemaining++;
+    }
+    else
+    {
+        PIE1bits.TX1IE = 0;
+    }
+}
+
+void EUSART_Receive_ISR(void)
+{
+
+    if(1 == RCSTAbits.OERR)
+    {
+        // EUSART error - restart
+
+        RCSTAbits.CREN = 0;
+        RCSTAbits.CREN = 1;
+    }
+
+    // buffer overruns are ignored
+    eusartRxBuffer[eusartRxHead++] = RCREG;
+    if(sizeof(eusartRxBuffer) <= eusartRxHead)
+    {
+        eusartRxHead = 0;
+    }
+    eusartRxCount++;
+}
+
+void EUSART_SetTxInterruptHandler(void* handler){
+    EUSART_TxDefaultInterruptHandler = handler;
+}
+
+void EUSART_SetRxInterruptHandler(void* handler){
+    EUSART_RxDefaultInterruptHandler = handler;
+}
+
 /**
   End of File
 */

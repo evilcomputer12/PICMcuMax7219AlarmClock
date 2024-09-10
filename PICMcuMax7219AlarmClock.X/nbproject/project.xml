@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>test5</name>
+            <name>PICMcuMax7219AlarmClock</name>
             <creation-uuid>e8ba2d4e-7f62-46f0-afd4-96203ca1236d</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>

@@ -1,5 +1,4 @@
-#include "MAX7219.h"
-#include "mcc_generated_files/tmr0.h"
+#include "main.h"
 
 #define NUM_DEV 4
 #define DEBOUNCE_DELAY 100
@@ -20,17 +19,14 @@ bool alarmActive = false;
 
 bool alarmTriggered = false;
 
+#define UART_BUFFER_SIZE 10
+
+// Buffer to store incoming UART data
+char uartBuffer[UART_BUFFER_SIZE];
+uint8_t uartBufferIndex = 0;
+
 // Function prototypes
-void displayTime(void);
-void setClock(void);
-void checkButtons(void);
-void blinkDisplay(void);
-void saveTimeToFlash(void);
-void loadTimeFromFlash(void);
-void displayAlarmTime(void);
-void processAlarm(void);
-void triggerAlarm(void);
-void clearAlarm(void);
+
 
 
 
@@ -41,7 +37,11 @@ bool displayBlinking = false;
 uint16_t button3PressTime = 0;
 bool isButton3Pressed = false;
 
+bool btTimeSet = false;
+
 #define FLASH_BUFFER_SIZE ERASE_FLASH_BLOCKSIZE
+
+
 
 void main(void)
 {
@@ -51,6 +51,10 @@ void main(void)
     loadTimeFromFlash();
     // Start the timer
     TMR0_StartTimer();
+    
+    INTCONbits.GIE = 1; // Enable Global Interrupts
+    INTCONbits.PEIE = 1; // Enable Peripheral Interrupts
+    
 
     while(1)
     {
@@ -77,6 +81,27 @@ void main(void)
         displayTime();
         checkButtons();
         processAlarm();
+        if(btTimeSet) {
+            // Check for the command structure: "H12M34;"
+            if (uartBuffer[0] == 'H' && uartBuffer[3] == 'M' && uartBuffer[6] == ';')
+            {
+                // Extract the hours (characters 1 and 2)
+                uint8_t hours_pom = (uartBuffer[1] - '0') * 10 + (uartBuffer[2] - '0');
+
+                // Extract the minutes (characters 4 and 5)
+                uint8_t minutes_pom = (uartBuffer[4] - '0') * 10 + (uartBuffer[5] - '0');
+
+                // Validate the extracted values
+                if (hours_pom < 24 && minutes_pom < 60)
+                {
+                    // Now you have the valid hours and minutes as integers
+                    hours = hours_pom;
+                    minutes = minutes_pom;
+                    displayTime(); // Display the time on your LED matrix or clock
+                    saveTimeToFlash(); // Save the time in flash memory (if applicable)
+                }
+            }
+        }
     }
 }
 
@@ -311,4 +336,21 @@ void loadTimeFromFlash(void)
     // Validate read values to ensure they're within range
     if (hours >= 24) hours = 0;
     if (minutes >= 60) minutes = 0;
+}
+
+void btGetData(char rcv) {
+    if(rcv == 'H' && uartBufferIndex == 0) {
+        uartBuffer[uartBufferIndex] = 'H';
+        uartBufferIndex++;
+    }
+    else if(uartBufferIndex != 0 && uartBufferIndex < 7) {
+        uartBuffer[uartBufferIndex++] = rcv;
+    } 
+    else if(uartBufferIndex == 7) {
+        if(rcv == ';') {
+            uartBuffer[6] = ';';
+            uartBufferIndex = 0;
+            btTimeSet = true;
+        }
+    }
 }

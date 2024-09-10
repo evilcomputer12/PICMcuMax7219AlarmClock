@@ -4550,6 +4550,13 @@ void PIN_MANAGER_IOC(void);
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
 # 51 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/interrupt_manager.h" 1
+# 157 "mcc_generated_files/interrupt_manager.h"
+void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager(void);
+# 169 "mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 52 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/spi.h" 1
 # 54 "mcc_generated_files/spi.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 1 3
@@ -4571,14 +4578,14 @@ _Bool SPI_IsBufferFull(void);
 _Bool SPI_HasWriteCollisionOccured(void);
 # 263 "mcc_generated_files/spi.h"
 void SPI_ClearWriteCollisionStatus(void);
-# 52 "mcc_generated_files/mcc.h" 2
+# 53 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pwm2.h" 1
 # 96 "mcc_generated_files/pwm2.h"
 void PWM2_Initialize(void);
 # 123 "mcc_generated_files/pwm2.h"
 void PWM2_LoadDutyValue(uint16_t dutyValue);
-# 53 "mcc_generated_files/mcc.h" 2
+# 54 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/memory.h" 1
 # 98 "mcc_generated_files/memory.h"
@@ -4597,7 +4604,7 @@ void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
 uint8_t DATAEE_ReadByte(uint16_t bAdd);
 
 void MEMORY_Tasks(void);
-# 54 "mcc_generated_files/mcc.h" 2
+# 55 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr2.h" 1
 # 102 "mcc_generated_files/tmr2.h"
@@ -4614,7 +4621,7 @@ void TMR2_WriteTimer(uint8_t timerVal);
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 324 "mcc_generated_files/tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
-# 55 "mcc_generated_files/mcc.h" 2
+# 56 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr0.h" 1
 # 99 "mcc_generated_files/tmr0.h"
@@ -4631,16 +4638,23 @@ void TMR0_WriteTimer(uint16_t timerVal);
 void TMR0_Reload(void);
 # 309 "mcc_generated_files/tmr0.h"
 _Bool TMR0_HasOverflowOccured(void);
-# 56 "mcc_generated_files/mcc.h" 2
+# 57 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/eusart.h" 1
-# 76 "mcc_generated_files/eusart.h"
+# 80 "mcc_generated_files/eusart.h"
+void (*EUSART_TxDefaultInterruptHandler)(void);
+void (*EUSART_RxDefaultInterruptHandler)(void);
+
+
+
+
+
 void EUSART_Initialize(void);
-# 85 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_ready(void);
-# 94 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_rx_ready(void);
-# 103 "mcc_generated_files/eusart.h"
+# 96 "mcc_generated_files/eusart.h"
+uint8_t EUSART_is_tx_ready(void);
+# 105 "mcc_generated_files/eusart.h"
+uint8_t EUSART_is_rx_ready(void);
+# 114 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
 
 
@@ -4649,12 +4663,40 @@ _Bool EUSART_is_tx_done(void);
 
 
 uint8_t EUSART_Read(void);
-# 119 "mcc_generated_files/eusart.h"
+# 130 "mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 57 "mcc_generated_files/mcc.h" 2
-# 73 "mcc_generated_files/mcc.h"
+
+
+
+
+
+
+void EUSART_Transmit_ISR(void);
+
+
+
+
+
+
+void EUSART_Receive_ISR(void);
+
+
+
+
+
+
+void EUSART_SetTxInterruptHandler(void* handler);
+
+
+
+
+
+
+void EUSART_SetRxInterruptHandler(void* handler);
+# 58 "mcc_generated_files/mcc.h" 2
+# 74 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 86 "mcc_generated_files/mcc.h"
+# 87 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 105 "mcc_generated_files/mcc.c" 2
 
@@ -4662,6 +4704,7 @@ void OSCILLATOR_Initialize(void);
 
 void SYSTEM_Initialize(void)
 {
+    INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     SPI_Initialize();

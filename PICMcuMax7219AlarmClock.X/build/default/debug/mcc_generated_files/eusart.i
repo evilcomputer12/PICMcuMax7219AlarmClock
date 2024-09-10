@@ -4484,13 +4484,20 @@ unsigned char __t3rd16on(void);
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
 # 54 "mcc_generated_files/eusart.h" 2
-# 76 "mcc_generated_files/eusart.h"
+# 80 "mcc_generated_files/eusart.h"
+void (*EUSART_TxDefaultInterruptHandler)(void);
+void (*EUSART_RxDefaultInterruptHandler)(void);
+
+
+
+
+
 void EUSART_Initialize(void);
-# 85 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_ready(void);
-# 94 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_rx_ready(void);
-# 103 "mcc_generated_files/eusart.h"
+# 96 "mcc_generated_files/eusart.h"
+uint8_t EUSART_is_tx_ready(void);
+# 105 "mcc_generated_files/eusart.h"
+uint8_t EUSART_is_rx_ready(void);
+# 114 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
 
 
@@ -4499,10 +4506,47 @@ _Bool EUSART_is_tx_done(void);
 
 
 uint8_t EUSART_Read(void);
-# 119 "mcc_generated_files/eusart.h"
+# 130 "mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 49 "mcc_generated_files/eusart.c" 2
 
+
+
+
+
+
+void EUSART_Transmit_ISR(void);
+
+
+
+
+
+
+void EUSART_Receive_ISR(void);
+
+
+
+
+
+
+void EUSART_SetTxInterruptHandler(void* handler);
+
+
+
+
+
+
+void EUSART_SetRxInterruptHandler(void* handler);
+# 49 "mcc_generated_files/eusart.c" 2
+# 61 "mcc_generated_files/eusart.c"
+volatile uint8_t eusartTxHead = 0;
+volatile uint8_t eusartTxTail = 0;
+volatile uint8_t eusartTxBuffer[8];
+volatile uint8_t eusartTxBufferRemaining;
+
+volatile uint8_t eusartRxHead = 0;
+volatile uint8_t eusartRxTail = 0;
+volatile uint8_t eusartRxBuffer[8];
+volatile uint8_t eusartRxCount;
 
 
 
@@ -4511,9 +4555,16 @@ void EUSART_Write(uint8_t txData);
 void EUSART_Initialize(void)
 {
 
+    PIE1bits.RC1IE = 0;
+    PIE1bits.TX1IE = 0;
+
+    EUSART_SetTxInterruptHandler(EUSART_Transmit_ISR);
+    EUSART_SetRxInterruptHandler(EUSART_Receive_ISR);
 
 
-    BAUDCON = 0x0A;
+
+
+    BAUDCON = 0x08;
 
 
     RCSTA = 0x90;
@@ -4527,17 +4578,28 @@ void EUSART_Initialize(void)
 
     SPBRGH = 0x00;
 
+
+
+    eusartTxHead = 0;
+    eusartTxTail = 0;
+    eusartTxBufferRemaining = sizeof(eusartTxBuffer);
+
+    eusartRxHead = 0;
+    eusartRxTail = 0;
+    eusartRxCount = 0;
+
+
+    PIE1bits.RC1IE = 1;
 }
 
-
-_Bool EUSART_is_tx_ready(void)
+uint8_t EUSART_is_tx_ready(void)
 {
-    return (PIR1bits.TX1IF && TXSTAbits.TXEN);
+    return eusartTxBufferRemaining;
 }
 
-_Bool EUSART_is_rx_ready(void)
+uint8_t EUSART_is_rx_ready(void)
 {
-    return PIR1bits.RC1IF;
+    return eusartRxCount;
 }
 
 _Bool EUSART_is_tx_done(void)
@@ -4547,28 +4609,90 @@ _Bool EUSART_is_tx_done(void)
 
 uint8_t EUSART_Read(void)
 {
+    uint8_t readValue = 0;
 
-    while(!PIR1bits.RC1IF)
+    while(0 == eusartRxCount)
     {
     }
 
+    readValue = eusartRxBuffer[eusartRxTail++];
+    if(sizeof(eusartRxBuffer) <= eusartRxTail)
+    {
+        eusartRxTail = 0;
+    }
+    PIE1bits.RC1IE = 0;
+    eusartRxCount--;
+    PIE1bits.RC1IE = 1;
+
+    return readValue;
+}
+
+void EUSART_Write(uint8_t txData)
+{
+    while(0 == eusartTxBufferRemaining)
+    {
+    }
+
+    if(0 == PIE1bits.TX1IE)
+    {
+        TXREG = txData;
+    }
+    else
+    {
+        PIE1bits.TX1IE = 0;
+        eusartTxBuffer[eusartTxHead++] = txData;
+        if(sizeof(eusartTxBuffer) <= eusartTxHead)
+        {
+            eusartTxHead = 0;
+        }
+        eusartTxBufferRemaining--;
+    }
+    PIE1bits.TX1IE = 1;
+}
+
+void EUSART_Transmit_ISR(void)
+{
+
+
+    if(sizeof(eusartTxBuffer) > eusartTxBufferRemaining)
+    {
+        TXREG = eusartTxBuffer[eusartTxTail++];
+        if(sizeof(eusartTxBuffer) <= eusartTxTail)
+        {
+            eusartTxTail = 0;
+        }
+        eusartTxBufferRemaining++;
+    }
+    else
+    {
+        PIE1bits.TX1IE = 0;
+    }
+}
+
+void EUSART_Receive_ISR(void)
+{
 
     if(1 == RCSTAbits.OERR)
     {
 
 
-        RCSTAbits.SPEN = 0;
-        RCSTAbits.SPEN = 1;
+        RCSTAbits.CREN = 0;
+        RCSTAbits.CREN = 1;
     }
 
-    return RCREG;
+
+    eusartRxBuffer[eusartRxHead++] = RCREG;
+    if(sizeof(eusartRxBuffer) <= eusartRxHead)
+    {
+        eusartRxHead = 0;
+    }
+    eusartRxCount++;
 }
 
-void EUSART_Write(uint8_t txData)
-{
-    while(0 == PIR1bits.TX1IF)
-    {
-    }
+void EUSART_SetTxInterruptHandler(void* handler){
+    EUSART_TxDefaultInterruptHandler = handler;
+}
 
-    TXREG = txData;
+void EUSART_SetRxInterruptHandler(void* handler){
+    EUSART_RxDefaultInterruptHandler = handler;
 }
