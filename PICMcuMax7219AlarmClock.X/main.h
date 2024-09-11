@@ -35,9 +35,10 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.
 #include "MAX7219.h"
-#include "mcc_generated_files/tmr0.h"
+#include "mcc_generated_files/tmr1.h"
 #include "mcc_generated_files/eusart.h"
-
+void delayMicroseconds(unsigned int microseconds);
+void generateBeep(unsigned int duration_ms);
 void displayTime(void);
 void calculateTime(void);
 void setClock(void);

@@ -50,8 +50,8 @@ void main(void)
     clearDisplay();     // Clear display at the beginning
     loadTimeFromFlash();
     // Start the timer
-    TMR0_StartTimer();
-    
+    TMR1_StartTimer();
+    TRISBbits.RB3 = 0;
     INTCONbits.GIE = 1; // Enable Global Interrupts
     INTCONbits.PEIE = 1; // Enable Peripheral Interrupts
     
@@ -86,7 +86,26 @@ void main(void)
     }
 }
 
+void delayMicroseconds(unsigned int microseconds) {
+    // Simple delay using for loops (calibration needed based on clock speed)
+    unsigned int i;
+    for (i = 0; i < microseconds; i++) {
+        // This will generate a delay of approximately 1 microsecond
+        // You may need to adjust based on your actual MCU speed
+        __asm__("nop"); // No Operation
+    }
+}
 
+void generateBeep(unsigned int duration_ms) {
+    unsigned int i;
+    unsigned int cycles = (duration_ms * 1000) / 244;  // Total number of cycles for the beep duration
+    for (i = 0; i < cycles; i++) {
+        LATBbits.LATB3 = 1;  // Turn on buzzer
+        delayMicroseconds(122);  // Delay for half the period (122 us)
+        LATBbits.LATB3 = 0;  // Turn off buzzer
+        delayMicroseconds(122);  // Delay for half the period (122 us)
+    }
+}
 
 // Display the current time on the LED matrix
 void displayTime(void)
@@ -182,10 +201,11 @@ void triggerAlarm(void)
         
         // Flash the display with "ALARM"
         printString("ALARM");
-        PWM2_LoadDutyValue(FLASH_INTERVAL_MS);
+//        PWM2_LoadDutyValue(FLASH_INTERVAL_MS);
+        generateBeep(FLASH_INTERVAL_MS);
         __delay_ms(FLASH_INTERVAL_MS);
         clearDisplay();
-        PWM2_LoadDutyValue(0);
+//        PWM2_LoadDutyValue(0);
         __delay_ms(FLASH_INTERVAL_MS);
     }
 

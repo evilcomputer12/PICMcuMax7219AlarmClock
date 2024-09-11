@@ -57,44 +57,40 @@ void  INTERRUPT_Initialize (void)
 
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
-//    // interrupt handler
-//    if(INTCONbits.PEIE == 1 && PIE1bits.TX1IE == 1 && PIR1bits.TX1IF == 1)
-//    {
-//        EUSART_TxDefaultInterruptHandler();
-//    }
-//    else if(INTCONbits.PEIE == 1 && PIE1bits.RC1IE == 1 && PIR1bits.RC1IF == 1)
-//    {
-//        EUSART_RxDefaultInterruptHandler();
-//    }
-//    else
-//    {
-//        //Unhandled Interrupt
-//    }
-    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+    // interrupt handler
+    if(INTCONbits.PEIE == 1)
     {
-        TMR0_ISR();
-    }
-    // Check if the EUSART Transmit interrupt is active
-    else if (PIE1bits.TX1IE && PIR1bits.TX1IF)
+        if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
+        {
+            TMR1_ISR();
+        } 
+        // Check if the EUSART Transmit interrupt is active
+        else if (PIE1bits.TX1IE && PIR1bits.TX1IF)
+        {
+            // Call the transmit interrupt handler
+            EUSART_TxDefaultInterruptHandler();
+
+            // Clear the TX interrupt flag (optional, usually handled by hardware)
+            PIR1bits.TX1IF = 0;
+        }
+
+        // Check if the EUSART Receive interrupt is active
+        else if (PIE1bits.RC1IE && PIR1bits.RC1IF)
+        {
+            // Call the receive interrupt handler
+            btGetData(RCREG);
+
+            // Clear the RX interrupt flag (optional, usually handled by hardware)
+            PIR1bits.RC1IF = 0;
+        }
+    }      
+    else
     {
-        // Call the transmit interrupt handler
-        EUSART_TxDefaultInterruptHandler();
-        
-        // Clear the TX interrupt flag (optional, usually handled by hardware)
-        PIR1bits.TX1IF = 0;
+        //Unhandled Interrupt
     }
-    
-    // Check if the EUSART Receive interrupt is active
-    else if (PIE1bits.RC1IE && PIR1bits.RC1IF)
-    {
-        // Call the receive interrupt handler
-        btGetData(RCREG);
-        
-        // Clear the RX interrupt flag (optional, usually handled by hardware)
-        PIR1bits.RC1IF = 0;
-    }
-    
 }
+
+
 /**
  End of File
 */

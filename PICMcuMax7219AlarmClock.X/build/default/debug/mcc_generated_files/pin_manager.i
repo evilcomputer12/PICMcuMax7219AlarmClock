@@ -4481,9 +4481,9 @@ unsigned char __t3rd16on(void);
 # 46 "mcc_generated_files/pin_manager.c" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 191 "mcc_generated_files/pin_manager.h"
+# 199 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 203 "mcc_generated_files/pin_manager.h"
+# 211 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 47 "mcc_generated_files/pin_manager.c" 2
 
@@ -4507,7 +4507,7 @@ void PIN_MANAGER_Initialize(void)
 
     TRISA = 0xFF;
     TRISB = 0xFF;
-    TRISC = 0x91;
+    TRISC = 0x93;
 
 
 

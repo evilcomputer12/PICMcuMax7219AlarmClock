@@ -1,27 +1,21 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2532 `(v ~T0 @X0 0 tf ]
-[v F2534 `(v ~T0 @X0 0 tf ]
+[v F2520 `(v ~T0 @X0 0 tf ]
+[v F2522 `(v ~T0 @X0 0 tf ]
 "169 mcc_generated_files/interrupt_manager.h
 [; ;mcc_generated_files/interrupt_manager.h: 169: void INTERRUPT_Initialize (void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
-"191 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 191: void PIN_MANAGER_Initialize (void);
+"199 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 199: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"87 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 87: void OSCILLATOR_Initialize(void);
+"85 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 85: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
 "116 mcc_generated_files/spi.h
 [; ;mcc_generated_files/spi.h: 116: void SPI_Initialize(void);
 [v _SPI_Initialize `(v ~T0 @X0 0 ef ]
-"96 mcc_generated_files/pwm2.h
-[; ;mcc_generated_files/pwm2.h: 96: void PWM2_Initialize(void);
-[v _PWM2_Initialize `(v ~T0 @X0 0 ef ]
-"102 mcc_generated_files/tmr2.h
-[; ;mcc_generated_files/tmr2.h: 102: void TMR2_Initialize(void);
-[v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
-"105 mcc_generated_files/tmr0.h
-[; ;mcc_generated_files/tmr0.h: 105: void TMR0_Initialize(void);
-[v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
+"94 mcc_generated_files/tmr1.h
+[; ;mcc_generated_files/tmr1.h: 94: void TMR1_Initialize(void);
+[v _TMR1_Initialize `(v ~T0 @X0 0 ef ]
 "87 mcc_generated_files/eusart.h
 [; ;mcc_generated_files/eusart.h: 87: void EUSART_Initialize(void);
 [v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
@@ -523,10 +517,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "80 mcc_generated_files/eusart.h
 [; ;mcc_generated_files/eusart.h: 80: void (*EUSART_TxDefaultInterruptHandler)(void);
-[v _EUSART_TxDefaultInterruptHandler `*F2532 ~T0 @X0 1 e ]
+[v _EUSART_TxDefaultInterruptHandler `*F2520 ~T0 @X0 1 e ]
 "81
 [; ;mcc_generated_files/eusart.h: 81: void (*EUSART_RxDefaultInterruptHandler)(void);
-[v _EUSART_RxDefaultInterruptHandler `*F2534 ~T0 @X0 1 e ]
+[v _EUSART_RxDefaultInterruptHandler `*F2522 ~T0 @X0 1 e ]
 "108 mcc_generated_files/mcc.c
 [; ;mcc_generated_files/mcc.c: 108: void SYSTEM_Initialize(void)
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
@@ -548,36 +542,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 113:     SPI_Initialize();
 [e ( _SPI_Initialize ..  ]
 "114
-[; ;mcc_generated_files/mcc.c: 114:     PWM2_Initialize();
-[e ( _PWM2_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 114:     TMR1_Initialize();
+[e ( _TMR1_Initialize ..  ]
 "115
-[; ;mcc_generated_files/mcc.c: 115:     TMR2_Initialize();
-[e ( _TMR2_Initialize ..  ]
-"116
-[; ;mcc_generated_files/mcc.c: 116:     TMR0_Initialize();
-[e ( _TMR0_Initialize ..  ]
-"117
-[; ;mcc_generated_files/mcc.c: 117:     EUSART_Initialize();
+[; ;mcc_generated_files/mcc.c: 115:     EUSART_Initialize();
 [e ( _EUSART_Initialize ..  ]
-"118
-[; ;mcc_generated_files/mcc.c: 118: }
+"116
+[; ;mcc_generated_files/mcc.c: 116: }
 [e :UE 277 ]
 }
-"120
-[; ;mcc_generated_files/mcc.c: 120: void OSCILLATOR_Initialize(void)
+"118
+[; ;mcc_generated_files/mcc.c: 118: void OSCILLATOR_Initialize(void)
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"121
-[; ;mcc_generated_files/mcc.c: 121: {
+"119
+[; ;mcc_generated_files/mcc.c: 119: {
 {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
+"121
+[; ;mcc_generated_files/mcc.c: 121:     OSCCON = 0x6A;
+[e = _OSCCON -> -> 106 `i `uc ]
 "123
-[; ;mcc_generated_files/mcc.c: 123:     OSCCON = 0x62;
-[e = _OSCCON -> -> 98 `i `uc ]
-"125
-[; ;mcc_generated_files/mcc.c: 125:     OSCTUNE = 0x00;
+[; ;mcc_generated_files/mcc.c: 123:     OSCTUNE = 0x00;
 [e = _OSCTUNE -> -> 0 `i `uc ]
-"126
-[; ;mcc_generated_files/mcc.c: 126: }
+"124
+[; ;mcc_generated_files/mcc.c: 124: }
 [e :UE 278 ]
 }

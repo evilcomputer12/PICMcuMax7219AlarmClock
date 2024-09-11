@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\martin\AppData\Local\Temp\xcAsh2g.\driver_tmp_3.o
+ C:\Users\martin\AppData\Local\Temp\xcAsplg.\driver_tmp_3.o
  -Odist/default/debug\PICMcuMax7219AlarmClock.X.debug.hex
  -logfile=dist/default/debug\PICMcuMax7219AlarmClock.X.debug.hxl
  -format=INHX032
@@ -10,21 +10,21 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\martin\AppData\Local\Temp\xcAsh2g.\driver_tmp_3.o)
-  8h - 1161h		(C:\Users\martin\AppData\Local\Temp\xcAsh2g.\driver_tmp_3.o)
-  F528h - FD2Fh		(C:\Users\martin\AppData\Local\Temp\xcAsh2g.\driver_tmp_3.o)
-  200000h - 200007h		(C:\Users\martin\AppData\Local\Temp\xcAsh2g.\driver_tmp_3.o)
-  300000h - 30000Dh		(C:\Users\martin\AppData\Local\Temp\xcAsh2g.\driver_tmp_3.o)
+  0h - 3h		(C:\Users\martin\AppData\Local\Temp\xcAsplg.\driver_tmp_3.o)
+  8h - 1245h		(C:\Users\martin\AppData\Local\Temp\xcAsplg.\driver_tmp_3.o)
+  F528h - FD2Fh		(C:\Users\martin\AppData\Local\Temp\xcAsplg.\driver_tmp_3.o)
+  200000h - 200007h		(C:\Users\martin\AppData\Local\Temp\xcAsplg.\driver_tmp_3.o)
+  300000h - 30000Dh		(C:\Users\martin\AppData\Local\Temp\xcAsplg.\driver_tmp_3.o)
  Unused ranges:
   4h - 7h
-  1162h - F527h
+  1246h - F527h
   FD30h - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\martin\AppData\Local\Temp\xcAsh2g.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\martin\AppData\Local\Temp\xcAsplg.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -306,7 +306,21 @@
 00001130 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001140 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001150 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001160 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
+00001160 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001170 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001180 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001190 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000011A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000011B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000011C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000011D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000011E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000011F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001200 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001210 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001220 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001230 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001240 | H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 0000F520 | -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1
 0000F530 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

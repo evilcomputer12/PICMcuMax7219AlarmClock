@@ -4486,9 +4486,9 @@ unsigned char __t3rd16on(void);
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 191 "./mcc_generated_files/pin_manager.h"
+# 199 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 203 "./mcc_generated_files/pin_manager.h"
+# 211 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 49 "./mcc_generated_files/mcc.h" 2
 
@@ -4526,13 +4526,6 @@ _Bool SPI_HasWriteCollisionOccured(void);
 void SPI_ClearWriteCollisionStatus(void);
 # 53 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/pwm2.h" 1
-# 96 "./mcc_generated_files/pwm2.h"
-void PWM2_Initialize(void);
-# 123 "./mcc_generated_files/pwm2.h"
-void PWM2_LoadDutyValue(uint16_t dutyValue);
-# 54 "./mcc_generated_files/mcc.h" 2
-
 # 1 "./mcc_generated_files/memory.h" 1
 # 98 "./mcc_generated_files/memory.h"
 uint8_t FLASH_ReadByte(uint32_t flashAddr);
@@ -4550,49 +4543,32 @@ void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
 uint8_t DATAEE_ReadByte(uint16_t bAdd);
 
 void MEMORY_Tasks(void);
+# 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr1.h" 1
+# 94 "./mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+# 125 "./mcc_generated_files/tmr1.h"
+void TMR1_StartTimer(void);
+# 155 "./mcc_generated_files/tmr1.h"
+void TMR1_StopTimer(void);
+# 188 "./mcc_generated_files/tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 214 "./mcc_generated_files/tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 246 "./mcc_generated_files/tmr1.h"
+void TMR1_Reload(void);
+# 262 "./mcc_generated_files/tmr1.h"
+void TMR1_ISR(void);
+# 280 "./mcc_generated_files/tmr1.h"
+void TMR1_CallBack(void);
+# 298 "./mcc_generated_files/tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 316 "./mcc_generated_files/tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 334 "./mcc_generated_files/tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
 # 55 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/tmr2.h" 1
-# 102 "./mcc_generated_files/tmr2.h"
-void TMR2_Initialize(void);
-# 131 "./mcc_generated_files/tmr2.h"
-void TMR2_StartTimer(void);
-# 163 "./mcc_generated_files/tmr2.h"
-void TMR2_StopTimer(void);
-# 198 "./mcc_generated_files/tmr2.h"
-uint8_t TMR2_ReadTimer(void);
-# 237 "./mcc_generated_files/tmr2.h"
-void TMR2_WriteTimer(uint8_t timerVal);
-# 289 "./mcc_generated_files/tmr2.h"
-void TMR2_LoadPeriodRegister(uint8_t periodVal);
-# 324 "./mcc_generated_files/tmr2.h"
-_Bool TMR2_HasOverflowOccured(void);
-# 56 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/tmr0.h" 1
-# 105 "./mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 134 "./mcc_generated_files/tmr0.h"
-void TMR0_StartTimer(void);
-# 166 "./mcc_generated_files/tmr0.h"
-void TMR0_StopTimer(void);
-# 202 "./mcc_generated_files/tmr0.h"
-uint16_t TMR0_ReadTimer(void);
-# 241 "./mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint16_t timerVal);
-# 277 "./mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 295 "./mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 313 "./mcc_generated_files/tmr0.h"
-void TMR0_CallBack(void);
-# 331 "./mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 349 "./mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 367 "./mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 57 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart.h" 1
 # 80 "./mcc_generated_files/eusart.h"
@@ -4647,10 +4623,10 @@ void EUSART_SetTxInterruptHandler(void* handler);
 
 
 void EUSART_SetRxInterruptHandler(void* handler);
-# 58 "./mcc_generated_files/mcc.h" 2
-# 74 "./mcc_generated_files/mcc.h"
+# 56 "./mcc_generated_files/mcc.h" 2
+# 72 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 87 "./mcc_generated_files/mcc.h"
+# 85 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 35 "./MAX7219.h" 2
 
@@ -4681,7 +4657,8 @@ void printString (uint8_t *str);
 
 
 
-
+void delayMicroseconds(unsigned int microseconds);
+void generateBeep(unsigned int duration_ms);
 void displayTime(void);
 void calculateTime(void);
 void setClock(void);
@@ -4751,8 +4728,8 @@ void main(void)
     clearDisplay();
     loadTimeFromFlash();
 
-    TMR0_StartTimer();
-
+    TMR1_StartTimer();
+    TRISBbits.RB3 = 0;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
 
@@ -4787,7 +4764,26 @@ void main(void)
     }
 }
 
+void delayMicroseconds(unsigned int microseconds) {
 
+    unsigned int i;
+    for (i = 0; i < microseconds; i++) {
+
+
+        __asm__("nop");
+    }
+}
+
+void generateBeep(unsigned int duration_ms) {
+    unsigned int i;
+    unsigned int cycles = (duration_ms * 1000) / 244;
+    for (i = 0; i < cycles; i++) {
+        LATBbits.LATB3 = 1;
+        delayMicroseconds(122);
+        LATBbits.LATB3 = 0;
+        delayMicroseconds(122);
+    }
+}
 
 
 void displayTime(void)
@@ -4810,20 +4806,19 @@ void displayTime(void)
     printString(displayString);
 }
 void calculateTime(void) {
-    seconds++;
-    if (seconds >= 60) {
+
+    if (++seconds >= 60) {
         seconds = 0;
-        minutes++;
-        if (minutes >= 60) {
+
+        if (++minutes >= 60) {
             minutes = 0;
-            hours++;
-            if (hours >= 24) {
+
+            if (++hours >= 24) {
                 hours = 0;
             }
         }
     }
 }
-
 void displayAlarmTime(void)
 {
     char alarmTimeString[5];
@@ -4884,10 +4879,11 @@ void triggerAlarm(void)
 
 
         printString("ALARM");
-        PWM2_LoadDutyValue(500);
+
+        generateBeep(500);
         _delay((unsigned long)((500)*(8000000/4000.0)));
         clearDisplay();
-        PWM2_LoadDutyValue(0);
+
         _delay((unsigned long)((500)*(8000000/4000.0)));
     }
 
@@ -4904,104 +4900,111 @@ void clearAlarm(void)
 
 }
 
+typedef enum {
+    NORMAL_MODE,
+    ALARM_SETTING_MODE,
+    ALARM_TRIGGERED
+} Mode;
+
+Mode currentMode = NORMAL_MODE;
 
 void checkButtons(void)
 {
     static uint8_t button3PressCount = 0;
     static uint16_t button3HoldTime = 0;
-    static _Bool alarmSettingMode = 0;
 
-
-    if (!PORTBbits.RB0)
+    switch (currentMode)
     {
-        _delay((unsigned long)((100)*(8000000/4000.0)));
-        if (!PORTBbits.RB0)
-        {
-            if (alarmSettingMode)
+        case NORMAL_MODE:
+
+            if (!PORTBbits.RB0)
             {
-                alarmHours = (alarmHours + 1) % 24;
-                displayAlarmTime();
-            }
-            else
-            {
-                hours = (hours + 1) % 24;
-                displayTime();
-            }
-        }
-    }
-
-
-    if (!PORTBbits.RB1)
-    {
-        _delay((unsigned long)((100)*(8000000/4000.0)));
-        if (!PORTBbits.RB1)
-        {
-            if (alarmSettingMode)
-            {
-                alarmMinutes = (alarmMinutes + 1) % 60;
-                displayAlarmTime();
-            }
-            else
-            {
-                minutes = (minutes + 1) % 60;
-                displayTime();
-            }
-        }
-    }
-
-
-    if (!PORTBbits.RB2)
-    {
-        button3HoldTime += 100;
-        _delay((unsigned long)((100)*(8000000/4000.0)));
-
-        if (button3HoldTime >= 1000)
-        {
-            if (!alarmTriggered)
-            {
-                alarmSettingMode = 1;
-                displayAlarmTime();
-
-                while (!PORTBbits.RB2)
+                _delay((unsigned long)((100)*(8000000/4000.0)));
+                if (!PORTBbits.RB0)
                 {
+                    hours = (hours + 1) % 24;
+                    displayTime();
+                }
+            }
+
+
+            if (!PORTBbits.RB1)
+            {
+                _delay((unsigned long)((100)*(8000000/4000.0)));
+                if (!PORTBbits.RB1)
+                {
+                    minutes = (minutes + 1) % 60;
+                    displayTime();
+                }
+            }
+
+
+            if (!PORTBbits.RB2)
+            {
+                button3HoldTime += 100;
+                _delay((unsigned long)((100)*(8000000/4000.0)));
+
+                if (button3HoldTime >= 1000)
+                {
+                    if (!alarmTriggered)
+                    {
+                        currentMode = ALARM_SETTING_MODE;
+                        displayAlarmTime();
+                    }
+                }
+                else
+                {
+                    button3PressCount++;
+                    if (button3PressCount == 5)
+                    {
+                        saveTimeToFlash();
+                        button3PressCount = 0;
+                    }
+                }
+            }
+            else
+            {
+                if (button3HoldTime < 1000)
+                {
+                    button3PressCount = 0;
+                }
+                button3HoldTime = 0;
+            }
+            break;
+
+        case ALARM_SETTING_MODE:
+            if (!PORTBbits.RB2)
+            {
+                if (!PORTBbits.RB0)
+                {
+                    _delay((unsigned long)((100)*(8000000/4000.0)));
                     if (!PORTBbits.RB0)
                     {
-                        _delay((unsigned long)((100)*(8000000/4000.0)));
                         alarmHours = (alarmHours + 1) % 24;
                         displayAlarmTime();
                     }
+                }
+                if (!PORTBbits.RB1)
+                {
+                    _delay((unsigned long)((100)*(8000000/4000.0)));
                     if (!PORTBbits.RB1)
                     {
-                        _delay((unsigned long)((100)*(8000000/4000.0)));
                         alarmMinutes = (alarmMinutes + 1) % 60;
                         displayAlarmTime();
                     }
                 }
-                alarmSettingMode = 0;
+            }
+            else
+            {
                 alarmSet = 1;
+                currentMode = NORMAL_MODE;
                 displayTime();
             }
-        }
-        else
-        {
-            if (alarmTriggered)
-            {
-                clearAlarm();
-            }
-        }
-    }
-    else
-    {
-        if (button3HoldTime < 1000)
-        {
-            button3PressCount++;
-            if (button3PressCount == 5)
-            {
-                saveTimeToFlash();
-                button3PressCount = 0;
-            }
-        }
-        button3HoldTime = 0;
+            break;
+
+        case ALARM_TRIGGERED:
+
+            break;
     }
 }
 
