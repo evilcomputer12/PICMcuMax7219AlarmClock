@@ -70,9 +70,12 @@ void __interrupt() INTERRUPT_InterruptManager (void)
 //    {
 //        //Unhandled Interrupt
 //    }
-    
+    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+    {
+        TMR0_ISR();
+    }
     // Check if the EUSART Transmit interrupt is active
-    if (PIE1bits.TX1IE && PIR1bits.TX1IF)
+    else if (PIE1bits.TX1IE && PIR1bits.TX1IF)
     {
         // Call the transmit interrupt handler
         EUSART_TxDefaultInterruptHandler();

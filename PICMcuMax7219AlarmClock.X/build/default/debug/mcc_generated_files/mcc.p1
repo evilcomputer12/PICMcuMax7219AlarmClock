@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2524 `(v ~T0 @X0 0 tf ]
-[v F2526 `(v ~T0 @X0 0 tf ]
+[v F2532 `(v ~T0 @X0 0 tf ]
+[v F2534 `(v ~T0 @X0 0 tf ]
 "169 mcc_generated_files/interrupt_manager.h
 [; ;mcc_generated_files/interrupt_manager.h: 169: void INTERRUPT_Initialize (void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
@@ -19,8 +19,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "102 mcc_generated_files/tmr2.h
 [; ;mcc_generated_files/tmr2.h: 102: void TMR2_Initialize(void);
 [v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
-"99 mcc_generated_files/tmr0.h
-[; ;mcc_generated_files/tmr0.h: 99: void TMR0_Initialize(void);
+"105 mcc_generated_files/tmr0.h
+[; ;mcc_generated_files/tmr0.h: 105: void TMR0_Initialize(void);
 [v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
 "87 mcc_generated_files/eusart.h
 [; ;mcc_generated_files/eusart.h: 87: void EUSART_Initialize(void);
@@ -523,10 +523,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "80 mcc_generated_files/eusart.h
 [; ;mcc_generated_files/eusart.h: 80: void (*EUSART_TxDefaultInterruptHandler)(void);
-[v _EUSART_TxDefaultInterruptHandler `*F2524 ~T0 @X0 1 e ]
+[v _EUSART_TxDefaultInterruptHandler `*F2532 ~T0 @X0 1 e ]
 "81
 [; ;mcc_generated_files/eusart.h: 81: void (*EUSART_RxDefaultInterruptHandler)(void);
-[v _EUSART_RxDefaultInterruptHandler `*F2526 ~T0 @X0 1 e ]
+[v _EUSART_RxDefaultInterruptHandler `*F2534 ~T0 @X0 1 e ]
 "108 mcc_generated_files/mcc.c
 [; ;mcc_generated_files/mcc.c: 108: void SYSTEM_Initialize(void)
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]

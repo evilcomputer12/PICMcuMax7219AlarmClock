@@ -39,6 +39,7 @@
 #include "mcc_generated_files/eusart.h"
 
 void displayTime(void);
+void calculateTime(void);
 void setClock(void);
 void checkButtons(void);
 void blinkDisplay(void);
@@ -48,6 +49,9 @@ void displayAlarmTime(void);
 void processAlarm(void);
 void triggerAlarm(void);
 void clearAlarm(void);
+// Save the alarm settings to flash memory
+void saveAlarmToFlash(void);
+void loadAlarmFromFlash(void);
 void btGetData(char rcv);
 void parseCommand(const char* command);
 

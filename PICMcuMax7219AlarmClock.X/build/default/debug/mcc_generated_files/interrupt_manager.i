@@ -4568,20 +4568,28 @@ _Bool TMR2_HasOverflowOccured(void);
 # 56 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr0.h" 1
-# 99 "mcc_generated_files/tmr0.h"
+# 105 "mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
-# 128 "mcc_generated_files/tmr0.h"
+# 134 "mcc_generated_files/tmr0.h"
 void TMR0_StartTimer(void);
-# 160 "mcc_generated_files/tmr0.h"
+# 166 "mcc_generated_files/tmr0.h"
 void TMR0_StopTimer(void);
-# 196 "mcc_generated_files/tmr0.h"
+# 202 "mcc_generated_files/tmr0.h"
 uint16_t TMR0_ReadTimer(void);
-# 235 "mcc_generated_files/tmr0.h"
+# 241 "mcc_generated_files/tmr0.h"
 void TMR0_WriteTimer(uint16_t timerVal);
-# 271 "mcc_generated_files/tmr0.h"
+# 277 "mcc_generated_files/tmr0.h"
 void TMR0_Reload(void);
-# 309 "mcc_generated_files/tmr0.h"
-_Bool TMR0_HasOverflowOccured(void);
+# 295 "mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 313 "mcc_generated_files/tmr0.h"
+void TMR0_CallBack(void);
+# 331 "mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 349 "mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 367 "mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
 # 57 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/eusart.h" 1
@@ -4673,6 +4681,7 @@ void printString (uint8_t *str);
 
 
 void displayTime(void);
+void calculateTime(void);
 void setClock(void);
 void checkButtons(void);
 void blinkDisplay(void);
@@ -4682,6 +4691,9 @@ void displayAlarmTime(void);
 void processAlarm(void);
 void triggerAlarm(void);
 void clearAlarm(void);
+
+void saveAlarmToFlash(void);
+void loadAlarmFromFlash(void);
 void btGetData(char rcv);
 void parseCommand(const char* command);
 # 50 "mcc_generated_files/interrupt_manager.c" 2
@@ -4695,8 +4707,13 @@ void INTERRUPT_Initialize (void)
 
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
 {
-# 75 "mcc_generated_files/interrupt_manager.c"
-    if (PIE1bits.TX1IE && PIR1bits.TX1IF)
+# 73 "mcc_generated_files/interrupt_manager.c"
+    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+    {
+        TMR0_ISR();
+    }
+
+    else if (PIE1bits.TX1IE && PIR1bits.TX1IF)
     {
 
         EUSART_TxDefaultInterruptHandler();

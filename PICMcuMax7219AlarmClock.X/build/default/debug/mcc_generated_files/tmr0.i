@@ -4484,27 +4484,231 @@ unsigned char __t3rd16on(void);
 # 54 "mcc_generated_files/tmr0.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
 # 54 "mcc_generated_files/tmr0.h" 2
-# 99 "mcc_generated_files/tmr0.h"
+# 105 "mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
-# 128 "mcc_generated_files/tmr0.h"
+# 134 "mcc_generated_files/tmr0.h"
 void TMR0_StartTimer(void);
-# 160 "mcc_generated_files/tmr0.h"
+# 166 "mcc_generated_files/tmr0.h"
 void TMR0_StopTimer(void);
-# 196 "mcc_generated_files/tmr0.h"
+# 202 "mcc_generated_files/tmr0.h"
 uint16_t TMR0_ReadTimer(void);
-# 235 "mcc_generated_files/tmr0.h"
+# 241 "mcc_generated_files/tmr0.h"
 void TMR0_WriteTimer(uint16_t timerVal);
-# 271 "mcc_generated_files/tmr0.h"
+# 277 "mcc_generated_files/tmr0.h"
 void TMR0_Reload(void);
-# 309 "mcc_generated_files/tmr0.h"
-_Bool TMR0_HasOverflowOccured(void);
+# 295 "mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 313 "mcc_generated_files/tmr0.h"
+void TMR0_CallBack(void);
+# 331 "mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 349 "mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 367 "mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
 # 51 "mcc_generated_files/tmr0.c" 2
 
+# 1 "mcc_generated_files/../main.h" 1
+# 37 "mcc_generated_files/../main.h"
+# 1 "./MAX7219.h" 1
+# 35 "./MAX7219.h"
+# 1 "./mcc_generated_files/mcc.h" 1
+# 49 "./mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/pin_manager.h" 1
+# 191 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 203 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 49 "./mcc_generated_files/mcc.h" 2
+
+
+
+# 1 "mcc_generated_files/interrupt_manager.h" 1
+# 157 "mcc_generated_files/interrupt_manager.h"
+void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager(void);
+# 169 "mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 52 "./mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/spi.h" 1
+# 54 "mcc_generated_files/spi.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 138 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 20 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 2 3
+# 54 "mcc_generated_files/spi.h" 2
+# 116 "mcc_generated_files/spi.h"
+void SPI_Initialize(void);
+# 151 "mcc_generated_files/spi.h"
+uint8_t SPI_Exchange8bit(uint8_t data);
+# 191 "mcc_generated_files/spi.h"
+uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+# 214 "mcc_generated_files/spi.h"
+_Bool SPI_IsBufferFull(void);
+# 239 "mcc_generated_files/spi.h"
+_Bool SPI_HasWriteCollisionOccured(void);
+# 263 "mcc_generated_files/spi.h"
+void SPI_ClearWriteCollisionStatus(void);
+# 53 "./mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/pwm2.h" 1
+# 96 "mcc_generated_files/pwm2.h"
+void PWM2_Initialize(void);
+# 123 "mcc_generated_files/pwm2.h"
+void PWM2_LoadDutyValue(uint16_t dutyValue);
+# 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/memory.h" 1
+# 98 "mcc_generated_files/memory.h"
+uint8_t FLASH_ReadByte(uint32_t flashAddr);
+# 124 "mcc_generated_files/memory.h"
+uint16_t FLASH_ReadWord(uint32_t flashAddr);
+# 156 "mcc_generated_files/memory.h"
+void FLASH_WriteByte(uint32_t flashAddr, uint8_t *flashRdBufPtr, uint8_t byte);
+# 192 "mcc_generated_files/memory.h"
+int8_t FLASH_WriteBlock(uint32_t writeAddr, uint8_t *flashWrBufPtr);
+# 217 "mcc_generated_files/memory.h"
+void FLASH_EraseBlock(uint32_t baseAddr);
+# 248 "mcc_generated_files/memory.h"
+void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+# 274 "mcc_generated_files/memory.h"
+uint8_t DATAEE_ReadByte(uint16_t bAdd);
+
+void MEMORY_Tasks(void);
+# 55 "./mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/tmr2.h" 1
+# 102 "mcc_generated_files/tmr2.h"
+void TMR2_Initialize(void);
+# 131 "mcc_generated_files/tmr2.h"
+void TMR2_StartTimer(void);
+# 163 "mcc_generated_files/tmr2.h"
+void TMR2_StopTimer(void);
+# 198 "mcc_generated_files/tmr2.h"
+uint8_t TMR2_ReadTimer(void);
+# 237 "mcc_generated_files/tmr2.h"
+void TMR2_WriteTimer(uint8_t timerVal);
+# 289 "mcc_generated_files/tmr2.h"
+void TMR2_LoadPeriodRegister(uint8_t periodVal);
+# 324 "mcc_generated_files/tmr2.h"
+_Bool TMR2_HasOverflowOccured(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+
+
+# 1 "mcc_generated_files/eusart.h" 1
+# 80 "mcc_generated_files/eusart.h"
+void (*EUSART_TxDefaultInterruptHandler)(void);
+void (*EUSART_RxDefaultInterruptHandler)(void);
 
 
 
 
 
+void EUSART_Initialize(void);
+# 96 "mcc_generated_files/eusart.h"
+uint8_t EUSART_is_tx_ready(void);
+# 105 "mcc_generated_files/eusart.h"
+uint8_t EUSART_is_rx_ready(void);
+# 114 "mcc_generated_files/eusart.h"
+_Bool EUSART_is_tx_done(void);
+
+
+
+
+
+
+uint8_t EUSART_Read(void);
+# 130 "mcc_generated_files/eusart.h"
+void EUSART_Write(uint8_t txData);
+
+
+
+
+
+
+void EUSART_Transmit_ISR(void);
+
+
+
+
+
+
+void EUSART_Receive_ISR(void);
+
+
+
+
+
+
+void EUSART_SetTxInterruptHandler(void* handler);
+
+
+
+
+
+
+void EUSART_SetRxInterruptHandler(void* handler);
+# 58 "./mcc_generated_files/mcc.h" 2
+# 74 "./mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 87 "./mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 35 "./MAX7219.h" 2
+
+
+
+
+
+void max_write (int row, uint8_t data);
+
+void flushBuffer (void);
+
+void max7219_cmd (uint8_t Addr, uint8_t data);
+
+void matrixInit (void);
+
+void clearDisplay (void);
+
+void shiftLeft (void);
+
+void HAL_Delay(int delay);
+
+void shiftchar (uint8_t ch, int delay);
+
+void scrollString (char *str, int delay);
+
+void printString (uint8_t *str);
+# 37 "mcc_generated_files/../main.h" 2
+
+
+
+
+void displayTime(void);
+void calculateTime(void);
+void setClock(void);
+void checkButtons(void);
+void blinkDisplay(void);
+void saveTimeToFlash(void);
+void loadTimeFromFlash(void);
+void displayAlarmTime(void);
+void processAlarm(void);
+void triggerAlarm(void);
+void clearAlarm(void);
+
+void saveAlarmToFlash(void);
+void loadAlarmFromFlash(void);
+void btGetData(char rcv);
+void parseCommand(const char* command);
+# 52 "mcc_generated_files/tmr0.c" 2
+
+
+
+
+
+
+void (*TMR0_InterruptHandler)(void);
 
 volatile uint16_t timer0ReloadVal;
 
@@ -4529,6 +4733,12 @@ void TMR0_Initialize(void)
 
 
     INTCONbits.TMR0IF = 0;
+
+
+    INTCONbits.TMR0IE = 1;
+
+
+    TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
 
 
     T0CON = 0x94;
@@ -4573,8 +4783,41 @@ void TMR0_Reload(void)
     TMR0L = (uint8_t) timer0ReloadVal;
 }
 
-_Bool TMR0_HasOverflowOccured(void)
+void TMR0_ISR(void)
 {
 
-    return(INTCONbits.TMR0IF);
+
+    INTCONbits.TMR0IF = 0;
+
+
+
+    TMR0H = timer0ReloadVal >> 8;
+    TMR0L = (uint8_t) timer0ReloadVal;
+
+
+
+    TMR0_CallBack();
+
+
+}
+
+void TMR0_CallBack(void)
+{
+
+
+    if(TMR0_InterruptHandler)
+    {
+        TMR0_InterruptHandler();
+    }
+}
+
+void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
+    TMR0_InterruptHandler = InterruptHandler;
+}
+
+void TMR0_DefaultInterruptHandler(void){
+
+
+    calculateTime();
+
 }

@@ -4,7 +4,7 @@
 #define DEBOUNCE_DELAY 100
 #define BLINK_INTERVAL 1000 // Interval for blinking display in milliseconds
 
-#define LONG_PRESS_DURATION 3000
+#define LONG_PRESS_DURATION 1000
 
 uint8_t bufferCol[NUM_DEV * 8];
 
@@ -58,26 +58,6 @@ void main(void)
 
     while(1)
     {
-        if(TMR0_HasOverflowOccured())
-        {
-            displayTime();
-            // Increment time
-            seconds++;
-            if (seconds >= 60) {
-                seconds = 0;
-                minutes++;
-                if (minutes >= 60) {
-                    minutes = 0;
-                    hours++;
-                    if (hours >= 24) {
-                        hours = 0;
-                    }
-                }
-            }
-            TMR0_Reload();
-            INTCONbits.TMR0IF = 0;
-            TMR0_StartTimer();
-        }
         displayTime();
         checkButtons();
         processAlarm();
@@ -106,6 +86,8 @@ void main(void)
     }
 }
 
+
+
 // Display the current time on the LED matrix
 void displayTime(void)
 {
@@ -125,6 +107,20 @@ void displayTime(void)
     }
 
     printString(displayString); // Show the time on the display
+}
+void calculateTime(void) {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+            if (hours >= 24) {
+                hours = 0;
+            }
+        }
+    }
 }
 
 void displayAlarmTime(void)
@@ -180,6 +176,7 @@ void triggerAlarm(void)
             if (!PORTBbits.RB2)
             {
                 clearDisplay();  // Optionally clear the display
+                clearAlarm();
                 return;
             }
         }
@@ -205,7 +202,6 @@ void clearAlarm(void)
     // Turn off the buzzer/LED if it's on
     // PORTAbits.RA0 = 0;  // Turn off the alarm buzzer/LED
 }
-
 
 // Function to check button presses and debounce them
 void checkButtons(void)
@@ -280,7 +276,6 @@ void checkButtons(void)
                         displayAlarmTime();
                     }
                 }
-
                 alarmSettingMode = false;
                 alarmSet = true;
                 displayTime();
@@ -324,6 +319,9 @@ void saveTimeToFlash(void)
     // Store hours and minutes into the buffer
     flashBuffer[0] = hours;
     flashBuffer[1] = minutes;
+    flashBuffer[2] = alarmHours;
+    flashBuffer[3] = alarmMinutes;
+    flashBuffer[4] = alarmSet;
 
     // Write the block back to flash
     FLASH_WriteBlock(flashAddress, flashBuffer);
@@ -335,7 +333,9 @@ void loadTimeFromFlash(void)
     uint32_t flashAddress = 0x1F80; // Same address as in saveTimeToFlash
     hours = FLASH_ReadByte(flashAddress);      // Read hours
     minutes = FLASH_ReadByte(flashAddress + 1); // Read minutes
-
+    alarmHours = FLASH_ReadByte(flashAddress + 2);
+    alarmMinutes = FLASH_ReadByte(flashAddress + 3);
+    alarmSet = FLASH_ReadByte(flashAddress + 4);
     // Validate read values to ensure they're within range
     if (hours >= 24) hours = 0;
     if (minutes >= 60) minutes = 0;

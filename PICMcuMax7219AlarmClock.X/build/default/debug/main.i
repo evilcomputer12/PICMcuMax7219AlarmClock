@@ -4570,20 +4570,28 @@ _Bool TMR2_HasOverflowOccured(void);
 # 56 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr0.h" 1
-# 99 "./mcc_generated_files/tmr0.h"
+# 105 "./mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
-# 128 "./mcc_generated_files/tmr0.h"
+# 134 "./mcc_generated_files/tmr0.h"
 void TMR0_StartTimer(void);
-# 160 "./mcc_generated_files/tmr0.h"
+# 166 "./mcc_generated_files/tmr0.h"
 void TMR0_StopTimer(void);
-# 196 "./mcc_generated_files/tmr0.h"
+# 202 "./mcc_generated_files/tmr0.h"
 uint16_t TMR0_ReadTimer(void);
-# 235 "./mcc_generated_files/tmr0.h"
+# 241 "./mcc_generated_files/tmr0.h"
 void TMR0_WriteTimer(uint16_t timerVal);
-# 271 "./mcc_generated_files/tmr0.h"
+# 277 "./mcc_generated_files/tmr0.h"
 void TMR0_Reload(void);
-# 309 "./mcc_generated_files/tmr0.h"
-_Bool TMR0_HasOverflowOccured(void);
+# 295 "./mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 313 "./mcc_generated_files/tmr0.h"
+void TMR0_CallBack(void);
+# 331 "./mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 349 "./mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 367 "./mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
 # 57 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart.h" 1
@@ -4675,6 +4683,7 @@ void printString (uint8_t *str);
 
 
 void displayTime(void);
+void calculateTime(void);
 void setClock(void);
 void checkButtons(void);
 void blinkDisplay(void);
@@ -4684,6 +4693,9 @@ void displayAlarmTime(void);
 void processAlarm(void);
 void triggerAlarm(void);
 void clearAlarm(void);
+
+void saveAlarmToFlash(void);
+void loadAlarmFromFlash(void);
 void btGetData(char rcv);
 void parseCommand(const char* command);
 # 1 "main.c" 2
@@ -4747,26 +4759,6 @@ void main(void)
 
     while(1)
     {
-        if(TMR0_HasOverflowOccured())
-        {
-            displayTime();
-
-            seconds++;
-            if (seconds >= 60) {
-                seconds = 0;
-                minutes++;
-                if (minutes >= 60) {
-                    minutes = 0;
-                    hours++;
-                    if (hours >= 24) {
-                        hours = 0;
-                    }
-                }
-            }
-            TMR0_Reload();
-            INTCONbits.TMR0IF = 0;
-            TMR0_StartTimer();
-        }
         displayTime();
         checkButtons();
         processAlarm();
@@ -4796,6 +4788,8 @@ void main(void)
 }
 
 
+
+
 void displayTime(void)
 {
     char timeString[5];
@@ -4814,6 +4808,20 @@ void displayTime(void)
     }
 
     printString(displayString);
+}
+void calculateTime(void) {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+            if (hours >= 24) {
+                hours = 0;
+            }
+        }
+    }
 }
 
 void displayAlarmTime(void)
@@ -4869,6 +4877,7 @@ void triggerAlarm(void)
             if (!PORTBbits.RB2)
             {
                 clearDisplay();
+                clearAlarm();
                 return;
             }
         }
@@ -4894,7 +4903,6 @@ void clearAlarm(void)
 
 
 }
-
 
 
 void checkButtons(void)
@@ -4947,7 +4955,7 @@ void checkButtons(void)
         button3HoldTime += 100;
         _delay((unsigned long)((100)*(8000000/4000.0)));
 
-        if (button3HoldTime >= 3000)
+        if (button3HoldTime >= 1000)
         {
             if (!alarmTriggered)
             {
@@ -4969,7 +4977,6 @@ void checkButtons(void)
                         displayAlarmTime();
                     }
                 }
-
                 alarmSettingMode = 0;
                 alarmSet = 1;
                 displayTime();
@@ -4985,7 +4992,7 @@ void checkButtons(void)
     }
     else
     {
-        if (button3HoldTime < 3000)
+        if (button3HoldTime < 1000)
         {
             button3PressCount++;
             if (button3PressCount == 5)
@@ -5013,6 +5020,9 @@ void saveTimeToFlash(void)
 
     flashBuffer[0] = hours;
     flashBuffer[1] = minutes;
+    flashBuffer[2] = alarmHours;
+    flashBuffer[3] = alarmMinutes;
+    flashBuffer[4] = alarmSet;
 
 
     FLASH_WriteBlock(flashAddress, flashBuffer);
@@ -5024,7 +5034,9 @@ void loadTimeFromFlash(void)
     uint32_t flashAddress = 0x1F80;
     hours = FLASH_ReadByte(flashAddress);
     minutes = FLASH_ReadByte(flashAddress + 1);
-
+    alarmHours = FLASH_ReadByte(flashAddress + 2);
+    alarmMinutes = FLASH_ReadByte(flashAddress + 3);
+    alarmSet = FLASH_ReadByte(flashAddress + 4);
 
     if (hours >= 24) hours = 0;
     if (minutes >= 60) minutes = 0;
