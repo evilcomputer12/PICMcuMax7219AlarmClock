@@ -95,6 +95,7 @@ void main(void)
                 if (hours_pom < 24 && minutes_pom < 60)
                 {
                     // Now you have the valid hours and minutes as integers
+                    btTimeSet = false;
                     hours = hours_pom;
                     minutes = minutes_pom;
                     displayTime(); // Display the time on your LED matrix or clock

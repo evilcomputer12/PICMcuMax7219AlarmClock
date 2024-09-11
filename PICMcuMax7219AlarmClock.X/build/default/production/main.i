@@ -4784,6 +4784,7 @@ void main(void)
                 if (hours_pom < 24 && minutes_pom < 60)
                 {
 
+                    btTimeSet = 0;
                     hours = hours_pom;
                     minutes = minutes_pom;
                     displayTime();

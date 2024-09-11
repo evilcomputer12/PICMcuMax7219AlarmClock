@@ -33,23 +33,23 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "46 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"109
+"110
 [v _displayTime displayTime `(v  1 e 1 0 ]
-"129
+"130
 [v _displayAlarmTime displayAlarmTime `(v  1 e 1 0 ]
-"149
+"150
 [v _processAlarm processAlarm `(v  1 e 1 0 ]
-"164
+"165
 [v _triggerAlarm triggerAlarm `(v  1 e 1 0 ]
-"197
+"198
 [v _clearAlarm clearAlarm `(v  1 e 1 0 ]
-"208
+"209
 [v _checkButtons checkButtons `(v  1 e 1 0 ]
-"311
+"312
 [v _saveTimeToFlash saveTimeToFlash `(v  1 e 1 0 ]
-"330
+"331
 [v _loadTimeFromFlash loadTimeFromFlash `(v  1 e 1 0 ]
-"341
+"342
 [v _btGetData btGetData `(v  1 e 1 0 ]
 "10 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\MAX7219.c
 [v _max_write max_write `(v  1 e 1 0 ]
@@ -608,21 +608,21 @@
 [v main@minutes_pom minutes_pom `uc  1 a 1 15 ]
 "89
 [v main@hours_pom hours_pom `uc  1 a 1 14 ]
-"106
+"107
 } 0
-"149
+"150
 [v _processAlarm processAlarm `(v  1 e 1 0 ]
 {
-"161
+"162
 } 0
-"164
+"165
 [v _triggerAlarm triggerAlarm `(v  1 e 1 0 ]
 {
-"173
+"174
 [v triggerAlarm@i i `ui  1 a 2 4 ]
-"171
+"172
 [v triggerAlarm@numCycles numCycles `ui  1 a 2 2 ]
-"195
+"196
 } 0
 "105 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\MAX7219.c
 [v _clearDisplay clearDisplay `(v  1 e 1 0 ]
@@ -651,32 +651,32 @@
 [v max7219_cmd@Addr Addr `uc  1 a 1 7 ]
 "94
 } 0
-"330 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
+"331 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
 [v _loadTimeFromFlash loadTimeFromFlash `(v  1 e 1 0 ]
 {
-"339
+"340
 } 0
-"208
+"209
 [v _checkButtons checkButtons `(v  1 e 1 0 ]
 {
-"210
-[v checkButtons@button3PressCount button3PressCount `uc  1 s 1 button3PressCount ]
 "211
-[v checkButtons@button3HoldTime button3HoldTime `us  1 s 2 button3HoldTime ]
+[v checkButtons@button3PressCount button3PressCount `uc  1 s 1 button3PressCount ]
 "212
+[v checkButtons@button3HoldTime button3HoldTime `us  1 s 2 button3HoldTime ]
+"213
 [v checkButtons@alarmSettingMode alarmSettingMode `a  1 s 1 alarmSettingMode ]
-"307
+"308
 } 0
-"311
+"312
 [v _saveTimeToFlash saveTimeToFlash `(v  1 e 1 0 ]
 {
-"317
+"318
 [v saveTimeToFlash@i i `uc  1 a 1 68 ]
-"314
+"315
 [v saveTimeToFlash@flashBuffer flashBuffer `[64]uc  1 a 64 0 ]
-"313
+"314
 [v saveTimeToFlash@flashAddress flashAddress `ul  1 a 4 64 ]
-"327
+"328
 } 0
 "93 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/memory.c
 [v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
@@ -710,27 +710,27 @@
 [v FLASH_ReadByte@flashAddr flashAddr `ul  1 p 4 3 ]
 "67
 } 0
-"109 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
+"110 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
 [v _displayTime displayTime `(v  1 e 1 0 ]
 {
-"122
+"123
 [v displayTime@i i `i  1 a 2 10 ]
-"111
+"112
 [v displayTime@timeString timeString `[5]uc  1 a 5 5 ]
-"121
+"122
 [v displayTime@displayString displayString `[5]uc  1 a 5 0 ]
-"127
+"128
 } 0
-"129
+"130
 [v _displayAlarmTime displayAlarmTime `(v  1 e 1 0 ]
 {
-"142
+"143
 [v displayAlarmTime@i i `i  1 a 2 10 ]
-"131
+"132
 [v displayAlarmTime@alarmTimeString alarmTimeString `[5]uc  1 a 5 5 ]
-"141
+"142
 [v displayAlarmTime@displayString displayString `[5]uc  1 a 5 0 ]
-"147
+"148
 } 0
 "161 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\MAX7219.c
 [v _printString printString `(v  1 e 1 0 ]
@@ -815,10 +815,10 @@
 [v ___awmod@divisor divisor `i  1 p 2 5 ]
 "34
 } 0
-"197 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
+"198 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
 [v _clearAlarm clearAlarm `(v  1 e 1 0 ]
 {
-"204
+"205
 } 0
 "86 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/tmr0.c
 [v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 1 0 ]
@@ -897,11 +897,11 @@
 {
 "94
 } 0
-"341 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
+"342 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
 [v _btGetData btGetData `(v  1 e 1 0 ]
 {
 [v btGetData@rcv rcv `uc  1 a 1 wreg ]
 [v btGetData@rcv rcv `uc  1 a 1 wreg ]
 [v btGetData@rcv rcv `uc  1 a 1 0 ]
-"356
+"357
 } 0

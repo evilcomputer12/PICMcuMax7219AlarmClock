@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Spinner to select paired Bluetooth devices -->
+    <Spinner
+        android:id="@+id/spinnerBTPairedDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="16dp"
+        android:prompt="@string/select_device" />
+
+    <!-- Button to connect/disconnect Bluetooth -->
+    <Button
+        android:id="@+id/buttonBTConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerBTPairedDevices"
+        android:layout_alignParentStart="true"
+        android:text="Connect" />
+
+    <!-- Button to send the current time -->
+    <Button
+        android:id="@+id/buttonSendTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/spinnerBTPairedDevices"
+        android:text="Send Time" />
+
+</RelativeLayout>
