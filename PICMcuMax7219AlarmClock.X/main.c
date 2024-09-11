@@ -108,21 +108,20 @@ void displayTime(void)
 
     printString(displayString); // Show the time on the display
 }
-void calculateTime(void) {
-    seconds++;
-    if (seconds >= 60) {
-        seconds = 0;
-        minutes++;
-        if (minutes >= 60) {
-            minutes = 0;
-            hours++;
-            if (hours >= 24) {
-                hours = 0;
+void calculateTime(void) { 
+    // Increment seconds
+    if (++seconds >= 60) {
+        seconds = 0;  // Reset seconds
+        // Increment minutes
+        if (++minutes >= 60) {
+            minutes = 0;  // Reset minutes
+            // Increment hours
+            if (++hours >= 24) {
+                hours = 0;  // Reset hours
             }
         }
     }
 }
-
 void displayAlarmTime(void)
 {
     char alarmTimeString[5]; // HHMM format (no separator)

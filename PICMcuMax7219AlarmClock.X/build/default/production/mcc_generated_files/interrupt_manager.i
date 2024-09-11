@@ -4691,6 +4691,9 @@ void displayAlarmTime(void);
 void processAlarm(void);
 void triggerAlarm(void);
 void clearAlarm(void);
+
+void saveAlarmToFlash(void);
+void loadAlarmFromFlash(void);
 void btGetData(char rcv);
 void parseCommand(const char* command);
 # 50 "mcc_generated_files/interrupt_manager.c" 2

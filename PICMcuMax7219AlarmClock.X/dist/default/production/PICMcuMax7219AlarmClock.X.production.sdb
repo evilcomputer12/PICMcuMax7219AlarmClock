@@ -37,21 +37,21 @@
 [v _displayTime displayTime `(v  1 e 1 0 ]
 "111
 [v _calculateTime calculateTime `(v  1 e 1 0 ]
-"126
+"125
 [v _displayAlarmTime displayAlarmTime `(v  1 e 1 0 ]
-"146
+"145
 [v _processAlarm processAlarm `(v  1 e 1 0 ]
-"161
+"160
 [v _triggerAlarm triggerAlarm `(v  1 e 1 0 ]
-"197
+"196
 [v _clearAlarm clearAlarm `(v  1 e 1 0 ]
-"207
+"206
 [v _checkButtons checkButtons `(v  1 e 1 0 ]
-"309
+"308
 [v _saveTimeToFlash saveTimeToFlash `(v  1 e 1 0 ]
-"331
+"330
 [v _loadTimeFromFlash loadTimeFromFlash `(v  1 e 1 0 ]
-"344
+"343
 [v _btGetData btGetData `(v  1 e 1 0 ]
 "10 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\MAX7219.c
 [v _max_write max_write `(v  1 e 1 0 ]
@@ -618,19 +618,19 @@
 [v main@hours_pom hours_pom `uc  1 a 1 69 ]
 "87
 } 0
-"146
+"145
 [v _processAlarm processAlarm `(v  1 e 1 0 ]
 {
-"158
+"157
 } 0
-"161
+"160
 [v _triggerAlarm triggerAlarm `(v  1 e 1 0 ]
 {
-"170
+"169
 [v triggerAlarm@i i `ui  1 a 2 13 ]
-"168
+"167
 [v triggerAlarm@numCycles numCycles `ui  1 a 2 11 ]
-"195
+"194
 } 0
 "105 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\MAX7219.c
 [v _clearDisplay clearDisplay `(v  1 e 1 0 ]
@@ -665,32 +665,32 @@
 [v max7219_cmd@Addr Addr `uc  1 a 1 9 ]
 "94
 } 0
-"331 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
+"330 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
 [v _loadTimeFromFlash loadTimeFromFlash `(v  1 e 1 0 ]
 {
-"342
+"341
 } 0
-"207
+"206
 [v _checkButtons checkButtons `(v  1 e 1 0 ]
 {
-"209
+"208
 [v checkButtons@button3PressCount button3PressCount `uc  1 s 1 button3PressCount ]
-"210
+"209
 [v checkButtons@button3HoldTime button3HoldTime `us  1 s 2 button3HoldTime ]
-"211
+"210
 [v checkButtons@alarmSettingMode alarmSettingMode `a  1 s 1 alarmSettingMode ]
-"305
+"304
 } 0
-"309
+"308
 [v _saveTimeToFlash saveTimeToFlash `(v  1 e 1 0 ]
 {
-"315
+"314
 [v saveTimeToFlash@i i `uc  1 a 1 68 ]
-"312
-[v saveTimeToFlash@flashBuffer flashBuffer `[64]uc  1 a 64 0 ]
 "311
+[v saveTimeToFlash@flashBuffer flashBuffer `[64]uc  1 a 64 0 ]
+"310
 [v saveTimeToFlash@flashAddress flashAddress `ul  1 a 4 64 ]
-"328
+"327
 } 0
 "93 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/memory.c
 [v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
@@ -735,16 +735,16 @@
 [v displayTime@displayString displayString `[5]uc  1 a 5 11 ]
 "110
 } 0
-"126
+"125
 [v _displayAlarmTime displayAlarmTime `(v  1 e 1 0 ]
 {
-"139
-[v displayAlarmTime@i i `i  1 a 2 21 ]
-"128
-[v displayAlarmTime@alarmTimeString alarmTimeString `[5]uc  1 a 5 16 ]
 "138
+[v displayAlarmTime@i i `i  1 a 2 21 ]
+"127
+[v displayAlarmTime@alarmTimeString alarmTimeString `[5]uc  1 a 5 16 ]
+"137
 [v displayAlarmTime@displayString displayString `[5]uc  1 a 5 11 ]
-"144
+"143
 } 0
 "161 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\MAX7219.c
 [v _printString printString `(v  1 e 1 0 ]
@@ -829,10 +829,10 @@
 [v ___awmod@divisor divisor `i  1 p 2 7 ]
 "34
 } 0
-"197 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
+"196 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
 [v _clearAlarm clearAlarm `(v  1 e 1 0 ]
 {
-"204
+"203
 } 0
 "94 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/tmr0.c
 [v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 1 0 ]
@@ -907,13 +907,13 @@
 {
 "97
 } 0
-"344 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
+"343 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
 [v _btGetData btGetData `(v  1 e 1 0 ]
 {
 [v btGetData@rcv rcv `uc  1 a 1 wreg ]
 [v btGetData@rcv rcv `uc  1 a 1 wreg ]
 [v btGetData@rcv rcv `uc  1 a 1 0 ]
-"359
+"358
 } 0
 "133 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]

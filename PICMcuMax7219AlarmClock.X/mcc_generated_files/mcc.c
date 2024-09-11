@@ -121,8 +121,8 @@ void OSCILLATOR_Initialize(void)
 {
     // SCS INTOSC; OSTS intosc; IRCF 8MHz_HFINTOSC/2; IDLEN disabled; 
     OSCCON = 0x62;
-    // INTSRC disabled; PLLEN disabled; TUN 0; 
-    OSCTUNE = 0x00;
+    // INTSRC enabled; PLLEN enabled; TUN 4; 
+    OSCTUNE = 0xC4;
 }
 
 

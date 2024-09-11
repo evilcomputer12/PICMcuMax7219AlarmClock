@@ -4810,20 +4810,19 @@ void displayTime(void)
     printString(displayString);
 }
 void calculateTime(void) {
-    seconds++;
-    if (seconds >= 60) {
+
+    if (++seconds >= 60) {
         seconds = 0;
-        minutes++;
-        if (minutes >= 60) {
+
+        if (++minutes >= 60) {
             minutes = 0;
-            hours++;
-            if (hours >= 24) {
+
+            if (++hours >= 24) {
                 hours = 0;
             }
         }
     }
 }
-
 void displayAlarmTime(void)
 {
     char alarmTimeString[5];

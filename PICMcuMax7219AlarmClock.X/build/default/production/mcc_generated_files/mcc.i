@@ -4727,5 +4727,5 @@ void OSCILLATOR_Initialize(void)
 
     OSCCON = 0x62;
 
-    OSCTUNE = 0x00;
+    OSCTUNE = 0xC4;
 }

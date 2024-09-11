@@ -788,32 +788,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _calculateTime ]
 [f ]
-"112
-[; ;main.c: 112:     seconds++;
-[e ++ _seconds -> -> 1 `i `uc ]
 "113
-[; ;main.c: 113:     if (seconds >= 60) {
-[e $ ! >= -> _seconds `i -> 60 `i 289  ]
+[; ;main.c: 113:     if (++seconds >= 60) {
+[e $ ! >= -> =+ _seconds -> -> 1 `i `uc `i -> 60 `i 289  ]
 {
 "114
 [; ;main.c: 114:         seconds = 0;
 [e = _seconds -> -> 0 `i `uc ]
-"115
-[; ;main.c: 115:         minutes++;
-[e ++ _minutes -> -> 1 `i `uc ]
 "116
-[; ;main.c: 116:         if (minutes >= 60) {
-[e $ ! >= -> _minutes `i -> 60 `i 290  ]
+[; ;main.c: 116:         if (++minutes >= 60) {
+[e $ ! >= -> =+ _minutes -> -> 1 `i `uc `i -> 60 `i 290  ]
 {
 "117
 [; ;main.c: 117:             minutes = 0;
 [e = _minutes -> -> 0 `i `uc ]
-"118
-[; ;main.c: 118:             hours++;
-[e ++ _hours -> -> 1 `i `uc ]
 "119
-[; ;main.c: 119:             if (hours >= 24) {
-[e $ ! >= -> _hours `i -> 24 `i 291  ]
+[; ;main.c: 119:             if (++hours >= 24) {
+[e $ ! >= -> =+ _hours -> -> 1 `i `uc `i -> 24 `i 291  ]
 {
 "120
 [; ;main.c: 120:                 hours = 0;
@@ -834,37 +825,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 124: }
 [e :UE 288 ]
 }
-"126
-[; ;main.c: 126: void displayAlarmTime(void)
+"125
+[; ;main.c: 125: void displayAlarmTime(void)
 [v _displayAlarmTime `(v ~T0 @X0 1 ef ]
-"127
-[; ;main.c: 127: {
+"126
+[; ;main.c: 126: {
 {
 [e :U _displayAlarmTime ]
 [f ]
-"128
-[; ;main.c: 128:     char alarmTimeString[5];
+"127
+[; ;main.c: 127:     char alarmTimeString[5];
 [v _alarmTimeString `uc ~T0 @X0 -> 5 `i a ]
-"131
-[; ;main.c: 131:     alarmTimeString[0] = (alarmHours / 10) + '0';
+"130
+[; ;main.c: 130:     alarmTimeString[0] = (alarmHours / 10) + '0';
 [e = *U + &U _alarmTimeString * -> -> -> 0 `i `ui `ux -> -> # *U &U _alarmTimeString `ui `ux -> + -> / -> _alarmHours `i -> 10 `i `ui -> 48 `ui `uc ]
-"132
-[; ;main.c: 132:     alarmTimeString[1] = (alarmHours % 10) + '0';
+"131
+[; ;main.c: 131:     alarmTimeString[1] = (alarmHours % 10) + '0';
 [e = *U + &U _alarmTimeString * -> -> -> 1 `i `ui `ux -> -> # *U &U _alarmTimeString `ui `ux -> + -> % -> _alarmHours `i -> 10 `i `ui -> 48 `ui `uc ]
-"133
-[; ;main.c: 133:     alarmTimeString[2] = (alarmMinutes / 10) + '0';
+"132
+[; ;main.c: 132:     alarmTimeString[2] = (alarmMinutes / 10) + '0';
 [e = *U + &U _alarmTimeString * -> -> -> 2 `i `ui `ux -> -> # *U &U _alarmTimeString `ui `ux -> + -> / -> _alarmMinutes `i -> 10 `i `ui -> 48 `ui `uc ]
-"134
-[; ;main.c: 134:     alarmTimeString[3] = (alarmMinutes % 10) + '0';
+"133
+[; ;main.c: 133:     alarmTimeString[3] = (alarmMinutes % 10) + '0';
 [e = *U + &U _alarmTimeString * -> -> -> 3 `i `ui `ux -> -> # *U &U _alarmTimeString `ui `ux -> + -> % -> _alarmMinutes `i -> 10 `i `ui -> 48 `ui `uc ]
-"135
-[; ;main.c: 135:     alarmTimeString[4] = '\0';
+"134
+[; ;main.c: 134:     alarmTimeString[4] = '\0';
 [e = *U + &U _alarmTimeString * -> -> -> 4 `i `ui `ux -> -> # *U &U _alarmTimeString `ui `ux -> -> 0 `ui `uc ]
-"138
-[; ;main.c: 138:     uint8_t displayString[5];
+"137
+[; ;main.c: 137:     uint8_t displayString[5];
 [v _displayString `uc ~T0 @X0 -> 5 `i a ]
-"139
-[; ;main.c: 139:     for (int i = 0; i < 5; i++) {
+"138
+[; ;main.c: 138:     for (int i = 0; i < 5; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -872,489 +863,489 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 294  ]
 [e :U 293 ]
 {
-"140
-[; ;main.c: 140:         displayString[i] = (uint8_t)alarmTimeString[i];
+"139
+[; ;main.c: 139:         displayString[i] = (uint8_t)alarmTimeString[i];
 [e = *U + &U _displayString * -> -> _i `ui `ux -> -> # *U &U _displayString `ui `ux -> *U + &U _alarmTimeString * -> -> _i `ui `ux -> -> # *U &U _alarmTimeString `ui `ux `uc ]
-"141
-[; ;main.c: 141:     }
+"140
+[; ;main.c: 140:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 5 `i 293  ]
 [e :U 294 ]
 }
-"143
-[; ;main.c: 143:     printString(displayString);
+"142
+[; ;main.c: 142:     printString(displayString);
 [e ( _printString (1 &U _displayString ]
-"144
-[; ;main.c: 144: }
+"143
+[; ;main.c: 143: }
 [e :UE 292 ]
 }
-"146
-[; ;main.c: 146: void processAlarm(void)
+"145
+[; ;main.c: 145: void processAlarm(void)
 [v _processAlarm `(v ~T0 @X0 1 ef ]
-"147
-[; ;main.c: 147: {
+"146
+[; ;main.c: 146: {
 {
 [e :U _processAlarm ]
 [f ]
-"149
-[; ;main.c: 149:     if (alarmSet && !alarmTriggered)
+"148
+[; ;main.c: 148:     if (alarmSet && !alarmTriggered)
 [e $ ! && != -> _alarmSet `i -> 0 `i ! != -> _alarmTriggered `i -> 0 `i 297  ]
-"150
-[; ;main.c: 150:     {
+"149
+[; ;main.c: 149:     {
 {
-"152
-[; ;main.c: 152:         if (hours == alarmHours && minutes == alarmMinutes)
+"151
+[; ;main.c: 151:         if (hours == alarmHours && minutes == alarmMinutes)
 [e $ ! && == -> _hours `i -> _alarmHours `i == -> _minutes `i -> _alarmMinutes `i 298  ]
-"153
-[; ;main.c: 153:         {
+"152
+[; ;main.c: 152:         {
 {
-"154
-[; ;main.c: 154:             triggerAlarm();
+"153
+[; ;main.c: 153:             triggerAlarm();
 [e ( _triggerAlarm ..  ]
-"155
-[; ;main.c: 155:             alarmTriggered = 1;
+"154
+[; ;main.c: 154:             alarmTriggered = 1;
 [e = _alarmTriggered -> -> 1 `i `a ]
-"156
-[; ;main.c: 156:         }
+"155
+[; ;main.c: 155:         }
 }
 [e :U 298 ]
-"157
-[; ;main.c: 157:     }
+"156
+[; ;main.c: 156:     }
 }
 [e :U 297 ]
-"158
-[; ;main.c: 158: }
+"157
+[; ;main.c: 157: }
 [e :UE 296 ]
 }
-"161
-[; ;main.c: 161: void triggerAlarm(void)
+"160
+[; ;main.c: 160: void triggerAlarm(void)
 [v _triggerAlarm `(v ~T0 @X0 1 ef ]
-"162
-[; ;main.c: 162: {
+"161
+[; ;main.c: 161: {
 {
 [e :U _triggerAlarm ]
 [f ]
-"168
-[; ;main.c: 168:     unsigned int numCycles = 60000 / (2 * 500);
+"167
+[; ;main.c: 167:     unsigned int numCycles = 60000 / (2 * 500);
 [v _numCycles `ui ~T0 @X0 1 a ]
 [e = _numCycles -> / -> 60000 `l -> * -> 2 `i -> 500 `i `l `ui ]
-"170
-[; ;main.c: 170:     for (unsigned int i = 0; i < numCycles; i++)
+"169
+[; ;main.c: 169:     for (unsigned int i = 0; i < numCycles; i++)
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
 [e $U 303  ]
 [e :U 300 ]
-"171
-[; ;main.c: 171:     {
+"170
+[; ;main.c: 170:     {
 {
-"173
-[; ;main.c: 173:         if (!PORTBbits.RB2)
+"172
+[; ;main.c: 172:         if (!PORTBbits.RB2)
 [e $ ! ! != -> . . _PORTBbits 0 2 `i -> 0 `i 304  ]
+"173
+[; ;main.c: 173:         {
+{
 "174
-[; ;main.c: 174:         {
-{
-"175
-[; ;main.c: 175:             _delay((unsigned long)((100)*(8000000/4000.0)));
+[; ;main.c: 174:             _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"176
-[; ;main.c: 176:             if (!PORTBbits.RB2)
+"175
+[; ;main.c: 175:             if (!PORTBbits.RB2)
 [e $ ! ! != -> . . _PORTBbits 0 2 `i -> 0 `i 305  ]
-"177
-[; ;main.c: 177:             {
+"176
+[; ;main.c: 176:             {
 {
-"178
-[; ;main.c: 178:                 clearDisplay();
+"177
+[; ;main.c: 177:                 clearDisplay();
 [e ( _clearDisplay ..  ]
-"179
-[; ;main.c: 179:                 clearAlarm();
+"178
+[; ;main.c: 178:                 clearAlarm();
 [e ( _clearAlarm ..  ]
-"180
-[; ;main.c: 180:                 return;
+"179
+[; ;main.c: 179:                 return;
 [e $UE 299  ]
-"181
-[; ;main.c: 181:             }
+"180
+[; ;main.c: 180:             }
 }
 [e :U 305 ]
-"182
-[; ;main.c: 182:         }
+"181
+[; ;main.c: 181:         }
 }
 [e :U 304 ]
-"185
-[; ;main.c: 185:         printString("ALARM");
+"184
+[; ;main.c: 184:         printString("ALARM");
 [e ( _printString (1 :s 1C ]
-"186
-[; ;main.c: 186:         PWM2_LoadDutyValue(500);
+"185
+[; ;main.c: 185:         PWM2_LoadDutyValue(500);
 [e ( _PWM2_LoadDutyValue (1 -> -> 500 `i `us ]
+"186
+[; ;main.c: 186:         _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "187
-[; ;main.c: 187:         _delay((unsigned long)((500)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"188
-[; ;main.c: 188:         clearDisplay();
+[; ;main.c: 187:         clearDisplay();
 [e ( _clearDisplay ..  ]
-"189
-[; ;main.c: 189:         PWM2_LoadDutyValue(0);
+"188
+[; ;main.c: 188:         PWM2_LoadDutyValue(0);
 [e ( _PWM2_LoadDutyValue (1 -> -> 0 `i `us ]
-"190
-[; ;main.c: 190:         _delay((unsigned long)((500)*(8000000/4000.0)));
+"189
+[; ;main.c: 189:         _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"191
-[; ;main.c: 191:     }
+"190
+[; ;main.c: 190:     }
 }
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 303 ]
 [e $ < _i _numCycles 300  ]
 [e :U 301 ]
 }
-"195
-[; ;main.c: 195: }
+"194
+[; ;main.c: 194: }
 [e :UE 299 ]
 }
-"197
-[; ;main.c: 197: void clearAlarm(void)
+"196
+[; ;main.c: 196: void clearAlarm(void)
 [v _clearAlarm `(v ~T0 @X0 1 ef ]
-"198
-[; ;main.c: 198: {
+"197
+[; ;main.c: 197: {
 {
 [e :U _clearAlarm ]
 [f ]
-"199
-[; ;main.c: 199:     alarmTriggered = 0;
+"198
+[; ;main.c: 198:     alarmTriggered = 0;
 [e = _alarmTriggered -> -> 0 `i `a ]
-"200
-[; ;main.c: 200:     alarmSet = 0;
+"199
+[; ;main.c: 199:     alarmSet = 0;
 [e = _alarmSet -> -> 0 `i `a ]
-"204
-[; ;main.c: 204: }
+"203
+[; ;main.c: 203: }
 [e :UE 306 ]
 }
-"207
-[; ;main.c: 207: void checkButtons(void)
+"206
+[; ;main.c: 206: void checkButtons(void)
 [v _checkButtons `(v ~T0 @X0 1 ef ]
-"208
-[; ;main.c: 208: {
+"207
+[; ;main.c: 207: {
 {
 [e :U _checkButtons ]
 [f ]
-"209
-[; ;main.c: 209:     static uint8_t button3PressCount = 0;
+"208
+[; ;main.c: 208:     static uint8_t button3PressCount = 0;
 [v F2621 `uc ~T0 @X0 1 s button3PressCount ]
 [i F2621
 -> -> 0 `i `uc
 ]
-"210
-[; ;main.c: 210:     static uint16_t button3HoldTime = 0;
+"209
+[; ;main.c: 209:     static uint16_t button3HoldTime = 0;
 [v F2622 `us ~T0 @X0 1 s button3HoldTime ]
 [i F2622
 -> -> 0 `i `us
 ]
-"211
-[; ;main.c: 211:     static _Bool alarmSettingMode = 0;
+"210
+[; ;main.c: 210:     static _Bool alarmSettingMode = 0;
 [v F2623 `a ~T0 @X0 1 s alarmSettingMode ]
 [i F2623
 -> -> 0 `i `a
 ]
-"214
-[; ;main.c: 214:     if (!PORTBbits.RB0)
+"213
+[; ;main.c: 213:     if (!PORTBbits.RB0)
 [e $ ! ! != -> . . _PORTBbits 0 0 `i -> 0 `i 308  ]
+"214
+[; ;main.c: 214:     {
+{
 "215
-[; ;main.c: 215:     {
-{
-"216
-[; ;main.c: 216:         _delay((unsigned long)((100)*(8000000/4000.0)));
+[; ;main.c: 215:         _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"217
-[; ;main.c: 217:         if (!PORTBbits.RB0)
+"216
+[; ;main.c: 216:         if (!PORTBbits.RB0)
 [e $ ! ! != -> . . _PORTBbits 0 0 `i -> 0 `i 309  ]
+"217
+[; ;main.c: 217:         {
+{
 "218
-[; ;main.c: 218:         {
-{
-"219
-[; ;main.c: 219:             if (alarmSettingMode)
+[; ;main.c: 218:             if (alarmSettingMode)
 [e $ ! != -> F2623 `i -> 0 `i 310  ]
-"220
-[; ;main.c: 220:             {
+"219
+[; ;main.c: 219:             {
 {
-"221
-[; ;main.c: 221:                 alarmHours = (alarmHours + 1) % 24;
+"220
+[; ;main.c: 220:                 alarmHours = (alarmHours + 1) % 24;
 [e = _alarmHours -> % + -> _alarmHours `i -> 1 `i -> 24 `i `uc ]
-"222
-[; ;main.c: 222:                 displayAlarmTime();
+"221
+[; ;main.c: 221:                 displayAlarmTime();
 [e ( _displayAlarmTime ..  ]
-"223
-[; ;main.c: 223:             }
+"222
+[; ;main.c: 222:             }
 }
 [e $U 311  ]
-"224
-[; ;main.c: 224:             else
+"223
+[; ;main.c: 223:             else
 [e :U 310 ]
-"225
-[; ;main.c: 225:             {
+"224
+[; ;main.c: 224:             {
 {
-"226
-[; ;main.c: 226:                 hours = (hours + 1) % 24;
+"225
+[; ;main.c: 225:                 hours = (hours + 1) % 24;
 [e = _hours -> % + -> _hours `i -> 1 `i -> 24 `i `uc ]
-"227
-[; ;main.c: 227:                 displayTime();
+"226
+[; ;main.c: 226:                 displayTime();
 [e ( _displayTime ..  ]
-"228
-[; ;main.c: 228:             }
+"227
+[; ;main.c: 227:             }
 }
 [e :U 311 ]
-"229
-[; ;main.c: 229:         }
+"228
+[; ;main.c: 228:         }
 }
 [e :U 309 ]
-"230
-[; ;main.c: 230:     }
+"229
+[; ;main.c: 229:     }
 }
 [e :U 308 ]
-"233
-[; ;main.c: 233:     if (!PORTBbits.RB1)
+"232
+[; ;main.c: 232:     if (!PORTBbits.RB1)
 [e $ ! ! != -> . . _PORTBbits 0 1 `i -> 0 `i 312  ]
+"233
+[; ;main.c: 233:     {
+{
 "234
-[; ;main.c: 234:     {
-{
-"235
-[; ;main.c: 235:         _delay((unsigned long)((100)*(8000000/4000.0)));
+[; ;main.c: 234:         _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"236
-[; ;main.c: 236:         if (!PORTBbits.RB1)
+"235
+[; ;main.c: 235:         if (!PORTBbits.RB1)
 [e $ ! ! != -> . . _PORTBbits 0 1 `i -> 0 `i 313  ]
+"236
+[; ;main.c: 236:         {
+{
 "237
-[; ;main.c: 237:         {
-{
-"238
-[; ;main.c: 238:             if (alarmSettingMode)
+[; ;main.c: 237:             if (alarmSettingMode)
 [e $ ! != -> F2623 `i -> 0 `i 314  ]
-"239
-[; ;main.c: 239:             {
+"238
+[; ;main.c: 238:             {
 {
-"240
-[; ;main.c: 240:                 alarmMinutes = (alarmMinutes + 1) % 60;
+"239
+[; ;main.c: 239:                 alarmMinutes = (alarmMinutes + 1) % 60;
 [e = _alarmMinutes -> % + -> _alarmMinutes `i -> 1 `i -> 60 `i `uc ]
-"241
-[; ;main.c: 241:                 displayAlarmTime();
+"240
+[; ;main.c: 240:                 displayAlarmTime();
 [e ( _displayAlarmTime ..  ]
-"242
-[; ;main.c: 242:             }
+"241
+[; ;main.c: 241:             }
 }
 [e $U 315  ]
-"243
-[; ;main.c: 243:             else
+"242
+[; ;main.c: 242:             else
 [e :U 314 ]
-"244
-[; ;main.c: 244:             {
+"243
+[; ;main.c: 243:             {
 {
-"245
-[; ;main.c: 245:                 minutes = (minutes + 1) % 60;
+"244
+[; ;main.c: 244:                 minutes = (minutes + 1) % 60;
 [e = _minutes -> % + -> _minutes `i -> 1 `i -> 60 `i `uc ]
-"246
-[; ;main.c: 246:                 displayTime();
+"245
+[; ;main.c: 245:                 displayTime();
 [e ( _displayTime ..  ]
-"247
-[; ;main.c: 247:             }
+"246
+[; ;main.c: 246:             }
 }
 [e :U 315 ]
-"248
-[; ;main.c: 248:         }
+"247
+[; ;main.c: 247:         }
 }
 [e :U 313 ]
-"249
-[; ;main.c: 249:     }
+"248
+[; ;main.c: 248:     }
 }
 [e :U 312 ]
-"252
-[; ;main.c: 252:     if (!PORTBbits.RB2)
+"251
+[; ;main.c: 251:     if (!PORTBbits.RB2)
 [e $ ! ! != -> . . _PORTBbits 0 2 `i -> 0 `i 316  ]
+"252
+[; ;main.c: 252:     {
+{
 "253
-[; ;main.c: 253:     {
-{
-"254
-[; ;main.c: 254:         button3HoldTime += 100;
+[; ;main.c: 253:         button3HoldTime += 100;
 [e =+ F2622 -> -> 100 `i `us ]
-"255
-[; ;main.c: 255:         _delay((unsigned long)((100)*(8000000/4000.0)));
+"254
+[; ;main.c: 254:         _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"257
-[; ;main.c: 257:         if (button3HoldTime >= 1000)
+"256
+[; ;main.c: 256:         if (button3HoldTime >= 1000)
 [e $ ! >= -> F2622 `ui -> -> 1000 `i `ui 317  ]
+"257
+[; ;main.c: 257:         {
+{
 "258
-[; ;main.c: 258:         {
-{
-"259
-[; ;main.c: 259:             if (!alarmTriggered)
+[; ;main.c: 258:             if (!alarmTriggered)
 [e $ ! ! != -> _alarmTriggered `i -> 0 `i 318  ]
-"260
-[; ;main.c: 260:             {
+"259
+[; ;main.c: 259:             {
 {
-"261
-[; ;main.c: 261:                 alarmSettingMode = 1;
+"260
+[; ;main.c: 260:                 alarmSettingMode = 1;
 [e = F2623 -> -> 1 `i `a ]
-"262
-[; ;main.c: 262:                 displayAlarmTime();
+"261
+[; ;main.c: 261:                 displayAlarmTime();
 [e ( _displayAlarmTime ..  ]
-"264
-[; ;main.c: 264:                 while (!PORTBbits.RB2)
+"263
+[; ;main.c: 263:                 while (!PORTBbits.RB2)
 [e $U 319  ]
 [e :U 320 ]
+"264
+[; ;main.c: 264:                 {
+{
 "265
-[; ;main.c: 265:                 {
-{
-"266
-[; ;main.c: 266:                     if (!PORTBbits.RB0)
+[; ;main.c: 265:                     if (!PORTBbits.RB0)
 [e $ ! ! != -> . . _PORTBbits 0 0 `i -> 0 `i 322  ]
-"267
-[; ;main.c: 267:                     {
+"266
+[; ;main.c: 266:                     {
 {
-"268
-[; ;main.c: 268:                         _delay((unsigned long)((100)*(8000000/4000.0)));
+"267
+[; ;main.c: 267:                         _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"269
-[; ;main.c: 269:                         alarmHours = (alarmHours + 1) % 24;
+"268
+[; ;main.c: 268:                         alarmHours = (alarmHours + 1) % 24;
 [e = _alarmHours -> % + -> _alarmHours `i -> 1 `i -> 24 `i `uc ]
-"270
-[; ;main.c: 270:                         displayAlarmTime();
+"269
+[; ;main.c: 269:                         displayAlarmTime();
 [e ( _displayAlarmTime ..  ]
-"271
-[; ;main.c: 271:                     }
+"270
+[; ;main.c: 270:                     }
 }
 [e :U 322 ]
-"272
-[; ;main.c: 272:                     if (!PORTBbits.RB1)
+"271
+[; ;main.c: 271:                     if (!PORTBbits.RB1)
 [e $ ! ! != -> . . _PORTBbits 0 1 `i -> 0 `i 323  ]
-"273
-[; ;main.c: 273:                     {
+"272
+[; ;main.c: 272:                     {
 {
-"274
-[; ;main.c: 274:                         _delay((unsigned long)((100)*(8000000/4000.0)));
+"273
+[; ;main.c: 273:                         _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"275
-[; ;main.c: 275:                         alarmMinutes = (alarmMinutes + 1) % 60;
+"274
+[; ;main.c: 274:                         alarmMinutes = (alarmMinutes + 1) % 60;
 [e = _alarmMinutes -> % + -> _alarmMinutes `i -> 1 `i -> 60 `i `uc ]
-"276
-[; ;main.c: 276:                         displayAlarmTime();
+"275
+[; ;main.c: 275:                         displayAlarmTime();
 [e ( _displayAlarmTime ..  ]
-"277
-[; ;main.c: 277:                     }
+"276
+[; ;main.c: 276:                     }
 }
 [e :U 323 ]
-"278
-[; ;main.c: 278:                 }
+"277
+[; ;main.c: 277:                 }
 }
 [e :U 319 ]
-"264
-[; ;main.c: 264:                 while (!PORTBbits.RB2)
+"263
+[; ;main.c: 263:                 while (!PORTBbits.RB2)
 [e $ ! != -> . . _PORTBbits 0 2 `i -> 0 `i 320  ]
 [e :U 321 ]
-"279
-[; ;main.c: 279:                 alarmSettingMode = 0;
+"278
+[; ;main.c: 278:                 alarmSettingMode = 0;
 [e = F2623 -> -> 0 `i `a ]
-"280
-[; ;main.c: 280:                 alarmSet = 1;
+"279
+[; ;main.c: 279:                 alarmSet = 1;
 [e = _alarmSet -> -> 1 `i `a ]
-"281
-[; ;main.c: 281:                 displayTime();
+"280
+[; ;main.c: 280:                 displayTime();
 [e ( _displayTime ..  ]
-"282
-[; ;main.c: 282:             }
+"281
+[; ;main.c: 281:             }
 }
 [e :U 318 ]
-"283
-[; ;main.c: 283:         }
+"282
+[; ;main.c: 282:         }
 }
 [e $U 324  ]
-"284
-[; ;main.c: 284:         else
+"283
+[; ;main.c: 283:         else
 [e :U 317 ]
+"284
+[; ;main.c: 284:         {
+{
 "285
-[; ;main.c: 285:         {
-{
-"286
-[; ;main.c: 286:             if (alarmTriggered)
+[; ;main.c: 285:             if (alarmTriggered)
 [e $ ! != -> _alarmTriggered `i -> 0 `i 325  ]
-"287
-[; ;main.c: 287:             {
+"286
+[; ;main.c: 286:             {
 {
-"288
-[; ;main.c: 288:                 clearAlarm();
+"287
+[; ;main.c: 287:                 clearAlarm();
 [e ( _clearAlarm ..  ]
-"289
-[; ;main.c: 289:             }
+"288
+[; ;main.c: 288:             }
 }
 [e :U 325 ]
-"290
-[; ;main.c: 290:         }
+"289
+[; ;main.c: 289:         }
 }
 [e :U 324 ]
-"291
-[; ;main.c: 291:     }
+"290
+[; ;main.c: 290:     }
 }
 [e $U 326  ]
-"292
-[; ;main.c: 292:     else
+"291
+[; ;main.c: 291:     else
 [e :U 316 ]
+"292
+[; ;main.c: 292:     {
+{
 "293
-[; ;main.c: 293:     {
-{
-"294
-[; ;main.c: 294:         if (button3HoldTime < 1000)
+[; ;main.c: 293:         if (button3HoldTime < 1000)
 [e $ ! < -> F2622 `ui -> -> 1000 `i `ui 327  ]
+"294
+[; ;main.c: 294:         {
+{
 "295
-[; ;main.c: 295:         {
-{
-"296
-[; ;main.c: 296:             button3PressCount++;
+[; ;main.c: 295:             button3PressCount++;
 [e ++ F2621 -> -> 1 `i `uc ]
-"297
-[; ;main.c: 297:             if (button3PressCount == 5)
+"296
+[; ;main.c: 296:             if (button3PressCount == 5)
 [e $ ! == -> F2621 `i -> 5 `i 328  ]
-"298
-[; ;main.c: 298:             {
+"297
+[; ;main.c: 297:             {
 {
-"299
-[; ;main.c: 299:                 saveTimeToFlash();
+"298
+[; ;main.c: 298:                 saveTimeToFlash();
 [e ( _saveTimeToFlash ..  ]
-"300
-[; ;main.c: 300:                 button3PressCount = 0;
+"299
+[; ;main.c: 299:                 button3PressCount = 0;
 [e = F2621 -> -> 0 `i `uc ]
-"301
-[; ;main.c: 301:             }
+"300
+[; ;main.c: 300:             }
 }
 [e :U 328 ]
-"302
-[; ;main.c: 302:         }
+"301
+[; ;main.c: 301:         }
 }
 [e :U 327 ]
-"303
-[; ;main.c: 303:         button3HoldTime = 0;
+"302
+[; ;main.c: 302:         button3HoldTime = 0;
 [e = F2622 -> -> 0 `i `us ]
-"304
-[; ;main.c: 304:     }
+"303
+[; ;main.c: 303:     }
 }
 [e :U 326 ]
-"305
-[; ;main.c: 305: }
+"304
+[; ;main.c: 304: }
 [e :UE 307 ]
 }
-"309
-[; ;main.c: 309: void saveTimeToFlash(void)
+"308
+[; ;main.c: 308: void saveTimeToFlash(void)
 [v _saveTimeToFlash `(v ~T0 @X0 1 ef ]
-"310
-[; ;main.c: 310: {
+"309
+[; ;main.c: 309: {
 {
 [e :U _saveTimeToFlash ]
 [f ]
-"311
-[; ;main.c: 311:     uint32_t flashAddress = 0x1F80;
+"310
+[; ;main.c: 310:     uint32_t flashAddress = 0x1F80;
 [v _flashAddress `ul ~T0 @X0 1 a ]
 [e = _flashAddress -> -> -> 8064 `i `l `ul ]
-"312
-[; ;main.c: 312:     uint8_t flashBuffer[64];
+"311
+[; ;main.c: 311:     uint8_t flashBuffer[64];
 [v _flashBuffer `uc ~T0 @X0 -> 64 `i a ]
-"315
-[; ;main.c: 315:     for (uint8_t i = 0; i < 64; i++) {
+"314
+[; ;main.c: 314:     for (uint8_t i = 0; i < 64; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -1362,142 +1353,142 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 331  ]
 [e :U 330 ]
 {
-"316
-[; ;main.c: 316:         flashBuffer[i] = FLASH_ReadByte(flashAddress + i);
+"315
+[; ;main.c: 315:         flashBuffer[i] = FLASH_ReadByte(flashAddress + i);
 [e = *U + &U _flashBuffer * -> _i `ux -> -> # *U &U _flashBuffer `ui `ux ( _FLASH_ReadByte (1 + _flashAddress -> _i `ul ]
-"317
-[; ;main.c: 317:     }
+"316
+[; ;main.c: 316:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 64 `i 330  ]
 [e :U 331 ]
 }
-"320
-[; ;main.c: 320:     flashBuffer[0] = hours;
+"319
+[; ;main.c: 319:     flashBuffer[0] = hours;
 [e = *U + &U _flashBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _flashBuffer `ui `ux _hours ]
-"321
-[; ;main.c: 321:     flashBuffer[1] = minutes;
+"320
+[; ;main.c: 320:     flashBuffer[1] = minutes;
 [e = *U + &U _flashBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _flashBuffer `ui `ux _minutes ]
-"322
-[; ;main.c: 322:     flashBuffer[2] = alarmHours;
+"321
+[; ;main.c: 321:     flashBuffer[2] = alarmHours;
 [e = *U + &U _flashBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _flashBuffer `ui `ux _alarmHours ]
-"323
-[; ;main.c: 323:     flashBuffer[3] = alarmMinutes;
+"322
+[; ;main.c: 322:     flashBuffer[3] = alarmMinutes;
 [e = *U + &U _flashBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _flashBuffer `ui `ux _alarmMinutes ]
-"324
-[; ;main.c: 324:     flashBuffer[4] = alarmSet;
+"323
+[; ;main.c: 323:     flashBuffer[4] = alarmSet;
 [e = *U + &U _flashBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _flashBuffer `ui `ux -> _alarmSet `uc ]
-"327
-[; ;main.c: 327:     FLASH_WriteBlock(flashAddress, flashBuffer);
+"326
+[; ;main.c: 326:     FLASH_WriteBlock(flashAddress, flashBuffer);
 [e ( _FLASH_WriteBlock (2 , _flashAddress &U _flashBuffer ]
-"328
-[; ;main.c: 328: }
+"327
+[; ;main.c: 327: }
 [e :UE 329 ]
 }
-"331
-[; ;main.c: 331: void loadTimeFromFlash(void)
+"330
+[; ;main.c: 330: void loadTimeFromFlash(void)
 [v _loadTimeFromFlash `(v ~T0 @X0 1 ef ]
-"332
-[; ;main.c: 332: {
+"331
+[; ;main.c: 331: {
 {
 [e :U _loadTimeFromFlash ]
 [f ]
-"333
-[; ;main.c: 333:     uint32_t flashAddress = 0x1F80;
+"332
+[; ;main.c: 332:     uint32_t flashAddress = 0x1F80;
 [v _flashAddress `ul ~T0 @X0 1 a ]
 [e = _flashAddress -> -> -> 8064 `i `l `ul ]
-"334
-[; ;main.c: 334:     hours = FLASH_ReadByte(flashAddress);
+"333
+[; ;main.c: 333:     hours = FLASH_ReadByte(flashAddress);
 [e = _hours ( _FLASH_ReadByte (1 _flashAddress ]
-"335
-[; ;main.c: 335:     minutes = FLASH_ReadByte(flashAddress + 1);
+"334
+[; ;main.c: 334:     minutes = FLASH_ReadByte(flashAddress + 1);
 [e = _minutes ( _FLASH_ReadByte (1 + _flashAddress -> -> -> 1 `i `l `ul ]
-"336
-[; ;main.c: 336:     alarmHours = FLASH_ReadByte(flashAddress + 2);
+"335
+[; ;main.c: 335:     alarmHours = FLASH_ReadByte(flashAddress + 2);
 [e = _alarmHours ( _FLASH_ReadByte (1 + _flashAddress -> -> -> 2 `i `l `ul ]
-"337
-[; ;main.c: 337:     alarmMinutes = FLASH_ReadByte(flashAddress + 3);
+"336
+[; ;main.c: 336:     alarmMinutes = FLASH_ReadByte(flashAddress + 3);
 [e = _alarmMinutes ( _FLASH_ReadByte (1 + _flashAddress -> -> -> 3 `i `l `ul ]
-"338
-[; ;main.c: 338:     alarmSet = FLASH_ReadByte(flashAddress + 4);
+"337
+[; ;main.c: 337:     alarmSet = FLASH_ReadByte(flashAddress + 4);
 [e = _alarmSet -> ( _FLASH_ReadByte (1 + _flashAddress -> -> -> 4 `i `l `ul `a ]
-"340
-[; ;main.c: 340:     if (hours >= 24) hours = 0;
+"339
+[; ;main.c: 339:     if (hours >= 24) hours = 0;
 [e $ ! >= -> _hours `i -> 24 `i 334  ]
 [e = _hours -> -> 0 `i `uc ]
 [e :U 334 ]
-"341
-[; ;main.c: 341:     if (minutes >= 60) minutes = 0;
+"340
+[; ;main.c: 340:     if (minutes >= 60) minutes = 0;
 [e $ ! >= -> _minutes `i -> 60 `i 335  ]
 [e = _minutes -> -> 0 `i `uc ]
 [e :U 335 ]
-"342
-[; ;main.c: 342: }
+"341
+[; ;main.c: 341: }
 [e :UE 333 ]
 }
-"344
-[; ;main.c: 344: void btGetData(char rcv) {
+"343
+[; ;main.c: 343: void btGetData(char rcv) {
 [v _btGetData `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _btGetData ]
 [v _rcv `uc ~T0 @X0 1 r1 ]
 [f ]
-"345
-[; ;main.c: 345:     if(rcv == 'H' && uartBufferIndex == 0) {
+"344
+[; ;main.c: 344:     if(rcv == 'H' && uartBufferIndex == 0) {
 [e $ ! && == -> _rcv `ui -> 72 `ui == -> _uartBufferIndex `i -> 0 `i 337  ]
 {
-"346
-[; ;main.c: 346:         uartBuffer[uartBufferIndex] = 'H';
+"345
+[; ;main.c: 345:         uartBuffer[uartBufferIndex] = 'H';
 [e = *U + &U _uartBuffer * -> _uartBufferIndex `ux -> -> # *U &U _uartBuffer `ui `ux -> -> 72 `ui `uc ]
-"347
-[; ;main.c: 347:         uartBufferIndex++;
+"346
+[; ;main.c: 346:         uartBufferIndex++;
 [e ++ _uartBufferIndex -> -> 1 `i `uc ]
-"348
-[; ;main.c: 348:     }
+"347
+[; ;main.c: 347:     }
 }
 [e $U 338  ]
-"349
-[; ;main.c: 349:     else if(uartBufferIndex != 0 && uartBufferIndex < 7) {
+"348
+[; ;main.c: 348:     else if(uartBufferIndex != 0 && uartBufferIndex < 7) {
 [e :U 337 ]
 [e $ ! && != -> _uartBufferIndex `i -> 0 `i < -> _uartBufferIndex `i -> 7 `i 339  ]
 {
-"350
-[; ;main.c: 350:         uartBuffer[uartBufferIndex++] = rcv;
+"349
+[; ;main.c: 349:         uartBuffer[uartBufferIndex++] = rcv;
 [e = *U + &U _uartBuffer * -> ++ _uartBufferIndex -> -> 1 `i `uc `ux -> -> # *U &U _uartBuffer `ui `ux _rcv ]
-"351
-[; ;main.c: 351:     }
+"350
+[; ;main.c: 350:     }
 }
 [e $U 340  ]
-"352
-[; ;main.c: 352:     else if(uartBufferIndex == 7) {
+"351
+[; ;main.c: 351:     else if(uartBufferIndex == 7) {
 [e :U 339 ]
 [e $ ! == -> _uartBufferIndex `i -> 7 `i 341  ]
 {
-"353
-[; ;main.c: 353:         if(rcv == ';') {
+"352
+[; ;main.c: 352:         if(rcv == ';') {
 [e $ ! == -> _rcv `ui -> 59 `ui 342  ]
 {
-"354
-[; ;main.c: 354:             uartBuffer[6] = ';';
+"353
+[; ;main.c: 353:             uartBuffer[6] = ';';
 [e = *U + &U _uartBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _uartBuffer `ui `ux -> -> 59 `ui `uc ]
-"355
-[; ;main.c: 355:             uartBufferIndex = 0;
+"354
+[; ;main.c: 354:             uartBufferIndex = 0;
 [e = _uartBufferIndex -> -> 0 `i `uc ]
-"356
-[; ;main.c: 356:             btTimeSet = 1;
+"355
+[; ;main.c: 355:             btTimeSet = 1;
 [e = _btTimeSet -> -> 1 `i `a ]
-"357
-[; ;main.c: 357:         }
+"356
+[; ;main.c: 356:         }
 }
 [e :U 342 ]
-"358
-[; ;main.c: 358:     }
+"357
+[; ;main.c: 357:     }
 }
 [e :U 341 ]
 [e :U 340 ]
 [e :U 338 ]
-"359
-[; ;main.c: 359: }
+"358
+[; ;main.c: 358: }
 [e :UE 336 ]
 }
 [a 1C 65 76 65 82 77 0 ]

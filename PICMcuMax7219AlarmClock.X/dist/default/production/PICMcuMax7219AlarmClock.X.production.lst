@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.46 build 20240104201356 
-                                                                                               Wed Sep 11 18:06:25 2024
+                                                                                               Wed Sep 11 20:06:34 2024
 
 Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1 
      1                           	processor	18F26K20
@@ -2729,7 +2729,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2710   0007BE                     
   2711                           ;main.c: 56:     INTCONbits.PEIE = 1;
   2712   0007BE  8CF2               	bsf	242,6,c	;volatile
-  2713   0007C0                     l3909:
+  2713   0007C0                     l3897:
   2714                           
   2715                           ;main.c: 60:     {;main.c: 61:         displayTime();
   2716   0007C0  EC53  F005         	call	_displayTime	;wreg free
@@ -2747,7 +2747,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2728   0007D2  EFED  F003         	goto	u3191
   2729   0007D6  EFEF  F003         	goto	u3190
   2730   0007DA                     u3191:
-  2731   0007DA  EFE0  F003         	goto	l3909
+  2731   0007DA  EFE0  F003         	goto	l3897
   2732   0007DE                     u3190:
   2733   0007DE                     
   2734                           ; BSR set to: 0
@@ -2759,7 +2759,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2739   0007E4  EFF6  F003         	goto	u3201
   2740   0007E8  EFF8  F003         	goto	u3200
   2741   0007EC                     u3201:
-  2742   0007EC  EFE0  F003         	goto	l3909
+  2742   0007EC  EFE0  F003         	goto	l3897
   2743   0007F0                     u3200:
   2744   0007F0                     
   2745                           ; BSR set to: 0
@@ -2769,7 +2769,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2749   0007F6  EFFF  F003         	goto	u3211
   2750   0007FA  EF01  F004         	goto	u3210
   2751   0007FE                     u3211:
-  2752   0007FE  EFE0  F003         	goto	l3909
+  2752   0007FE  EFE0  F003         	goto	l3897
   2753   000802                     u3210:
   2754   000802                     
   2755                           ; BSR set to: 0
@@ -2779,7 +2779,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2759   000808  EF08  F004         	goto	u3221
   2760   00080C  EF0A  F004         	goto	u3220
   2761   000810                     u3221:
-  2762   000810  EFE0  F003         	goto	l3909
+  2762   000810  EFE0  F003         	goto	l3897
   2763   000814                     u3220:
   2764   000814                     
   2765                           ; BSR set to: 0
@@ -2839,18 +2839,18 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2817   00085C                     
   2818                           ;main.c: 82:                     saveTimeToFlash();
   2819   00085C  ECAE  F006         	call	_saveTimeToFlash	;wreg free
-  2820   000860  EFE0  F003         	goto	l3909
+  2820   000860  EFE0  F003         	goto	l3897
   2821   000864                     l467:
   2822                           
   2823                           ; BSR set to: 0
-  2824   000864  EFE0  F003         	goto	l3909
+  2824   000864  EFE0  F003         	goto	l3897
   2825   000868  EF4C  F000         	goto	start
   2826   00086C                     __end_of_main:
   2827                           	callstack 0
   2828                           
   2829 ;; *************** function _processAlarm *****************
   2830 ;; Defined at:
-  2831 ;;		line 146 in file "main.c"
+  2831 ;;		line 145 in file "main.c"
   2832 ;; Parameters:    Size  Location     Type
   2833 ;;		None
   2834 ;; Auto vars:     Size  Location     Type
@@ -2889,7 +2889,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2862   000DDA                     _processAlarm:
   2863                           	callstack 20
   2864   000DDA                     
-  2865                           ;main.c: 149:     if (alarmSet && !alarmTriggered)
+  2865                           ;main.c: 148:     if (alarmSet && !alarmTriggered)
   2866   000DDA  0100               	movlb	0	; () banked
   2867   000DDC  51A7               	movf	_alarmSet& (0+255),w,b
   2868   000DDE  B4D8               	btfsc	status,2,c
@@ -2909,7 +2909,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2882   000DFC                     u3040:
   2883   000DFC                     
   2884                           ; BSR set to: 0
-  2885                           ;main.c: 150:     {;main.c: 152:         if (hours == alarmHours && minutes == alarmMinu
+  2885                           ;main.c: 149:     {;main.c: 151:         if (hours == alarmHours && minutes == alarmMinu
       +                          tes)
   2886   000DFC  51A9               	movf	_alarmHours& (0+255),w,b
   2887   000DFE  19AC               	xorwf	_hours& (0+255),w,b
@@ -2931,10 +2931,10 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2903   000E20                     u3060:
   2904   000E20                     
   2905                           ; BSR set to: 0
-  2906                           ;main.c: 153:         {;main.c: 154:             triggerAlarm();
+  2906                           ;main.c: 152:         {;main.c: 153:             triggerAlarm();
   2907   000E20  EC6F  F003         	call	_triggerAlarm	;wreg free
   2908   000E24                     
-  2909                           ;main.c: 155:             alarmTriggered = 1;
+  2909                           ;main.c: 154:             alarmTriggered = 1;
   2910   000E24  0E01               	movlw	1
   2911   000E26  0100               	movlb	0	; () banked
   2912   000E28  6FA5               	movwf	_alarmTriggered& (0+255),b
@@ -2947,7 +2947,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2919                           
   2920 ;; *************** function _triggerAlarm *****************
   2921 ;; Defined at:
-  2922 ;;		line 161 in file "main.c"
+  2922 ;;		line 160 in file "main.c"
   2923 ;; Parameters:    Size  Location     Type
   2924 ;;		None
   2925 ;; Auto vars:     Size  Location     Type
@@ -2990,32 +2990,32 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2957   0006DE                     _triggerAlarm:
   2958                           	callstack 20
   2959   0006DE                     
-  2960                           ;main.c: 168:     unsigned int numCycles = 60000 / (2 * 500);
+  2960                           ;main.c: 167:     unsigned int numCycles = 60000 / (2 * 500);
   2961   0006DE  0E00               	movlw	0
   2962   0006E0  0100               	movlb	0	; () banked
   2963   0006E2  6FBB               	movwf	(triggerAlarm@numCycles+1)& (0+255),b
   2964   0006E4  0E3C               	movlw	60
   2965   0006E6  6FBA               	movwf	triggerAlarm@numCycles& (0+255),b
   2966                           
-  2967                           ;main.c: 170:     for (unsigned int i = 0; i < numCycles; i++)
+  2967                           ;main.c: 169:     for (unsigned int i = 0; i < numCycles; i++)
   2968   0006E8  0E00               	movlw	0
   2969   0006EA  6FBD               	movwf	(triggerAlarm@i+1)& (0+255),b
   2970   0006EC  0E00               	movlw	0
   2971   0006EE  6FBC               	movwf	triggerAlarm@i& (0+255),b
-  2972   0006F0  EFC8  F003         	goto	l3647
+  2972   0006F0  EFC8  F003         	goto	l3635
   2973   0006F4                     l497:
   2974                           
   2975                           ; BSR set to: 0
-  2976                           ;main.c: 171:     {;main.c: 173:         if (!PORTBbits.RB2)
+  2976                           ;main.c: 170:     {;main.c: 172:         if (!PORTBbits.RB2)
   2977   0006F4  B481               	btfsc	129,2,c	;volatile
   2978   0006F6  EF7F  F003         	goto	u2791
   2979   0006FA  EF81  F003         	goto	u2790
   2980   0006FE                     u2791:
-  2981   0006FE  EF9B  F003         	goto	l3633
+  2981   0006FE  EF9B  F003         	goto	l3621
   2982   000702                     u2790:
   2983   000702                     
   2984                           ; BSR set to: 0
-  2985                           ;main.c: 174:         {;main.c: 175:             _delay((unsigned long)((100)*(8000000/4
+  2985                           ;main.c: 173:         {;main.c: 174:             _delay((unsigned long)((100)*(8000000/4
       +                          000.0)));
   2986   000702  0E02               	movlw	2
   2987   000704  6E51               	movwf	(??_triggerAlarm+1)^0,c
@@ -3031,37 +3031,37 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2997   000716  D7FA               	bra	u3267
   2998   000718  F000 F000          	nop2	
   2999   00071C                     
-  3000                           ;main.c: 176:             if (!PORTBbits.RB2)
+  3000                           ;main.c: 175:             if (!PORTBbits.RB2)
   3001   00071C  B481               	btfsc	129,2,c	;volatile
   3002   00071E  EF93  F003         	goto	u2801
   3003   000722  EF95  F003         	goto	u2800
   3004   000726                     u2801:
-  3005   000726  EF9B  F003         	goto	l3633
+  3005   000726  EF9B  F003         	goto	l3621
   3006   00072A                     u2800:
   3007   00072A                     
-  3008                           ;main.c: 177:             {;main.c: 178:                 clearDisplay();
+  3008                           ;main.c: 176:             {;main.c: 177:                 clearDisplay();
   3009   00072A  EC89  F007         	call	_clearDisplay	;wreg free
   3010   00072E                     
-  3011                           ;main.c: 179:                 clearAlarm();
+  3011                           ;main.c: 178:                 clearAlarm();
   3012   00072E  EC90  F008         	call	_clearAlarm	;wreg free
   3013   000732  EFD3  F003         	goto	l500
-  3014   000736                     l3633:
+  3014   000736                     l3621:
   3015                           
-  3016                           ;main.c: 185:         printString("ALARM");
+  3016                           ;main.c: 184:         printString("ALARM");
   3017   000736  0EF9               	movlw	low STR_1
   3018   000738  6E46               	movwf	printString@str^0,c
   3019   00073A  0EFF               	movlw	high STR_1
   3020   00073C  6E47               	movwf	(printString@str+1)^0,c
   3021   00073E  EC99  F001         	call	_printString	;wreg free
   3022   000742                     
-  3023                           ;main.c: 186:         PWM2_LoadDutyValue(500);
+  3023                           ;main.c: 185:         PWM2_LoadDutyValue(500);
   3024   000742  0E01               	movlw	1
   3025   000744  6E07               	movwf	(PWM2_LoadDutyValue@dutyValue+1)^0,c
   3026   000746  0EF4               	movlw	244
   3027   000748  6E06               	movwf	PWM2_LoadDutyValue@dutyValue^0,c
   3028   00074A  ECF3  F007         	call	_PWM2_LoadDutyValue	;wreg free
   3029   00074E                     
-  3030                           ;main.c: 187:         _delay((unsigned long)((500)*(8000000/4000.0)));
+  3030                           ;main.c: 186:         _delay((unsigned long)((500)*(8000000/4000.0)));
   3031   00074E  0E06               	movlw	6
   3032   000750  6E51               	movwf	(??_triggerAlarm+1)^0,c
   3033   000752  0E13               	movlw	19
@@ -3075,17 +3075,17 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3041   000760  2E51               	decfsz	(??_triggerAlarm+1)^0,f,c
   3042   000762  D7FA               	bra	u3277
   3043   000764                     
-  3044                           ;main.c: 188:         clearDisplay();
+  3044                           ;main.c: 187:         clearDisplay();
   3045   000764  EC89  F007         	call	_clearDisplay	;wreg free
   3046   000768                     
-  3047                           ;main.c: 189:         PWM2_LoadDutyValue(0);
+  3047                           ;main.c: 188:         PWM2_LoadDutyValue(0);
   3048   000768  0E00               	movlw	0
   3049   00076A  6E07               	movwf	(PWM2_LoadDutyValue@dutyValue+1)^0,c
   3050   00076C  0E00               	movlw	0
   3051   00076E  6E06               	movwf	PWM2_LoadDutyValue@dutyValue^0,c
   3052   000770  ECF3  F007         	call	_PWM2_LoadDutyValue	;wreg free
   3053   000774                     
-  3054                           ;main.c: 190:         _delay((unsigned long)((500)*(8000000/4000.0)));
+  3054                           ;main.c: 189:         _delay((unsigned long)((500)*(8000000/4000.0)));
   3055   000774  0E06               	movlw	6
   3056   000776  6E51               	movwf	(??_triggerAlarm+1)^0,c
   3057   000778  0E13               	movlw	19
@@ -3099,11 +3099,11 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3065   000786  2E51               	decfsz	(??_triggerAlarm+1)^0,f,c
   3066   000788  D7FA               	bra	u3287
   3067   00078A                     
-  3068                           ;main.c: 191:     }
+  3068                           ;main.c: 190:     }
   3069   00078A  0100               	movlb	0	; () banked
   3070   00078C  4BBC               	infsnz	triggerAlarm@i& (0+255),f,b
   3071   00078E  2BBD               	incf	(triggerAlarm@i+1)& (0+255),f,b
-  3072   000790                     l3647:
+  3072   000790                     l3635:
   3073                           
   3074                           ; BSR set to: 0
   3075   000790  51BA               	movf	triggerAlarm@numCycles& (0+255),w,b
@@ -3168,7 +3168,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3129   000F14  6E47               	movwf	(clearDisplay@i+1)^0,c
   3130   000F16  0E00               	movlw	0
   3131   000F18  6E46               	movwf	clearDisplay@i^0,c
-  3132   000F1A                     l3413:
+  3132   000F1A                     l3401:
   3133                           
   3134                           ;MAX7219.c: 108:  {;MAX7219.c: 109:   bufferCol[i] = 0;
   3135   000F1A  5046               	movf	clearDisplay@i^0,w,c
@@ -3190,7 +3190,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3151   000F38  EFA0  F007         	goto	u2591
   3152   000F3C  EFA2  F007         	goto	u2590
   3153   000F40                     u2591:
-  3154   000F40  EF8D  F007         	goto	l3413
+  3154   000F40  EF8D  F007         	goto	l3401
   3155   000F44                     u2590:
   3156   000F44                     
   3157                           ;MAX7219.c: 111:  flushBuffer();
@@ -3410,7 +3410,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3352   000E48  6E0E               	movwf	(max7219_cmd@i+1)^0,c
   3353   000E4A  0E00               	movlw	0
   3354   000E4C  6E0D               	movwf	max7219_cmd@i^0,c
-  3355   000E4E                     l3659:
+  3355   000E4E                     l3647:
   3356                           
   3357                           ;MAX7219.c: 83:  {;MAX7219.c: 87:         SPI_Exchange8bit((writeData >> 8) & 0xFF);
   3358   000E4E  500C               	movf	(max7219_cmd@writeData+1)^0,w,c
@@ -3433,7 +3433,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3375   000E6E  EF3B  F007         	goto	u2821
   3376   000E72  EF3D  F007         	goto	u2820
   3377   000E76                     u2821:
-  3378   000E76  EF27  F007         	goto	l3659
+  3378   000E76  EF27  F007         	goto	l3647
   3379   000E7A                     u2820:
   3380   000E7A  848B               	bsf	139,2,c	;volatile
   3381   000E7C  0012               	return		;funcret
@@ -3442,7 +3442,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3384                           
   3385 ;; *************** function _loadTimeFromFlash *****************
   3386 ;; Defined at:
-  3387 ;;		line 331 in file "main.c"
+  3387 ;;		line 330 in file "main.c"
   3388 ;; Parameters:    Size  Location     Type
   3389 ;;		None
   3390 ;; Auto vars:     Size  Location     Type
@@ -3481,7 +3481,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3418   0009F0                     _loadTimeFromFlash:
   3419                           	callstack 24
   3420   0009F0                     
-  3421                           ;main.c: 334:     hours = FLASH_ReadByte(flashAddress);
+  3421                           ;main.c: 333:     hours = FLASH_ReadByte(flashAddress);
   3422   0009F0  0E80               	movlw	128
   3423   0009F2  6E06               	movwf	FLASH_ReadByte@flashAddr^0,c
   3424   0009F4  0E1F               	movlw	31
@@ -3495,7 +3495,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3432   000A06  6FAC               	movwf	_hours& (0+255),b
   3433   000A08                     
   3434                           ; BSR set to: 0
-  3435                           ;main.c: 335:     minutes = FLASH_ReadByte(flashAddress + 1);
+  3435                           ;main.c: 334:     minutes = FLASH_ReadByte(flashAddress + 1);
   3436   000A08  0E81               	movlw	129
   3437   000A0A  6E06               	movwf	FLASH_ReadByte@flashAddr^0,c
   3438   000A0C  0E1F               	movlw	31
@@ -3509,7 +3509,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3446   000A1E  6FAB               	movwf	_minutes& (0+255),b
   3447   000A20                     
   3448                           ; BSR set to: 0
-  3449                           ;main.c: 336:     alarmHours = FLASH_ReadByte(flashAddress + 2);
+  3449                           ;main.c: 335:     alarmHours = FLASH_ReadByte(flashAddress + 2);
   3450   000A20  0E82               	movlw	130
   3451   000A22  6E06               	movwf	FLASH_ReadByte@flashAddr^0,c
   3452   000A24  0E1F               	movlw	31
@@ -3523,7 +3523,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3460   000A36  6FA9               	movwf	_alarmHours& (0+255),b
   3461   000A38                     
   3462                           ; BSR set to: 0
-  3463                           ;main.c: 337:     alarmMinutes = FLASH_ReadByte(flashAddress + 3);
+  3463                           ;main.c: 336:     alarmMinutes = FLASH_ReadByte(flashAddress + 3);
   3464   000A38  0E83               	movlw	131
   3465   000A3A  6E06               	movwf	FLASH_ReadByte@flashAddr^0,c
   3466   000A3C  0E1F               	movlw	31
@@ -3537,7 +3537,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3474   000A4E  6FA8               	movwf	_alarmMinutes& (0+255),b
   3475   000A50                     
   3476                           ; BSR set to: 0
-  3477                           ;main.c: 338:     alarmSet = FLASH_ReadByte(flashAddress + 4);
+  3477                           ;main.c: 337:     alarmSet = FLASH_ReadByte(flashAddress + 4);
   3478   000A50  0E84               	movlw	132
   3479   000A52  6E06               	movwf	FLASH_ReadByte@flashAddr^0,c
   3480   000A54  0E1F               	movlw	31
@@ -3561,22 +3561,22 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3498   000A7A  6FA7               	movwf	_alarmSet& (0+255),b
   3499   000A7C                     
   3500                           ; BSR set to: 0
-  3501                           ;main.c: 340:     if (hours >= 24) hours = 0;
+  3501                           ;main.c: 339:     if (hours >= 24) hours = 0;
   3502   000A7C  0E17               	movlw	23
   3503   000A7E  65AC               	cpfsgt	_hours& (0+255),b
   3504   000A80  EF44  F005         	goto	u2861
   3505   000A84  EF46  F005         	goto	u2860
   3506   000A88                     u2861:
-  3507   000A88  EF48  F005         	goto	l3717
+  3507   000A88  EF48  F005         	goto	l3705
   3508   000A8C                     u2860:
   3509   000A8C                     
   3510                           ; BSR set to: 0
   3511   000A8C  0E00               	movlw	0
   3512   000A8E  6FAC               	movwf	_hours& (0+255),b
-  3513   000A90                     l3717:
+  3513   000A90                     l3705:
   3514                           
   3515                           ; BSR set to: 0
-  3516                           ;main.c: 341:     if (minutes >= 60) minutes = 0;
+  3516                           ;main.c: 340:     if (minutes >= 60) minutes = 0;
   3517   000A90  0E3B               	movlw	59
   3518   000A92  65AB               	cpfsgt	_minutes& (0+255),b
   3519   000A94  EF4E  F005         	goto	u2871
@@ -3597,7 +3597,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3534                           
   3535 ;; *************** function _checkButtons *****************
   3536 ;; Defined at:
-  3537 ;;		line 207 in file "main.c"
+  3537 ;;		line 206 in file "main.c"
   3538 ;; Parameters:    Size  Location     Type
   3539 ;;		None
   3540 ;; Auto vars:     Size  Location     Type
@@ -3640,17 +3640,17 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3572   00009C                     _checkButtons:
   3573                           	callstack 20
   3574   00009C                     
-  3575                           ;main.c: 209:     static uint8_t button3PressCount = 0;;main.c: 210:     static uint16_t
-      +                           button3HoldTime = 0;;main.c: 211:     static _Bool alarmSettingMode = 0;;main.c: 214:  
+  3575                           ;main.c: 208:     static uint8_t button3PressCount = 0;;main.c: 209:     static uint16_t
+      +                           button3HoldTime = 0;;main.c: 210:     static _Bool alarmSettingMode = 0;;main.c: 213:  
       +                             if (!PORTBbits.RB0)
   3576   00009C  B081               	btfsc	129,0,c	;volatile
   3577   00009E  EF53  F000         	goto	u2881
   3578   0000A2  EF55  F000         	goto	u2880
   3579   0000A6                     u2881:
-  3580   0000A6  EF96  F000         	goto	l3737
+  3580   0000A6  EF96  F000         	goto	l3725
   3581   0000AA                     u2880:
   3582   0000AA                     
-  3583                           ;main.c: 215:     {;main.c: 216:         _delay((unsigned long)((100)*(8000000/4000.0)))
+  3583                           ;main.c: 214:     {;main.c: 215:         _delay((unsigned long)((100)*(8000000/4000.0)))
       +                          ;
   3584   0000AA  0E02               	movlw	2
   3585   0000AC  6E51               	movwf	(??_checkButtons+1)^0,c
@@ -3666,26 +3666,26 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3595   0000BE  D7FA               	bra	u3297
   3596   0000C0  F000 F000          	nop2	
   3597   0000C4                     
-  3598                           ;main.c: 217:         if (!PORTBbits.RB0)
+  3598                           ;main.c: 216:         if (!PORTBbits.RB0)
   3599   0000C4  B081               	btfsc	129,0,c	;volatile
   3600   0000C6  EF67  F000         	goto	u2891
   3601   0000CA  EF69  F000         	goto	u2890
   3602   0000CE                     u2891:
-  3603   0000CE  EF96  F000         	goto	l3737
+  3603   0000CE  EF96  F000         	goto	l3725
   3604   0000D2                     u2890:
   3605   0000D2                     
-  3606                           ;main.c: 218:         {;main.c: 219:             if (alarmSettingMode)
+  3606                           ;main.c: 217:         {;main.c: 218:             if (alarmSettingMode)
   3607   0000D2  0100               	movlb	0	; () banked
   3608   0000D4  51A0               	movf	checkButtons@alarmSettingMode& (0+255),w,b
   3609   0000D6  B4D8               	btfsc	status,2,c
   3610   0000D8  EF70  F000         	goto	u2901
   3611   0000DC  EF72  F000         	goto	u2900
   3612   0000E0                     u2901:
-  3613   0000E0  EF85  F000         	goto	l3733
+  3613   0000E0  EF85  F000         	goto	l3721
   3614   0000E4                     u2900:
   3615   0000E4                     
   3616                           ; BSR set to: 0
-  3617                           ;main.c: 220:             {;main.c: 221:                 alarmHours = (alarmHours + 1) %
+  3617                           ;main.c: 219:             {;main.c: 220:                 alarmHours = (alarmHours + 1) %
       +                           24;
   3618   0000E4  0E01               	movlw	1
   3619   0000E6  25A9               	addwf	_alarmHours& (0+255),w,b
@@ -3703,15 +3703,15 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3631   000100  6FA9               	movwf	_alarmHours& (0+255),b
   3632   000102                     
   3633                           ; BSR set to: 0
-  3634                           ;main.c: 222:                 displayAlarmTime();
+  3634                           ;main.c: 221:                 displayAlarmTime();
   3635   000102  ECAD  F005         	call	_displayAlarmTime	;wreg free
   3636                           
-  3637                           ;main.c: 223:             }
-  3638   000106  EF96  F000         	goto	l3737
-  3639   00010A                     l3733:
+  3637                           ;main.c: 222:             }
+  3638   000106  EF96  F000         	goto	l3725
+  3639   00010A                     l3721:
   3640                           
   3641                           ; BSR set to: 0
-  3642                           ;main.c: 225:             {;main.c: 226:                 hours = (hours + 1) % 24;
+  3642                           ;main.c: 224:             {;main.c: 225:                 hours = (hours + 1) % 24;
   3643   00010A  0E01               	movlw	1
   3644   00010C  25AC               	addwf	_hours& (0+255),w,b
   3645   00010E  6E06               	movwf	___awmod@dividend^0,c
@@ -3728,19 +3728,19 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3656   000126  6FAC               	movwf	_hours& (0+255),b
   3657   000128                     
   3658                           ; BSR set to: 0
-  3659                           ;main.c: 227:                 displayTime();
+  3659                           ;main.c: 226:                 displayTime();
   3660   000128  EC53  F005         	call	_displayTime	;wreg free
-  3661   00012C                     l3737:
+  3661   00012C                     l3725:
   3662                           
-  3663                           ;main.c: 233:     if (!PORTBbits.RB1)
+  3663                           ;main.c: 232:     if (!PORTBbits.RB1)
   3664   00012C  B281               	btfsc	129,1,c	;volatile
   3665   00012E  EF9B  F000         	goto	u2911
   3666   000132  EF9D  F000         	goto	u2910
   3667   000136                     u2911:
-  3668   000136  EFDE  F000         	goto	l3753
+  3668   000136  EFDE  F000         	goto	l3741
   3669   00013A                     u2910:
   3670   00013A                     
-  3671                           ;main.c: 234:     {;main.c: 235:         _delay((unsigned long)((100)*(8000000/4000.0)))
+  3671                           ;main.c: 233:     {;main.c: 234:         _delay((unsigned long)((100)*(8000000/4000.0)))
       +                          ;
   3672   00013A  0E02               	movlw	2
   3673   00013C  6E51               	movwf	(??_checkButtons+1)^0,c
@@ -3756,26 +3756,26 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3683   00014E  D7FA               	bra	u3307
   3684   000150  F000 F000          	nop2	
   3685   000154                     
-  3686                           ;main.c: 236:         if (!PORTBbits.RB1)
+  3686                           ;main.c: 235:         if (!PORTBbits.RB1)
   3687   000154  B281               	btfsc	129,1,c	;volatile
   3688   000156  EFAF  F000         	goto	u2921
   3689   00015A  EFB1  F000         	goto	u2920
   3690   00015E                     u2921:
-  3691   00015E  EFDE  F000         	goto	l3753
+  3691   00015E  EFDE  F000         	goto	l3741
   3692   000162                     u2920:
   3693   000162                     
-  3694                           ;main.c: 237:         {;main.c: 238:             if (alarmSettingMode)
+  3694                           ;main.c: 236:         {;main.c: 237:             if (alarmSettingMode)
   3695   000162  0100               	movlb	0	; () banked
   3696   000164  51A0               	movf	checkButtons@alarmSettingMode& (0+255),w,b
   3697   000166  B4D8               	btfsc	status,2,c
   3698   000168  EFB8  F000         	goto	u2931
   3699   00016C  EFBA  F000         	goto	u2930
   3700   000170                     u2931:
-  3701   000170  EFCD  F000         	goto	l3749
+  3701   000170  EFCD  F000         	goto	l3737
   3702   000174                     u2930:
   3703   000174                     
   3704                           ; BSR set to: 0
-  3705                           ;main.c: 239:             {;main.c: 240:                 alarmMinutes = (alarmMinutes + 
+  3705                           ;main.c: 238:             {;main.c: 239:                 alarmMinutes = (alarmMinutes + 
       +                          1) % 60;
   3706   000174  0E01               	movlw	1
   3707   000176  25A8               	addwf	_alarmMinutes& (0+255),w,b
@@ -3793,15 +3793,15 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3719   000190  6FA8               	movwf	_alarmMinutes& (0+255),b
   3720   000192                     
   3721                           ; BSR set to: 0
-  3722                           ;main.c: 241:                 displayAlarmTime();
+  3722                           ;main.c: 240:                 displayAlarmTime();
   3723   000192  ECAD  F005         	call	_displayAlarmTime	;wreg free
   3724                           
-  3725                           ;main.c: 242:             }
-  3726   000196  EFDE  F000         	goto	l3753
-  3727   00019A                     l3749:
+  3725                           ;main.c: 241:             }
+  3726   000196  EFDE  F000         	goto	l3741
+  3727   00019A                     l3737:
   3728                           
   3729                           ; BSR set to: 0
-  3730                           ;main.c: 244:             {;main.c: 245:                 minutes = (minutes + 1) % 60;
+  3730                           ;main.c: 243:             {;main.c: 244:                 minutes = (minutes + 1) % 60;
   3731   00019A  0E01               	movlw	1
   3732   00019C  25AB               	addwf	_minutes& (0+255),w,b
   3733   00019E  6E06               	movwf	___awmod@dividend^0,c
@@ -3818,19 +3818,19 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3744   0001B6  6FAB               	movwf	_minutes& (0+255),b
   3745   0001B8                     
   3746                           ; BSR set to: 0
-  3747                           ;main.c: 246:                 displayTime();
+  3747                           ;main.c: 245:                 displayTime();
   3748   0001B8  EC53  F005         	call	_displayTime	;wreg free
-  3749   0001BC                     l3753:
+  3749   0001BC                     l3741:
   3750                           
-  3751                           ;main.c: 252:     if (!PORTBbits.RB2)
+  3751                           ;main.c: 251:     if (!PORTBbits.RB2)
   3752   0001BC  B481               	btfsc	129,2,c	;volatile
   3753   0001BE  EFE3  F000         	goto	u2941
   3754   0001C2  EFE5  F000         	goto	u2940
   3755   0001C6                     u2941:
-  3756   0001C6  EF79  F001         	goto	l3791
+  3756   0001C6  EF79  F001         	goto	l3779
   3757   0001CA                     u2940:
   3758   0001CA                     
-  3759                           ;main.c: 253:     {;main.c: 254:         button3HoldTime += 100;
+  3759                           ;main.c: 252:     {;main.c: 253:         button3HoldTime += 100;
   3760   0001CA  0E64               	movlw	100
   3761   0001CC  0100               	movlb	0	; () banked
   3762   0001CE  279A               	addwf	checkButtons@button3HoldTime& (0+255),f,b
@@ -3838,7 +3838,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3764   0001D2  239B               	addwfc	(checkButtons@button3HoldTime+1)& (0+255),f,b
   3765   0001D4                     
   3766                           ; BSR set to: 0
-  3767                           ;main.c: 255:         _delay((unsigned long)((100)*(8000000/4000.0)));
+  3767                           ;main.c: 254:         _delay((unsigned long)((100)*(8000000/4000.0)));
   3768   0001D4  0E02               	movlw	2
   3769   0001D6  6E51               	movwf	(??_checkButtons+1)^0,c
   3770   0001D8  0E04               	movlw	4
@@ -3853,7 +3853,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3779   0001E8  D7FA               	bra	u3317
   3780   0001EA  F000 F000          	nop2	
   3781   0001EE                     
-  3782                           ;main.c: 257:         if (button3HoldTime >= 1000)
+  3782                           ;main.c: 256:         if (button3HoldTime >= 1000)
   3783   0001EE  0EE8               	movlw	232
   3784   0001F0  0100               	movlb	0	; () banked
   3785   0001F2  5D9A               	subwf	checkButtons@button3HoldTime& (0+255),w,b
@@ -3863,11 +3863,11 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3789   0001FA  EF01  F001         	goto	u2951
   3790   0001FE  EF03  F001         	goto	u2950
   3791   000202                     u2951:
-  3792   000202  EF6D  F001         	goto	l3787
+  3792   000202  EF6D  F001         	goto	l3775
   3793   000206                     u2950:
   3794   000206                     
   3795                           ; BSR set to: 0
-  3796                           ;main.c: 258:         {;main.c: 259:             if (!alarmTriggered)
+  3796                           ;main.c: 257:         {;main.c: 258:             if (!alarmTriggered)
   3797   000206  51A5               	movf	_alarmTriggered& (0+255),w,b
   3798   000208  A4D8               	btfss	status,2,c
   3799   00020A  EF09  F001         	goto	u2961
@@ -3877,28 +3877,28 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3803   000216                     u2960:
   3804   000216                     
   3805                           ; BSR set to: 0
-  3806                           ;main.c: 260:             {;main.c: 261:                 alarmSettingMode = 1;
+  3806                           ;main.c: 259:             {;main.c: 260:                 alarmSettingMode = 1;
   3807   000216  0E01               	movlw	1
   3808   000218  6FA0               	movwf	checkButtons@alarmSettingMode& (0+255),b
-  3809   00021A                     l3765:
+  3809   00021A                     l3753:
   3810                           
   3811                           ; BSR set to: 0
-  3812                           ;main.c: 262:                 displayAlarmTime();
+  3812                           ;main.c: 261:                 displayAlarmTime();
   3813   00021A  ECAD  F005         	call	_displayAlarmTime	;wreg free
   3814                           
-  3815                           ;main.c: 264:                 while (!PORTBbits.RB2)
-  3816   00021E  EF5D  F001         	goto	l3781
+  3815                           ;main.c: 263:                 while (!PORTBbits.RB2)
+  3816   00021E  EF5D  F001         	goto	l3769
   3817   000222                     l525:
   3818                           
-  3819                           ;main.c: 265:                 {;main.c: 266:                     if (!PORTBbits.RB0)
+  3819                           ;main.c: 264:                 {;main.c: 265:                     if (!PORTBbits.RB0)
   3820   000222  B081               	btfsc	129,0,c	;volatile
   3821   000224  EF16  F001         	goto	u2971
   3822   000228  EF18  F001         	goto	u2970
   3823   00022C                     u2971:
-  3824   00022C  EF37  F001         	goto	l3773
+  3824   00022C  EF37  F001         	goto	l3761
   3825   000230                     u2970:
   3826   000230                     
-  3827                           ;main.c: 267:                     {;main.c: 268:                         _delay((unsigne
+  3827                           ;main.c: 266:                     {;main.c: 267:                         _delay((unsigne
       +                          d long)((100)*(8000000/4000.0)));
   3828   000230  0E02               	movlw	2
   3829   000232  6E51               	movwf	(??_checkButtons+1)^0,c
@@ -3914,7 +3914,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3839   000244  D7FA               	bra	u3327
   3840   000246  F000 F000          	nop2	
   3841   00024A                     
-  3842                           ;main.c: 269:                         alarmHours = (alarmHours + 1) % 24;
+  3842                           ;main.c: 268:                         alarmHours = (alarmHours + 1) % 24;
   3843   00024A  0E01               	movlw	1
   3844   00024C  0100               	movlb	0	; () banked
   3845   00024E  25A9               	addwf	_alarmHours& (0+255),w,b
@@ -3932,19 +3932,19 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3857   000268  6FA9               	movwf	_alarmHours& (0+255),b
   3858   00026A                     
   3859                           ; BSR set to: 0
-  3860                           ;main.c: 270:                         displayAlarmTime();
+  3860                           ;main.c: 269:                         displayAlarmTime();
   3861   00026A  ECAD  F005         	call	_displayAlarmTime	;wreg free
-  3862   00026E                     l3773:
+  3862   00026E                     l3761:
   3863                           
-  3864                           ;main.c: 272:                     if (!PORTBbits.RB1)
+  3864                           ;main.c: 271:                     if (!PORTBbits.RB1)
   3865   00026E  B281               	btfsc	129,1,c	;volatile
   3866   000270  EF3C  F001         	goto	u2981
   3867   000274  EF3E  F001         	goto	u2980
   3868   000278                     u2981:
-  3869   000278  EF5D  F001         	goto	l3781
+  3869   000278  EF5D  F001         	goto	l3769
   3870   00027C                     u2980:
   3871   00027C                     
-  3872                           ;main.c: 273:                     {;main.c: 274:                         _delay((unsigne
+  3872                           ;main.c: 272:                     {;main.c: 273:                         _delay((unsigne
       +                          d long)((100)*(8000000/4000.0)));
   3873   00027C  0E02               	movlw	2
   3874   00027E  6E51               	movwf	(??_checkButtons+1)^0,c
@@ -3960,7 +3960,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3884   000290  D7FA               	bra	u3337
   3885   000292  F000 F000          	nop2	
   3886   000296                     
-  3887                           ;main.c: 275:                         alarmMinutes = (alarmMinutes + 1) % 60;
+  3887                           ;main.c: 274:                         alarmMinutes = (alarmMinutes + 1) % 60;
   3888   000296  0E01               	movlw	1
   3889   000298  0100               	movlb	0	; () banked
   3890   00029A  25A8               	addwf	_alarmMinutes& (0+255),w,b
@@ -3976,10 +3976,10 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3900   0002B0  5006               	movf	?___awmod^0,w,c
   3901   0002B2  0100               	movlb	0	; () banked
   3902   0002B4  6FA8               	movwf	_alarmMinutes& (0+255),b
-  3903   0002B6  EF0D  F001         	goto	l3765
-  3904   0002BA                     l3781:
+  3903   0002B6  EF0D  F001         	goto	l3753
+  3904   0002BA                     l3769:
   3905                           
-  3906                           ;main.c: 264:                 while (!PORTBbits.RB2)
+  3906                           ;main.c: 263:                 while (!PORTBbits.RB2)
   3907   0002BA  A481               	btfss	129,2,c	;volatile
   3908   0002BC  EF62  F001         	goto	u2991
   3909   0002C0  EF64  F001         	goto	u2990
@@ -3987,23 +3987,23 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3911   0002C4  EF11  F001         	goto	l525
   3912   0002C8                     u2990:
   3913   0002C8                     
-  3914                           ;main.c: 279:                 alarmSettingMode = 0;
+  3914                           ;main.c: 278:                 alarmSettingMode = 0;
   3915   0002C8  0E00               	movlw	0
   3916   0002CA  0100               	movlb	0	; () banked
   3917   0002CC  6FA0               	movwf	checkButtons@alarmSettingMode& (0+255),b
   3918                           
-  3919                           ;main.c: 280:                 alarmSet = 1;
+  3919                           ;main.c: 279:                 alarmSet = 1;
   3920   0002CE  0E01               	movlw	1
   3921   0002D0  6FA7               	movwf	_alarmSet& (0+255),b
   3922   0002D2                     
   3923                           ; BSR set to: 0
-  3924                           ;main.c: 281:                 displayTime();
+  3924                           ;main.c: 280:                 displayTime();
   3925   0002D2  EC53  F005         	call	_displayTime	;wreg free
   3926   0002D6  EF98  F001         	goto	l534
-  3927   0002DA                     l3787:
+  3927   0002DA                     l3775:
   3928                           
   3929                           ; BSR set to: 0
-  3930                           ;main.c: 285:         {;main.c: 286:             if (alarmTriggered)
+  3930                           ;main.c: 284:         {;main.c: 285:             if (alarmTriggered)
   3931   0002DA  51A5               	movf	_alarmTriggered& (0+255),w,b
   3932   0002DC  B4D8               	btfsc	status,2,c
   3933   0002DE  EF73  F001         	goto	u3001
@@ -4013,12 +4013,12 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3937   0002EA                     u3000:
   3938   0002EA                     
   3939                           ; BSR set to: 0
-  3940                           ;main.c: 287:             {;main.c: 288:                 clearAlarm();
+  3940                           ;main.c: 286:             {;main.c: 287:                 clearAlarm();
   3941   0002EA  EC90  F008         	call	_clearAlarm	;wreg free
   3942   0002EE  EF98  F001         	goto	l534
-  3943   0002F2                     l3791:
+  3943   0002F2                     l3779:
   3944                           
-  3945                           ;main.c: 293:     {;main.c: 294:         if (button3HoldTime < 1000)
+  3945                           ;main.c: 292:     {;main.c: 293:         if (button3HoldTime < 1000)
   3946   0002F2  0EE8               	movlw	232
   3947   0002F4  0100               	movlb	0	; () banked
   3948   0002F6  5D9A               	subwf	checkButtons@button3HoldTime& (0+255),w,b
@@ -4028,36 +4028,36 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3952   0002FE  EF83  F001         	goto	u3011
   3953   000302  EF85  F001         	goto	u3010
   3954   000306                     u3011:
-  3955   000306  EF94  F001         	goto	l3801
+  3955   000306  EF94  F001         	goto	l3789
   3956   00030A                     u3010:
   3957   00030A                     
   3958                           ; BSR set to: 0
-  3959                           ;main.c: 295:         {;main.c: 296:             button3PressCount++;
+  3959                           ;main.c: 294:         {;main.c: 295:             button3PressCount++;
   3960   00030A  2BA1               	incf	checkButtons@button3PressCount& (0+255),f,b
   3961   00030C                     
   3962                           ; BSR set to: 0
-  3963                           ;main.c: 297:             if (button3PressCount == 5)
+  3963                           ;main.c: 296:             if (button3PressCount == 5)
   3964   00030C  0E05               	movlw	5
   3965   00030E  19A1               	xorwf	checkButtons@button3PressCount& (0+255),w,b
   3966   000310  A4D8               	btfss	status,2,c
   3967   000312  EF8D  F001         	goto	u3021
   3968   000316  EF8F  F001         	goto	u3020
   3969   00031A                     u3021:
-  3970   00031A  EF94  F001         	goto	l3801
+  3970   00031A  EF94  F001         	goto	l3789
   3971   00031E                     u3020:
   3972   00031E                     
   3973                           ; BSR set to: 0
-  3974                           ;main.c: 298:             {;main.c: 299:                 saveTimeToFlash();
+  3974                           ;main.c: 297:             {;main.c: 298:                 saveTimeToFlash();
   3975   00031E  ECAE  F006         	call	_saveTimeToFlash	;wreg free
   3976   000322                     
-  3977                           ;main.c: 300:                 button3PressCount = 0;
+  3977                           ;main.c: 299:                 button3PressCount = 0;
   3978   000322  0E00               	movlw	0
   3979   000324  0100               	movlb	0	; () banked
   3980   000326  6FA1               	movwf	checkButtons@button3PressCount& (0+255),b
-  3981   000328                     l3801:
+  3981   000328                     l3789:
   3982                           
   3983                           ; BSR set to: 0
-  3984                           ;main.c: 303:         button3HoldTime = 0;
+  3984                           ;main.c: 302:         button3HoldTime = 0;
   3985   000328  0E00               	movlw	0
   3986   00032A  6F9B               	movwf	(checkButtons@button3HoldTime+1)& (0+255),b
   3987   00032C  0E00               	movlw	0
@@ -4069,7 +4069,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3993                           
   3994 ;; *************** function _saveTimeToFlash *****************
   3995 ;; Defined at:
-  3996 ;;		line 309 in file "main.c"
+  3996 ;;		line 308 in file "main.c"
   3997 ;; Parameters:    Size  Location     Type
   3998 ;;		None
   3999 ;; Auto vars:     Size  Location     Type
@@ -4112,7 +4112,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4031   000D5C                     _saveTimeToFlash:
   4032                           	callstack 23
   4033   000D5C                     
-  4034                           ;main.c: 311:     uint32_t flashAddress = 0x1F80;
+  4034                           ;main.c: 310:     uint32_t flashAddress = 0x1F80;
   4035   000D5C  0E80               	movlw	128
   4036   000D5E  0100               	movlb	0	; () banked
   4037   000D60  6FEF               	movwf	saveTimeToFlash@flashAddress& (0+255),b
@@ -4123,14 +4123,14 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4042   000D6A  0E00               	movlw	0
   4043   000D6C  6FF2               	movwf	(saveTimeToFlash@flashAddress+3)& (0+255),b
   4044                           
-  4045                           ;main.c: 312:     uint8_t flashBuffer[64];;main.c: 315:     for (uint8_t i = 0; i < 64; 
+  4045                           ;main.c: 311:     uint8_t flashBuffer[64];;main.c: 314:     for (uint8_t i = 0; i < 64; 
       +                          i++) {
   4046   000D6E  0E00               	movlw	0
   4047   000D70  6FF3               	movwf	saveTimeToFlash@i& (0+255),b
-  4048   000D72                     l3595:
+  4048   000D72                     l3583:
   4049                           
   4050                           ; BSR set to: 0
-  4051                           ;main.c: 316:         flashBuffer[i] = FLASH_ReadByte(flashAddress + i);
+  4051                           ;main.c: 315:         flashBuffer[i] = FLASH_ReadByte(flashAddress + i);
   4052   000D72  51F3               	movf	saveTimeToFlash@i& (0+255),w,b
   4053   000D74  0FAF               	addlw	low saveTimeToFlash@flashBuffer
   4054   000D76  6ED9               	movwf	fsr2l,c
@@ -4150,7 +4150,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4068   000D92  EC68  F008         	call	_FLASH_ReadByte	;wreg free
   4069   000D96  6EDF               	movwf	indf2,c
   4070   000D98                     
-  4071                           ;main.c: 317:     }
+  4071                           ;main.c: 316:     }
   4072   000D98  0100               	movlb	0	; () banked
   4073   000D9A  2BF3               	incf	saveTimeToFlash@i& (0+255),f,b
   4074   000D9C                     
@@ -4160,27 +4160,27 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4078   000DA0  EFD4  F006         	goto	u2771
   4079   000DA4  EFD6  F006         	goto	u2770
   4080   000DA8                     u2771:
-  4081   000DA8  EFB9  F006         	goto	l3595
+  4081   000DA8  EFB9  F006         	goto	l3583
   4082   000DAC                     u2770:
   4083   000DAC                     
   4084                           ; BSR set to: 0
-  4085                           ;main.c: 320:     flashBuffer[0] = hours;
+  4085                           ;main.c: 319:     flashBuffer[0] = hours;
   4086   000DAC  C0AC  F0AF         	movff	_hours,saveTimeToFlash@flashBuffer
   4087                           
-  4088                           ;main.c: 321:     flashBuffer[1] = minutes;
+  4088                           ;main.c: 320:     flashBuffer[1] = minutes;
   4089   000DB0  C0AB  F0B0         	movff	_minutes,saveTimeToFlash@flashBuffer+1
   4090                           
-  4091                           ;main.c: 322:     flashBuffer[2] = alarmHours;
+  4091                           ;main.c: 321:     flashBuffer[2] = alarmHours;
   4092   000DB4  C0A9  F0B1         	movff	_alarmHours,saveTimeToFlash@flashBuffer+2
   4093                           
-  4094                           ;main.c: 323:     flashBuffer[3] = alarmMinutes;
+  4094                           ;main.c: 322:     flashBuffer[3] = alarmMinutes;
   4095   000DB8  C0A8  F0B2         	movff	_alarmMinutes,saveTimeToFlash@flashBuffer+3
   4096                           
-  4097                           ;main.c: 324:     flashBuffer[4] = alarmSet;
+  4097                           ;main.c: 323:     flashBuffer[4] = alarmSet;
   4098   000DBC  C0A7  F0B3         	movff	_alarmSet,saveTimeToFlash@flashBuffer+4
   4099   000DC0                     
   4100                           ; BSR set to: 0
-  4101                           ;main.c: 327:     FLASH_WriteBlock(flashAddress, flashBuffer);
+  4101                           ;main.c: 326:     FLASH_WriteBlock(flashAddress, flashBuffer);
   4102   000DC0  C0EF  F00B         	movff	saveTimeToFlash@flashAddress,FLASH_WriteBlock@writeAddr
   4103   000DC4  C0F0  F00C         	movff	saveTimeToFlash@flashAddress+1,FLASH_WriteBlock@writeAddr+1
   4104   000DC8  C0F1  F00D         	movff	saveTimeToFlash@flashAddress+2,FLASH_WriteBlock@writeAddr+2
@@ -4285,10 +4285,10 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4196   000634  EF1E  F003         	goto	u2541
   4197   000638  EF20  F003         	goto	u2540
   4198   00063C                     u2541:
-  4199   00063C  EF22  F003         	goto	l3369
+  4199   00063C  EF22  F003         	goto	l3357
   4200   000640                     u2540:
   4201   000640  EF6E  F003         	goto	l336
-  4202   000644                     l3369:
+  4202   000644                     l3357:
   4203                           
   4204                           ;mcc_generated_files/memory.c: 108:     FLASH_EraseBlock(writeAddr);
   4205   000644  C00B  F006         	movff	FLASH_WriteBlock@writeAddr,FLASH_EraseBlock@baseAddr
@@ -4310,14 +4310,14 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4220                           ;mcc_generated_files/memory.c: 115:  for(j=0; j<numberOfWriteBlocks; j++)
   4221   000664  0E00               	movlw	0
   4222   000666  6E15               	movwf	FLASH_WriteBlock@j^0,c
-  4223   000668  EF65  F003         	goto	l3405
-  4224   00066C                     l3379:
+  4223   000668  EF65  F003         	goto	l3393
+  4224   00066C                     l3367:
   4225                           
   4226                           ;mcc_generated_files/memory.c: 116:     {;mcc_generated_files/memory.c: 118:   for (i=0;
       +                           i<64; i++)
   4227   00066C  0E00               	movlw	0
   4228   00066E  6E18               	movwf	FLASH_WriteBlock@i^0,c
-  4229   000670                     l3385:
+  4229   000670                     l3373:
   4230                           
   4231                           ;mcc_generated_files/memory.c: 119:   {;mcc_generated_files/memory.c: 120:    TABLAT = f
       +                          lashWrBufPtr[dataCounter];
@@ -4355,7 +4355,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4263   00069E  EF53  F003         	goto	u2561
   4264   0006A2  EF55  F003         	goto	u2560
   4265   0006A6                     u2561:
-  4266   0006A6  EF38  F003         	goto	l3385
+  4266   0006A6  EF38  F003         	goto	l3373
   4267   0006AA                     u2560:
   4268   0006AA                     
   4269                           ;mcc_generated_files/memory.c: 132:   EECON1bits.EEPGD = 1;
@@ -4395,14 +4395,14 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4303   0006C8                     
   4304                           ;mcc_generated_files/memory.c: 142:  }
   4305   0006C8  2A15               	incf	FLASH_WriteBlock@j^0,f,c
-  4306   0006CA                     l3405:
+  4306   0006CA                     l3393:
   4307   0006CA  5016               	movf	FLASH_WriteBlock@numberOfWriteBlocks^0,w,c
   4308   0006CC  5C15               	subwf	FLASH_WriteBlock@j^0,w,c
   4309   0006CE  A0D8               	btfss	status,0,c
   4310   0006D0  EF6C  F003         	goto	u2581
   4311   0006D4  EF6E  F003         	goto	u2580
   4312   0006D8                     u2581:
-  4313   0006D8  EF36  F003         	goto	l3379
+  4313   0006D8  EF36  F003         	goto	l3367
   4314   0006DC                     u2580:
   4315   0006DC                     l336:
   4316   0006DC  0012               	return		;funcret
@@ -4680,7 +4680,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4565   000B14  6FC5               	movwf	(displayTime@i+1)& (0+255),b
   4566   000B16  0E00               	movlw	0
   4567   000B18  6FC4               	movwf	displayTime@i& (0+255),b
-  4568   000B1A                     l3581:
+  4568   000B1A                     l3569:
   4569                           
   4570                           ; BSR set to: 0
   4571                           ;main.c: 106:         displayString[i] = (uint8_t)timeString[i];
@@ -4710,7 +4710,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4595   000B42  EFA5  F005         	goto	u2761
   4596   000B46  EFA7  F005         	goto	u2760
   4597   000B4A                     u2761:
-  4598   000B4A  EF8D  F005         	goto	l3581
+  4598   000B4A  EF8D  F005         	goto	l3569
   4599   000B4E                     u2760:
   4600   000B4E                     
   4601                           ; BSR set to: 0
@@ -4725,7 +4725,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4610                           
   4611 ;; *************** function _displayAlarmTime *****************
   4612 ;; Defined at:
-  4613 ;;		line 126 in file "main.c"
+  4613 ;;		line 125 in file "main.c"
   4614 ;; Parameters:    Size  Location     Type
   4615 ;;		None
   4616 ;; Auto vars:     Size  Location     Type
@@ -4768,7 +4768,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4648   000B5A                     _displayAlarmTime:
   4649                           	callstack 20
   4650   000B5A                     
-  4651                           ;main.c: 128:     char alarmTimeString[5];;main.c: 131:     alarmTimeString[0] = (alarmH
+  4651                           ;main.c: 127:     char alarmTimeString[5];;main.c: 130:     alarmTimeString[0] = (alarmH
       +                          ours / 10) + '0';
   4652   000B5A  C0A9  F006         	movff	_alarmHours,___awdiv@dividend
   4653   000B5E  6A07               	clrf	(___awdiv@dividend+1)^0,c
@@ -4782,7 +4782,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4661   000B70  0100               	movlb	0	; () banked
   4662   000B72  6FBF               	movwf	displayAlarmTime@alarmTimeString& (0+255),b
   4663                           
-  4664                           ;main.c: 132:     alarmTimeString[1] = (alarmHours % 10) + '0';
+  4664                           ;main.c: 131:     alarmTimeString[1] = (alarmHours % 10) + '0';
   4665   000B74  C0A9  F006         	movff	_alarmHours,___awmod@dividend
   4666   000B78  6A07               	clrf	(___awmod@dividend+1)^0,c
   4667   000B7A  0E00               	movlw	0
@@ -4795,7 +4795,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4674   000B8A  0100               	movlb	0	; () banked
   4675   000B8C  6FC0               	movwf	(displayAlarmTime@alarmTimeString+1)& (0+255),b
   4676                           
-  4677                           ;main.c: 133:     alarmTimeString[2] = (alarmMinutes / 10) + '0';
+  4677                           ;main.c: 132:     alarmTimeString[2] = (alarmMinutes / 10) + '0';
   4678   000B8E  C0A8  F006         	movff	_alarmMinutes,___awdiv@dividend
   4679   000B92  6A07               	clrf	(___awdiv@dividend+1)^0,c
   4680   000B94  0E00               	movlw	0
@@ -4808,7 +4808,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4687   000BA4  0100               	movlb	0	; () banked
   4688   000BA6  6FC1               	movwf	(displayAlarmTime@alarmTimeString+2)& (0+255),b
   4689                           
-  4690                           ;main.c: 134:     alarmTimeString[3] = (alarmMinutes % 10) + '0';
+  4690                           ;main.c: 133:     alarmTimeString[3] = (alarmMinutes % 10) + '0';
   4691   000BA8  C0A8  F006         	movff	_alarmMinutes,___awmod@dividend
   4692   000BAC  6A07               	clrf	(___awmod@dividend+1)^0,c
   4693   000BAE  0E00               	movlw	0
@@ -4822,21 +4822,21 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4701   000BC0  6FC2               	movwf	(displayAlarmTime@alarmTimeString+3)& (0+255),b
   4702   000BC2                     
   4703                           ; BSR set to: 0
-  4704                           ;main.c: 135:     alarmTimeString[4] = '\0';
+  4704                           ;main.c: 134:     alarmTimeString[4] = '\0';
   4705   000BC2  0E00               	movlw	0
   4706   000BC4  6FC3               	movwf	(displayAlarmTime@alarmTimeString+4)& (0+255),b
   4707   000BC6                     
   4708                           ; BSR set to: 0
-  4709                           ;main.c: 138:     uint8_t displayString[5];;main.c: 139:     for (int i = 0; i < 5; i++)
+  4709                           ;main.c: 137:     uint8_t displayString[5];;main.c: 138:     for (int i = 0; i < 5; i++)
       +                           {
   4710   000BC6  0E00               	movlw	0
   4711   000BC8  6FC5               	movwf	(displayAlarmTime@i+1)& (0+255),b
   4712   000BCA  0E00               	movlw	0
   4713   000BCC  6FC4               	movwf	displayAlarmTime@i& (0+255),b
-  4714   000BCE                     l3613:
+  4714   000BCE                     l3601:
   4715                           
   4716                           ; BSR set to: 0
-  4717                           ;main.c: 140:         displayString[i] = (uint8_t)alarmTimeString[i];
+  4717                           ;main.c: 139:         displayString[i] = (uint8_t)alarmTimeString[i];
   4718   000BCE  51C4               	movf	displayAlarmTime@i& (0+255),w,b
   4719   000BD0  0FBF               	addlw	low displayAlarmTime@alarmTimeString
   4720   000BD2  6ED9               	movwf	fsr2l,c
@@ -4848,7 +4848,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4726   000BDE  CFDF FFE7          	movff	indf2,indf1
   4727   000BE2                     
   4728                           ; BSR set to: 0
-  4729                           ;main.c: 141:     }
+  4729                           ;main.c: 140:     }
   4730   000BE2  4BC4               	infsnz	displayAlarmTime@i& (0+255),f,b
   4731   000BE4  2BC5               	incf	(displayAlarmTime@i+1)& (0+255),f,b
   4732   000BE6                     
@@ -4863,11 +4863,11 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4741   000BF6  EFFF  F005         	goto	u2781
   4742   000BFA  EF01  F006         	goto	u2780
   4743   000BFE                     u2781:
-  4744   000BFE  EFE7  F005         	goto	l3613
+  4744   000BFE  EFE7  F005         	goto	l3601
   4745   000C02                     u2780:
   4746   000C02                     
   4747                           ; BSR set to: 0
-  4748                           ;main.c: 143:     printString(displayString);
+  4748                           ;main.c: 142:     printString(displayString);
   4749   000C02  0EBA               	movlw	low displayAlarmTime@displayString
   4750   000C04  6E46               	movwf	printString@str^0,c
   4751   000C06  6A47               	clrf	(printString@str+1)^0,c
@@ -4940,8 +4940,8 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4812   000342  6FB6               	movwf	printString@k& (0+255),b
   4813                           
   4814                           ;MAX7219.c: 166:     while (str[strindx] != '\0')
-  4815   000344  EF41  F002         	goto	l3463
-  4816   000348                     l3423:
+  4815   000344  EF41  F002         	goto	l3451
+  4816   000348                     l3411:
   4817                           
   4818                           ;MAX7219.c: 167:     {;MAX7219.c: 168:         int indx = 0;
   4819   000348  0E00               	movlw	0
@@ -4955,7 +4955,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4827   000354  6FB5               	movwf	(printString@i+1)& (0+255),b
   4828   000356  0E00               	movlw	0
   4829   000358  6FB4               	movwf	printString@i& (0+255),b
-  4830   00035A                     l3429:
+  4830   00035A                     l3417:
   4831                           
   4832                           ; BSR set to: 0
   4833                           ;MAX7219.c: 170:         {;MAX7219.c: 171:             uint8_t data = 0;
@@ -4967,7 +4967,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4839   000360  6FB9               	movwf	(printString@j+1)& (0+255),b
   4840   000362  0E07               	movlw	7
   4841   000364  6FB8               	movwf	printString@j& (0+255),b
-  4842   000366                     l3435:
+  4842   000366                     l3423:
   4843                           
   4844                           ; BSR set to: 0
   4845                           ;MAX7219.c: 174:             {;MAX7219.c: 175:                 if ((MAX7219_Dot_Matrix_f
@@ -5034,7 +5034,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4905   0003E0  EFF4  F001         	goto	u2621
   4906   0003E4  EFF6  F001         	goto	u2620
   4907   0003E8                     u2621:
-  4908   0003E8  EF07  F002         	goto	l3439
+  4908   0003E8  EF07  F002         	goto	l3427
   4909   0003EC                     u2620:
   4910   0003EC                     
   4911                           ;MAX7219.c: 176:                 {;MAX7219.c: 177:                     data |= (1 << (7 
@@ -5056,7 +5056,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4926   000408  5049               	movf	(??_printString+1)^0,w,c
   4927   00040A  0100               	movlb	0	; () banked
   4928   00040C  13B1               	iorwf	printString@data& (0+255),f,b
-  4929   00040E                     l3439:
+  4929   00040E                     l3427:
   4930                           
   4931                           ;MAX7219.c: 179:             }
   4932   00040E  0100               	movlb	0	; () banked
@@ -5069,7 +5069,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4939   000418  EF12  F002         	goto	u2640
   4940   00041C  EF10  F002         	goto	u2641
   4941   000420                     u2641:
-  4942   000420  EFB3  F001         	goto	l3435
+  4942   000420  EFB3  F001         	goto	l3423
   4943   000424                     u2640:
   4944   000424                     
   4945                           ; BSR set to: 0
@@ -5078,10 +5078,10 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4948   000426  EF19  F002         	goto	u2650
   4949   00042A  EF17  F002         	goto	u2651
   4950   00042E                     u2651:
-  4951   00042E  EF1B  F002         	goto	l3447
+  4951   00042E  EF1B  F002         	goto	l3435
   4952   000432                     u2650:
-  4953   000432  EF36  F002         	goto	l3457
-  4954   000436                     l3447:
+  4953   000432  EF36  F002         	goto	l3445
+  4954   000436                     l3435:
   4955                           
   4956                           ; BSR set to: 0
   4957                           ;MAX7219.c: 181:             bufferCol[k--] = data;
@@ -5117,9 +5117,9 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4987   000460  EF34  F002         	goto	u2661
   4988   000464  EF36  F002         	goto	u2660
   4989   000468                     u2661:
-  4990   000468  EFAD  F001         	goto	l3429
+  4990   000468  EFAD  F001         	goto	l3417
   4991   00046C                     u2660:
-  4992   00046C                     l3457:
+  4992   00046C                     l3445:
   4993                           
   4994                           ; BSR set to: 0
   4995                           ;MAX7219.c: 184:         strindx++;
@@ -5132,10 +5132,10 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5002   000472  EF3F  F002         	goto	u2670
   5003   000476  EF3D  F002         	goto	u2671
   5004   00047A                     u2671:
-  5005   00047A  EF41  F002         	goto	l3463
+  5005   00047A  EF41  F002         	goto	l3451
   5006   00047E                     u2670:
-  5007   00047E  EF60  F002         	goto	l3465
-  5008   000482                     l3463:
+  5007   00047E  EF60  F002         	goto	l3453
+  5008   000482                     l3451:
   5009                           
   5010                           ; BSR set to: 0
   5011                           ;MAX7219.c: 166:     while (str[strindx] != '\0')
@@ -5165,9 +5165,9 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5035   0004B4  EF5E  F002         	goto	u2691
   5036   0004B8  EF60  F002         	goto	u2690
   5037   0004BC                     u2691:
-  5038   0004BC  EFA4  F001         	goto	l3423
+  5038   0004BC  EFA4  F001         	goto	l3411
   5039   0004C0                     u2690:
-  5040   0004C0                     l3465:
+  5040   0004C0                     l3453:
   5041                           
   5042                           ;MAX7219.c: 188:     flushBuffer();
   5043   0004C0  EC63  F002         	call	_flushBuffer	;wreg free
@@ -5237,7 +5237,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5102   0004D4  6E45               	movwf	(flushBuffer@i+1)^0,c
   5103   0004D6  0E00               	movlw	0
   5104   0004D8  6E44               	movwf	flushBuffer@i^0,c
-  5105   0004DA                     l3309:
+  5105   0004DA                     l3297:
   5106                           
   5107                           ;MAX7219.c: 58:  {;MAX7219.c: 59:   int dev = i/8;
   5108   0004DA  C044  F006         	movff	flushBuffer@i,___awdiv@dividend
@@ -5255,7 +5255,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5120   0004F8  6E41               	movwf	(flushBuffer@j+1)^0,c
   5121   0004FA  0E00               	movlw	0
   5122   0004FC  6E40               	movwf	flushBuffer@j^0,c
-  5123   0004FE                     l3317:
+  5123   0004FE                     l3305:
   5124                           
   5125                           ;MAX7219.c: 61:   {;MAX7219.c: 62:    if ((bufferCol[i])&(1<<(j)))
   5126   0004FE  5044               	movf	flushBuffer@i^0,w,c
@@ -5282,7 +5282,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5147   00052A  EF99  F002         	goto	u2491
   5148   00052E  EF9B  F002         	goto	u2490
   5149   000532                     u2491:
-  5150   000532  EFB5  F002         	goto	l3321
+  5150   000532  EFB5  F002         	goto	l3309
   5151   000536                     u2490:
   5152   000536                     
   5153                           ;MAX7219.c: 63:    {;MAX7219.c: 64:     bufferRow[j+(8*dev)] |= (1<<(7-(i-(8*dev))));
@@ -5312,7 +5312,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5177   000564  6ADA               	clrf	fsr2h,c
   5178   000566  501C               	movf	(??_flushBuffer+1)^0,w,c
   5179   000568  12DF               	iorwf	indf2,f,c
-  5180   00056A                     l3321:
+  5180   00056A                     l3309:
   5181                           
   5182                           ;MAX7219.c: 66:   }
   5183   00056A  4A40               	infsnz	flushBuffer@j^0,f,c
@@ -5327,7 +5327,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5192   00057E  EFC3  F002         	goto	u2511
   5193   000582  EFC5  F002         	goto	u2510
   5194   000586                     u2511:
-  5195   000586  EF7F  F002         	goto	l3317
+  5195   000586  EF7F  F002         	goto	l3305
   5196   00058A                     u2510:
   5197   00058A                     
   5198                           ;MAX7219.c: 67:  }
@@ -5343,7 +5343,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5208   00059E  EFD3  F002         	goto	u2521
   5209   0005A2  EFD5  F002         	goto	u2520
   5210   0005A6                     u2521:
-  5211   0005A6  EF6D  F002         	goto	l3309
+  5211   0005A6  EF6D  F002         	goto	l3297
   5212   0005AA                     u2520:
   5213   0005AA                     
   5214                           ;MAX7219.c: 70:  for (int row=1; row<=(4*8); row++)
@@ -5351,7 +5351,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5216   0005AC  6E43               	movwf	(flushBuffer@row+1)^0,c
   5217   0005AE  0E01               	movlw	1
   5218   0005B0  6E42               	movwf	flushBuffer@row^0,c
-  5219   0005B2                     l3335:
+  5219   0005B2                     l3323:
   5220                           
   5221                           ;MAX7219.c: 71:  {;MAX7219.c: 72:   max_write(row, bufferRow[row-1]);
   5222   0005B2  C042  F00E         	movff	flushBuffer@row,max_write@row
@@ -5380,7 +5380,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5245   0005E6  EFF7  F002         	goto	u2531
   5246   0005EA  EFF9  F002         	goto	u2530
   5247   0005EE                     u2531:
-  5248   0005EE  EFD9  F002         	goto	l3335
+  5248   0005EE  EFD9  F002         	goto	l3323
   5249   0005F2                     u2530:
   5250   0005F2  0012               	return		;funcret
   5251   0005F4                     __end_of_flushBuffer:
@@ -5469,7 +5469,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5328   000976  6E18               	movwf	(max_write@dev+1)^0,c
   5329   000978  0E00               	movlw	0
   5330   00097A  6E17               	movwf	max_write@dev^0,c
-  5331   00097C                     l3257:
+  5331   00097C                     l3245:
   5332                           
   5333                           ;MAX7219.c: 20:  {;MAX7219.c: 21:   if (dev == devTarget)
   5334   00097C  5015               	movf	max_write@devTarget^0,w,c
@@ -5481,7 +5481,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5340   000988  EFC8  F004         	goto	u2441
   5341   00098C  EFCA  F004         	goto	u2440
   5342   000990                     u2441:
-  5343   000990  EFE0  F004         	goto	l3265
+  5343   000990  EFE0  F004         	goto	l3253
   5344   000994                     u2440:
   5345   000994                     
   5346                           ;MAX7219.c: 22:   {;MAX7219.c: 23:    writeData = ((row - offset)<<8)|data;
@@ -5508,8 +5508,8 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5367   0009B8  EC5B  F008         	call	_SPI_Exchange8bit
   5368                           
   5369                           ;MAX7219.c: 31:   }
-  5370   0009BC  EFE6  F004         	goto	l3271
-  5371   0009C0                     l3265:
+  5370   0009BC  EFE6  F004         	goto	l3259
+  5371   0009C0                     l3253:
   5372   0009C0                     
   5373                           ;MAX7219.c: 42:             SPI_Exchange8bit((writeData >> 8) & 0xFF);
   5374   0009C0  0E00               	movlw	0
@@ -5518,7 +5518,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5377                           ;MAX7219.c: 44:             SPI_Exchange8bit(writeData & 0xFF);
   5378   0009C6  0E00               	movlw	0
   5379   0009C8  EC5B  F008         	call	_SPI_Exchange8bit
-  5380   0009CC                     l3271:
+  5380   0009CC                     l3259:
   5381                           
   5382                           ;MAX7219.c: 46:  }
   5383   0009CC  4A17               	infsnz	max_write@dev^0,f,c
@@ -5533,7 +5533,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5392   0009E0  EFF4  F004         	goto	u2451
   5393   0009E4  EFF6  F004         	goto	u2450
   5394   0009E8                     u2451:
-  5395   0009E8  EFBE  F004         	goto	l3257
+  5395   0009E8  EFBE  F004         	goto	l3245
   5396   0009EC                     u2450:
   5397   0009EC  848B               	bsf	139,2,c	;volatile
   5398   0009EE  0012               	return		;funcret
@@ -5592,7 +5592,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5446   000872  EF3F  F004         	goto	u2380
   5447   000876  EF3D  F004         	goto	u2381
   5448   00087A                     u2381:
-  5449   00087A  EF45  F004         	goto	l3207
+  5449   00087A  EF45  F004         	goto	l3195
   5450   00087E                     u2380:
   5451   00087E  6C08               	negf	___awdiv@divisor^0,c
   5452   000880  1E09               	comf	(___awdiv@divisor+1)^0,f,c
@@ -5600,12 +5600,12 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5454   000884  2A09               	incf	(___awdiv@divisor+1)^0,f,c
   5455   000886  0E01               	movlw	1
   5456   000888  6E0B               	movwf	___awdiv@sign^0,c
-  5457   00088A                     l3207:
+  5457   00088A                     l3195:
   5458   00088A  BE07               	btfsc	(___awdiv@dividend+1)^0,7,c
   5459   00088C  EF4C  F004         	goto	u2390
   5460   000890  EF4A  F004         	goto	u2391
   5461   000894                     u2391:
-  5462   000894  EF52  F004         	goto	l3213
+  5462   000894  EF52  F004         	goto	l3201
   5463   000898                     u2390:
   5464   000898  6C06               	negf	___awdiv@dividend^0,c
   5465   00089A  1E07               	comf	(___awdiv@dividend+1)^0,f,c
@@ -5613,7 +5613,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5467   00089E  2A07               	incf	(___awdiv@dividend+1)^0,f,c
   5468   0008A0  0E01               	movlw	1
   5469   0008A2  1A0B               	xorwf	___awdiv@sign^0,f,c
-  5470   0008A4                     l3213:
+  5470   0008A4                     l3201:
   5471   0008A4  0E00               	movlw	0
   5472   0008A6  6E0D               	movwf	(___awdiv@quotient+1)^0,c
   5473   0008A8  0E00               	movlw	0
@@ -5624,24 +5624,24 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5478   0008B2  EF5D  F004         	goto	u2401
   5479   0008B6  EF5F  F004         	goto	u2400
   5480   0008BA                     u2401:
-  5481   0008BA  EF87  F004         	goto	l3235
+  5481   0008BA  EF87  F004         	goto	l3223
   5482   0008BE                     u2400:
   5483   0008BE  0E01               	movlw	1
   5484   0008C0  6E0A               	movwf	___awdiv@counter^0,c
-  5485   0008C2  EF67  F004         	goto	l3221
-  5486   0008C6                     l3219:
+  5485   0008C2  EF67  F004         	goto	l3209
+  5486   0008C6                     l3207:
   5487   0008C6  90D8               	bcf	status,0,c
   5488   0008C8  3608               	rlcf	___awdiv@divisor^0,f,c
   5489   0008CA  3609               	rlcf	(___awdiv@divisor+1)^0,f,c
   5490   0008CC  2A0A               	incf	___awdiv@counter^0,f,c
-  5491   0008CE                     l3221:
+  5491   0008CE                     l3209:
   5492   0008CE  AE09               	btfss	(___awdiv@divisor+1)^0,7,c
   5493   0008D0  EF6C  F004         	goto	u2411
   5494   0008D4  EF6E  F004         	goto	u2410
   5495   0008D8                     u2411:
-  5496   0008D8  EF63  F004         	goto	l3219
+  5496   0008D8  EF63  F004         	goto	l3207
   5497   0008DC                     u2410:
-  5498   0008DC                     l3223:
+  5498   0008DC                     l3211:
   5499   0008DC  90D8               	bcf	status,0,c
   5500   0008DE  360C               	rlcf	___awdiv@quotient^0,f,c
   5501   0008E0  360D               	rlcf	(___awdiv@quotient+1)^0,f,c
@@ -5653,32 +5653,32 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5507   0008EC  EF7A  F004         	goto	u2421
   5508   0008F0  EF7C  F004         	goto	u2420
   5509   0008F4                     u2421:
-  5510   0008F4  EF81  F004         	goto	l3231
+  5510   0008F4  EF81  F004         	goto	l3219
   5511   0008F8                     u2420:
   5512   0008F8  5008               	movf	___awdiv@divisor^0,w,c
   5513   0008FA  5E06               	subwf	___awdiv@dividend^0,f,c
   5514   0008FC  5009               	movf	(___awdiv@divisor+1)^0,w,c
   5515   0008FE  5A07               	subwfb	(___awdiv@dividend+1)^0,f,c
   5516   000900  800C               	bsf	___awdiv@quotient^0,0,c
-  5517   000902                     l3231:
+  5517   000902                     l3219:
   5518   000902  90D8               	bcf	status,0,c
   5519   000904  3209               	rrcf	(___awdiv@divisor+1)^0,f,c
   5520   000906  3208               	rrcf	___awdiv@divisor^0,f,c
   5521   000908  2E0A               	decfsz	___awdiv@counter^0,f,c
-  5522   00090A  EF6E  F004         	goto	l3223
-  5523   00090E                     l3235:
+  5522   00090A  EF6E  F004         	goto	l3211
+  5523   00090E                     l3223:
   5524   00090E  500B               	movf	___awdiv@sign^0,w,c
   5525   000910  B4D8               	btfsc	status,2,c
   5526   000912  EF8D  F004         	goto	u2431
   5527   000916  EF8F  F004         	goto	u2430
   5528   00091A                     u2431:
-  5529   00091A  EF93  F004         	goto	l3239
+  5529   00091A  EF93  F004         	goto	l3227
   5530   00091E                     u2430:
   5531   00091E  6C0C               	negf	___awdiv@quotient^0,c
   5532   000920  1E0D               	comf	(___awdiv@quotient+1)^0,f,c
   5533   000922  B0D8               	btfsc	status,0,c
   5534   000924  2A0D               	incf	(___awdiv@quotient+1)^0,f,c
-  5535   000926                     l3239:
+  5535   000926                     l3227:
   5536   000926  C00C  F006         	movff	___awdiv@quotient,?___awdiv
   5537   00092A  C00D  F007         	movff	___awdiv@quotient+1,?___awdiv+1
   5538   00092E  0012               	return		;funcret
@@ -5804,7 +5804,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5647   000C14  EF10  F006         	goto	u2700
   5648   000C18  EF0E  F006         	goto	u2701
   5649   000C1C                     u2701:
-  5650   000C1C  EF16  F006         	goto	l3477
+  5650   000C1C  EF16  F006         	goto	l3465
   5651   000C20                     u2700:
   5652   000C20  6C06               	negf	___awmod@dividend^0,c
   5653   000C22  1E07               	comf	(___awmod@dividend+1)^0,f,c
@@ -5812,42 +5812,42 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5655   000C26  2A07               	incf	(___awmod@dividend+1)^0,f,c
   5656   000C28  0E01               	movlw	1
   5657   000C2A  6E0B               	movwf	___awmod@sign^0,c
-  5658   000C2C                     l3477:
+  5658   000C2C                     l3465:
   5659   000C2C  BE09               	btfsc	(___awmod@divisor+1)^0,7,c
   5660   000C2E  EF1D  F006         	goto	u2710
   5661   000C32  EF1B  F006         	goto	u2711
   5662   000C36                     u2711:
-  5663   000C36  EF21  F006         	goto	l3481
+  5663   000C36  EF21  F006         	goto	l3469
   5664   000C3A                     u2710:
   5665   000C3A  6C08               	negf	___awmod@divisor^0,c
   5666   000C3C  1E09               	comf	(___awmod@divisor+1)^0,f,c
   5667   000C3E  B0D8               	btfsc	status,0,c
   5668   000C40  2A09               	incf	(___awmod@divisor+1)^0,f,c
-  5669   000C42                     l3481:
+  5669   000C42                     l3469:
   5670   000C42  5008               	movf	___awmod@divisor^0,w,c
   5671   000C44  1009               	iorwf	(___awmod@divisor+1)^0,w,c
   5672   000C46  B4D8               	btfsc	status,2,c
   5673   000C48  EF28  F006         	goto	u2721
   5674   000C4C  EF2A  F006         	goto	u2720
   5675   000C50                     u2721:
-  5676   000C50  EF4E  F006         	goto	l3497
+  5676   000C50  EF4E  F006         	goto	l3485
   5677   000C54                     u2720:
   5678   000C54  0E01               	movlw	1
   5679   000C56  6E0A               	movwf	___awmod@counter^0,c
-  5680   000C58  EF32  F006         	goto	l3487
-  5681   000C5C                     l3485:
+  5680   000C58  EF32  F006         	goto	l3475
+  5681   000C5C                     l3473:
   5682   000C5C  90D8               	bcf	status,0,c
   5683   000C5E  3608               	rlcf	___awmod@divisor^0,f,c
   5684   000C60  3609               	rlcf	(___awmod@divisor+1)^0,f,c
   5685   000C62  2A0A               	incf	___awmod@counter^0,f,c
-  5686   000C64                     l3487:
+  5686   000C64                     l3475:
   5687   000C64  AE09               	btfss	(___awmod@divisor+1)^0,7,c
   5688   000C66  EF37  F006         	goto	u2731
   5689   000C6A  EF39  F006         	goto	u2730
   5690   000C6E                     u2731:
-  5691   000C6E  EF2E  F006         	goto	l3485
+  5691   000C6E  EF2E  F006         	goto	l3473
   5692   000C72                     u2730:
-  5693   000C72                     l3489:
+  5693   000C72                     l3477:
   5694   000C72  5008               	movf	___awmod@divisor^0,w,c
   5695   000C74  5C06               	subwf	___awmod@dividend^0,w,c
   5696   000C76  5009               	movf	(___awmod@divisor+1)^0,w,c
@@ -5856,31 +5856,31 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5699   000C7C  EF42  F006         	goto	u2741
   5700   000C80  EF44  F006         	goto	u2740
   5701   000C84                     u2741:
-  5702   000C84  EF48  F006         	goto	l3493
+  5702   000C84  EF48  F006         	goto	l3481
   5703   000C88                     u2740:
   5704   000C88  5008               	movf	___awmod@divisor^0,w,c
   5705   000C8A  5E06               	subwf	___awmod@dividend^0,f,c
   5706   000C8C  5009               	movf	(___awmod@divisor+1)^0,w,c
   5707   000C8E  5A07               	subwfb	(___awmod@dividend+1)^0,f,c
-  5708   000C90                     l3493:
+  5708   000C90                     l3481:
   5709   000C90  90D8               	bcf	status,0,c
   5710   000C92  3209               	rrcf	(___awmod@divisor+1)^0,f,c
   5711   000C94  3208               	rrcf	___awmod@divisor^0,f,c
   5712   000C96  2E0A               	decfsz	___awmod@counter^0,f,c
-  5713   000C98  EF39  F006         	goto	l3489
-  5714   000C9C                     l3497:
+  5713   000C98  EF39  F006         	goto	l3477
+  5714   000C9C                     l3485:
   5715   000C9C  500B               	movf	___awmod@sign^0,w,c
   5716   000C9E  B4D8               	btfsc	status,2,c
   5717   000CA0  EF54  F006         	goto	u2751
   5718   000CA4  EF56  F006         	goto	u2750
   5719   000CA8                     u2751:
-  5720   000CA8  EF5A  F006         	goto	l3501
+  5720   000CA8  EF5A  F006         	goto	l3489
   5721   000CAC                     u2750:
   5722   000CAC  6C06               	negf	___awmod@dividend^0,c
   5723   000CAE  1E07               	comf	(___awmod@dividend+1)^0,f,c
   5724   000CB0  B0D8               	btfsc	status,0,c
   5725   000CB2  2A07               	incf	(___awmod@dividend+1)^0,f,c
-  5726   000CB4                     l3501:
+  5726   000CB4                     l3489:
   5727   000CB4  C006  F006         	movff	___awmod@dividend,?___awmod
   5728   000CB8  C007  F007         	movff	___awmod@dividend+1,?___awmod+1
   5729   000CBC  0012               	return		;funcret
@@ -5889,7 +5889,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5732                           
   5733 ;; *************** function _clearAlarm *****************
   5734 ;; Defined at:
-  5735 ;;		line 197 in file "main.c"
+  5735 ;;		line 196 in file "main.c"
   5736 ;; Parameters:    Size  Location     Type
   5737 ;;		None
   5738 ;; Auto vars:     Size  Location     Type
@@ -5929,12 +5929,12 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5767   001120                     _clearAlarm:
   5768                           	callstack 23
   5769   001120                     
-  5770                           ;main.c: 199:     alarmTriggered = 0;
+  5770                           ;main.c: 198:     alarmTriggered = 0;
   5771   001120  0E00               	movlw	0
   5772   001122  0100               	movlb	0	; () banked
   5773   001124  6FA5               	movwf	_alarmTriggered& (0+255),b
   5774                           
-  5775                           ;main.c: 200:     alarmSet = 0;
+  5775                           ;main.c: 199:     alarmSet = 0;
   5776   001126  0E00               	movlw	0
   5777   001128  6FA7               	movwf	_alarmSet& (0+255),b
   5778   00112A                     
@@ -6494,8 +6494,8 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   6286   001136  0E62               	movlw	98
   6287   001138  6ED3               	movwf	211,c	;volatile
   6288                           
-  6289                           ;mcc_generated_files/mcc.c: 125:     OSCTUNE = 0x00;
-  6290   00113A  0E00               	movlw	0
+  6289                           ;mcc_generated_files/mcc.c: 125:     OSCTUNE = 0xC4;
+  6290   00113A  0EC4               	movlw	196
   6291   00113C  6E9B               	movwf	155,c	;volatile
   6292   00113E  0012               	return		;funcret
   6293   001140                     __end_of_OSCILLATOR_Initialize:
@@ -6888,7 +6888,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   6649                           
   6650 ;; *************** function _btGetData *****************
   6651 ;; Defined at:
-  6652 ;;		line 344 in file "main.c"
+  6652 ;;		line 343 in file "main.c"
   6653 ;; Parameters:    Size  Location     Type
   6654 ;;  rcv             1    wreg     unsigned char 
   6655 ;; Auto vars:     Size  Location     Type
@@ -6930,61 +6930,61 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   6686                           ;btGetData@rcv stored from wreg
   6687   000CBE  6E01               	movwf	btGetData@rcv^0,c
   6688   000CC0                     
-  6689                           ;main.c: 345:     if(rcv == 'H' && uartBufferIndex == 0) {
+  6689                           ;main.c: 344:     if(rcv == 'H' && uartBufferIndex == 0) {
   6690   000CC0  0E48               	movlw	72
   6691   000CC2  1801               	xorwf	btGetData@rcv^0,w,c
   6692   000CC4  A4D8               	btfss	status,2,c
   6693   000CC6  EF67  F006         	goto	i2u174_41
   6694   000CCA  EF69  F006         	goto	i2u174_40
   6695   000CCE                     i2u174_41:
-  6696   000CCE  EF7A  F006         	goto	i2l2853
+  6696   000CCE  EF7A  F006         	goto	i2l2841
   6697   000CD2                     i2u174_40:
   6698   000CD2  5054               	movf	_uartBufferIndex^0,w,c
   6699   000CD4  A4D8               	btfss	status,2,c
   6700   000CD6  EF6F  F006         	goto	i2u175_41
   6701   000CDA  EF71  F006         	goto	i2u175_40
   6702   000CDE                     i2u175_41:
-  6703   000CDE  EF7A  F006         	goto	i2l2853
+  6703   000CDE  EF7A  F006         	goto	i2l2841
   6704   000CE2                     i2u175_40:
   6705   000CE2                     
-  6706                           ;main.c: 346:         uartBuffer[uartBufferIndex] = 'H';
+  6706                           ;main.c: 345:         uartBuffer[uartBufferIndex] = 'H';
   6707   000CE2  5054               	movf	_uartBufferIndex^0,w,c
   6708   000CE4  0F80               	addlw	low _uartBuffer
   6709   000CE6  6ED9               	movwf	fsr2l,c
   6710   000CE8  6ADA               	clrf	fsr2h,c
   6711   000CEA  0E48               	movlw	72
   6712   000CEC  6EDF               	movwf	indf2,c
-  6713   000CEE                     i2l2851:
+  6713   000CEE                     i2l2839:
   6714                           
-  6715                           ;main.c: 347:         uartBufferIndex++;
+  6715                           ;main.c: 346:         uartBufferIndex++;
   6716   000CEE  2A54               	incf	_uartBufferIndex^0,f,c
   6717                           
-  6718                           ;main.c: 348:     }
+  6718                           ;main.c: 347:     }
   6719   000CF0  EFAD  F006         	goto	i2l553
-  6720   000CF4                     i2l2853:
+  6720   000CF4                     i2l2841:
   6721   000CF4  5054               	movf	_uartBufferIndex^0,w,c
   6722   000CF6  B4D8               	btfsc	status,2,c
   6723   000CF8  EF80  F006         	goto	i2u176_41
   6724   000CFC  EF82  F006         	goto	i2u176_40
   6725   000D00                     i2u176_41:
-  6726   000D00  EF92  F006         	goto	i2l2861
+  6726   000D00  EF92  F006         	goto	i2l2849
   6727   000D04                     i2u176_40:
   6728   000D04  0E07               	movlw	7
   6729   000D06  6054               	cpfslt	_uartBufferIndex^0,c
   6730   000D08  EF88  F006         	goto	i2u177_41
   6731   000D0C  EF8A  F006         	goto	i2u177_40
   6732   000D10                     i2u177_41:
-  6733   000D10  EF92  F006         	goto	i2l2861
+  6733   000D10  EF92  F006         	goto	i2l2849
   6734   000D14                     i2u177_40:
   6735   000D14                     
-  6736                           ;main.c: 350:         uartBuffer[uartBufferIndex++] = rcv;
+  6736                           ;main.c: 349:         uartBuffer[uartBufferIndex++] = rcv;
   6737   000D14  5054               	movf	_uartBufferIndex^0,w,c
   6738   000D16  0F80               	addlw	low _uartBuffer
   6739   000D18  6ED9               	movwf	fsr2l,c
   6740   000D1A  6ADA               	clrf	fsr2h,c
   6741   000D1C  C001  FFDF         	movff	btGetData@rcv,indf2
-  6742   000D20  EF77  F006         	goto	i2l2851
-  6743   000D24                     i2l2861:
+  6742   000D20  EF77  F006         	goto	i2l2839
+  6743   000D24                     i2l2849:
   6744   000D24  0E07               	movlw	7
   6745   000D26  1854               	xorwf	_uartBufferIndex^0,w,c
   6746   000D28  A4D8               	btfss	status,2,c
@@ -6994,7 +6994,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   6750   000D32  EFAD  F006         	goto	i2l553
   6751   000D36                     i2u178_40:
   6752   000D36                     
-  6753                           ;main.c: 353:         if(rcv == ';') {
+  6753                           ;main.c: 352:         if(rcv == ';') {
   6754   000D36  0E3B               	movlw	59
   6755   000D38  1801               	xorwf	btGetData@rcv^0,w,c
   6756   000D3A  A4D8               	btfss	status,2,c
@@ -7004,16 +7004,16 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   6760   000D44  EFAD  F006         	goto	i2l550
   6761   000D48                     i2u179_40:
   6762   000D48                     
-  6763                           ;main.c: 354:             uartBuffer[6] = ';';
+  6763                           ;main.c: 353:             uartBuffer[6] = ';';
   6764   000D48  0E3B               	movlw	59
   6765   000D4A  0100               	movlb	0	; () banked
   6766   000D4C  6F86               	movwf	(_uartBuffer+6)& (0+255),b
   6767                           
-  6768                           ;main.c: 355:             uartBufferIndex = 0;
+  6768                           ;main.c: 354:             uartBufferIndex = 0;
   6769   000D4E  0E00               	movlw	0
   6770   000D50  6E54               	movwf	_uartBufferIndex^0,c
   6771                           
-  6772                           ;main.c: 356:             btTimeSet = 1;
+  6772                           ;main.c: 355:             btTimeSet = 1;
   6773   000D52  0E01               	movlw	1
   6774   000D54  6FA2               	movwf	_btTimeSet& (0+255),b
   6775   000D56  EFAD  F006         	goto	i2l553
@@ -7242,295 +7242,286 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   6977   000ECC                     _calculateTime:
   6978                           	callstack 20
   6979   000ECC                     
-  6980                           ;main.c: 112:     seconds++;
+  6980                           ;main.c: 113:     if (++seconds >= 60) {
   6981   000ECC  0100               	movlb	0	; () banked
   6982   000ECE  2BAA               	incf	_seconds& (0+255),f,b
-  6983   000ED0                     
-  6984                           ; BSR set to: 0
-  6985                           ;main.c: 113:     if (seconds >= 60) {
-  6986   000ED0  0E3B               	movlw	59
-  6987   000ED2  65AA               	cpfsgt	_seconds& (0+255),b
-  6988   000ED4  EF6E  F007         	goto	i2u130_41
-  6989   000ED8  EF70  F007         	goto	i2u130_40
-  6990   000EDC                     i2u130_41:
-  6991   000EDC  EF88  F007         	goto	i2l483
-  6992   000EE0                     i2u130_40:
-  6993   000EE0                     
-  6994                           ; BSR set to: 0
-  6995                           ;main.c: 114:         seconds = 0;
-  6996   000EE0  0E00               	movlw	0
-  6997   000EE2  6FAA               	movwf	_seconds& (0+255),b
-  6998   000EE4                     
-  6999                           ; BSR set to: 0
-  7000                           ;main.c: 115:         minutes++;
-  7001   000EE4  2BAB               	incf	_minutes& (0+255),f,b
-  7002   000EE6                     
-  7003                           ; BSR set to: 0
-  7004                           ;main.c: 116:         if (minutes >= 60) {
-  7005   000EE6  0E3B               	movlw	59
-  7006   000EE8  65AB               	cpfsgt	_minutes& (0+255),b
-  7007   000EEA  EF79  F007         	goto	i2u131_41
-  7008   000EEE  EF7B  F007         	goto	i2u131_40
-  7009   000EF2                     i2u131_41:
-  7010   000EF2  EF88  F007         	goto	i2l483
-  7011   000EF6                     i2u131_40:
-  7012   000EF6                     
-  7013                           ; BSR set to: 0
-  7014                           ;main.c: 117:             minutes = 0;
-  7015   000EF6  0E00               	movlw	0
-  7016   000EF8  6FAB               	movwf	_minutes& (0+255),b
-  7017   000EFA                     
-  7018                           ; BSR set to: 0
-  7019                           ;main.c: 118:             hours++;
-  7020   000EFA  2BAC               	incf	_hours& (0+255),f,b
-  7021   000EFC                     
-  7022                           ; BSR set to: 0
-  7023                           ;main.c: 119:             if (hours >= 24) {
-  7024   000EFC  0E17               	movlw	23
-  7025   000EFE  65AC               	cpfsgt	_hours& (0+255),b
-  7026   000F00  EF84  F007         	goto	i2u132_41
-  7027   000F04  EF86  F007         	goto	i2u132_40
-  7028   000F08                     i2u132_41:
-  7029   000F08  EF88  F007         	goto	i2l483
-  7030   000F0C                     i2u132_40:
-  7031   000F0C                     
-  7032                           ; BSR set to: 0
-  7033                           ;main.c: 120:                 hours = 0;
-  7034   000F0C  0E00               	movlw	0
-  7035   000F0E  6FAC               	movwf	_hours& (0+255),b
-  7036   000F10                     i2l483:
-  7037                           
-  7038                           ; BSR set to: 0
-  7039   000F10  0012               	return		;funcret
-  7040   000F12                     __end_of_calculateTime:
-  7041                           	callstack 0
-  7042                           
-  7043                           	psect	rparam
-  7044   000000                     
-  7045                           	psect	temp
-  7046   000059                     btemp:
-  7047                           	callstack 0
-  7048   000059                     	ds	1
-  7049   000000                     int$flags	set	btemp
-  7050   000000                     wtemp8	set	btemp+1
-  7051   000000                     ttemp5	set	btemp+1
-  7052   000000                     ttemp6	set	btemp+4
-  7053   000000                     ttemp7	set	btemp+8
-  7054                           
-  7055                           	psect	idloc
-  7056                           
-  7057                           ;Config register IDLOC0 @ 0x200000
-  7058                           ;	unspecified, using default values
-  7059   200000                     	org	2097152
-  7060   200000  FF                 	db	255
-  7061                           
-  7062                           ;Config register IDLOC1 @ 0x200001
-  7063                           ;	unspecified, using default values
-  7064   200001                     	org	2097153
-  7065   200001  FF                 	db	255
-  7066                           
-  7067                           ;Config register IDLOC2 @ 0x200002
-  7068                           ;	unspecified, using default values
-  7069   200002                     	org	2097154
-  7070   200002  FF                 	db	255
-  7071                           
-  7072                           ;Config register IDLOC3 @ 0x200003
-  7073                           ;	unspecified, using default values
-  7074   200003                     	org	2097155
-  7075   200003  FF                 	db	255
-  7076                           
-  7077                           ;Config register IDLOC4 @ 0x200004
-  7078                           ;	unspecified, using default values
-  7079   200004                     	org	2097156
-  7080   200004  FF                 	db	255
-  7081                           
-  7082                           ;Config register IDLOC5 @ 0x200005
-  7083                           ;	unspecified, using default values
-  7084   200005                     	org	2097157
-  7085   200005  FF                 	db	255
-  7086                           
-  7087                           ;Config register IDLOC6 @ 0x200006
-  7088                           ;	unspecified, using default values
-  7089   200006                     	org	2097158
-  7090   200006  FF                 	db	255
-  7091                           
-  7092                           ;Config register IDLOC7 @ 0x200007
-  7093                           ;	unspecified, using default values
-  7094   200007                     	org	2097159
-  7095   200007  FF                 	db	255
-  7096                           
-  7097                           	psect	config
-  7098                           
-  7099                           ; Padding undefined space
-  7100   300000                     	org	3145728
-  7101   300000  FF                 	db	255
-  7102                           
-  7103                           ;Config register CONFIG1H @ 0x300001
-  7104                           ;	Oscillator Selection bits
-  7105                           ;	FOSC = INTIO67, Internal oscillator block, port function on RA6 and RA7
-  7106                           ;	Fail-Safe Clock Monitor Enable bit
-  7107                           ;	FCMEN = OFF, Fail-Safe Clock Monitor disabled
-  7108                           ;	Internal/External Oscillator Switchover bit
-  7109                           ;	IESO = OFF, Oscillator Switchover mode disabled
-  7110   300001                     	org	3145729
-  7111   300001  08                 	db	8
-  7112                           
-  7113                           ;Config register CONFIG2L @ 0x300002
-  7114                           ;	Power-up Timer Enable bit
-  7115                           ;	PWRTEN = OFF, PWRT disabled
-  7116                           ;	Brown-out Reset Enable bits
-  7117                           ;	BOREN = SBORDIS, Brown-out Reset enabled in hardware only (SBOREN is disabled)
-  7118                           ;	Brown Out Reset Voltage bits
-  7119                           ;	BORV = 18, VBOR set to 1.8 V nominal
-  7120   300002                     	org	3145730
-  7121   300002  1F                 	db	31
-  7122                           
-  7123                           ;Config register CONFIG2H @ 0x300003
-  7124                           ;	Watchdog Timer Enable bit
-  7125                           ;	WDTEN = OFF, WDT is controlled by SWDTEN bit of the WDTCON register
-  7126                           ;	Watchdog Timer Postscale Select bits
-  7127                           ;	WDTPS = 32768, 1:32768
-  7128   300003                     	org	3145731
-  7129   300003  1E                 	db	30
-  7130                           
-  7131                           ; Padding undefined space
-  7132   300004                     	org	3145732
-  7133   300004  FF                 	db	255
-  7134                           
-  7135                           ;Config register CONFIG3H @ 0x300005
-  7136                           ;	CCP2 MUX bit
-  7137                           ;	CCP2MX = PORTC, CCP2 input/output is multiplexed with RC1
-  7138                           ;	PORTB A/D Enable bit
-  7139                           ;	PBADEN = OFF, PORTB<4:0> pins are configured as digital I/O on Reset
-  7140                           ;	Low-Power Timer1 Oscillator Enable bit
-  7141                           ;	LPT1OSC = OFF, Timer1 configured for higher power operation
-  7142                           ;	HFINTOSC Fast Start-up
-  7143                           ;	HFOFST = ON, HFINTOSC starts clocking the CPU without waiting for the oscillator to st
+  6983   000ED0  0E3B               	movlw	59
+  6984   000ED2  65AA               	cpfsgt	_seconds& (0+255),b
+  6985   000ED4  EF6E  F007         	goto	i2u130_41
+  6986   000ED8  EF70  F007         	goto	i2u130_40
+  6987   000EDC                     i2u130_41:
+  6988   000EDC  EF88  F007         	goto	i2l483
+  6989   000EE0                     i2u130_40:
+  6990   000EE0                     
+  6991                           ; BSR set to: 0
+  6992                           ;main.c: 114:         seconds = 0;
+  6993   000EE0  0E00               	movlw	0
+  6994   000EE2  6FAA               	movwf	_seconds& (0+255),b
+  6995   000EE4                     
+  6996                           ; BSR set to: 0
+  6997                           ;main.c: 116:         if (++minutes >= 60) {
+  6998   000EE4  2BAB               	incf	_minutes& (0+255),f,b
+  6999   000EE6  0E3B               	movlw	59
+  7000   000EE8  65AB               	cpfsgt	_minutes& (0+255),b
+  7001   000EEA  EF79  F007         	goto	i2u131_41
+  7002   000EEE  EF7B  F007         	goto	i2u131_40
+  7003   000EF2                     i2u131_41:
+  7004   000EF2  EF88  F007         	goto	i2l483
+  7005   000EF6                     i2u131_40:
+  7006   000EF6                     
+  7007                           ; BSR set to: 0
+  7008                           ;main.c: 117:             minutes = 0;
+  7009   000EF6  0E00               	movlw	0
+  7010   000EF8  6FAB               	movwf	_minutes& (0+255),b
+  7011   000EFA                     
+  7012                           ; BSR set to: 0
+  7013                           ;main.c: 119:             if (++hours >= 24) {
+  7014   000EFA  2BAC               	incf	_hours& (0+255),f,b
+  7015   000EFC  0E17               	movlw	23
+  7016   000EFE  65AC               	cpfsgt	_hours& (0+255),b
+  7017   000F00  EF84  F007         	goto	i2u132_41
+  7018   000F04  EF86  F007         	goto	i2u132_40
+  7019   000F08                     i2u132_41:
+  7020   000F08  EF88  F007         	goto	i2l483
+  7021   000F0C                     i2u132_40:
+  7022   000F0C                     
+  7023                           ; BSR set to: 0
+  7024                           ;main.c: 120:                 hours = 0;
+  7025   000F0C  0E00               	movlw	0
+  7026   000F0E  6FAC               	movwf	_hours& (0+255),b
+  7027   000F10                     i2l483:
+  7028                           
+  7029                           ; BSR set to: 0
+  7030   000F10  0012               	return		;funcret
+  7031   000F12                     __end_of_calculateTime:
+  7032                           	callstack 0
+  7033                           
+  7034                           	psect	rparam
+  7035   000000                     
+  7036                           	psect	temp
+  7037   000059                     btemp:
+  7038                           	callstack 0
+  7039   000059                     	ds	1
+  7040   000000                     int$flags	set	btemp
+  7041   000000                     wtemp8	set	btemp+1
+  7042   000000                     ttemp5	set	btemp+1
+  7043   000000                     ttemp6	set	btemp+4
+  7044   000000                     ttemp7	set	btemp+8
+  7045                           
+  7046                           	psect	idloc
+  7047                           
+  7048                           ;Config register IDLOC0 @ 0x200000
+  7049                           ;	unspecified, using default values
+  7050   200000                     	org	2097152
+  7051   200000  FF                 	db	255
+  7052                           
+  7053                           ;Config register IDLOC1 @ 0x200001
+  7054                           ;	unspecified, using default values
+  7055   200001                     	org	2097153
+  7056   200001  FF                 	db	255
+  7057                           
+  7058                           ;Config register IDLOC2 @ 0x200002
+  7059                           ;	unspecified, using default values
+  7060   200002                     	org	2097154
+  7061   200002  FF                 	db	255
+  7062                           
+  7063                           ;Config register IDLOC3 @ 0x200003
+  7064                           ;	unspecified, using default values
+  7065   200003                     	org	2097155
+  7066   200003  FF                 	db	255
+  7067                           
+  7068                           ;Config register IDLOC4 @ 0x200004
+  7069                           ;	unspecified, using default values
+  7070   200004                     	org	2097156
+  7071   200004  FF                 	db	255
+  7072                           
+  7073                           ;Config register IDLOC5 @ 0x200005
+  7074                           ;	unspecified, using default values
+  7075   200005                     	org	2097157
+  7076   200005  FF                 	db	255
+  7077                           
+  7078                           ;Config register IDLOC6 @ 0x200006
+  7079                           ;	unspecified, using default values
+  7080   200006                     	org	2097158
+  7081   200006  FF                 	db	255
+  7082                           
+  7083                           ;Config register IDLOC7 @ 0x200007
+  7084                           ;	unspecified, using default values
+  7085   200007                     	org	2097159
+  7086   200007  FF                 	db	255
+  7087                           
+  7088                           	psect	config
+  7089                           
+  7090                           ; Padding undefined space
+  7091   300000                     	org	3145728
+  7092   300000  FF                 	db	255
+  7093                           
+  7094                           ;Config register CONFIG1H @ 0x300001
+  7095                           ;	Oscillator Selection bits
+  7096                           ;	FOSC = INTIO67, Internal oscillator block, port function on RA6 and RA7
+  7097                           ;	Fail-Safe Clock Monitor Enable bit
+  7098                           ;	FCMEN = OFF, Fail-Safe Clock Monitor disabled
+  7099                           ;	Internal/External Oscillator Switchover bit
+  7100                           ;	IESO = OFF, Oscillator Switchover mode disabled
+  7101   300001                     	org	3145729
+  7102   300001  08                 	db	8
+  7103                           
+  7104                           ;Config register CONFIG2L @ 0x300002
+  7105                           ;	Power-up Timer Enable bit
+  7106                           ;	PWRTEN = OFF, PWRT disabled
+  7107                           ;	Brown-out Reset Enable bits
+  7108                           ;	BOREN = SBORDIS, Brown-out Reset enabled in hardware only (SBOREN is disabled)
+  7109                           ;	Brown Out Reset Voltage bits
+  7110                           ;	BORV = 18, VBOR set to 1.8 V nominal
+  7111   300002                     	org	3145730
+  7112   300002  1F                 	db	31
+  7113                           
+  7114                           ;Config register CONFIG2H @ 0x300003
+  7115                           ;	Watchdog Timer Enable bit
+  7116                           ;	WDTEN = OFF, WDT is controlled by SWDTEN bit of the WDTCON register
+  7117                           ;	Watchdog Timer Postscale Select bits
+  7118                           ;	WDTPS = 32768, 1:32768
+  7119   300003                     	org	3145731
+  7120   300003  1E                 	db	30
+  7121                           
+  7122                           ; Padding undefined space
+  7123   300004                     	org	3145732
+  7124   300004  FF                 	db	255
+  7125                           
+  7126                           ;Config register CONFIG3H @ 0x300005
+  7127                           ;	CCP2 MUX bit
+  7128                           ;	CCP2MX = PORTC, CCP2 input/output is multiplexed with RC1
+  7129                           ;	PORTB A/D Enable bit
+  7130                           ;	PBADEN = OFF, PORTB<4:0> pins are configured as digital I/O on Reset
+  7131                           ;	Low-Power Timer1 Oscillator Enable bit
+  7132                           ;	LPT1OSC = OFF, Timer1 configured for higher power operation
+  7133                           ;	HFINTOSC Fast Start-up
+  7134                           ;	HFOFST = ON, HFINTOSC starts clocking the CPU without waiting for the oscillator to st
       +                          ablize.
-  7144                           ;	MCLR Pin Enable bit
-  7145                           ;	MCLRE = OFF, RE3 input pin enabled; MCLR disabled
-  7146   300005                     	org	3145733
-  7147   300005  09                 	db	9
-  7148                           
-  7149                           ;Config register CONFIG4L @ 0x300006
-  7150                           ;	Stack Full/Underflow Reset Enable bit
-  7151                           ;	STVREN = ON, Stack full/underflow will cause Reset
-  7152                           ;	Single-Supply ICSP Enable bit
-  7153                           ;	LVP = OFF, Single-Supply ICSP disabled
-  7154                           ;	Extended Instruction Set Enable bit
-  7155                           ;	XINST = OFF, Instruction set extension and Indexed Addressing mode disabled (Legacy mo
+  7135                           ;	MCLR Pin Enable bit
+  7136                           ;	MCLRE = OFF, RE3 input pin enabled; MCLR disabled
+  7137   300005                     	org	3145733
+  7138   300005  09                 	db	9
+  7139                           
+  7140                           ;Config register CONFIG4L @ 0x300006
+  7141                           ;	Stack Full/Underflow Reset Enable bit
+  7142                           ;	STVREN = ON, Stack full/underflow will cause Reset
+  7143                           ;	Single-Supply ICSP Enable bit
+  7144                           ;	LVP = OFF, Single-Supply ICSP disabled
+  7145                           ;	Extended Instruction Set Enable bit
+  7146                           ;	XINST = OFF, Instruction set extension and Indexed Addressing mode disabled (Legacy mo
       +                          de)
-  7156                           ;	Background Debugger Enable bit
-  7157                           ;	DEBUG = OFF, Background debugger disabled, RB6 and RB7 configured as general purpose I
+  7147                           ;	Background Debugger Enable bit
+  7148                           ;	DEBUG = OFF, Background debugger disabled, RB6 and RB7 configured as general purpose I
       +                          /O pins
-  7158   300006                     	org	3145734
-  7159   300006  81                 	db	129
-  7160                           
-  7161                           ; Padding undefined space
-  7162   300007                     	org	3145735
-  7163   300007  FF                 	db	255
-  7164                           
-  7165                           ;Config register CONFIG5L @ 0x300008
-  7166                           ;	Code Protection Block 0
-  7167                           ;	CP0 = OFF, Block 0 (000800-003FFFh) not code-protected
-  7168                           ;	Code Protection Block 1
-  7169                           ;	CP1 = OFF, Block 1 (004000-007FFFh) not code-protected
-  7170                           ;	Code Protection Block 2
-  7171                           ;	CP2 = OFF, Block 2 (008000-00BFFFh) not code-protected
-  7172                           ;	Code Protection Block 3
-  7173                           ;	CP3 = OFF, Block 3 (00C000-00FFFFh) not code-protected
-  7174   300008                     	org	3145736
-  7175   300008  0F                 	db	15
-  7176                           
-  7177                           ;Config register CONFIG5H @ 0x300009
-  7178                           ;	Boot Block Code Protection bit
-  7179                           ;	CPB = OFF, Boot block (000000-0007FFh) not code-protected
-  7180                           ;	Data EEPROM Code Protection bit
-  7181                           ;	CPD = OFF, Data EEPROM not code-protected
-  7182   300009                     	org	3145737
-  7183   300009  C0                 	db	192
-  7184                           
-  7185                           ;Config register CONFIG6L @ 0x30000A
-  7186                           ;	Write Protection Block 0
-  7187                           ;	WRT0 = OFF, Block 0 (000800-003FFFh) not write-protected
-  7188                           ;	Write Protection Block 1
-  7189                           ;	WRT1 = OFF, Block 1 (004000-007FFFh) not write-protected
-  7190                           ;	Write Protection Block 2
-  7191                           ;	WRT2 = OFF, Block 2 (008000-00BFFFh) not write-protected
-  7192                           ;	Write Protection Block 3
-  7193                           ;	WRT3 = OFF, Block 3 (00C000h-00FFFFh) not write-protected
-  7194   30000A                     	org	3145738
-  7195   30000A  0F                 	db	15
-  7196                           
-  7197                           ;Config register CONFIG6H @ 0x30000B
-  7198                           ;	Configuration Register Write Protection bit
-  7199                           ;	WRTC = OFF, Configuration registers (300000-3000FFh) not write-protected
-  7200                           ;	Boot Block Write Protection bit
-  7201                           ;	WRTB = OFF, Boot Block (000000-0007FFh) not write-protected
-  7202                           ;	Data EEPROM Write Protection bit
-  7203                           ;	WRTD = OFF, Data EEPROM not write-protected
-  7204   30000B                     	org	3145739
-  7205   30000B  E0                 	db	224
-  7206                           
-  7207                           ;Config register CONFIG7L @ 0x30000C
-  7208                           ;	Table Read Protection Block 0
-  7209                           ;	EBTR0 = OFF, Block 0 (000800-003FFFh) not protected from table reads executed in other
+  7149   300006                     	org	3145734
+  7150   300006  81                 	db	129
+  7151                           
+  7152                           ; Padding undefined space
+  7153   300007                     	org	3145735
+  7154   300007  FF                 	db	255
+  7155                           
+  7156                           ;Config register CONFIG5L @ 0x300008
+  7157                           ;	Code Protection Block 0
+  7158                           ;	CP0 = OFF, Block 0 (000800-003FFFh) not code-protected
+  7159                           ;	Code Protection Block 1
+  7160                           ;	CP1 = OFF, Block 1 (004000-007FFFh) not code-protected
+  7161                           ;	Code Protection Block 2
+  7162                           ;	CP2 = OFF, Block 2 (008000-00BFFFh) not code-protected
+  7163                           ;	Code Protection Block 3
+  7164                           ;	CP3 = OFF, Block 3 (00C000-00FFFFh) not code-protected
+  7165   300008                     	org	3145736
+  7166   300008  0F                 	db	15
+  7167                           
+  7168                           ;Config register CONFIG5H @ 0x300009
+  7169                           ;	Boot Block Code Protection bit
+  7170                           ;	CPB = OFF, Boot block (000000-0007FFh) not code-protected
+  7171                           ;	Data EEPROM Code Protection bit
+  7172                           ;	CPD = OFF, Data EEPROM not code-protected
+  7173   300009                     	org	3145737
+  7174   300009  C0                 	db	192
+  7175                           
+  7176                           ;Config register CONFIG6L @ 0x30000A
+  7177                           ;	Write Protection Block 0
+  7178                           ;	WRT0 = OFF, Block 0 (000800-003FFFh) not write-protected
+  7179                           ;	Write Protection Block 1
+  7180                           ;	WRT1 = OFF, Block 1 (004000-007FFFh) not write-protected
+  7181                           ;	Write Protection Block 2
+  7182                           ;	WRT2 = OFF, Block 2 (008000-00BFFFh) not write-protected
+  7183                           ;	Write Protection Block 3
+  7184                           ;	WRT3 = OFF, Block 3 (00C000h-00FFFFh) not write-protected
+  7185   30000A                     	org	3145738
+  7186   30000A  0F                 	db	15
+  7187                           
+  7188                           ;Config register CONFIG6H @ 0x30000B
+  7189                           ;	Configuration Register Write Protection bit
+  7190                           ;	WRTC = OFF, Configuration registers (300000-3000FFh) not write-protected
+  7191                           ;	Boot Block Write Protection bit
+  7192                           ;	WRTB = OFF, Boot Block (000000-0007FFh) not write-protected
+  7193                           ;	Data EEPROM Write Protection bit
+  7194                           ;	WRTD = OFF, Data EEPROM not write-protected
+  7195   30000B                     	org	3145739
+  7196   30000B  E0                 	db	224
+  7197                           
+  7198                           ;Config register CONFIG7L @ 0x30000C
+  7199                           ;	Table Read Protection Block 0
+  7200                           ;	EBTR0 = OFF, Block 0 (000800-003FFFh) not protected from table reads executed in other
       +                           blocks
-  7210                           ;	Table Read Protection Block 1
-  7211                           ;	EBTR1 = OFF, Block 1 (004000-007FFFh) not protected from table reads executed in other
+  7201                           ;	Table Read Protection Block 1
+  7202                           ;	EBTR1 = OFF, Block 1 (004000-007FFFh) not protected from table reads executed in other
       +                           blocks
-  7212                           ;	Table Read Protection Block 2
-  7213                           ;	EBTR2 = OFF, Block 2 (008000-00BFFFh) not protected from table reads executed in other
+  7203                           ;	Table Read Protection Block 2
+  7204                           ;	EBTR2 = OFF, Block 2 (008000-00BFFFh) not protected from table reads executed in other
       +                           blocks
-  7214                           ;	Table Read Protection Block 3
-  7215                           ;	EBTR3 = OFF, Block 3 (00C000-00FFFFh) not protected from table reads executed in other
+  7205                           ;	Table Read Protection Block 3
+  7206                           ;	EBTR3 = OFF, Block 3 (00C000-00FFFFh) not protected from table reads executed in other
       +                           blocks
-  7216   30000C                     	org	3145740
-  7217   30000C  0F                 	db	15
-  7218                           
-  7219                           ;Config register CONFIG7H @ 0x30000D
-  7220                           ;	Boot Block Table Read Protection bit
-  7221                           ;	EBTRB = OFF, Boot Block (000000-0007FFh) not protected from table reads executed in ot
+  7207   30000C                     	org	3145740
+  7208   30000C  0F                 	db	15
+  7209                           
+  7210                           ;Config register CONFIG7H @ 0x30000D
+  7211                           ;	Boot Block Table Read Protection bit
+  7212                           ;	EBTRB = OFF, Boot Block (000000-0007FFh) not protected from table reads executed in ot
       +                          her blocks
-  7222   30000D                     	org	3145741
-  7223   30000D  40                 	db	64
-  7224                           tosu	equ	0xFFF
-  7225                           tosh	equ	0xFFE
-  7226                           tosl	equ	0xFFD
-  7227                           stkptr	equ	0xFFC
-  7228                           pclatu	equ	0xFFB
-  7229                           pclath	equ	0xFFA
-  7230                           pcl	equ	0xFF9
-  7231                           tblptru	equ	0xFF8
-  7232                           tblptrh	equ	0xFF7
-  7233                           tblptrl	equ	0xFF6
-  7234                           tablat	equ	0xFF5
-  7235                           prodh	equ	0xFF4
-  7236                           prodl	equ	0xFF3
-  7237                           indf0	equ	0xFEF
-  7238                           postinc0	equ	0xFEE
-  7239                           postdec0	equ	0xFED
-  7240                           preinc0	equ	0xFEC
-  7241                           plusw0	equ	0xFEB
-  7242                           fsr0h	equ	0xFEA
-  7243                           fsr0l	equ	0xFE9
-  7244                           wreg	equ	0xFE8
-  7245                           indf1	equ	0xFE7
-  7246                           postinc1	equ	0xFE6
-  7247                           postdec1	equ	0xFE5
-  7248                           preinc1	equ	0xFE4
-  7249                           plusw1	equ	0xFE3
-  7250                           fsr1h	equ	0xFE2
-  7251                           fsr1l	equ	0xFE1
-  7252                           bsr	equ	0xFE0
-  7253                           indf2	equ	0xFDF
-  7254                           postinc2	equ	0xFDE
-  7255                           postdec2	equ	0xFDD
-  7256                           preinc2	equ	0xFDC
-  7257                           plusw2	equ	0xFDB
-  7258                           fsr2h	equ	0xFDA
-  7259                           fsr2l	equ	0xFD9
-  7260                           status	equ	0xFD8
+  7213   30000D                     	org	3145741
+  7214   30000D  40                 	db	64
+  7215                           tosu	equ	0xFFF
+  7216                           tosh	equ	0xFFE
+  7217                           tosl	equ	0xFFD
+  7218                           stkptr	equ	0xFFC
+  7219                           pclatu	equ	0xFFB
+  7220                           pclath	equ	0xFFA
+  7221                           pcl	equ	0xFF9
+  7222                           tblptru	equ	0xFF8
+  7223                           tblptrh	equ	0xFF7
+  7224                           tblptrl	equ	0xFF6
+  7225                           tablat	equ	0xFF5
+  7226                           prodh	equ	0xFF4
+  7227                           prodl	equ	0xFF3
+  7228                           indf0	equ	0xFEF
+  7229                           postinc0	equ	0xFEE
+  7230                           postdec0	equ	0xFED
+  7231                           preinc0	equ	0xFEC
+  7232                           plusw0	equ	0xFEB
+  7233                           fsr0h	equ	0xFEA
+  7234                           fsr0l	equ	0xFE9
+  7235                           wreg	equ	0xFE8
+  7236                           indf1	equ	0xFE7
+  7237                           postinc1	equ	0xFE6
+  7238                           postdec1	equ	0xFE5
+  7239                           preinc1	equ	0xFE4
+  7240                           plusw1	equ	0xFE3
+  7241                           fsr1h	equ	0xFE2
+  7242                           fsr1l	equ	0xFE1
+  7243                           bsr	equ	0xFE0
+  7244                           indf2	equ	0xFDF
+  7245                           postinc2	equ	0xFDE
+  7246                           postdec2	equ	0xFDD
+  7247                           preinc2	equ	0xFDC
+  7248                           plusw2	equ	0xFDB
+  7249                           fsr2h	equ	0xFDA
+  7250                           fsr2l	equ	0xFD9
+  7251                           status	equ	0xFD8
 
 Data Sizes:
     Strings     6
@@ -8046,7 +8037,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.46 build 20240104201356 
-Symbol Table                                                                                   Wed Sep 11 18:06:25 2024
+Symbol Table                                                                                   Wed Sep 11 20:06:34 2024
 
                     __end_of_checkButtons 0332             ?_EUSART_SetRxInterruptHandler 0006  
                           _SPI_Initialize 1104                              ?_displayTime 0001  
@@ -8077,152 +8068,152 @@ Symbol Table                                                                    
                                      _PR2 0FCB       EUSART_SetRxInterruptHandler@handler 0006  
                             ___awmod@sign 000B                           _TMR2_Initialize 10E2  
                                      prod 0FF3                                       tosl 0FFD  
-                                     wreg 0FE8                                      l3201 0870  
-                                    l3211 08A0                                      l3203 087E  
-                                    l3221 08CE                                      l3213 08A4  
-                                    l3205 0886                                      l3301 04C6  
-                                    l3231 0902                                      l3223 08DC  
-                                    l3215 08AC                                      l3207 088A  
-                                    l3311 04F6                                      l3303 04D2  
-                                    l3233 0908                                      l3225 08E2  
-                                    l3217 08BE                                      l3209 0898  
-                                    l3321 056A                                      l3401 06BE  
-                                    l3227 08F8                                      l3219 08C6  
-                                    l3235 090E                                      l3251 0974  
-                                    l3243 0930                                      l3323 056E  
-                                    l3403 06C8                                      l3341 1140  
-                                    l3501 0CB4                                      l3237 091E  
-                                    l3229 0900                                      l3261 09B0  
-                                    l3245 0950                                      l3325 058A  
-                                    l3317 04FE                                      l3309 04DA  
-                                    l3421 0332                                      l3405 06CA  
-                                    l3413 0F1A                                      l3343 114A  
-                                    l3511 10A0                                      l3239 0926  
-                                    l3271 09CC                                      l3263 09B6  
-                                    l3247 0972                                      l3335 05B2  
-                                    l3327 058E                                      l3319 0536  
-                                    l3423 0348                                      l3351 10DE  
-                                    l3415 0F24                                      l3407 0F12  
-                                    l3513 10A2                                      l3521 1112  
-                                    l3505 1104                                      l3345 112C  
-                                    l3273 09D0                                      l3265 09C0  
-                                    l3257 097C                                      l3249 0972  
-                                    l3337 05D2                                      l3329 05AA  
-                                    l3441 0416                                      l3281 0F8E  
-                                    l3361 0614                                      l3601 0DC0  
-                                    l3417 0F28                                      l3507 115E  
-                                    l3515 10B0                                      l3523 111A  
-                                    l3531 0FB2                                      l3195 10B8  
-                                    l3267 09C0                                      l3259 0994  
-                                    l3339 05D6                                      l3451 0448  
-                                    l3443 0424                                      l3435 0366  
-                                    l3603 0B5A                                      l3291 0F9A  
-                                    l3283 0F92                                      l3275 0F7E  
-                                    l3371 0658                                      l3363 0618  
-                                    l3355 05F4                                      l3347 0FE6  
-                                    l3419 0F44                                      l3517 10B2  
-                                    l3509 1094                                      l3541 0FE0  
-                                    l3533 0FBA                                      l3525 10E2  
-                                    l3197 10BA                                      l3269 09C6  
-                                    l3453 044C                                      l3437 03EC  
-                                    l3429 035A                                      l3613 0BCE  
-                                    l3605 0BC2                                      l3349 10D0  
-                                    l3293 0F9C                                      l3285 0F94  
-                                    l3277 0F86                                      l3373 065C  
-                                    l3365 061C                                      l3357 060C  
-                                    l3701 09F0                                      l3621 06DE  
-                                    l3551 0EA2                                      l3543 0E7E  
-                                    l3519 1136                                      l3535 0FD0  
-                                    l3527 10EA                                      l3471 0C12  
-                                    l3199 086C                                      l3455 0450  
-                                    l3447 0436                                      l3439 040E  
-                                    l3463 0482                                      l3615 0BE2  
-                                    l3607 0BC6                                      l3295 0FA0  
-                                    l3287 0F96                                      l3279 0F8A  
-                                    l3391 0696                                      l3375 0660  
-                                    l3359 0614                                      l3711 0A50  
-                                    l3703 09F0                                      l3623 0702  
-                                    l3561 0EB6                                      l3553 0EA6  
-                                    l3545 0E82                                      l3537 0FD2  
-                                    l3529 10F0                                      l3481 0C42  
-                                    l3473 0C20                                      l3465 04C0  
-                                    l3449 0442                                      l3457 046C  
-                                    l3617 0BE6                                      l3297 0FA4  
-                                    l3289 0F98                                      l3393 069A  
-                                    l3385 0670                                      l3377 0664  
-                                    l3369 0644                                      l3801 0328  
-                                    l3721 009C                                      l3713 0A7C  
-                                    l3705 0A08                                      l3641 0768  
-                                    l3625 071C                                      l3633 0736  
-                                    l3563 0EBA                                      l3555 0EAA  
-                                    l3547 0E9A                                      l3539 0FD4  
-                                    l3467 1120                                      l3491 0C88  
-                                    l3483 0C54                                      l3475 0C28  
-                                    l3459 0470                                      l3619 0C02  
-                                    l3571 0AA6                                      l3299 0FA6  
-                                    l3395 06B2                                      l3387 067C  
-                                    l3379 066C                                      l3731 0102  
-                                    l3723 00AA                                      l3715 0A8C  
-                                    l3707 0A20                                      l3651 0E44  
-                                    l3643 0774                                      l3635 0742  
-                                    l3627 072A                                      l3811 0E20  
-                                    l3803 0DDA                                      l3565 0EBE  
-                                    l3557 0EAE                                      l3549 0E9E  
-                                    l3493 0C90                                      l3485 0C5C  
-                                    l3477 0C2C                                      l3469 0C0E  
-                                    l3581 0B1A                                      l3573 0B0E  
-                                    l3397 06BA                                      l3389 068E  
-                                    l3741 0154                                      l3733 010A  
-                                    l3725 00C4                                      l3717 0A90  
-                                    l3709 0A38                                      l3661 0E5A  
-                                    l3653 0E46                                      l3645 078A  
-                                    l3637 074E                                      l3629 072E  
-                                    l3813 0E24                                      l3805 0DEC  
-                                    l3901 07B4                                      l3567 0EC4  
-                                    l3559 0EB2                                      l3495 0C96  
-                                    l3487 0C64                                      l3479 0C3A  
-                                    l3583 0B2E                                      l3575 0B12  
-                                    l3399 06BC                                      l3751 01B8  
-                                    l3743 0162                                      l3735 0128  
-                                    l3727 00D2                                      l3719 0AA0  
-                                    l3663 0E5E                                      l3639 0764  
-                                    l3647 0790                                      l3807 0DFC  
-                                    l3911 07C4                                      l3903 07B8  
-                                    l3569 0EC8                                      l3681 1072  
-                                    l3489 0C72                                      l3497 0C9C  
-                                    l3585 0B32                                      l3761 0206  
-                                    l3745 0174                                      l3753 01BC  
-                                    l3729 00E4                                      l3737 012C  
-                                    l3649 0E2E                                      l3809 0E0E  
-                                    l3921 0802                                      l3913 07C8  
-                                    l3905 07BC                                      l3691 1086  
-                                    l3683 1076                                      l3499 0CAC  
-                                    l3587 0B4E                                      l3595 0D72  
-                                    l3771 026A                                      l3763 0216  
-                                    l3755 01CA                                      l3747 0192  
-                                    l3739 013A                                      l3659 0E4E  
-                                    l3931 0850                                      l3923 0814  
-                                    l3915 07CC                                      l3907 07BE  
-                                    l3693 108A                                      l3685 107A  
-                                    l3597 0D98                                      l3589 0D5C  
-                                    l3773 026E                                      l3781 02BA  
-                                    l3765 021A                                      l3757 01D4  
-                                    l3749 019A                                      l3933 0854  
-                                    l3925 082C                                      l3917 07DE  
-                                    l3909 07C0                                      l3695 108E  
-                                    l3687 107E                                      l3599 0D9C  
-                                    l3783 02C8                                      l3775 027C  
-                                    l3767 0230                                      l3759 01EE  
-                                    l3791 02F2                                      l3935 0858  
-                                    l3927 083C                                      l3919 07F0  
-                                    l3689 1082                                      l3697 115A  
-                                    l3793 030A                                      l3785 02D2  
-                                    l3777 0296                                      l3769 024A  
-                                    l3937 085C                                      l3929 084C  
-                                    l3795 030C                                      l3787 02DA  
-                                    l3699 0F4A                                      l3797 031E  
-                                    l3789 02EA                                      l3799 0322  
-                                    l3897 07A8                                      l3899 07B0  
+                                     wreg 0FE8                                      l3201 08A4  
+                                    l3211 08DC                                      l3203 08AC  
+                                    l3221 0908                                      l3213 08E2  
+                                    l3205 08BE                                      l3215 08F8  
+                                    l3207 08C6                                      l3223 090E  
+                                    l3231 0930                                      l3311 056E  
+                                    l3225 091E                                      l3217 0900  
+                                    l3209 08CE                                      l3233 0950  
+                                    l3313 058A                                      l3305 04FE  
+                                    l3401 0F1A                                      l3331 114A  
+                                    l3227 0926                                      l3219 0902  
+                                    l3251 09B6                                      l3235 0972  
+                                    l3323 05B2                                      l3315 058E  
+                                    l3307 0536                                      l3411 0348  
+                                    l3403 0F24                                      l3501 10A2  
+                                    l3333 112C                                      l3261 09D0  
+                                    l3253 09C0                                      l3245 097C  
+                                    l3237 0972                                      l3325 05D2  
+                                    l3317 05AA                                      l3309 056A  
+                                    l3405 0F28                                      l3503 10B0  
+                                    l3511 111A                                      l3183 10B8  
+                                    l3191 087E                                      l3255 09C0  
+                                    l3247 0994                                      l3239 0974  
+                                    l3327 05D6                                      l3431 0424  
+                                    l3423 0366                                      l3271 0F92  
+                                    l3263 0F7E                                      l3351 0618  
+                                    l3343 05F4                                      l3335 0FE6  
+                                    l3407 0F44                                      l3329 1140  
+                                    l3505 10B2                                      l3521 0FBA  
+                                    l3513 10E2                                      l3185 10BA  
+                                    l3193 0886                                      l3257 09C6  
+                                    l3249 09B0                                      l3441 044C  
+                                    l3425 03EC                                      l3417 035A  
+                                    l3409 0332                                      l3601 0BCE  
+                                    l3337 10D0                                      l3281 0F9C  
+                                    l3273 0F94                                      l3265 0F86  
+                                    l3361 065C                                      l3353 061C  
+                                    l3345 060C                                      l3531 0E7E  
+                                    l3507 1136                                      l3523 0FD0  
+                                    l3515 10EA                                      l3195 088A  
+                                    l3187 086C                                      l3259 09CC  
+                                    l3291 04D2                                      l3443 0450  
+                                    l3435 0436                                      l3427 040E  
+                                    l3451 0482                                      l3603 0BE2  
+                                    l3339 10DE                                      l3283 0FA0  
+                                    l3275 0F96                                      l3267 0F8A  
+                                    l3363 0660                                      l3347 0614  
+                                    l3611 0702                                      l3541 0EA6  
+                                    l3533 0E82                                      l3509 1112  
+                                    l3525 0FD2                                      l3517 10F0  
+                                    l3461 0C20                                      l3197 0898  
+                                    l3189 0870                                      l3453 04C0  
+                                    l3437 0442                                      l3445 046C  
+                                    l3429 0416                                      l3605 0BE6  
+                                    l3285 0FA4                                      l3277 0F98  
+                                    l3269 0F8E                                      l3381 069A  
+                                    l3373 0670                                      l3365 0664  
+                                    l3357 0644                                      l3349 0614  
+                                    l3701 0A7C                                      l3613 071C  
+                                    l3621 0736                                      l3551 0EBA  
+                                    l3543 0EAA                                      l3535 0E9A  
+                                    l3527 0FD4                                      l3519 0FB2  
+                                    l3455 1120                                      l3471 0C54  
+                                    l3463 0C28                                      l3199 08A0  
+                                    l3447 0470                                      l3439 0448  
+                                    l3607 0C02                                      l3287 0FA6  
+                                    l3279 0F9A                                      l3391 06C8  
+                                    l3383 06B2                                      l3375 067C  
+                                    l3367 066C                                      l3359 0658  
+                                    l3711 00AA                                      l3703 0A8C  
+                                    l3631 0774                                      l3623 0742  
+                                    l3615 072A                                      l3553 0EBE  
+                                    l3545 0EAE                                      l3537 0E9E  
+                                    l3529 0FE0                                      l3481 0C90  
+                                    l3473 0C5C                                      l3465 0C2C  
+                                    l3457 0C0E                                      l3297 04DA  
+                                    l3289 04C6                                      l3561 0B0E  
+                                    l3385 06BA                                      l3377 068E  
+                                    l3393 06CA                                      l3721 010A  
+                                    l3713 00C4                                      l3705 0A90  
+                                    l3641 0E46                                      l3633 078A  
+                                    l3625 074E                                      l3617 072E  
+                                    l3609 06DE                                      l3801 0E24  
+                                    l3555 0EC4                                      l3547 0EB2  
+                                    l3539 0EA2                                      l3483 0C96  
+                                    l3475 0C64                                      l3467 0C3A  
+                                    l3459 0C12                                      l3299 04F6  
+                                    l3571 0B2E                                      l3563 0B12  
+                                    l3387 06BC                                      l3379 0696  
+                                    l3731 0162                                      l3723 0128  
+                                    l3715 00D2                                      l3707 0AA0  
+                                    l3651 0E5E                                      l3395 0F12  
+                                    l3627 0764                                      l3635 0790  
+                                    l3557 0EC8                                      l3549 0EB6  
+                                    l3493 1104                                      l3477 0C72  
+                                    l3485 0C9C                                      l3469 0C42  
+                                    l3573 0B32                                      l3389 06BE  
+                                    l3733 0174                                      l3741 01BC  
+                                    l3717 00E4                                      l3725 012C  
+                                    l3709 009C                                      l3637 0E2E  
+                                    l3629 0768                                      l3901 07C8  
+                                    l3495 115E                                      l3671 1076  
+                                    l3487 0CAC                                      l3479 0C88  
+                                    l3591 0B5A                                      l3575 0B4E  
+                                    l3559 0AA6                                      l3583 0D72  
+                                    l3751 0216                                      l3743 01CA  
+                                    l3735 0192                                      l3727 013A  
+                                    l3719 0102                                      l3647 0E4E  
+                                    l3639 0E44                                      l3911 0814  
+                                    l3903 07CC                                      l3497 1094  
+                                    l3681 108A                                      l3673 107A  
+                                    l3489 0CB4                                      l3593 0BC2  
+                                    l3569 0B1A                                      l3585 0D98  
+                                    l3577 0D5C                                      l3761 026E  
+                                    l3753 021A                                      l3745 01D4  
+                                    l3737 019A                                      l3729 0154  
+                                    l3649 0E5A                                      l3921 0854  
+                                    l3913 082C                                      l3905 07DE  
+                                    l3499 10A0                                      l3683 108E  
+                                    l3675 107E                                      l3595 0BC6  
+                                    l3587 0D9C                                      l3771 02C8  
+                                    l3763 027C                                      l3755 0230  
+                                    l3747 01EE                                      l3739 01B8  
+                                    l3691 09F0                                      l3923 0858  
+                                    l3915 083C                                      l3907 07F0  
+                                    l3677 1082                                      l3669 1072  
+                                    l3685 115A                                      l3589 0DC0  
+                                    l3781 030A                                      l3773 02D2  
+                                    l3765 0296                                      l3757 024A  
+                                    l3749 0206                                      l3693 0A08  
+                                    l3925 085C                                      l3917 084C  
+                                    l3909 0802                                      l3679 1086  
+                                    l3783 030C                                      l3759 026A  
+                                    l3775 02DA                                      l3695 0A20  
+                                    l3687 0F4A                                      l3791 0DDA  
+                                    l3919 0850                                      l3785 031E  
+                                    l3777 02EA                                      l3769 02BA  
+                                    l3697 0A38                                      l3689 09F0  
+                                    l3793 0DEC                                      l3787 0322  
+                                    l3779 02F2                                      l3699 0A50  
+                                    l3795 0DFC                                      l3891 07B8  
+                                    l3789 0328                                      l3797 0E0E  
+                                    l3893 07BC                                      l3885 07A8  
+                                    l3799 0E20                                      l3895 07BE  
+                                    l3887 07B0                                      l3897 07C0  
+                                    l3889 07B4                                      l3899 07C4  
                                     STR_1 FFF9                              _triggerAlarm 06DE  
                                     u3000 02EA                                      u3001 02E6  
                                     u3010 030A                                      u3011 0306  
@@ -8349,192 +8340,191 @@ Symbol Table                                                                    
                                   _EEADRH 0FAA                                    _EEDATA 0FA8  
                                   _CCPR2L 0FBB                                    _EECON2 0FA7  
                         ___awdiv@dividend 0006                                    _ANSELH 0F7F  
-                                  i2l3131 0028                                    i2l3141 007C  
-                                  i2l3133 0036                                    i2l3143 0082  
-                                  i2l3135 004C                                    i2l3137 005A  
-                                  i2l3129 001A                                    i2l3139 006E  
-                                  i2l2701 1058                                    i2l2391 0EE6  
-                                  i2l2383 0ECC                                    i2l2393 0EF6  
-                                  i2l2385 0ED0                                    i2l2473 1154  
-                                  i2l2395 0EFA                                    i2l2387 0EE0  
-                                  i2l2397 0EFC                                    i2l2389 0EE4  
-                                  i2l2399 0F0C                                    i2l2841 10FA  
-                                  i2l2843 10FE                                    i2l2851 0CEE  
-                                  i2l2837 10F4                                    i2l2861 0D24  
-                                  i2l2853 0CF4                                    i2l2845 0CC0  
-                                  i2l2839 10F6                                    i2l2863 0D36  
-                                  i2l2855 0D04                                    i2l2847 0CD2  
-                                  i2l2865 0D48                                    i2l2857 0D14  
-                                  i2l2849 0CE2                                    i2l2699 1044  
-                                  _TABLAT 0FF5                                    _OSCCON 0FD3  
-                                  _SPBRGH 0FB0                                    _SSPADD 0FC8  
-                                  _SSPBUF 0FC9                     triggerAlarm@numCycles 00BA  
-                           main@hours_pom 00F4                                 ??___awdiv 000A  
-                               ??___awmod 000A                       _EUSART_Transmit_ISR 0000  
-                        ?_TMR0_Initialize 0001                          ?_PWM2_Initialize 0001  
-                                  clear_0 101C                                    clear_1 1028  
-                                  clear_2 1034                          ___awdiv@quotient 000C  
-                         ___awmod@divisor 0008                                    isa$std 0001  
-                         ___awmod@counter 000A                          flushBuffer@F2581 0100  
-                   displayTime@timeString 00BF                            printString@str 0046  
-                       displayAlarmTime@i 00C4               FLASH_WriteBlock@dataCounter 0017  
-                       ?_displayAlarmTime 0001                              __mediumconst F7F8  
-                                  tblptrh 0FF7                                    tblptrl 0FF6  
-                                  tblptru 0FF8                     __end_of_TMR0_CallBack 1072  
-                            _checkButtons 009C                        ??_displayAlarmTime 0050  
-TMR0_SetInterruptHandler@InterruptHandler 0006                              ?_printString 0046  
-                       _SYSTEM_Initialize 1072                                __accesstop 0060  
-                 __end_of__initialization 103A                        ?_SYSTEM_Initialize 0001  
-              __end_of_PWM2_LoadDutyValue 1016                             ___rparam_used 0001  
-    __end_of_EUSART_SetTxInterruptHandler 114A              _EUSART_SetTxInterruptHandler 1140  
-                          __pcstackCOMRAM 0001                       ??_SYSTEM_Initialize 000A  
-                               ?_TMR0_ISR 0001                              _alarmMinutes 00A8  
-                        ?_TMR2_Initialize 0001           __end_of_MAX7219_Dot_Matrix_font FFF9  
-             FLASH_WriteBlock@GIEBitValue 0014                              _clearDisplay 0F12  
-                        ?_TMR0_StartTimer 0001                 __end_of_SYSTEM_Initialize 1094  
-                          flushBuffer@dev 003E                            flushBuffer@row 0042  
-                              __pbssBANK0 0060                                __pbssBANK1 0100  
-                              _alarmHours 00A9                                _clearAlarm 1120  
-           displayAlarmTime@displayString 00BA                              flushBuffer@i 0044  
-                            flushBuffer@j 0040                           _saveTimeToFlash 0D5C  
-           ?_EUSART_SetTxInterruptHandler 0006          _EUSART_TxDefaultInterruptHandler 00FA  
-        __end_of_TMR0_SetInterruptHandler 1136                                _blinkTimer 009E  
-                              ??_TMR0_ISR 0001                                   _CCP2CON 0FBA  
-                                 _BAUDCON 0FB8                            _FLASH_ReadByte 10D0  
-                           _eusartRxCount 00AD                         __end_of_btGetData 0D5C  
-                                 _TBLPTRH 0FF7                                   _TBLPTRL 0FF6  
-                                 _TBLPTRU 0FF8                                   _OSCTUNE 0F9B  
-                                 _SSPCON1 0FC6                                   _SSPSTAT 0FC7  
-                        _FLASH_EraseBlock 0F7E                          ??_SPI_Initialize 0006  
-     EUSART_SetTxInterruptHandler@handler 0006                                   __Hparam 0000  
-                                 __Lparam 0000                                   ___awdiv 086C  
-                                 ___awmod 0C0E                          _isButton3Pressed 00A3  
-                  __end_of_FLASH_ReadByte 10E2                                   __pcinit 1016  
-                                 __ramtop 1000                                _matrixInit 0F4A  
-                                 __ptext0 07A8                                   __ptext1 0DDA  
-                                 __ptext2 06DE                                   __ptext3 0F12  
-                                 __ptext4 0FE6                                   __ptext5 0F4A  
-                                 __ptext6 0E2C                                   __ptext7 09F0  
-                                 __ptext8 009C                                   __ptext9 0D5C  
-                               _T0CONbits 0FD5                             ??_max7219_cmd 0008  
-                   _OSCILLATOR_Initialize 1136                                 _T2CONbits 0FCA  
-                        ___awmod@dividend 0006                         __end_of_max_write 09F0  
-                                 _minutes 00AB                  ??_PIN_MANAGER_Initialize 0006  
-                                 _seconds 00AA                         ?_SPI_Exchange8bit 0001  
-                    end_of_initialization 103A                           printString@data 00B1  
-                           triggerAlarm@i 00BC                        ??_SPI_Exchange8bit 0006  
-                         printString@indx 00AF                      SPI_Exchange8bit@data 0006  
-                 __end_of_saveTimeToFlash 0DDA                             _calculateTime 0ECC  
-                             ?_clearAlarm 0001                         _EUSART_Initialize 0E7E  
-                            max_write@dev 0017                                _uartBuffer 0080  
-                            btGetData@rcv 0001                        ?_EUSART_Initialize 0001  
-                            max_write@row 000E                                 _RCSTAbits 0FAB  
-                                 postinc0 0FEE                                   postinc2 0FDE  
-                         ?_FLASH_ReadByte 0006                       ??_EUSART_Initialize 0008  
-                        saveTimeToFlash@i 00F3            ??_EUSART_SetTxInterruptHandler 0008  
-                       _loadTimeFromFlash 09F0                  _TMR0_SetInterruptHandler 112C  
-                           ?_processAlarm 0001                                 _PORTBbits 0F81  
-                           clearDisplay@i 0046                        ?_loadTimeFromFlash 0001  
-           FLASH_WriteBlock@flashWrBufPtr 000F                       ??_loadTimeFromFlash 000A  
-                     __end_of_max7219_cmd 0E7E                  FLASH_EraseBlock@baseAddr 0006  
-               __end_of_EUSART_Initialize 0ECC                            ?_calculateTime 0001  
-                               _TXSTAbits 0FAC                         FLASH_WriteBlock@i 0018  
-                       FLASH_WriteBlock@j 0015                saveTimeToFlash@flashBuffer 00AF  
-            __end_of_INTERRUPT_Initialize 1162                             ??_displayTime 0050  
-               __end_of_loadTimeFromFlash 0AA6                            ??_processAlarm 0052  
-                      _PWM2_LoadDutyValue 0FE6                               ?_matrixInit 0001  
-            checkButtons@alarmSettingMode 00A0                          _FLASH_WriteBlock 05F4  
-                  ?_OSCILLATOR_Initialize 0001                       start_initialization 1016  
-                     ?_PWM2_LoadDutyValue 0006                             ?_triggerAlarm 0001  
-                        ?_saveTimeToFlash 0001                        printString@strindx 00B2  
-                           ??_flushBuffer 001B                      ??_PWM2_LoadDutyValue 0008  
-             PWM2_LoadDutyValue@dutyValue 0006           displayAlarmTime@alarmTimeString 00BF  
-             FLASH_EraseBlock@GIEBitValue 000A                  __end_of_FLASH_EraseBlock 0FB2  
-                     __end_of_displayTime 0B5A                               _max7219_cmd 0E2C  
-                             __pbssCOMRAM 0052                               _alarmActive 00A6  
-                           __pcstackBANK0 00AF                            ??_triggerAlarm 0050  
-                            max7219_cmd@i 000D                                 _btGetData 0CBE  
-                         ??_calculateTime 0001          _EUSART_RxDefaultInterruptHandler 00F8  
-                   _TMR0_InterruptHandler 00F6                   _MAX7219_Dot_Matrix_font F7F9  
-                               __pnvBANK0 00F6                                 _btTimeSet 00A2  
-                  _PIN_MANAGER_Initialize 1094                                 __pintcode 0008  
-                           __pmediumconst F7F8                                  ?___awdiv 0006  
-                                ?___awmod 0006                              _eusartRxHead 0055  
-                            _eusartTxHead 0058                              _eusartRxTail 00AE  
-                     __end_of_flushBuffer 05F4                              _eusartTxTail 0057  
-                               _bufferCol 0060              ??_INTERRUPT_InterruptManager 0002  
-                 _eusartTxBufferRemaining 0056                             _TMR0_CallBack 1044  
-                               _max_write 0930                      _INTERRUPT_Initialize 115E  
-                              ?_btGetData 0001            FLASH_WriteBlock@blockStartAddr 0010  
-                          _eusartRxBuffer 008A                         ??_TMR0_Initialize 0008  
-                       ??_PWM2_Initialize 0006                            _eusartTxBuffer 0092  
-                    __end_of_processAlarm 0E2C                                  _LATCbits 0F8B  
-                            ??_clearAlarm 0006                                  _PIE1bits 0F9D  
-                        _displayAlarmTime 0B5A                                  i2u130_40 0EE0  
-                                i2u130_41 0EDC                                  i2u131_40 0EF6  
-                                i2u131_41 0EF2                                  i2u132_40 0F0C  
-                                i2u132_41 0F08                                  i2u224_40 0028  
-                                i2u224_41 0024                                  i2u225_40 0036  
-                                i2u225_41 0032                           max_write@offset 0013  
-                                i2u226_40 004C                                  i2u226_41 0048  
-                                i2u163_40 1058                                  i2u227_40 005A  
-                                i2u163_41 1054                                  i2u227_41 0056  
-                                i2u228_40 006E                                  i2u228_41 006A  
-                                i2u164_48 105E                                  i2u229_40 007C  
-              ??_TMR0_SetInterruptHandler 0008                                  i2u164_49 1070  
-                                i2u229_41 0078                                  i2u174_40 0CD2  
-                                i2u174_41 0CCE                                  i2u175_40 0CE2  
-                                i2u175_41 0CDE                                  i2u176_40 0D04  
-                                i2u176_41 0D00                                  i2u177_40 0D14  
-                                i2u177_41 0D10                                  _PIR1bits 0F9E  
-                                i2u178_40 0D36                                  i2u178_41 0D32  
-                        ??_FLASH_ReadByte 000A                                  i2u179_40 0D48  
-                                i2u179_41 0D44                                  _PIR2bits 0FA1  
-                                _RCONbits 0FD0                                  _TMR0_ISR 10F4  
-                             _displayTime 0AA6                        __end_of_clearAlarm 112C  
-                           ?_checkButtons 0001                            ?_TMR0_CallBack 0001  
-                             _INTCON2bits 0FF1                                ?_max_write 000E  
-                   ?_INTERRUPT_Initialize 0001                             ??_printString 0048  
-                       ??_TMR2_Initialize 0006                  __end_of_FLASH_WriteBlock 06DE  
-                              _EECON1bits 0FA6                                  __Hrparam 0000  
-                             _flushBuffer 04C6                                  __Lrparam 0000  
-                      max_write@devTarget 0015                   ??_OSCILLATOR_Initialize 0006  
-                    __end_of_triggerAlarm 07A8                         ??_TMR0_StartTimer 0006  
-                            ??_matrixInit 000F                           main@minutes_pom 00F5  
-                                _alarmSet 00A7                            ??_checkButtons 0050  
-                           ?_clearDisplay 0001                                  __ptext10 05F4  
-                                __ptext11 0F7E                                  __ptext20 0C0E  
-                                __ptext12 10D0                                  __ptext21 1120  
-                                __ptext13 0AA6                                  __ptext30 1136  
-                                __ptext22 115A                                  __ptext14 0B5A  
-                                __ptext31 115E                                  __ptext23 1072  
-                                __ptext15 0332                                  __ptext40 0ECC  
-                                __ptext32 0E7E                                  __ptext24 10E2  
-                                __ptext16 04C6                                  __ptext33 1140  
-                                __ptext25 0FB2                                  __ptext17 0930  
-                                __ptext34 114A                                  __ptext26 112C  
-                                __ptext18 086C                                  __ptext27 1104  
-                                __ptext19 10B6                                  __ptext36 0CBE  
-                                __ptext28 1112                                  __ptext37 10F4  
-                                __ptext29 1094                                  __ptext38 1044  
-                                __ptext39 1154                               ??_btGetData 0001  
-    __end_of_TMR0_DefaultInterruptHandler 115A              _TMR0_DefaultInterruptHandler 1154  
-                      __end_of_matrixInit 0F7E                       __end_of_printString 04C6  
-                    flushBuffer@bufferRow 001E                           _displayBlinking 00A4  
-                                isa$xinst 0000                      max7219_cmd@writeData 000B  
-                                int$flags 0059        __end_of_INTERRUPT_InterruptManager 0098  
-              _INTERRUPT_InterruptManager 0008                         ?_FLASH_EraseBlock 0006  
-     FLASH_WriteBlock@numberOfWriteBlocks 0016                              ?_max7219_cmd 0007  
-                      ??_FLASH_EraseBlock 000A                                _INTCONbits 0FF2  
-                         ??_TMR0_CallBack 0001                           _uartBufferIndex 0054  
-                          ??_clearDisplay 0046                    ??_INTERRUPT_Initialize 0006  
-                      max_write@writeData 0019                               ??_max_write 0011  
-                                intlevel2 0000                   ?_PIN_MANAGER_Initialize 0001  
-    __end_of_EUSART_SetRxInterruptHandler 1154              _EUSART_SetRxInterruptHandler 114A  
-                           max_write@data 0010             ?_TMR0_DefaultInterruptHandler 0001  
-                        _SPI_Exchange8bit 10B6                        _EUSART_Receive_ISR 0000  
-                displayTime@displayString 00BA                              _processAlarm 0DDA  
-                __end_of_displayAlarmTime 0C0E                           _TMR0_Initialize 0FB2  
-                         _PWM2_Initialize 1112             checkButtons@button3PressCount 00A1  
-                             _SSPCON1bits 0FC6            __end_of_PIN_MANAGER_Initialize 10B6  
-                             _printString 0332                     __end_of_calculateTime 0F12  
+                                  i2l3121 0036                                    i2l3131 0082  
+                                  i2l3123 004C                                    i2l3125 005A  
+                                  i2l3117 001A                                    i2l3127 006E  
+                                  i2l3119 0028                                    i2l3129 007C  
+                                  i2l2381 0EE4                                    i2l2461 1154  
+                                  i2l2383 0EF6                                    i2l2385 0EFA  
+                                  i2l2377 0ECC                                    i2l2387 0F0C  
+                                  i2l2379 0EE0                                    i2l2831 10FE  
+                                  i2l2825 10F4                                    i2l2841 0CF4  
+                                  i2l2833 0CC0                                    i2l2827 10F6  
+                                  i2l2851 0D36                                    i2l2843 0D04  
+                                  i2l2835 0CD2                                    i2l2829 10FA  
+                                  i2l2853 0D48                                    i2l2845 0D14  
+                                  i2l2837 0CE2                                    i2l2687 1044  
+                                  i2l2839 0CEE                                    i2l2689 1058  
+                                  i2l2849 0D24                                    _TABLAT 0FF5  
+                                  _OSCCON 0FD3                                    _SPBRGH 0FB0  
+                                  _SSPADD 0FC8                                    _SSPBUF 0FC9  
+                   triggerAlarm@numCycles 00BA                             main@hours_pom 00F4  
+                               ??___awdiv 000A                                 ??___awmod 000A  
+                     _EUSART_Transmit_ISR 0000                          ?_TMR0_Initialize 0001  
+                        ?_PWM2_Initialize 0001                                    clear_0 101C  
+                                  clear_1 1028                                    clear_2 1034  
+                        ___awdiv@quotient 000C                           ___awmod@divisor 0008  
+                                  isa$std 0001                           ___awmod@counter 000A  
+                        flushBuffer@F2581 0100                     displayTime@timeString 00BF  
+                          printString@str 0046                         displayAlarmTime@i 00C4  
+             FLASH_WriteBlock@dataCounter 0017                         ?_displayAlarmTime 0001  
+                            __mediumconst F7F8                                    tblptrh 0FF7  
+                                  tblptrl 0FF6                                    tblptru 0FF8  
+                   __end_of_TMR0_CallBack 1072                              _checkButtons 009C  
+                      ??_displayAlarmTime 0050  TMR0_SetInterruptHandler@InterruptHandler 0006  
+                            ?_printString 0046                         _SYSTEM_Initialize 1072  
+                              __accesstop 0060                   __end_of__initialization 103A  
+                      ?_SYSTEM_Initialize 0001                __end_of_PWM2_LoadDutyValue 1016  
+                           ___rparam_used 0001      __end_of_EUSART_SetTxInterruptHandler 114A  
+            _EUSART_SetTxInterruptHandler 1140                            __pcstackCOMRAM 0001  
+                     ??_SYSTEM_Initialize 000A                                 ?_TMR0_ISR 0001  
+                            _alarmMinutes 00A8                          ?_TMR2_Initialize 0001  
+         __end_of_MAX7219_Dot_Matrix_font FFF9               FLASH_WriteBlock@GIEBitValue 0014  
+                            _clearDisplay 0F12                          ?_TMR0_StartTimer 0001  
+               __end_of_SYSTEM_Initialize 1094                            flushBuffer@dev 003E  
+                          flushBuffer@row 0042                                __pbssBANK0 0060  
+                              __pbssBANK1 0100                                _alarmHours 00A9  
+                              _clearAlarm 1120             displayAlarmTime@displayString 00BA  
+                            flushBuffer@i 0044                              flushBuffer@j 0040  
+                         _saveTimeToFlash 0D5C             ?_EUSART_SetTxInterruptHandler 0006  
+        _EUSART_TxDefaultInterruptHandler 00FA          __end_of_TMR0_SetInterruptHandler 1136  
+                              _blinkTimer 009E                                ??_TMR0_ISR 0001  
+                                 _CCP2CON 0FBA                                   _BAUDCON 0FB8  
+                          _FLASH_ReadByte 10D0                             _eusartRxCount 00AD  
+                       __end_of_btGetData 0D5C                                   _TBLPTRH 0FF7  
+                                 _TBLPTRL 0FF6                                   _TBLPTRU 0FF8  
+                                 _OSCTUNE 0F9B                                   _SSPCON1 0FC6  
+                                 _SSPSTAT 0FC7                          _FLASH_EraseBlock 0F7E  
+                        ??_SPI_Initialize 0006       EUSART_SetTxInterruptHandler@handler 0006  
+                                 __Hparam 0000                                   __Lparam 0000  
+                                 ___awdiv 086C                                   ___awmod 0C0E  
+                        _isButton3Pressed 00A3                    __end_of_FLASH_ReadByte 10E2  
+                                 __pcinit 1016                                   __ramtop 1000  
+                              _matrixInit 0F4A                                   __ptext0 07A8  
+                                 __ptext1 0DDA                                   __ptext2 06DE  
+                                 __ptext3 0F12                                   __ptext4 0FE6  
+                                 __ptext5 0F4A                                   __ptext6 0E2C  
+                                 __ptext7 09F0                                   __ptext8 009C  
+                                 __ptext9 0D5C                                 _T0CONbits 0FD5  
+                           ??_max7219_cmd 0008                     _OSCILLATOR_Initialize 1136  
+                               _T2CONbits 0FCA                          ___awmod@dividend 0006  
+                       __end_of_max_write 09F0                                   _minutes 00AB  
+                ??_PIN_MANAGER_Initialize 0006                                   _seconds 00AA  
+                       ?_SPI_Exchange8bit 0001                      end_of_initialization 103A  
+                         printString@data 00B1                             triggerAlarm@i 00BC  
+                      ??_SPI_Exchange8bit 0006                           printString@indx 00AF  
+                    SPI_Exchange8bit@data 0006                   __end_of_saveTimeToFlash 0DDA  
+                           _calculateTime 0ECC                               ?_clearAlarm 0001  
+                       _EUSART_Initialize 0E7E                              max_write@dev 0017  
+                              _uartBuffer 0080                              btGetData@rcv 0001  
+                      ?_EUSART_Initialize 0001                              max_write@row 000E  
+                               _RCSTAbits 0FAB                                   postinc0 0FEE  
+                                 postinc2 0FDE                           ?_FLASH_ReadByte 0006  
+                     ??_EUSART_Initialize 0008                          saveTimeToFlash@i 00F3  
+          ??_EUSART_SetTxInterruptHandler 0008                         _loadTimeFromFlash 09F0  
+                _TMR0_SetInterruptHandler 112C                             ?_processAlarm 0001  
+                               _PORTBbits 0F81                             clearDisplay@i 0046  
+                      ?_loadTimeFromFlash 0001             FLASH_WriteBlock@flashWrBufPtr 000F  
+                     ??_loadTimeFromFlash 000A                       __end_of_max7219_cmd 0E7E  
+                FLASH_EraseBlock@baseAddr 0006                 __end_of_EUSART_Initialize 0ECC  
+                          ?_calculateTime 0001                                 _TXSTAbits 0FAC  
+                       FLASH_WriteBlock@i 0018                         FLASH_WriteBlock@j 0015  
+              saveTimeToFlash@flashBuffer 00AF              __end_of_INTERRUPT_Initialize 1162  
+                           ??_displayTime 0050                 __end_of_loadTimeFromFlash 0AA6  
+                          ??_processAlarm 0052                        _PWM2_LoadDutyValue 0FE6  
+                             ?_matrixInit 0001              checkButtons@alarmSettingMode 00A0  
+                        _FLASH_WriteBlock 05F4                    ?_OSCILLATOR_Initialize 0001  
+                     start_initialization 1016                       ?_PWM2_LoadDutyValue 0006  
+                           ?_triggerAlarm 0001                          ?_saveTimeToFlash 0001  
+                      printString@strindx 00B2                             ??_flushBuffer 001B  
+                    ??_PWM2_LoadDutyValue 0008               PWM2_LoadDutyValue@dutyValue 0006  
+         displayAlarmTime@alarmTimeString 00BF               FLASH_EraseBlock@GIEBitValue 000A  
+                __end_of_FLASH_EraseBlock 0FB2                       __end_of_displayTime 0B5A  
+                             _max7219_cmd 0E2C                               __pbssCOMRAM 0052  
+                             _alarmActive 00A6                             __pcstackBANK0 00AF  
+                          ??_triggerAlarm 0050                              max7219_cmd@i 000D  
+                               _btGetData 0CBE                           ??_calculateTime 0001  
+        _EUSART_RxDefaultInterruptHandler 00F8                     _TMR0_InterruptHandler 00F6  
+                 _MAX7219_Dot_Matrix_font F7F9                                 __pnvBANK0 00F6  
+                               _btTimeSet 00A2                    _PIN_MANAGER_Initialize 1094  
+                               __pintcode 0008                             __pmediumconst F7F8  
+                                ?___awdiv 0006                                  ?___awmod 0006  
+                            _eusartRxHead 0055                              _eusartTxHead 0058  
+                            _eusartRxTail 00AE                       __end_of_flushBuffer 05F4  
+                            _eusartTxTail 0057                                 _bufferCol 0060  
+            ??_INTERRUPT_InterruptManager 0002                   _eusartTxBufferRemaining 0056  
+                           _TMR0_CallBack 1044                                 _max_write 0930  
+                    _INTERRUPT_Initialize 115E                                ?_btGetData 0001  
+          FLASH_WriteBlock@blockStartAddr 0010                            _eusartRxBuffer 008A  
+                       ??_TMR0_Initialize 0008                         ??_PWM2_Initialize 0006  
+                          _eusartTxBuffer 0092                      __end_of_processAlarm 0E2C  
+                                _LATCbits 0F8B                              ??_clearAlarm 0006  
+                                _PIE1bits 0F9D                          _displayAlarmTime 0B5A  
+                                i2u130_40 0EE0                                  i2u130_41 0EDC  
+                                i2u131_40 0EF6                                  i2u131_41 0EF2  
+                                i2u132_40 0F0C                                  i2u132_41 0F08  
+                                i2u224_40 0028                                  i2u224_41 0024  
+                                i2u225_40 0036                                  i2u225_41 0032  
+                         max_write@offset 0013                                  i2u226_40 004C  
+                                i2u226_41 0048                                  i2u163_40 1058  
+                                i2u227_40 005A                                  i2u163_41 1054  
+                                i2u227_41 0056                                  i2u228_40 006E  
+                                i2u228_41 006A                                  i2u164_48 105E  
+                                i2u229_40 007C                ??_TMR0_SetInterruptHandler 0008  
+                                i2u164_49 1070                                  i2u229_41 0078  
+                                i2u174_40 0CD2                                  i2u174_41 0CCE  
+                                i2u175_40 0CE2                                  i2u175_41 0CDE  
+                                i2u176_40 0D04                                  i2u176_41 0D00  
+                                i2u177_40 0D14                                  i2u177_41 0D10  
+                                _PIR1bits 0F9E                                  i2u178_40 0D36  
+                                i2u178_41 0D32                          ??_FLASH_ReadByte 000A  
+                                i2u179_40 0D48                                  i2u179_41 0D44  
+                                _PIR2bits 0FA1                                  _RCONbits 0FD0  
+                                _TMR0_ISR 10F4                               _displayTime 0AA6  
+                      __end_of_clearAlarm 112C                             ?_checkButtons 0001  
+                          ?_TMR0_CallBack 0001                               _INTCON2bits 0FF1  
+                              ?_max_write 000E                     ?_INTERRUPT_Initialize 0001  
+                           ??_printString 0048                         ??_TMR2_Initialize 0006  
+                __end_of_FLASH_WriteBlock 06DE                                _EECON1bits 0FA6  
+                                __Hrparam 0000                               _flushBuffer 04C6  
+                                __Lrparam 0000                        max_write@devTarget 0015  
+                 ??_OSCILLATOR_Initialize 0006                      __end_of_triggerAlarm 07A8  
+                       ??_TMR0_StartTimer 0006                              ??_matrixInit 000F  
+                         main@minutes_pom 00F5                                  _alarmSet 00A7  
+                          ??_checkButtons 0050                             ?_clearDisplay 0001  
+                                __ptext10 05F4                                  __ptext11 0F7E  
+                                __ptext20 0C0E                                  __ptext12 10D0  
+                                __ptext21 1120                                  __ptext13 0AA6  
+                                __ptext30 1136                                  __ptext22 115A  
+                                __ptext14 0B5A                                  __ptext31 115E  
+                                __ptext23 1072                                  __ptext15 0332  
+                                __ptext40 0ECC                                  __ptext32 0E7E  
+                                __ptext24 10E2                                  __ptext16 04C6  
+                                __ptext33 1140                                  __ptext25 0FB2  
+                                __ptext17 0930                                  __ptext34 114A  
+                                __ptext26 112C                                  __ptext18 086C  
+                                __ptext27 1104                                  __ptext19 10B6  
+                                __ptext36 0CBE                                  __ptext28 1112  
+                                __ptext37 10F4                                  __ptext29 1094  
+                                __ptext38 1044                                  __ptext39 1154  
+                             ??_btGetData 0001      __end_of_TMR0_DefaultInterruptHandler 115A  
+            _TMR0_DefaultInterruptHandler 1154                        __end_of_matrixInit 0F7E  
+                     __end_of_printString 04C6                      flushBuffer@bufferRow 001E  
+                         _displayBlinking 00A4                                  isa$xinst 0000  
+                    max7219_cmd@writeData 000B                                  int$flags 0059  
+      __end_of_INTERRUPT_InterruptManager 0098                _INTERRUPT_InterruptManager 0008  
+                       ?_FLASH_EraseBlock 0006       FLASH_WriteBlock@numberOfWriteBlocks 0016  
+                            ?_max7219_cmd 0007                        ??_FLASH_EraseBlock 000A  
+                              _INTCONbits 0FF2                           ??_TMR0_CallBack 0001  
+                         _uartBufferIndex 0054                            ??_clearDisplay 0046  
+                  ??_INTERRUPT_Initialize 0006                        max_write@writeData 0019  
+                             ??_max_write 0011                                  intlevel2 0000  
+                 ?_PIN_MANAGER_Initialize 0001      __end_of_EUSART_SetRxInterruptHandler 1154  
+            _EUSART_SetRxInterruptHandler 114A                             max_write@data 0010  
+           ?_TMR0_DefaultInterruptHandler 0001                          _SPI_Exchange8bit 10B6  
+                      _EUSART_Receive_ISR 0000                  displayTime@displayString 00BA  
+                            _processAlarm 0DDA                  __end_of_displayAlarmTime 0C0E  
+                         _TMR0_Initialize 0FB2                           _PWM2_Initialize 1112  
+           checkButtons@button3PressCount 00A1                               _SSPCON1bits 0FC6  
+          __end_of_PIN_MANAGER_Initialize 10B6                               _printString 0332  
+                   __end_of_calculateTime 0F12  
