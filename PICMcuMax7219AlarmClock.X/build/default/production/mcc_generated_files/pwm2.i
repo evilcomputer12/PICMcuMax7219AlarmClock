@@ -4489,21 +4489,19 @@ void PWM2_Initialize(void);
 # 123 "mcc_generated_files/pwm2.h"
 void PWM2_LoadDutyValue(uint16_t dutyValue);
 # 51 "mcc_generated_files/pwm2.c" 2
-# 63 "mcc_generated_files/pwm2.c"
+# 65 "mcc_generated_files/pwm2.c"
 void PWM2_Initialize(void)
 {
-
 
 
     CCP2CON = 0x1C;
 
 
-    CCPR2L = 0x3E;
-
-
-    CCPR2H = 0x00;
-
+    CCPR2L = 0x00;
+    CCP2CON &= 0xCF;
 }
+
+
 
 void PWM2_LoadDutyValue(uint16_t dutyValue)
 {

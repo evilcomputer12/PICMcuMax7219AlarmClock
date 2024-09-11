@@ -186,8 +186,10 @@ void triggerAlarm(void)
         
         // Flash the display with "ALARM"
         printString("ALARM");
+        PWM2_LoadDutyValue(FLASH_INTERVAL_MS);
         __delay_ms(FLASH_INTERVAL_MS);
         clearDisplay();
+        PWM2_LoadDutyValue(0);
         __delay_ms(FLASH_INTERVAL_MS);
     }
 

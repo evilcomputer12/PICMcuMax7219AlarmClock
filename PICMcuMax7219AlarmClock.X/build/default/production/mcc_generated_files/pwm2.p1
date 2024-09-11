@@ -5,9 +5,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4125
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4125: extern volatile unsigned char CCPR2L __attribute__((address(0xFBB)));
 [v _CCPR2L `Vuc ~T0 @X0 0 e@4027 ]
-"4132
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4132: extern volatile unsigned char CCPR2H __attribute__((address(0xFBC)));
-[v _CCPR2H `Vuc ~T0 @X0 0 e@4028 ]
 "54 C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -428,25 +425,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6515
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 6515: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"63 mcc_generated_files/pwm2.c
-[; ;mcc_generated_files/pwm2.c: 63: void PWM2_Initialize(void)
+"65 mcc_generated_files/pwm2.c
+[; ;mcc_generated_files/pwm2.c: 65: void PWM2_Initialize(void)
 [v _PWM2_Initialize `(v ~T0 @X0 1 ef ]
-"64
-[; ;mcc_generated_files/pwm2.c: 64: {
+"66
+[; ;mcc_generated_files/pwm2.c: 66: {
 {
 [e :U _PWM2_Initialize ]
 [f ]
-"68
-[; ;mcc_generated_files/pwm2.c: 68:     CCP2CON = 0x1C;
+"69
+[; ;mcc_generated_files/pwm2.c: 69:     CCP2CON = 0x1C;
 [e = _CCP2CON -> -> 28 `i `uc ]
-"71
-[; ;mcc_generated_files/pwm2.c: 71:     CCPR2L = 0x3E;
-[e = _CCPR2L -> -> 62 `i `uc ]
+"72
+[; ;mcc_generated_files/pwm2.c: 72:     CCPR2L = 0x00;
+[e = _CCPR2L -> -> 0 `i `uc ]
+"73
+[; ;mcc_generated_files/pwm2.c: 73:     CCP2CON &= 0xCF;
+[e =& _CCP2CON -> -> 207 `i `Vuc ]
 "74
-[; ;mcc_generated_files/pwm2.c: 74:     CCPR2H = 0x00;
-[e = _CCPR2H -> -> 0 `i `uc ]
-"76
-[; ;mcc_generated_files/pwm2.c: 76: }
+[; ;mcc_generated_files/pwm2.c: 74: }
 [e :UE 277 ]
 }
 "78

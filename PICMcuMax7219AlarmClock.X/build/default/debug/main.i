@@ -4784,6 +4784,7 @@ void main(void)
                 if (hours_pom < 24 && minutes_pom < 60)
                 {
 
+                    btTimeSet = 0;
                     hours = hours_pom;
                     minutes = minutes_pom;
                     displayTime();
@@ -4874,8 +4875,10 @@ void triggerAlarm(void)
 
 
         printString("ALARM");
+        PWM2_LoadDutyValue(500);
         _delay((unsigned long)((500)*(8000000/4000.0)));
         clearDisplay();
+        PWM2_LoadDutyValue(0);
         _delay((unsigned long)((500)*(8000000/4000.0)));
     }
 

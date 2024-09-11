@@ -122,8 +122,6 @@ void PWM2_Initialize(void);
 */
 void PWM2_LoadDutyValue(uint16_t dutyValue);
 
-
-
         
 #ifdef __cplusplus  // Provide C++ Compatibility
 

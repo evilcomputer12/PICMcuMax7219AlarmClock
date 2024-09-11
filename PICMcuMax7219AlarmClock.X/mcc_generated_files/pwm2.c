@@ -60,27 +60,27 @@
   Section: PWM Module APIs
 */
 
+// Function to initialize PWM2
+// Function to initialize PWM2
 void PWM2_Initialize(void)
 {
     // Set the PWM to the options selected in the PIC10 / PIC12 / PIC16 / PIC18 MCUs 
+    // Configure PWM mode
+    CCP2CON = 0x1C;  // PWM mode, DC2B 1
 
-    // CCP2M PWM; DC2B 1; 
-    CCP2CON = 0x1C;
-    
-    // CCPR2L 62; 
-    CCPR2L = 0x3E;
-    
-    // CCPR2H 0; 
-    CCPR2H = 0x00;
-    
+    // Initially, turn off the PWM by setting the duty cycle to 0
+    CCPR2L = 0x00;  // 8 MSBs of duty cycle
+    CCP2CON &= 0xCF; // Clear DC2B bits to 0 (2 LSBs of duty cycle)
 }
 
+
+// Function to load the PWM duty value
 void PWM2_LoadDutyValue(uint16_t dutyValue)
 {
-   // Writing to 8 MSBs of pwm duty cycle in CCPRL register
+    // Writing to 8 MSBs of pwm duty cycle in CCPRL register
     CCPR2L = ((dutyValue & 0x03FC)>>2);
     
-   // Writing to 2 LSBs of pwm duty cycle in CCPCON register
+    // Writing to 2 LSBs of pwm duty cycle in CCPCON register
     CCP2CON = ((uint8_t)(CCP2CON & 0xCF) | ((dutyValue & 0x0003)<<4));
 }
 
