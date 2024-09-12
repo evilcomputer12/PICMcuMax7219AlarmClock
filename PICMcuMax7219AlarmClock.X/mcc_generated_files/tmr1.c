@@ -56,6 +56,7 @@
   Section: Global Variable Definitions
 */
 volatile uint16_t timer1ReloadVal;
+volatile uint8_t overflow_count = 0;
 void (*TMR1_InterruptHandler)(void);
 
 /**
@@ -66,8 +67,8 @@ void TMR1_Initialize(void)
 {
     //Set the Timer to the options selected in the GUI
 	
-	// TMR1H 128; 
-		TMR1H = 0x80;
+	// TMR1H 240; 
+		TMR1H = 0xF0;
 	
 	// TMR1L 0; 
 		TMR1L = 0x00;
@@ -84,8 +85,8 @@ void TMR1_Initialize(void)
     // Set Default Interrupt Handler
     TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler);
 
-    // T1CKPS 1:1; T1OSCEN enabled; TMR1CS External; nT1SYNC synchronize; TMR1ON enabled; RD16 disabled; 
-    T1CON = 0x0B;
+    // T1CKPS 1:1; T1OSCEN enabled; TMR1CS External; nT1SYNC do_not_synchronize; TMR1ON enabled; RD16 enabled; 
+    T1CON = 0x8F;
 }
 
 void TMR1_StartTimer(void)
@@ -106,8 +107,6 @@ uint16_t TMR1_ReadTimer(void)
     uint8_t readValHigh;
     uint8_t readValLow;
 	
-    T1CONbits.RD16 = 1;
-	
     readValLow = TMR1L;
     readValHigh = TMR1H;
     
@@ -124,8 +123,8 @@ void TMR1_WriteTimer(uint16_t timerVal)
         T1CONbits.TMR1ON = 0;
 
         // Write to the Timer1 register
-        TMR1H = (uint8_t)(timerVal >> 8);
-        TMR1L = (uint8_t)timerVal;
+        TMR1H = (timerVal >> 8);
+        TMR1L = (uint8_t) timerVal;
 
         // Start the Timer after writing to the register
         T1CONbits.TMR1ON =1;
@@ -133,14 +132,16 @@ void TMR1_WriteTimer(uint16_t timerVal)
     else
     {
         // Write to the Timer1 register
-        TMR1H = (uint8_t)(timerVal >> 8);
-        TMR1L = (uint8_t)timerVal;
+        TMR1H = (timerVal >> 8);
+        TMR1L = (uint8_t) timerVal;
     }
 }
 
 void TMR1_Reload(void)
 {
-    TMR1_WriteTimer(timer1ReloadVal);
+    // Write to the Timer1 register
+    TMR1H = (timer1ReloadVal >> 8);
+    TMR1L = (uint8_t) timer1ReloadVal;
 }
 
 void TMR1_ISR(void)
@@ -148,11 +149,17 @@ void TMR1_ISR(void)
 
     // Clear the TMR1 interrupt flag
     PIR1bits.TMR1IF = 0;    
-    TMR1_WriteTimer(timer1ReloadVal);
 
-    // ticker function call;
-    // ticker is 1 -> Callback function gets called every time this ISR executes
-    TMR1_CallBack();
+     // Write to the Timer1 register
+     TMR1H = (timer1ReloadVal >> 8);
+     TMR1L =  (uint8_t) timer1ReloadVal;
+    overflow_count++;
+    if (overflow_count >= 16) {  // For example, update clock every 8 overflows
+        // ticker function call;
+        // ticker is 1 -> Callback function gets called every time this ISR executes
+        TMR1_CallBack();
+        overflow_count = 0;     // Reset the counter
+    }
 }
 
 void TMR1_CallBack(void)

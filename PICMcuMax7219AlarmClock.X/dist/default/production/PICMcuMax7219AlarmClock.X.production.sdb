@@ -109,19 +109,17 @@
 [v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
 "77
 [v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
-"65 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/tmr1.c
+"66 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
-"91
+"92
 [v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
-"119
-[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
-"146
+"147
 [v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
-"158
+"165
 [v _TMR1_CallBack TMR1_CallBack `(v  1 e 1 0 ]
-"168
+"175
 [v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
-"172
+"179
 [v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
 "13 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X/Fonts.h
 [v _MAX7219_Dot_Matrix_font MAX7219_Dot_Matrix_font `C[256][8]uc  1 e 2048 0 ]
@@ -633,6 +631,8 @@
 "58 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
 "59
+[v _overflow_count overflow_count `VEuc  1 e 1 0 ]
+"60
 [v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
 "46 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -661,49 +661,49 @@
 [v _generateBeep generateBeep `(v  1 e 1 0 ]
 {
 "100
-[v generateBeep@i i `ui  1 a 2 23 ]
+[v generateBeep@i i `ui  1 a 2 22 ]
 "101
-[v generateBeep@cycles cycles `ui  1 a 2 21 ]
+[v generateBeep@cycles cycles `ui  1 a 2 20 ]
 "99
-[v generateBeep@duration_ms duration_ms `ui  1 p 2 19 ]
+[v generateBeep@duration_ms duration_ms `ui  1 p 2 18 ]
 "108
 } 0
 "89
 [v _delayMicroseconds delayMicroseconds `(v  1 e 1 0 ]
 {
 "91
-[v delayMicroseconds@i i `ui  1 a 2 8 ]
+[v delayMicroseconds@i i `ui  1 a 2 7 ]
 "89
-[v delayMicroseconds@microseconds microseconds `ui  1 p 2 6 ]
+[v delayMicroseconds@microseconds microseconds `ui  1 p 2 5 ]
 "97
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
-[v ___wmul@product product `ui  1 a 2 10 ]
+[v ___wmul@product product `ui  1 a 2 9 ]
 "15
-[v ___wmul@multiplier multiplier `ui  1 p 2 6 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 8 ]
+[v ___wmul@multiplier multiplier `ui  1 p 2 5 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 7 ]
 "53
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
-[v ___lwdiv@quotient quotient `ui  1 a 2 17 ]
+[v ___lwdiv@quotient quotient `ui  1 a 2 16 ]
 "11
-[v ___lwdiv@counter counter `uc  1 a 1 16 ]
+[v ___lwdiv@counter counter `uc  1 a 1 15 ]
 "7
-[v ___lwdiv@dividend dividend `ui  1 p 2 12 ]
-[v ___lwdiv@divisor divisor `ui  1 p 2 14 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 11 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 13 ]
 "30
 } 0
 "105 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\MAX7219.c
 [v _clearDisplay clearDisplay `(v  1 e 1 0 ]
 {
 "107
-[v clearDisplay@i i `i  1 a 2 70 ]
+[v clearDisplay@i i `i  1 a 2 69 ]
 "112
 } 0
 "96
@@ -716,14 +716,14 @@
 {
 [v max7219_cmd@Addr Addr `uc  1 a 1 wreg ]
 "82
-[v max7219_cmd@i i `i  1 a 2 13 ]
+[v max7219_cmd@i i `i  1 a 2 12 ]
 "78
-[v max7219_cmd@writeData writeData `us  1 a 2 11 ]
+[v max7219_cmd@writeData writeData `us  1 a 2 10 ]
 "76
 [v max7219_cmd@Addr Addr `uc  1 a 1 wreg ]
-[v max7219_cmd@data data `uc  1 p 1 7 ]
+[v max7219_cmd@data data `uc  1 p 1 6 ]
 "78
-[v max7219_cmd@Addr Addr `uc  1 a 1 10 ]
+[v max7219_cmd@Addr Addr `uc  1 a 1 9 ]
 "94
 } 0
 "350 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
@@ -757,32 +757,32 @@
 [v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
 {
 "95
-[v FLASH_WriteBlock@blockStartAddr blockStartAddr `ul  1 a 4 16 ]
+[v FLASH_WriteBlock@blockStartAddr blockStartAddr `ul  1 a 4 15 ]
 "97
-[v FLASH_WriteBlock@i i `uc  1 a 1 24 ]
-[v FLASH_WriteBlock@dataCounter dataCounter `uc  1 a 1 23 ]
-[v FLASH_WriteBlock@numberOfWriteBlocks numberOfWriteBlocks `uc  1 a 1 22 ]
-[v FLASH_WriteBlock@j j `uc  1 a 1 21 ]
+[v FLASH_WriteBlock@i i `uc  1 a 1 23 ]
+[v FLASH_WriteBlock@dataCounter dataCounter `uc  1 a 1 22 ]
+[v FLASH_WriteBlock@numberOfWriteBlocks numberOfWriteBlocks `uc  1 a 1 21 ]
+[v FLASH_WriteBlock@j j `uc  1 a 1 20 ]
 "96
-[v FLASH_WriteBlock@GIEBitValue GIEBitValue `uc  1 a 1 20 ]
+[v FLASH_WriteBlock@GIEBitValue GIEBitValue `uc  1 a 1 19 ]
 "93
-[v FLASH_WriteBlock@writeAddr writeAddr `ul  1 p 4 11 ]
-[v FLASH_WriteBlock@flashWrBufPtr flashWrBufPtr `*.30uc  1 p 1 15 ]
+[v FLASH_WriteBlock@writeAddr writeAddr `ul  1 p 4 10 ]
+[v FLASH_WriteBlock@flashWrBufPtr flashWrBufPtr `*.30uc  1 p 1 14 ]
 "145
 } 0
 "147
 [v _FLASH_EraseBlock FLASH_EraseBlock `(v  1 e 1 0 ]
 {
 "149
-[v FLASH_EraseBlock@GIEBitValue GIEBitValue `uc  1 a 1 10 ]
+[v FLASH_EraseBlock@GIEBitValue GIEBitValue `uc  1 a 1 9 ]
 "147
-[v FLASH_EraseBlock@baseAddr baseAddr `ul  1 p 4 6 ]
+[v FLASH_EraseBlock@baseAddr baseAddr `ul  1 p 4 5 ]
 "164
 } 0
 "58
 [v _FLASH_ReadByte FLASH_ReadByte `(uc  1 e 1 0 ]
 {
-[v FLASH_ReadByte@flashAddr flashAddr `ul  1 p 4 6 ]
+[v FLASH_ReadByte@flashAddr flashAddr `ul  1 p 4 5 ]
 "67
 } 0
 "111 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
@@ -823,51 +823,51 @@
 "163
 [v printString@strindx strindx `i  1 a 2 3 ]
 "161
-[v printString@str str `*.34uc  1 p 2 70 ]
+[v printString@str str `*.34uc  1 p 2 69 ]
 "189
 } 0
 "52
 [v _flushBuffer flushBuffer `(v  1 e 1 0 ]
 {
 "60
-[v flushBuffer@j j `i  1 a 2 64 ]
+[v flushBuffer@j j `i  1 a 2 63 ]
 "59
-[v flushBuffer@dev dev `i  1 a 2 62 ]
+[v flushBuffer@dev dev `i  1 a 2 61 ]
 "70
-[v flushBuffer@row row `i  1 a 2 66 ]
+[v flushBuffer@row row `i  1 a 2 65 ]
 "57
-[v flushBuffer@i i `i  1 a 2 68 ]
+[v flushBuffer@i i `i  1 a 2 67 ]
 "54
-[v flushBuffer@bufferRow bufferRow `[32]uc  1 a 32 30 ]
+[v flushBuffer@bufferRow bufferRow `[32]uc  1 a 32 29 ]
 "74
 } 0
 "10
 [v _max_write max_write `(v  1 e 1 0 ]
 {
 "19
-[v max_write@dev dev `i  1 a 2 23 ]
+[v max_write@dev dev `i  1 a 2 22 ]
 "14
-[v max_write@writeData writeData `us  1 a 2 25 ]
+[v max_write@writeData writeData `us  1 a 2 24 ]
 "12
-[v max_write@devTarget devTarget `i  1 a 2 21 ]
+[v max_write@devTarget devTarget `i  1 a 2 20 ]
 "13
-[v max_write@offset offset `i  1 a 2 19 ]
+[v max_write@offset offset `i  1 a 2 18 ]
 "10
-[v max_write@row row `i  1 p 2 14 ]
-[v max_write@data data `uc  1 p 1 16 ]
+[v max_write@row row `i  1 p 2 13 ]
+[v max_write@data data `uc  1 p 1 15 ]
 "50
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
-[v ___awdiv@quotient quotient `i  1 a 2 12 ]
+[v ___awdiv@quotient quotient `i  1 a 2 11 ]
 "11
-[v ___awdiv@sign sign `uc  1 a 1 11 ]
-[v ___awdiv@counter counter `uc  1 a 1 10 ]
+[v ___awdiv@sign sign `uc  1 a 1 10 ]
+[v ___awdiv@counter counter `uc  1 a 1 9 ]
 "7
-[v ___awdiv@dividend dividend `i  1 p 2 6 ]
-[v ___awdiv@divisor divisor `i  1 p 2 8 ]
+[v ___awdiv@dividend dividend `i  1 p 2 5 ]
+[v ___awdiv@divisor divisor `i  1 p 2 7 ]
 "41
 } 0
 "77 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/spi.c
@@ -876,18 +876,18 @@
 [v SPI_Exchange8bit@data data `uc  1 a 1 wreg ]
 [v SPI_Exchange8bit@data data `uc  1 a 1 wreg ]
 "80
-[v SPI_Exchange8bit@data data `uc  1 a 1 6 ]
+[v SPI_Exchange8bit@data data `uc  1 a 1 5 ]
 "89
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "10
-[v ___awmod@sign sign `uc  1 a 1 11 ]
-[v ___awmod@counter counter `uc  1 a 1 10 ]
+[v ___awmod@sign sign `uc  1 a 1 10 ]
+[v ___awmod@counter counter `uc  1 a 1 9 ]
 "7
-[v ___awmod@dividend dividend `i  1 p 2 6 ]
-[v ___awmod@divisor divisor `i  1 p 2 8 ]
+[v ___awmod@dividend dividend `i  1 p 2 5 ]
+[v ___awmod@divisor divisor `i  1 p 2 7 ]
 "34
 } 0
 "216 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
@@ -895,26 +895,26 @@
 {
 "223
 } 0
-"91 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/tmr1.c
+"92 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/tmr1.c
 [v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
 {
-"95
+"96
 } 0
 "108 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "116
 } 0
-"65 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/tmr1.c
+"66 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 {
-"89
+"90
 } 0
-"168
+"175
 [v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 6 ]
-"170
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 5 ]
+"177
 } 0
 "63 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/spi.c
 [v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
@@ -944,13 +944,13 @@
 "212
 [v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetTxInterruptHandler@handler handler `*.2v  1 p 2 6 ]
+[v EUSART_SetTxInterruptHandler@handler handler `*.2v  1 p 2 5 ]
 "214
 } 0
 "216
 [v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetRxInterruptHandler@handler handler `*.2v  1 p 2 6 ]
+[v EUSART_SetRxInterruptHandler@handler handler `*.2v  1 p 2 5 ]
 "218
 } 0
 "58 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/interrupt_manager.c
@@ -966,26 +966,20 @@
 [v btGetData@rcv rcv `uc  1 a 1 0 ]
 "378
 } 0
-"146 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/tmr1.c
+"147 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\mcc_generated_files/tmr1.c
 [v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
 {
-"156
+"163
 } 0
-"119
-[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
-{
-[v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
-"139
-} 0
-"158
+"165
 [v _TMR1_CallBack TMR1_CallBack `(v  1 e 1 0 ]
 {
-"166
+"173
 } 0
-"172
+"179
 [v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
-"176
+"183
 } 0
 "130 C:\Users\martin\MPLABXProjects\PICMcuMax7219AlarmClock\PICMcuMax7219AlarmClock.X\main.c
 [v _calculateTime calculateTime `(v  1 e 1 0 ]

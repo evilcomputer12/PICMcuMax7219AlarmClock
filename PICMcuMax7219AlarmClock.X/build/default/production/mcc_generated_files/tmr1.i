@@ -4553,6 +4553,7 @@ _Bool SPI_HasWriteCollisionOccured(void);
 void SPI_ClearWriteCollisionStatus(void);
 # 53 "./mcc_generated_files/mcc.h" 2
 
+
 # 1 "mcc_generated_files/memory.h" 1
 # 98 "mcc_generated_files/memory.h"
 uint8_t FLASH_ReadByte(uint32_t flashAddr);
@@ -4570,8 +4571,7 @@ void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
 uint8_t DATAEE_ReadByte(uint16_t bAdd);
 
 void MEMORY_Tasks(void);
-# 54 "./mcc_generated_files/mcc.h" 2
-
+# 55 "./mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/eusart.h" 1
 # 80 "mcc_generated_files/eusart.h"
@@ -4685,6 +4685,7 @@ void parseCommand(const char* command);
 
 
 volatile uint16_t timer1ReloadVal;
+volatile uint8_t overflow_count = 0;
 void (*TMR1_InterruptHandler)(void);
 
 
@@ -4696,7 +4697,7 @@ void TMR1_Initialize(void)
 
 
 
-  TMR1H = 0x80;
+  TMR1H = 0xF0;
 
 
   TMR1L = 0x00;
@@ -4714,7 +4715,7 @@ void TMR1_Initialize(void)
     TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler);
 
 
-    T1CON = 0x0B;
+    T1CON = 0x8F;
 }
 
 void TMR1_StartTimer(void)
@@ -4735,8 +4736,6 @@ uint16_t TMR1_ReadTimer(void)
     uint8_t readValHigh;
     uint8_t readValLow;
 
-    T1CONbits.RD16 = 1;
-
     readValLow = TMR1L;
     readValHigh = TMR1H;
 
@@ -4753,8 +4752,8 @@ void TMR1_WriteTimer(uint16_t timerVal)
         T1CONbits.TMR1ON = 0;
 
 
-        TMR1H = (uint8_t)(timerVal >> 8);
-        TMR1L = (uint8_t)timerVal;
+        TMR1H = (timerVal >> 8);
+        TMR1L = (uint8_t) timerVal;
 
 
         T1CONbits.TMR1ON =1;
@@ -4762,14 +4761,16 @@ void TMR1_WriteTimer(uint16_t timerVal)
     else
     {
 
-        TMR1H = (uint8_t)(timerVal >> 8);
-        TMR1L = (uint8_t)timerVal;
+        TMR1H = (timerVal >> 8);
+        TMR1L = (uint8_t) timerVal;
     }
 }
 
 void TMR1_Reload(void)
 {
-    TMR1_WriteTimer(timer1ReloadVal);
+
+    TMR1H = (timer1ReloadVal >> 8);
+    TMR1L = (uint8_t) timer1ReloadVal;
 }
 
 void TMR1_ISR(void)
@@ -4777,11 +4778,17 @@ void TMR1_ISR(void)
 
 
     PIR1bits.TMR1IF = 0;
-    TMR1_WriteTimer(timer1ReloadVal);
 
 
+     TMR1H = (timer1ReloadVal >> 8);
+     TMR1L = (uint8_t) timer1ReloadVal;
+    overflow_count++;
+    if (overflow_count >= 16) {
 
-    TMR1_CallBack();
+
+        TMR1_CallBack();
+        overflow_count = 0;
+    }
 }
 
 void TMR1_CallBack(void)
