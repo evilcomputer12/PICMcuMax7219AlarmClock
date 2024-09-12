@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2520 `(v ~T0 @X0 0 tf ]
-[v F2522 `(v ~T0 @X0 0 tf ]
+[v F2519 `(v ~T0 @X0 0 tf ]
+[v F2521 `(v ~T0 @X0 0 tf ]
 "5193 C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 5193:     struct {
 [s S234 :1 `uc 1 ]
@@ -87,7 +87,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2415
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 2415: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
 [v _PIR1bits `VS93 ~T0 @X0 0 e@3998 ]
-"262 ./mcc_generated_files/tmr1.h
+"261 ./mcc_generated_files/tmr1.h
 [v _TMR1_ISR `(v ~T0 @X0 0 ef ]
 "56 mcc_generated_files/../main.h
 [; ;mcc_generated_files/../main.h: 56: void btGetData(char rcv);
@@ -516,9 +516,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 6515: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "80 ./mcc_generated_files/eusart.h
-[v _EUSART_TxDefaultInterruptHandler `*F2520 ~T0 @X0 1 e ]
+[v _EUSART_TxDefaultInterruptHandler `*F2519 ~T0 @X0 1 e ]
 "81
-[v _EUSART_RxDefaultInterruptHandler `*F2522 ~T0 @X0 1 e ]
+[v _EUSART_RxDefaultInterruptHandler `*F2521 ~T0 @X0 1 e ]
 "52 mcc_generated_files/interrupt_manager.c
 [; ;mcc_generated_files/interrupt_manager.c: 52: void INTERRUPT_Initialize (void)
 [v _INTERRUPT_Initialize `(v ~T0 @X0 1 ef ]

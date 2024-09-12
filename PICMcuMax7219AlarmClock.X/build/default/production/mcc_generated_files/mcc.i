@@ -4581,27 +4581,25 @@ void SPI_ClearWriteCollisionStatus(void);
 # 53 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr1.h" 1
-# 94 "mcc_generated_files/tmr1.h"
+# 93 "mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
-# 125 "mcc_generated_files/tmr1.h"
+# 124 "mcc_generated_files/tmr1.h"
 void TMR1_StartTimer(void);
-# 155 "mcc_generated_files/tmr1.h"
+# 154 "mcc_generated_files/tmr1.h"
 void TMR1_StopTimer(void);
-# 188 "mcc_generated_files/tmr1.h"
+# 187 "mcc_generated_files/tmr1.h"
 uint16_t TMR1_ReadTimer(void);
-# 214 "mcc_generated_files/tmr1.h"
+# 213 "mcc_generated_files/tmr1.h"
 void TMR1_WriteTimer(uint16_t timerVal);
-# 246 "mcc_generated_files/tmr1.h"
+# 245 "mcc_generated_files/tmr1.h"
 void TMR1_Reload(void);
-# 262 "mcc_generated_files/tmr1.h"
+# 261 "mcc_generated_files/tmr1.h"
 void TMR1_ISR(void);
 # 280 "mcc_generated_files/tmr1.h"
-void TMR1_CallBack(void);
-# 298 "mcc_generated_files/tmr1.h"
  void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 316 "mcc_generated_files/tmr1.h"
+# 298 "mcc_generated_files/tmr1.h"
 extern void (*TMR1_InterruptHandler)(void);
-# 334 "mcc_generated_files/tmr1.h"
+# 316 "mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
 # 54 "mcc_generated_files/mcc.h" 2
 

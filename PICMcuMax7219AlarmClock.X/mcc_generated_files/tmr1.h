@@ -59,7 +59,6 @@
 
 #endif
 
-#define TMR1_INTERRUPT_TICKER_FACTOR    1
 
 /**
   Section: TMR1 APIs
@@ -261,23 +260,6 @@ void TMR1_Reload(void);
 */
 void TMR1_ISR(void);
 
-/**
-  @Summary
-    CallBack function.
-
-  @Description
-    This routine is called by the Interrupt Manager.
-
-  @Preconditions
-    None
-
-  @Param
-    None
-
-  @Returns
-    None
-*/
-void TMR1_CallBack(void);
 
 /**
   @Summary

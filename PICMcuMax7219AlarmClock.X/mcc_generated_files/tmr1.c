@@ -13,35 +13,34 @@
   @Description
     This source file provides APIs for TMR1.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.8
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.55
         Device            :  PIC18F26K20
-        Driver Version    :  2.01
+        Driver Version    :  2.00
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.36 and above
-        MPLAB 	          :  MPLAB X 6.00
+        Compiler          :  XC8 1.43
+        MPLAB 	          :  MPLAB X 4.00
 */
 
 /*
-    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
-    
-    Subject to your compliance with these terms, you may use Microchip software and any 
-    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
-    license terms applicable to your use of third party software (including open source software) that 
-    may accompany Microchip software.
-    
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
-    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
-    FOR A PARTICULAR PURPOSE.
-    
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
-    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
-    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
-    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
-    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
-    SOFTWARE.
+    (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
+    software and any derivatives exclusively with Microchip products.
+
+    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
+    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
+    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
+
+    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
+    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+
+    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
+    TERMS.
 */
 
 /**
@@ -50,13 +49,13 @@
 
 #include <xc.h>
 #include "tmr1.h"
+#include <math.h>
 #include "../main.h"
 
 /**
   Section: Global Variable Definitions
 */
 volatile uint16_t timer1ReloadVal;
-volatile uint8_t overflow_count = 0;
 void (*TMR1_InterruptHandler)(void);
 
 /**
@@ -67,14 +66,19 @@ void TMR1_Initialize(void)
 {
     //Set the Timer to the options selected in the GUI
 	
-	// TMR1H 240; 
-		TMR1H = 0xF0;
+	// TMR1H 128; 
+		TMR1H = 0x80;
 	
 	// TMR1L 0; 
 		TMR1L = 0x00;
 
     // Load the TMR value to reload variable
-    timer1ReloadVal=TMR1;
+    timer1ReloadVal=(TMR1H << 8) | TMR1L;
+    
+    // Add an approximate Timer1 offset value derived from wake-up, interrupts, and other latencies
+    uint8_t tmr1Offset = round((0.000008+(20.0/(_XTAL_FREQ/4)))*32768);
+    timer1ReloadVal += tmr1Offset;
+
 
     // Clearing IF flag before enabling the interrupt.
     PIR1bits.TMR1IF = 0;
@@ -85,8 +89,8 @@ void TMR1_Initialize(void)
     // Set Default Interrupt Handler
     TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler);
 
-    // T1CKPS 1:1; T1OSCEN enabled; TMR1CS External; nT1SYNC do_not_synchronize; TMR1ON enabled; RD16 enabled; 
-    T1CON = 0x8F;
+    // T1CKPS 1:1; T1OSCEN enabled; TMR1CS External; nT1SYNC do_not_synchronize; TMR1ON disabled; RD16 disabled; 
+    T1CON = 0x0E;
 }
 
 void TMR1_StartTimer(void)
@@ -106,7 +110,7 @@ uint16_t TMR1_ReadTimer(void)
     uint16_t readVal;
     uint8_t readValHigh;
     uint8_t readValLow;
-	
+    
     readValLow = TMR1L;
     readValHigh = TMR1H;
     
@@ -148,29 +152,18 @@ void TMR1_ISR(void)
 {
 
     // Clear the TMR1 interrupt flag
-    PIR1bits.TMR1IF = 0;    
-
+    PIR1bits.TMR1IF = 0;
+    
      // Write to the Timer1 register
      TMR1H = (timer1ReloadVal >> 8);
      TMR1L =  (uint8_t) timer1ReloadVal;
-    overflow_count++;
-    if (overflow_count >= 16) {  // For example, update clock every 8 overflows
-        // ticker function call;
-        // ticker is 1 -> Callback function gets called every time this ISR executes
-        TMR1_CallBack();
-        overflow_count = 0;     // Reset the counter
-    }
-}
-
-void TMR1_CallBack(void)
-{
-    // Add your custom callback code here
 
     if(TMR1_InterruptHandler)
     {
         TMR1_InterruptHandler();
     }
 }
+
 
 void TMR1_SetInterruptHandler(void (* InterruptHandler)(void)){
     TMR1_InterruptHandler = InterruptHandler;

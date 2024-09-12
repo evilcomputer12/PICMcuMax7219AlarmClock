@@ -50,12 +50,12 @@ void main(void)
     clearDisplay();     // Clear display at the beginning
     loadTimeFromFlash();
     // Start the timer
-    TMR1_StartTimer();
+    
     TRISBbits.RB3 = 0;
     INTCONbits.GIE = 1; // Enable Global Interrupts
     INTCONbits.PEIE = 1; // Enable Peripheral Interrupts
     
-
+    TMR1_StartTimer();
     while(1)
     {
         displayTime();
