@@ -78,7 +78,7 @@ void TMR1_Initialize(void)
     // Add an approximate Timer1 offset value derived from wake-up, interrupts, and other latencies
     uint8_t tmr1Offset = round((0.000008+(20.0/(_XTAL_FREQ/4)))*32768);
     timer1ReloadVal += tmr1Offset;
-
+    timer1ReloadVal += 0xC1;
 
     // Clearing IF flag before enabling the interrupt.
     PIR1bits.TMR1IF = 0;

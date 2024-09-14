@@ -4,23 +4,26 @@ Linker command line:
 
 -W-3 \
   --edf=C:\Program Files\Microchip\xc8\v2.46\pic\dat\20240104201356_en.msgs \
-  -cn -h+dist/default/production\PICMcuMax7219AlarmClock.X.production.sym \
-  --cmf=dist/default/production\PICMcuMax7219AlarmClock.X.production.cmf -z \
-  -Q18F26K20 -oC:\Users\martin\AppData\Local\Temp\xcAs9n4.\driver_tmp_3.o \
+  -cn -h+dist/default/debug\PICMcuMax7219AlarmClock.X.debug.sym \
+  --cmf=dist/default/debug\PICMcuMax7219AlarmClock.X.debug.cmf -z \
+  -Q18F26K20 -oC:\Users\martin\AppData\Local\Temp\xcAsf6o.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
-  -Mdist/default/production/PICMcuMax7219AlarmClock.X.production.map \
-  --md=C:\Users\martin\AppData\Local\Temp\xcAs9n4.\driver_tmp_0.dat -E1 \
-  -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh \
-  -ASMALLCONST=01000h-010FFhx240 -AMEDIUMCONST=01000h-0FFFFh \
-  -ACOMRAM=01h-05Fh -AABS1=00h-0F5Fh -ABIGRAM=01h-0F5Fh \
-  -ARAM=060h-0FFh,0100h-01FFhx14,0F00h-0F5Fh -ABANK0=060h-0FFh \
+  -Mdist/default/debug/PICMcuMax7219AlarmClock.X.debug.map \
+  --md=C:\Users\martin\AppData\Local\Temp\xcAsf6o.\driver_tmp_0.dat -E1 \
+  -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-0FD2Fh -ACONST=00h-0FD2Fh \
+  -ASMALLCONST=01000h-010FFhx237,0FD00h-0FD2Fh -AMEDIUMCONST=01000h-0FD2Fh \
+  -ACOMRAM=01h-05Fh -AABS1=00h-0EEEh,0F00h-0F5Fh \
+  -ABIGRAM=01h-0EEEh,0F00h-0F5Fh \
+  -ARAM=060h-0FFh,0100h-01FFhx13,0E00h-0EEEh,0F00h-0F5Fh -ABANK0=060h-0FFh \
   -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh -ABANK3=0300h-03FFh \
   -ABANK4=0400h-04FFh -ABANK5=0500h-05FFh -ABANK6=0600h-06FFh \
   -ABANK7=0700h-07FFh -ABANK8=0800h-08FFh -ABANK9=0900h-09FFh \
   -ABANK10=0A00h-0AFFh -ABANK11=0B00h-0BFFh -ABANK12=0C00h-0CFFh \
-  -ABANK13=0D00h-0DFFh -ABANK14=0E00h-0EFFh -ABANK15=0F00h-0F5Fh \
-  -ASFR=0F60h-0FFFh -ABIGSFR=0F60h-0FFFh -ACONFIG=0300000h-030000Dh \
-  -AIDLOC=0200000h-0200007h -AEEDATA=0F00000h-0F003FFh -peeprom_data=EEDATA \
+  -ABANK13=0D00h-0DFFh -ABANK14=0E00h-0EEEh -ABANK15=0F00h-0F5Fh \
+  -ASFR=0F60h-0F9Bh,0F9Dh-0FD3h,0FD5h-0FDAh,0FE0h-0FE2h,0FE8h-0FEAh,0FF0h-0FFBh \
+  -ABIGSFR=0F60h-0F9Bh,0F9Dh-0FD3h,0FD5h-0FDAh,0FE0h-0FE2h,0FE8h-0FEAh,0FF0h-0FFBh \
+  -ACONFIG=0300000h-030000Dh -AIDLOC=0200000h-0200007h \
+  -AEEDATA=0F00000h-0F003FFh -peeprom_data=EEDATA \
   -preset_vec=00h,intcode=8h,intcodelo,powerup,init -pramtop=01000h \
   -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST -pconst=CONST \
   -AFARRAM=00h-00h \
@@ -28,8 +31,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\martin\AppData\Local\Temp\xcAs9n4.\driver_tmp_9.o \
-  dist/default/production\PICMcuMax7219AlarmClock.X.production.o 
+  C:\Users\martin\AppData\Local\Temp\xcAsf6o.\driver_tmp_9.o \
+  dist/default/debug\PICMcuMax7219AlarmClock.X.debug.o 
 
 Object code version is 3.11
 
@@ -38,17 +41,17 @@ Machine type is 18F26K20
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\martin\AppData\Local\Temp\xcAs9n4.\driver_tmp_9.o
+C:\Users\martin\AppData\Local\Temp\xcAsf6o.\driver_tmp_9.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 AA       AA        4        4       0
                 reset_vec                             0        0        4        0       0
-dist/default/production\PICMcuMax7219AlarmClock.X.production.o
+dist/default/debug\PICMcuMax7219AlarmClock.X.debug.o
                 intcode                               8        8       A2        4       0
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 temp                                 59       59        1        1       1
-                mediumconst                        F7F4     F7F4      80C     7BFA       0
+                mediumconst                        F524     F524      80C     7A92       0
                 text46                             1A12     1A12       46        4       0
                 text45                             1C90     1C90        6        4       0
                 text44                             1AC8     1AC8       38        4       0
@@ -161,7 +164,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   SMALLCONST     
 
         CLASS   MEDIUMCONST    
-                mediumconst                        F7F4     F7F4      80C         0
+                mediumconst                        F524     F524      80C         0
 
         CLASS   COMRAM         
                 temp                                 59       59        1         1
@@ -237,7 +240,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 intcode                        000008  001C96  001C9E         4       0  CODE    
                 bssBANK0                       000060  0000A0  000100        60       1  BANK0   
                 bssBANK1                       000100  000020  000120       100       1  BANK1   
-                mediumconst                    00F7F4  00080C  010000      7BFA       0  MEDIUMCO
+                mediumconst                    00F524  00080C  00FD30      7A92       0  MEDIUMCO
 
 
 UNUSED ADDRESS RANGES
@@ -248,7 +251,7 @@ UNUSED ADDRESS RANGES
         BANK11           000B00-000BFF              100
         BANK12           000C00-000CFF              100
         BANK13           000D00-000DFF              100
-        BANK14           000E00-000EFF              100
+        BANK14           000E00-000EEE               EF
         BANK15           000F00-000F5F               60
         BANK2            000200-0002FF              100
         BANK3            000300-0003FF              100
@@ -259,18 +262,30 @@ UNUSED ADDRESS RANGES
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
         BIGRAM           00005A-00005F                6
-                         000120-000F5F              E40
-        BIGSFR           000F60-000FFF               A0
+                         000120-000EEE              DCF
+                         000F00-000F5F               60
+        BIGSFR           000F60-000F9B               3C
+                         000F9D-000FD3               37
+                         000FD5-000FDA                6
+                         000FE0-000FE2                3
+                         000FE8-000FEA                3
+                         000FF0-000FFB                C
         CODE             000004-000007                4
-                         001C9E-00F7F3             DB56
+                         001C9E-00F523             D886
         COMRAM           00005A-00005F                6
         CONST            000004-000007                4
-                         001C9E-00F7F3             DB56
+                         001C9E-00F523             D886
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      001C9E-00F7F3             DB56
-        RAM              000120-000F5F              100
-        SFR              000F60-000FFF               A0
-        SMALLCONST       001C9E-00F7F3              100
+        MEDIUMCONST      001C9E-00F523             D886
+        RAM              000120-000EEE              100
+                         000F00-000F5F               60
+        SFR              000F60-000F9B               3C
+                         000F9D-000FD3               37
+                         000FD5-000FDA                6
+                         000FE0-000FE2                3
+                         000FE8-000FEA                3
+                         000FF0-000FFB                C
+        SMALLCONST       001C9E-00F523              100
 
                                   Symbol Table
 
@@ -326,7 +341,7 @@ _LATB                                     (abs)        000F8A
 _LATBbits                                 (abs)        000F8A
 _LATC                                     (abs)        000F8B
 _LATCbits                                 (abs)        000F8B
-_MAX7219_Dot_Matrix_font                  mediumconst  00F7F5
+_MAX7219_Dot_Matrix_font                  mediumconst  00F525
 _OSCCON                                   (abs)        000FD3
 _OSCILLATOR_Initialize                    text37       001C72
 _OSCTUNE                                  (abs)        000F9B
@@ -423,7 +438,7 @@ __Hintentry                               intentry     000000
 __Hintret                                 intret       000000
 __Hintsave_regs                           intsave_regs 000000
 __Hirdata                                 irdata       000000
-__Hmediumconst                            mediumconst  010000
+__Hmediumconst                            mediumconst  00FD30
 __HnvBANK0                                nvBANK0      000000
 __HnvFARRAM                               nvFARRAM     000000
 __Hnvbit                                  nvbit        000000
@@ -441,7 +456,7 @@ __Hsfr                                    sfr          000000
 __Hsivt_hi                                sivt_hi      000000
 __Hsivt_lo                                sivt_lo      000000
 __Hsmallconst                             smallconst   000000
-__Hspace_0                                (abs)        010000
+__Hspace_0                                (abs)        00FD30
 __Hspace_1                                (abs)        000120
 __Hspace_2                                (abs)        000000
 __Hspace_4                                (abs)        60000E
@@ -546,7 +561,7 @@ __Lintentry                               intentry     000000
 __Lintret                                 intret       000000
 __Lintsave_regs                           intsave_regs 000000
 __Lirdata                                 irdata       000000
-__Lmediumconst                            mediumconst  00F7F4
+__Lmediumconst                            mediumconst  00F524
 __LnvBANK0                                nvBANK0      000000
 __LnvFARRAM                               nvFARRAM     000000
 __Lnvbit                                  nvbit        000000
@@ -618,7 +633,7 @@ __Ltext6                                  text6        000000
 __Ltext7                                  text7        000000
 __Ltext8                                  text8        000000
 __Ltext9                                  text9        000000
-__S0                                      (abs)        010000
+__S0                                      (abs)        00FD30
 __S1                                      (abs)        000120
 __S4                                      (abs)        000000
 __S5                                      (abs)        000000
@@ -684,7 +699,7 @@ __end_of_FLASH_ReadByte                   text15       001C4E
 __end_of_FLASH_WriteBlock                 text13       001090
 __end_of_INTERRUPT_Initialize             text38       001C9E
 __end_of_INTERRUPT_InterruptManager       intcode      0000AA
-__end_of_MAX7219_Dot_Matrix_font          mediumconst  00FFF5
+__end_of_MAX7219_Dot_Matrix_font          mediumconst  00FD25
 __end_of_OSCILLATOR_Initialize            text37       001C7C
 __end_of_PIN_MANAGER_Initialize           text36       001C08
 __end_of_SPI_Exchange8bit                 text22       001C22
@@ -724,10 +739,10 @@ __end_of_printString                      text18       000C6E
 __end_of_processAlarm                     text1        00192C
 __end_of_roundf                           text28       000844
 __end_of_saveTimeToFlash                  text12       001782
-__end_of_toint                            mediumconst  00FFF9
+__end_of_toint                            mediumconst  00FD29
 __end_of_triggerAlarm                     text2        001398
 __initialization                          cinit        001B68
-__mediumconst                             mediumconst  00F7F4
+__mediumconst                             mediumconst  00F524
 __pbssBANK0                               bssBANK0     000060
 __pbssBANK1                               bssBANK1     000100
 __pbssCOMRAM                              bssCOMRAM    000052
@@ -735,7 +750,7 @@ __pcinit                                  cinit        001B68
 __pcstackBANK0                            cstackBANK0  0000B3
 __pcstackCOMRAM                           cstackCOMRAM 000001
 __pintcode                                intcode      000008
-__pmediumconst                            mediumconst  00F7F4
+__pmediumconst                            mediumconst  00F524
 __pnvBANK0                                nvBANK0      0000FA
 __ptext0                                  text0        001090
 __ptext1                                  text1        0018DA
@@ -961,7 +976,7 @@ mcc_generated_files/spi.c estimated size: 40
 shared
 		__initialization		CODE           	1B68	0000	36
 		_toint         		MEDIUMCONST    	0000	0000	0
-		_MAX7219_Dot_Matrix_font		MEDIUMCONST    	F7F5	0000	2048
+		_MAX7219_Dot_Matrix_font		MEDIUMCONST    	F525	0000	2048
 
 shared estimated size: 2084
 

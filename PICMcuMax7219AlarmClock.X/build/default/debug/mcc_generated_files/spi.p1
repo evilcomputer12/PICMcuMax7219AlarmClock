@@ -1,83 +1,90 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2943 `(v ~T0 @X0 0 tf ]
-[v F2945 `(v ~T0 @X0 0 tf ]
-[v F3004 `(v ~T0 @X0 0 tf ]
-"5180 C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 5180: extern volatile unsigned char TMR1H __attribute__((address(0xFCF)));
-[v _TMR1H `Vuc ~T0 @X0 0 e@4047 ]
-"5173
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 5173: extern volatile unsigned char TMR1L __attribute__((address(0xFCE)));
-[v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
-"351 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\math.h: 351: float roundf(float);
-[v _roundf `(f ~T0 @X0 0 ef1`f ]
-"2400 C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 2400:     struct {
-[s S94 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S94 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
-"2409
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 2409:     struct {
-[s S95 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S95 . . TX1IF RC1IF ]
-"2399
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 2399: typedef union {
-[u S93 `S94 1 `S95 1 ]
-[n S93 . . . ]
-"2415
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 2415: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
-[v _PIR1bits `VS93 ~T0 @X0 0 e@3998 ]
-"2329
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 2329:     struct {
-[s S91 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S91 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE ]
-"2338
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 2338:     struct {
-[s S92 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S92 . . TX1IE RC1IE ]
-"2328
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 2328: typedef union {
-[u S90 `S91 1 `S92 1 ]
-[n S90 . . . ]
-"2344
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 2344: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
-[v _PIE1bits `VS90 ~T0 @X0 0 e@3997 ]
-[v F2478 `(v ~T0 @X0 0 tf ]
-"280 ./mcc_generated_files/tmr1.h
-[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2478 ]
-"316
-[v _TMR1_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
-"5063 C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 5063: extern volatile unsigned char T1CON __attribute__((address(0xFCD)));
-[v _T1CON `Vuc ~T0 @X0 0 e@4045 ]
-"5069
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 5069:     struct {
-[s S229 :2 `uc 1 :1 `uc 1 ]
-[n S229 . . NOT_T1SYNC ]
-"5073
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 5073:     struct {
-[s S230 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S230 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS T1RUN RD16 ]
-"5082
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 5082:     struct {
-[s S231 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S231 . . T1SYNC . T1CKPS0 T1CKPS1 ]
-"5089
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 5089:     struct {
-[s S232 :3 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S232 . . SOSCEN . T1RD16 ]
-"5068
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 5068: typedef union {
-[u S228 `S229 1 `S230 1 `S231 1 `S232 1 ]
-[n S228 . . . . . ]
-"5096
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 5096: extern volatile T1CONbits_t T1CONbits __attribute__((address(0xFCD)));
-[v _T1CONbits `VS228 ~T0 @X0 0 e@4045 ]
-[v F3018 `(v ~T0 @X0 0 tf ]
-[v F3020 `(v ~T0 @X0 0 tf ]
-[v F3022 `(v ~T0 @X0 0 tf ]
-"43 mcc_generated_files/../main.h
-[; ;mcc_generated_files/../main.h: 43: void calculateTime(void);
-[v _calculateTime `(v ~T0 @X0 0 ef ]
+"4636 C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4636: extern volatile unsigned char SSPSTAT __attribute__((address(0xFC7)));
+[v _SSPSTAT `Vuc ~T0 @X0 0 e@4039 ]
+"4566
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4566: extern volatile unsigned char SSPCON1 __attribute__((address(0xFC6)));
+[v _SSPCON1 `Vuc ~T0 @X0 0 e@4038 ]
+"4861
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4861: extern volatile unsigned char SSPADD __attribute__((address(0xFC8)));
+[v _SSPADD `Vuc ~T0 @X0 0 e@4040 ]
+"4572
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4572:     struct {
+[s S197 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S197 . SSPM CKP SSPEN SSPOV WCOL ]
+"4579
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4579:     struct {
+[s S198 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S198 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"4571
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4571: typedef union {
+[u S196 `S197 1 `S198 1 ]
+[n S196 . . . ]
+"4586
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4586: extern volatile SSPCON1bits_t SSPCON1bits __attribute__((address(0xFC6)));
+[v _SSPCON1bits `VS196 ~T0 @X0 0 e@4038 ]
+"4868
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4868: extern volatile unsigned char SSPBUF __attribute__((address(0xFC9)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
+"4642
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4642:     struct {
+[s S200 :2 `uc 1 :1 `uc 1 ]
+[n S200 . . R_NOT_W ]
+"4646
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4646:     struct {
+[s S201 :5 `uc 1 :1 `uc 1 ]
+[n S201 . . D_NOT_A ]
+"4650
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4650:     struct {
+[s S202 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S202 . BF UA R_nW S P D_nA CKE SMP ]
+"4660
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4660:     struct {
+[s S203 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S203 . . R . D ]
+"4666
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4666:     struct {
+[s S204 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S204 . . W . A ]
+"4672
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4672:     struct {
+[s S205 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S205 . . nW . nA ]
+"4678
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4678:     struct {
+[s S206 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S206 . . R_W . D_A ]
+"4684
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4684:     struct {
+[s S207 :2 `uc 1 :1 `uc 1 ]
+[n S207 . . NOT_WRITE ]
+"4688
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4688:     struct {
+[s S208 :5 `uc 1 :1 `uc 1 ]
+[n S208 . . NOT_ADDRESS ]
+"4692
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4692:     struct {
+[s S209 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S209 . . nWRITE . nADDRESS ]
+"4698
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4698:     struct {
+[s S210 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S210 . . START STOP ]
+"4703
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4703:     struct {
+[s S211 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S211 . . RW . DA ]
+"4709
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4709:     struct {
+[s S212 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S212 . . NOT_W . NOT_A ]
+"4641
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4641: typedef union {
+[u S199 `S200 1 `S201 1 `S202 1 `S203 1 `S204 1 `S205 1 `S206 1 `S207 1 `S208 1 `S209 1 `S210 1 `S211 1 `S212 1 ]
+[n S199 . . . . . . . . . . . . . . ]
+"4716
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 4716: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0xFC7)));
+[v _SSPSTATbits `VS199 ~T0 @X0 0 e@4039 ]
 "54 C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -498,254 +505,245 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6515
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\proc\pic18f26k20.h: 6515: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"80 ./mcc_generated_files/eusart.h
-[v _EUSART_TxDefaultInterruptHandler `*F2943 ~T0 @X0 1 e ]
-"81
-[v _EUSART_RxDefaultInterruptHandler `*F2945 ~T0 @X0 1 e ]
-"58 mcc_generated_files/tmr1.c
-[; ;mcc_generated_files/tmr1.c: 58: volatile uint16_t timer1ReloadVal;
-[v _timer1ReloadVal `Vus ~T0 @X0 1 e ]
-"59
-[; ;mcc_generated_files/tmr1.c: 59: void (*TMR1_InterruptHandler)(void);
-[v _TMR1_InterruptHandler `*F3004 ~T0 @X0 1 e ]
-"65
-[; ;mcc_generated_files/tmr1.c: 65: void TMR1_Initialize(void)
-[v _TMR1_Initialize `(v ~T0 @X0 1 ef ]
-"66
-[; ;mcc_generated_files/tmr1.c: 66: {
+"63 mcc_generated_files/spi.c
+[; ;mcc_generated_files/spi.c: 63: void SPI_Initialize(void)
+[v _SPI_Initialize `(v ~T0 @X0 1 ef ]
+"64
+[; ;mcc_generated_files/spi.c: 64: {
 {
-[e :U _TMR1_Initialize ]
+[e :U _SPI_Initialize ]
 [f ]
-"70
-[; ;mcc_generated_files/tmr1.c: 70:   TMR1H = 0x80;
-[e = _TMR1H -> -> 128 `i `uc ]
-"73
-[; ;mcc_generated_files/tmr1.c: 73:   TMR1L = 0x00;
-[e = _TMR1L -> -> 0 `i `uc ]
-"76
-[; ;mcc_generated_files/tmr1.c: 76:     timer1ReloadVal=(TMR1H << 8) | TMR1L;
-[e = _timer1ReloadVal -> | << -> _TMR1H `i -> 8 `i -> _TMR1L `i `us ]
-"79
-[; ;mcc_generated_files/tmr1.c: 79:     uint8_t tmr1Offset = roundf((0.000008+(20.0/(8000000/4)))*32768);
-[v _tmr1Offset `uc ~T0 @X0 1 a ]
-[e = _tmr1Offset -> ( _roundf (1 -> * + .0.000008 / .20.0 -> / -> 8000000 `l -> -> 4 `i `l `d -> -> 32768 `l `d `f `uc ]
-"80
-[; ;mcc_generated_files/tmr1.c: 80:     timer1ReloadVal += tmr1Offset;
-[e =+ _timer1ReloadVal -> _tmr1Offset `Vus ]
-"81
-[; ;mcc_generated_files/tmr1.c: 81:     timer1ReloadVal += 0xC1;
-[e =+ _timer1ReloadVal -> -> 193 `i `Vus ]
-"84
-[; ;mcc_generated_files/tmr1.c: 84:     PIR1bits.TMR1IF = 0;
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"87
-[; ;mcc_generated_files/tmr1.c: 87:     PIE1bits.TMR1IE = 1;
-[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-"90
-[; ;mcc_generated_files/tmr1.c: 90:     TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler);
-[e ( _TMR1_SetInterruptHandler (1 &U _TMR1_DefaultInterruptHandler ]
-"93
-[; ;mcc_generated_files/tmr1.c: 93:     T1CON = 0x0E;
-[e = _T1CON -> -> 14 `i `uc ]
-"94
-[; ;mcc_generated_files/tmr1.c: 94: }
+"68
+[; ;mcc_generated_files/spi.c: 68:     SSPSTAT = 0xC0;
+[e = _SSPSTAT -> -> 192 `i `uc ]
+"71
+[; ;mcc_generated_files/spi.c: 71:     SSPCON1 = 0x30;
+[e = _SSPCON1 -> -> 48 `i `uc ]
+"74
+[; ;mcc_generated_files/spi.c: 74:     SSPADD = 0x00;
+[e = _SSPADD -> -> 0 `i `uc ]
+"75
+[; ;mcc_generated_files/spi.c: 75: }
 [e :UE 277 ]
 }
-"96
-[; ;mcc_generated_files/tmr1.c: 96: void TMR1_StartTimer(void)
-[v _TMR1_StartTimer `(v ~T0 @X0 1 ef ]
-"97
-[; ;mcc_generated_files/tmr1.c: 97: {
+"77
+[; ;mcc_generated_files/spi.c: 77: uint8_t SPI_Exchange8bit(uint8_t data)
+[v _SPI_Exchange8bit `(uc ~T0 @X0 1 ef1`uc ]
+"78
+[; ;mcc_generated_files/spi.c: 78: {
 {
-[e :U _TMR1_StartTimer ]
+[e :U _SPI_Exchange8bit ]
+"77
+[; ;mcc_generated_files/spi.c: 77: uint8_t SPI_Exchange8bit(uint8_t data)
+[v _data `uc ~T0 @X0 1 r1 ]
+"78
+[; ;mcc_generated_files/spi.c: 78: {
 [f ]
-"99
-[; ;mcc_generated_files/tmr1.c: 99:     T1CONbits.TMR1ON = 1;
-[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
-"100
-[; ;mcc_generated_files/tmr1.c: 100: }
+"80
+[; ;mcc_generated_files/spi.c: 80:     SSPCON1bits.WCOL = 0;
+[e = . . _SSPCON1bits 0 4 -> -> 0 `i `uc ]
+"82
+[; ;mcc_generated_files/spi.c: 82:     SSPBUF = data;
+[e = _SSPBUF _data ]
+"84
+[; ;mcc_generated_files/spi.c: 84:     while(SSPSTATbits.BF == 0x0)
+[e $U 279  ]
+[e :U 280 ]
+"85
+[; ;mcc_generated_files/spi.c: 85:     {
+{
+"86
+[; ;mcc_generated_files/spi.c: 86:     }
+}
+[e :U 279 ]
+"84
+[; ;mcc_generated_files/spi.c: 84:     while(SSPSTATbits.BF == 0x0)
+[e $ == -> . . _SSPSTATbits 2 0 `i -> 0 `i 280  ]
+[e :U 281 ]
+"88
+[; ;mcc_generated_files/spi.c: 88:     return (SSPBUF);
+[e ) _SSPBUF ]
+[e $UE 278  ]
+"89
+[; ;mcc_generated_files/spi.c: 89: }
 [e :UE 278 ]
 }
+"91
+[; ;mcc_generated_files/spi.c: 91: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut)
+[v _SPI_Exchange8bitBuffer `(uc ~T0 @X0 1 ef3`*uc`uc`*uc ]
+"92
+[; ;mcc_generated_files/spi.c: 92: {
+{
+[e :U _SPI_Exchange8bitBuffer ]
+"91
+[; ;mcc_generated_files/spi.c: 91: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut)
+[v _dataIn `*uc ~T0 @X0 1 r1 ]
+[v _bufLen `uc ~T0 @X0 1 r2 ]
+[v _dataOut `*uc ~T0 @X0 1 r3 ]
+"92
+[; ;mcc_generated_files/spi.c: 92: {
+[f ]
+"93
+[; ;mcc_generated_files/spi.c: 93:     uint8_t bytesWritten = 0;
+[v _bytesWritten `uc ~T0 @X0 1 a ]
+[e = _bytesWritten -> -> 0 `i `uc ]
+"95
+[; ;mcc_generated_files/spi.c: 95:     if(bufLen != 0)
+[e $ ! != -> _bufLen `i -> 0 `i 283  ]
+"96
+[; ;mcc_generated_files/spi.c: 96:     {
+{
+"97
+[; ;mcc_generated_files/spi.c: 97:         if(dataIn != ((void*)0))
+[e $ ! != _dataIn -> -> -> 0 `i `*v `*uc 284  ]
+"98
+[; ;mcc_generated_files/spi.c: 98:         {
+{
+"99
+[; ;mcc_generated_files/spi.c: 99:             while(bytesWritten < bufLen)
+[e $U 285  ]
+[e :U 286 ]
+"100
+[; ;mcc_generated_files/spi.c: 100:             {
+{
+"101
+[; ;mcc_generated_files/spi.c: 101:                 if(dataOut == ((void*)0))
+[e $ ! == _dataOut -> -> -> 0 `i `*v `*uc 288  ]
 "102
-[; ;mcc_generated_files/tmr1.c: 102: void TMR1_StopTimer(void)
-[v _TMR1_StopTimer `(v ~T0 @X0 1 ef ]
+[; ;mcc_generated_files/spi.c: 102:                 {
+{
 "103
-[; ;mcc_generated_files/tmr1.c: 103: {
-{
-[e :U _TMR1_StopTimer ]
-[f ]
+[; ;mcc_generated_files/spi.c: 103:                     SPI_Exchange8bit(dataIn[bytesWritten]);
+[e ( _SPI_Exchange8bit (1 *U + _dataIn * -> _bytesWritten `ux -> -> # *U _dataIn `ui `ux ]
+"104
+[; ;mcc_generated_files/spi.c: 104:                 }
+}
+[e $U 289  ]
 "105
-[; ;mcc_generated_files/tmr1.c: 105:     T1CONbits.TMR1ON = 0;
-[e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
+[; ;mcc_generated_files/spi.c: 105:                 else
+[e :U 288 ]
 "106
-[; ;mcc_generated_files/tmr1.c: 106: }
-[e :UE 279 ]
-}
+[; ;mcc_generated_files/spi.c: 106:                 {
+{
+"107
+[; ;mcc_generated_files/spi.c: 107:                     dataOut[bytesWritten] = SPI_Exchange8bit(dataIn[bytesWritten]);
+[e = *U + _dataOut * -> _bytesWritten `ux -> -> # *U _dataOut `ui `ux ( _SPI_Exchange8bit (1 *U + _dataIn * -> _bytesWritten `ux -> -> # *U _dataIn `ui `ux ]
 "108
-[; ;mcc_generated_files/tmr1.c: 108: uint16_t TMR1_ReadTimer(void)
-[v _TMR1_ReadTimer `(us ~T0 @X0 1 ef ]
-"109
-[; ;mcc_generated_files/tmr1.c: 109: {
-{
-[e :U _TMR1_ReadTimer ]
-[f ]
+[; ;mcc_generated_files/spi.c: 108:                 }
+}
+[e :U 289 ]
 "110
-[; ;mcc_generated_files/tmr1.c: 110:     uint16_t readVal;
-[v _readVal `us ~T0 @X0 1 a ]
+[; ;mcc_generated_files/spi.c: 110:                 bytesWritten++;
+[e ++ _bytesWritten -> -> 1 `i `uc ]
 "111
-[; ;mcc_generated_files/tmr1.c: 111:     uint8_t readValHigh;
-[v _readValHigh `uc ~T0 @X0 1 a ]
+[; ;mcc_generated_files/spi.c: 111:             }
+}
+[e :U 285 ]
+"99
+[; ;mcc_generated_files/spi.c: 99:             while(bytesWritten < bufLen)
+[e $ < -> _bytesWritten `i -> _bufLen `i 286  ]
+[e :U 287 ]
 "112
-[; ;mcc_generated_files/tmr1.c: 112:     uint8_t readValLow;
-[v _readValLow `uc ~T0 @X0 1 a ]
+[; ;mcc_generated_files/spi.c: 112:         }
+}
+[e $U 290  ]
+"113
+[; ;mcc_generated_files/spi.c: 113:         else
+[e :U 284 ]
 "114
-[; ;mcc_generated_files/tmr1.c: 114:     readValLow = TMR1L;
-[e = _readValLow _TMR1L ]
+[; ;mcc_generated_files/spi.c: 114:         {
+{
 "115
-[; ;mcc_generated_files/tmr1.c: 115:     readValHigh = TMR1H;
-[e = _readValHigh _TMR1H ]
+[; ;mcc_generated_files/spi.c: 115:             if(dataOut != ((void*)0))
+[e $ ! != _dataOut -> -> -> 0 `i `*v `*uc 291  ]
+"116
+[; ;mcc_generated_files/spi.c: 116:             {
+{
 "117
-[; ;mcc_generated_files/tmr1.c: 117:     readVal = ((uint16_t)readValHigh << 8) | readValLow;
-[e = _readVal -> | << -> -> _readValHigh `us `ui -> 8 `i -> _readValLow `ui `us ]
+[; ;mcc_generated_files/spi.c: 117:                 while(bytesWritten < bufLen )
+[e $U 292  ]
+[e :U 293 ]
+"118
+[; ;mcc_generated_files/spi.c: 118:                 {
+{
 "119
-[; ;mcc_generated_files/tmr1.c: 119:     return readVal;
-[e ) _readVal ]
-[e $UE 280  ]
-"120
-[; ;mcc_generated_files/tmr1.c: 120: }
-[e :UE 280 ]
+[; ;mcc_generated_files/spi.c: 119:                     dataOut[bytesWritten] = SPI_Exchange8bit(0x0);
+[e = *U + _dataOut * -> _bytesWritten `ux -> -> # *U _dataOut `ui `ux ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
+"121
+[; ;mcc_generated_files/spi.c: 121:                     bytesWritten++;
+[e ++ _bytesWritten -> -> 1 `i `uc ]
+"122
+[; ;mcc_generated_files/spi.c: 122:                 }
 }
-"122
-[; ;mcc_generated_files/tmr1.c: 122: void TMR1_WriteTimer(uint16_t timerVal)
-[v _TMR1_WriteTimer `(v ~T0 @X0 1 ef1`us ]
+[e :U 292 ]
+"117
+[; ;mcc_generated_files/spi.c: 117:                 while(bytesWritten < bufLen )
+[e $ < -> _bytesWritten `i -> _bufLen `i 293  ]
+[e :U 294 ]
 "123
-[; ;mcc_generated_files/tmr1.c: 123: {
-{
-[e :U _TMR1_WriteTimer ]
-"122
-[; ;mcc_generated_files/tmr1.c: 122: void TMR1_WriteTimer(uint16_t timerVal)
-[v _timerVal `us ~T0 @X0 1 r1 ]
-"123
-[; ;mcc_generated_files/tmr1.c: 123: {
-[f ]
+[; ;mcc_generated_files/spi.c: 123:             }
+}
+[e :U 291 ]
 "124
-[; ;mcc_generated_files/tmr1.c: 124:     if (T1CONbits.nT1SYNC == 1)
-[e $ ! == -> . . _T1CONbits 1 2 `i -> 1 `i 282  ]
-"125
-[; ;mcc_generated_files/tmr1.c: 125:     {
-{
-"127
-[; ;mcc_generated_files/tmr1.c: 127:         T1CONbits.TMR1ON = 0;
-[e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
-"130
-[; ;mcc_generated_files/tmr1.c: 130:         TMR1H = (timerVal >> 8);
-[e = _TMR1H -> >> -> _timerVal `ui -> 8 `i `uc ]
-"131
-[; ;mcc_generated_files/tmr1.c: 131:         TMR1L = (uint8_t) timerVal;
-[e = _TMR1L -> _timerVal `uc ]
-"134
-[; ;mcc_generated_files/tmr1.c: 134:         T1CONbits.TMR1ON =1;
-[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
-"135
-[; ;mcc_generated_files/tmr1.c: 135:     }
+[; ;mcc_generated_files/spi.c: 124:         }
 }
-[e $U 283  ]
-"136
-[; ;mcc_generated_files/tmr1.c: 136:     else
-[e :U 282 ]
-"137
-[; ;mcc_generated_files/tmr1.c: 137:     {
-{
-"139
-[; ;mcc_generated_files/tmr1.c: 139:         TMR1H = (timerVal >> 8);
-[e = _TMR1H -> >> -> _timerVal `ui -> 8 `i `uc ]
-"140
-[; ;mcc_generated_files/tmr1.c: 140:         TMR1L = (uint8_t) timerVal;
-[e = _TMR1L -> _timerVal `uc ]
-"141
-[; ;mcc_generated_files/tmr1.c: 141:     }
+[e :U 290 ]
+"125
+[; ;mcc_generated_files/spi.c: 125:     }
 }
 [e :U 283 ]
+"127
+[; ;mcc_generated_files/spi.c: 127:     return bytesWritten;
+[e ) _bytesWritten ]
+[e $UE 282  ]
+"128
+[; ;mcc_generated_files/spi.c: 128: }
+[e :UE 282 ]
+}
+"130
+[; ;mcc_generated_files/spi.c: 130: _Bool SPI_IsBufferFull(void)
+[v _SPI_IsBufferFull `(a ~T0 @X0 1 ef ]
+"131
+[; ;mcc_generated_files/spi.c: 131: {
+{
+[e :U _SPI_IsBufferFull ]
+[f ]
+"132
+[; ;mcc_generated_files/spi.c: 132:     return (SSPSTATbits.BF);
+[e ) -> . . _SSPSTATbits 2 0 `a ]
+[e $UE 295  ]
+"133
+[; ;mcc_generated_files/spi.c: 133: }
+[e :UE 295 ]
+}
+"135
+[; ;mcc_generated_files/spi.c: 135: _Bool SPI_HasWriteCollisionOccured(void)
+[v _SPI_HasWriteCollisionOccured `(a ~T0 @X0 1 ef ]
+"136
+[; ;mcc_generated_files/spi.c: 136: {
+{
+[e :U _SPI_HasWriteCollisionOccured ]
+[f ]
+"137
+[; ;mcc_generated_files/spi.c: 137:     return (SSPCON1bits.WCOL);
+[e ) -> . . _SSPCON1bits 0 4 `a ]
+[e $UE 296  ]
+"138
+[; ;mcc_generated_files/spi.c: 138: }
+[e :UE 296 ]
+}
+"140
+[; ;mcc_generated_files/spi.c: 140: void SPI_ClearWriteCollisionStatus(void)
+[v _SPI_ClearWriteCollisionStatus `(v ~T0 @X0 1 ef ]
+"141
+[; ;mcc_generated_files/spi.c: 141: {
+{
+[e :U _SPI_ClearWriteCollisionStatus ]
+[f ]
 "142
-[; ;mcc_generated_files/tmr1.c: 142: }
-[e :UE 281 ]
-}
-"144
-[; ;mcc_generated_files/tmr1.c: 144: void TMR1_Reload(void)
-[v _TMR1_Reload `(v ~T0 @X0 1 ef ]
-"145
-[; ;mcc_generated_files/tmr1.c: 145: {
-{
-[e :U _TMR1_Reload ]
-[f ]
-"147
-[; ;mcc_generated_files/tmr1.c: 147:     TMR1H = (timer1ReloadVal >> 8);
-[e = _TMR1H -> >> -> _timer1ReloadVal `ui -> 8 `i `uc ]
-"148
-[; ;mcc_generated_files/tmr1.c: 148:     TMR1L = (uint8_t) timer1ReloadVal;
-[e = _TMR1L -> _timer1ReloadVal `uc ]
-"149
-[; ;mcc_generated_files/tmr1.c: 149: }
-[e :UE 284 ]
-}
-"151
-[; ;mcc_generated_files/tmr1.c: 151: void TMR1_ISR(void)
-[v _TMR1_ISR `(v ~T0 @X0 1 ef ]
-"152
-[; ;mcc_generated_files/tmr1.c: 152: {
-{
-[e :U _TMR1_ISR ]
-[f ]
-"155
-[; ;mcc_generated_files/tmr1.c: 155:     PIR1bits.TMR1IF = 0;
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"158
-[; ;mcc_generated_files/tmr1.c: 158:      TMR1H = (timer1ReloadVal >> 8);
-[e = _TMR1H -> >> -> _timer1ReloadVal `ui -> 8 `i `uc ]
-"159
-[; ;mcc_generated_files/tmr1.c: 159:      TMR1L = (uint8_t) timer1ReloadVal;
-[e = _TMR1L -> _timer1ReloadVal `uc ]
-"161
-[; ;mcc_generated_files/tmr1.c: 161:     if(TMR1_InterruptHandler)
-[e $ ! != _TMR1_InterruptHandler -> -> 0 `i `*F3018 286  ]
-"162
-[; ;mcc_generated_files/tmr1.c: 162:     {
-{
-"163
-[; ;mcc_generated_files/tmr1.c: 163:         TMR1_InterruptHandler();
-[e ( *U _TMR1_InterruptHandler ..  ]
-"164
-[; ;mcc_generated_files/tmr1.c: 164:     }
-}
-[e :U 286 ]
-"165
-[; ;mcc_generated_files/tmr1.c: 165: }
-[e :UE 285 ]
-}
-"168
-[; ;mcc_generated_files/tmr1.c: 168: void TMR1_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _TMR1_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F3020 ]
-{
-[e :U _TMR1_SetInterruptHandler ]
-[v _InterruptHandler `*F3022 ~T0 @X0 1 r1 ]
-[f ]
-"169
-[; ;mcc_generated_files/tmr1.c: 169:     TMR1_InterruptHandler = InterruptHandler;
-[e = _TMR1_InterruptHandler _InterruptHandler ]
-"170
-[; ;mcc_generated_files/tmr1.c: 170: }
-[e :UE 287 ]
-}
-"172
-[; ;mcc_generated_files/tmr1.c: 172: void TMR1_DefaultInterruptHandler(void){
-[v _TMR1_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
-{
-[e :U _TMR1_DefaultInterruptHandler ]
-[f ]
-"175
-[; ;mcc_generated_files/tmr1.c: 175:     calculateTime();
-[e ( _calculateTime ..  ]
-"176
-[; ;mcc_generated_files/tmr1.c: 176: }
-[e :UE 288 ]
+[; ;mcc_generated_files/spi.c: 142:     SSPCON1bits.WCOL = 0;
+[e = . . _SSPCON1bits 0 4 -> -> 0 `i `uc ]
+"143
+[; ;mcc_generated_files/spi.c: 143: }
+[e :UE 297 ]
 }

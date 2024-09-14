@@ -533,8 +533,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/tmr1.c: 80:     timer1ReloadVal += tmr1Offset;
 [e =+ _timer1ReloadVal -> _tmr1Offset `Vus ]
 "81
-[; ;mcc_generated_files/tmr1.c: 81:     timer1ReloadVal += 0xC1;
-[e =+ _timer1ReloadVal -> -> 193 `i `Vus ]
+[; ;mcc_generated_files/tmr1.c: 81:     timer1ReloadVal += 5;
+[e =+ _timer1ReloadVal -> -> 5 `i `Vus ]
 "84
 [; ;mcc_generated_files/tmr1.c: 84:     PIR1bits.TMR1IF = 0;
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]

@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/tmr1.c"
+# 1 "main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/tmr1.c" 2
-# 50 "mcc_generated_files/tmr1.c"
+# 1 "main.c" 2
+# 1 "./main.h" 1
+# 36 "./main.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4478,475 +4479,97 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 50 "mcc_generated_files/tmr1.c" 2
+# 36 "./main.h" 2
 
-# 1 "mcc_generated_files/tmr1.h" 1
-# 53 "mcc_generated_files/tmr1.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "mcc_generated_files/tmr1.h" 2
-# 93 "mcc_generated_files/tmr1.h"
-void TMR1_Initialize(void);
-# 124 "mcc_generated_files/tmr1.h"
-void TMR1_StartTimer(void);
-# 154 "mcc_generated_files/tmr1.h"
-void TMR1_StopTimer(void);
-# 187 "mcc_generated_files/tmr1.h"
-uint16_t TMR1_ReadTimer(void);
-# 213 "mcc_generated_files/tmr1.h"
-void TMR1_WriteTimer(uint16_t timerVal);
-# 245 "mcc_generated_files/tmr1.h"
-void TMR1_Reload(void);
-# 261 "mcc_generated_files/tmr1.h"
-void TMR1_ISR(void);
-# 280 "mcc_generated_files/tmr1.h"
- void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 298 "mcc_generated_files/tmr1.h"
-extern void (*TMR1_InterruptHandler)(void);
-# 316 "mcc_generated_files/tmr1.h"
-void TMR1_DefaultInterruptHandler(void);
-# 51 "mcc_generated_files/tmr1.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 1 3
-# 15 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 39 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef float float_t;
-
-
-
-
-typedef double double_t;
-# 16 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 2 3
-# 42 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
-int __fpclassifyf(float);
-
-
-
-
-
-
-
-int __signbitf(float);
-# 59 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
-double acos(double);
-float acosf(float);
-long double acosl(long double);
-
-
-
-double acosh(double);
-float acoshf(float);
-long double acoshl(long double);
-
-
-
-double asin(double);
-float asinf(float);
-long double asinl(long double);
-
-
-
-double asinh(double);
-float asinhf(float);
-long double asinhl(long double);
-
-
-
-double atan(double);
-float atanf(float);
-long double atanl(long double);
-
-
-
-double atan2(double, double);
-float atan2f(float, float);
-long double atan2l(long double, long double);
-
-
-
-double atanh(double);
-float atanhf(float);
-long double atanhl(long double);
-
-
-
-double cbrt(double);
-float cbrtf(float);
-long double cbrtl(long double);
-
-
-
-double ceil(double);
-float ceilf(float);
-long double ceill(long double);
-
-
-
-double copysign(double, double);
-float copysignf(float, float);
-long double copysignl(long double, long double);
-
-
-
-double cos(double);
-float cosf(float);
-long double cosl(long double);
-
-
-
-double cosh(double);
-float coshf(float);
-long double coshl(long double);
-
-
-
-double erf(double);
-float erff(float);
-long double erfl(long double);
-
-
-
-double erfc(double);
-float erfcf(float);
-long double erfcl(long double);
-
-
-
-double exp(double);
-float expf(float);
-long double expl(long double);
-
-
-
-double exp2(double);
-float exp2f(float);
-long double exp2l(long double);
-
-
-
-double expm1(double);
-float expm1f(float);
-long double expm1l(long double);
-
-
-
-double fabs(double);
-float fabsf(float);
-long double fabsl(long double);
-
-
-
-double fdim(double, double);
-float fdimf(float, float);
-long double fdiml(long double, long double);
-
-
-
-double floor(double);
-float floorf(float);
-long double floorl(long double);
-
-
-
-double fma(double, double, double);
-float fmaf(float, float, float);
-long double fmal(long double, long double, long double);
-
-
-
-double fmax(double, double);
-float fmaxf(float, float);
-long double fmaxl(long double, long double);
-
-
-
-double fmin(double, double);
-float fminf(float, float);
-long double fminl(long double, long double);
-
-
-
-double fmod(double, double);
-float fmodf(float, float);
-long double fmodl(long double, long double);
-
-
-
-double frexp(double, int *);
-float frexpf(float, int *);
-long double frexpl(long double, int *);
-
-
-
-double hypot(double, double);
-float hypotf(float, float);
-long double hypotl(long double, long double);
-
-
-
-int ilogb(double);
-int ilogbf(float);
-int ilogbl(long double);
-
-
-
-double ldexp(double, int);
-float ldexpf(float, int);
-long double ldexpl(long double, int);
-
-
-
-
-double lgamma(double);
-float lgammaf(float);
-long double lgammal(long double);
-
-
-
-
-long long llrint(double);
-long long llrintf(float);
-long long llrintl(long double);
-
-
-
-long long llround(double);
-long long llroundf(float);
-long long llroundl(long double);
-
-
-
-
-double log(double);
-float logf(float);
-long double logl(long double);
-
-
-
-double log10(double);
-float log10f(float);
-long double log10l(long double);
-
-
-
-double log1p(double);
-float log1pf(float);
-long double log1pl(long double);
-
-
-
-double log2(double);
-float log2f(float);
-long double log2l(long double);
-
-
-
-double logb(double);
-float logbf(float);
-long double logbl(long double);
-
-
-
-long lrint(double);
-long lrintf(float);
-long lrintl(long double);
-
-
-
-long lround(double);
-long lroundf(float);
-long lroundl(long double);
-
-
-
-double modf(double, double *);
-float modff(float, float *);
-long double modfl(long double, long double *);
-
-
-
-double nan(const char *);
-float nanf(const char *);
-long double nanl(const char *);
-
-
-
-double nearbyint(double);
-float nearbyintf(float);
-long double nearbyintl(long double);
-
-
-
-double nextafter(double, double);
-float nextafterf(float, float);
-long double nextafterl(long double, long double);
-
-
-
-double nexttoward(double, long double);
-float nexttowardf(float, long double);
-long double nexttowardl(long double, long double);
-# 326 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
-double pow(double, double);
-__attribute__((nonreentrant)) float powf(float, float);
-long double powl(long double, long double);
-
-
-
-double remainder(double, double);
-float remainderf(float, float);
-long double remainderl(long double, long double);
-
-
-
-double remquo(double, double, int *);
-float remquof(float, float, int *);
-long double remquol(long double, long double, int *);
-
-
-
-double rint(double);
-float rintf(float);
-long double rintl(long double);
-
-
-
-double round(double);
-float roundf(float);
-long double roundl(long double);
-
-
-
-double scalbln(double, long);
-float scalblnf(float, long);
-long double scalblnl(long double, long);
-
-
-
-double scalbn(double, int);
-float scalbnf(float, int);
-long double scalbnl(long double, int);
-
-
-
-double sin(double);
-float sinf(float);
-long double sinl(long double);
-
-
-
-double sinh(double);
-float sinhf(float);
-long double sinhl(long double);
-
-
-
-double sqrt(double);
-float sqrtf(float);
-long double sqrtl(long double);
-
-
-
-double tan(double);
-float tanf(float);
-long double tanl(long double);
-
-
-
-double tanh(double);
-float tanhf(float);
-long double tanhl(long double);
-
-
-
-double tgamma(double);
-float tgammaf(float);
-long double tgammal(long double);
-
-
-
-double trunc(double);
-float truncf(float);
-long double truncl(long double);
-# 431 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
-extern int signgam;
-
-double j0(double);
-double j1(double);
-double jn(int, double);
-
-double y0(double);
-double y1(double);
-double yn(int, double);
-# 52 "mcc_generated_files/tmr1.c" 2
-
-# 1 "mcc_generated_files/../main.h" 1
-# 37 "mcc_generated_files/../main.h"
 # 1 "./MAX7219.h" 1
 # 35 "./MAX7219.h"
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 199 "mcc_generated_files/pin_manager.h"
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 199 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 211 "mcc_generated_files/pin_manager.h"
+# 211 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 49 "./mcc_generated_files/mcc.h" 2
 
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
+# 51 "./mcc_generated_files/mcc.h" 2
 
-# 1 "mcc_generated_files/interrupt_manager.h" 1
-# 157 "mcc_generated_files/interrupt_manager.h"
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 157 "./mcc_generated_files/interrupt_manager.h"
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager(void);
-# 169 "mcc_generated_files/interrupt_manager.h"
+# 169 "./mcc_generated_files/interrupt_manager.h"
 void INTERRUPT_Initialize (void);
 # 52 "./mcc_generated_files/mcc.h" 2
 
-# 1 "mcc_generated_files/spi.h" 1
-# 54 "mcc_generated_files/spi.h"
+# 1 "./mcc_generated_files/spi.h" 1
+# 54 "./mcc_generated_files/spi.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 1 3
 # 19 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
 # 138 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef int ptrdiff_t;
 # 20 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 2 3
-# 54 "mcc_generated_files/spi.h" 2
-# 116 "mcc_generated_files/spi.h"
+# 54 "./mcc_generated_files/spi.h" 2
+# 116 "./mcc_generated_files/spi.h"
 void SPI_Initialize(void);
-# 151 "mcc_generated_files/spi.h"
+# 151 "./mcc_generated_files/spi.h"
 uint8_t SPI_Exchange8bit(uint8_t data);
-# 191 "mcc_generated_files/spi.h"
+# 191 "./mcc_generated_files/spi.h"
 uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-# 214 "mcc_generated_files/spi.h"
+# 214 "./mcc_generated_files/spi.h"
 _Bool SPI_IsBufferFull(void);
-# 239 "mcc_generated_files/spi.h"
+# 239 "./mcc_generated_files/spi.h"
 _Bool SPI_HasWriteCollisionOccured(void);
-# 263 "mcc_generated_files/spi.h"
+# 263 "./mcc_generated_files/spi.h"
 void SPI_ClearWriteCollisionStatus(void);
 # 53 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/tmr1.h" 1
+# 93 "./mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+# 124 "./mcc_generated_files/tmr1.h"
+void TMR1_StartTimer(void);
+# 154 "./mcc_generated_files/tmr1.h"
+void TMR1_StopTimer(void);
+# 187 "./mcc_generated_files/tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 213 "./mcc_generated_files/tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 245 "./mcc_generated_files/tmr1.h"
+void TMR1_Reload(void);
+# 261 "./mcc_generated_files/tmr1.h"
+void TMR1_ISR(void);
+# 280 "./mcc_generated_files/tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 298 "./mcc_generated_files/tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 316 "./mcc_generated_files/tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 54 "./mcc_generated_files/mcc.h" 2
 
-# 1 "mcc_generated_files/memory.h" 1
-# 98 "mcc_generated_files/memory.h"
+# 1 "./mcc_generated_files/memory.h" 1
+# 98 "./mcc_generated_files/memory.h"
 uint8_t FLASH_ReadByte(uint32_t flashAddr);
-# 124 "mcc_generated_files/memory.h"
+# 124 "./mcc_generated_files/memory.h"
 uint16_t FLASH_ReadWord(uint32_t flashAddr);
-# 156 "mcc_generated_files/memory.h"
+# 156 "./mcc_generated_files/memory.h"
 void FLASH_WriteByte(uint32_t flashAddr, uint8_t *flashRdBufPtr, uint8_t byte);
-# 192 "mcc_generated_files/memory.h"
+# 192 "./mcc_generated_files/memory.h"
 int8_t FLASH_WriteBlock(uint32_t writeAddr, uint8_t *flashWrBufPtr);
-# 217 "mcc_generated_files/memory.h"
+# 217 "./mcc_generated_files/memory.h"
 void FLASH_EraseBlock(uint32_t baseAddr);
-# 248 "mcc_generated_files/memory.h"
+# 248 "./mcc_generated_files/memory.h"
 void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
-# 274 "mcc_generated_files/memory.h"
+# 274 "./mcc_generated_files/memory.h"
 uint8_t DATAEE_ReadByte(uint16_t bAdd);
 
 void MEMORY_Tasks(void);
 # 55 "./mcc_generated_files/mcc.h" 2
 
-# 1 "mcc_generated_files/eusart.h" 1
-# 80 "mcc_generated_files/eusart.h"
+# 1 "./mcc_generated_files/eusart.h" 1
+# 80 "./mcc_generated_files/eusart.h"
 void (*EUSART_TxDefaultInterruptHandler)(void);
 void (*EUSART_RxDefaultInterruptHandler)(void);
 
@@ -4955,11 +4578,11 @@ void (*EUSART_RxDefaultInterruptHandler)(void);
 
 
 void EUSART_Initialize(void);
-# 96 "mcc_generated_files/eusart.h"
+# 96 "./mcc_generated_files/eusart.h"
 uint8_t EUSART_is_tx_ready(void);
-# 105 "mcc_generated_files/eusart.h"
+# 105 "./mcc_generated_files/eusart.h"
 uint8_t EUSART_is_rx_ready(void);
-# 114 "mcc_generated_files/eusart.h"
+# 114 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
 
 
@@ -4968,7 +4591,7 @@ _Bool EUSART_is_tx_done(void);
 
 
 uint8_t EUSART_Read(void);
-# 130 "mcc_generated_files/eusart.h"
+# 130 "./mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
 
 
@@ -5028,7 +4651,7 @@ void shiftchar (uint8_t ch, int delay);
 void scrollString (char *str, int delay);
 
 void printString (uint8_t *str);
-# 37 "mcc_generated_files/../main.h" 2
+# 37 "./main.h" 2
 
 
 
@@ -5050,128 +4673,382 @@ void saveAlarmToFlash(void);
 void loadAlarmFromFlash(void);
 void btGetData(char rcv);
 void parseCommand(const char* command);
-# 53 "mcc_generated_files/tmr1.c" 2
+# 1 "main.c" 2
 
 
 
 
 
-volatile uint16_t timer1ReloadVal;
-void (*TMR1_InterruptHandler)(void);
+
+
+
+uint8_t bufferCol[4 * 8];
+
+
+uint8_t hours = 0;
+uint8_t minutes = 0;
+uint8_t seconds = 0;
+uint8_t alarmHours = 0;
+uint8_t alarmMinutes = 0;
+_Bool alarmSet = 0;
+_Bool alarmActive = 0;
+
+_Bool alarmTriggered = 0;
+
+
+
+
+char uartBuffer[10];
+uint8_t uartBufferIndex = 0;
 
 
 
 
 
-void TMR1_Initialize(void)
+
+
+uint16_t blinkTimer = 0;
+_Bool displayBlinking = 0;
+
+uint16_t button3PressTime = 0;
+_Bool isButton3Pressed = 0;
+
+_Bool btTimeSet = 0;
+
+
+
+
+
+void main(void)
 {
+    SYSTEM_Initialize();
+    matrixInit();
+    clearDisplay();
+    loadTimeFromFlash();
 
 
+    TRISBbits.RB3 = 0;
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
 
-  TMR1H = 0x80;
+    TMR1_StartTimer();
+    while(1)
+    {
+        displayTime();
+        checkButtons();
+        processAlarm();
+        if(btTimeSet) {
 
+            if (uartBuffer[0] == 'H' && uartBuffer[3] == 'M' && uartBuffer[6] == ';')
+            {
 
-  TMR1L = 0x00;
-
-
-    timer1ReloadVal=(TMR1H << 8) | TMR1L;
-
-
-    uint8_t tmr1Offset = roundf((0.000008+(20.0/(8000000/4)))*32768);
-    timer1ReloadVal += tmr1Offset;
-    timer1ReloadVal += 0xC1;
-
-
-    PIR1bits.TMR1IF = 0;
-
-
-    PIE1bits.TMR1IE = 1;
+                uint8_t hours_pom = (uartBuffer[1] - '0') * 10 + (uartBuffer[2] - '0');
 
 
-    TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler);
+                uint8_t minutes_pom = (uartBuffer[4] - '0') * 10 + (uartBuffer[5] - '0');
 
 
-    T1CON = 0x0E;
+                if (hours_pom < 24 && minutes_pom < 60)
+                {
+
+                    btTimeSet = 0;
+                    hours = hours_pom;
+                    minutes = minutes_pom;
+                    displayTime();
+                    saveTimeToFlash();
+                }
+            }
+        }
+    }
 }
 
-void TMR1_StartTimer(void)
-{
+void delayMicroseconds(unsigned int microseconds) {
 
-    T1CONbits.TMR1ON = 1;
+    unsigned int i;
+    for (i = 0; i < microseconds; i++) {
+
+
+        __asm__("nop");
+    }
 }
 
-void TMR1_StopTimer(void)
-{
-
-    T1CONbits.TMR1ON = 0;
+void generateBeep(unsigned int duration_ms) {
+    unsigned int i;
+    unsigned int cycles = (duration_ms * 1000) / 244;
+    for (i = 0; i < cycles; i++) {
+        LATBbits.LATB3 = 1;
+        delayMicroseconds(122);
+        LATBbits.LATB3 = 0;
+        delayMicroseconds(122);
+    }
 }
 
-uint16_t TMR1_ReadTimer(void)
+
+void displayTime(void)
 {
-    uint16_t readVal;
-    uint8_t readValHigh;
-    uint8_t readValLow;
+    char timeString[5];
 
-    readValLow = TMR1L;
-    readValHigh = TMR1H;
 
-    readVal = ((uint16_t)readValHigh << 8) | readValLow;
+    timeString[0] = (hours / 10) + '0';
+    timeString[1] = (hours % 10) + '0';
+    timeString[2] = (minutes / 10) + '0';
+    timeString[3] = (minutes % 10) + '0';
+    timeString[4] = '\0';
 
-    return readVal;
+
+    uint8_t displayString[5];
+    for (int i = 0; i < 5; i++) {
+        displayString[i] = (uint8_t)timeString[i];
+    }
+
+    printString(displayString);
+}
+void calculateTime(void) {
+
+    if (++seconds >= 60) {
+        seconds = 0;
+
+        if (++minutes >= 60) {
+            minutes = 0;
+
+            if (++hours >= 24) {
+                hours = 0;
+            }
+        }
+    }
+}
+void displayAlarmTime(void)
+{
+    char alarmTimeString[5];
+
+
+    alarmTimeString[0] = (alarmHours / 10) + '0';
+    alarmTimeString[1] = (alarmHours % 10) + '0';
+    alarmTimeString[2] = (alarmMinutes / 10) + '0';
+    alarmTimeString[3] = (alarmMinutes % 10) + '0';
+    alarmTimeString[4] = '\0';
+
+
+    uint8_t displayString[5];
+    for (int i = 0; i < 5; i++) {
+        displayString[i] = (uint8_t)alarmTimeString[i];
+    }
+
+    printString(displayString);
 }
 
-void TMR1_WriteTimer(uint16_t timerVal)
+void processAlarm(void)
 {
-    if (T1CONbits.nT1SYNC == 1)
+
+    if (alarmSet && !alarmTriggered)
     {
 
-        T1CONbits.TMR1ON = 0;
+        if (hours == alarmHours && minutes == alarmMinutes)
+        {
+            triggerAlarm();
+            alarmTriggered = 1;
+        }
+    }
+}
 
 
-        TMR1H = (timerVal >> 8);
-        TMR1L = (uint8_t) timerVal;
+void triggerAlarm(void)
+{
 
 
-        T1CONbits.TMR1ON =1;
+
+
+
+    unsigned int numCycles = 60000 / (2 * 500);
+
+    for (unsigned int i = 0; i < numCycles; i++)
+    {
+
+        if (!PORTBbits.RB2)
+        {
+            _delay((unsigned long)((100)*(8000000/4000.0)));
+            if (!PORTBbits.RB2)
+            {
+                clearDisplay();
+                clearAlarm();
+                return;
+            }
+        }
+
+
+        printString("ALARM");
+
+        generateBeep(500);
+        _delay((unsigned long)((500)*(8000000/4000.0)));
+        clearDisplay();
+
+        _delay((unsigned long)((500)*(8000000/4000.0)));
+    }
+
+
+
+}
+
+void clearAlarm(void)
+{
+    alarmTriggered = 0;
+    alarmSet = 0;
+
+
+
+}
+
+
+void checkButtons(void)
+{
+    static uint8_t button3PressCount = 0;
+    static uint16_t button3HoldTime = 0;
+    static _Bool alarmSettingMode = 0;
+
+
+    if (!PORTBbits.RB0)
+    {
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        if (!PORTBbits.RB0)
+        {
+            if (alarmSettingMode)
+            {
+                alarmHours = (alarmHours + 1) % 24;
+                displayAlarmTime();
+            }
+            else
+            {
+                hours = (hours + 1) % 24;
+                displayTime();
+            }
+        }
+    }
+
+
+    if (!PORTBbits.RB1)
+    {
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        if (!PORTBbits.RB1)
+        {
+            if (alarmSettingMode)
+            {
+                alarmMinutes = (alarmMinutes + 1) % 60;
+                displayAlarmTime();
+            }
+            else
+            {
+                minutes = (minutes + 1) % 60;
+                displayTime();
+            }
+        }
+    }
+
+
+    if (!PORTBbits.RB2)
+    {
+        button3HoldTime += 100;
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+
+        if (button3HoldTime >= 1000)
+        {
+            if (!alarmTriggered)
+            {
+                alarmSettingMode = 1;
+                displayAlarmTime();
+
+                while (!PORTBbits.RB2)
+                {
+                    if (!PORTBbits.RB0)
+                    {
+                        _delay((unsigned long)((100)*(8000000/4000.0)));
+                        alarmHours = (alarmHours + 1) % 24;
+                        displayAlarmTime();
+                    }
+                    if (!PORTBbits.RB1)
+                    {
+                        _delay((unsigned long)((100)*(8000000/4000.0)));
+                        alarmMinutes = (alarmMinutes + 1) % 60;
+                        displayAlarmTime();
+                    }
+                }
+                alarmSettingMode = 0;
+                alarmSet = 1;
+                displayTime();
+            }
+        }
+        else
+        {
+            if (alarmTriggered)
+            {
+                clearAlarm();
+            }
+        }
     }
     else
     {
-
-        TMR1H = (timerVal >> 8);
-        TMR1L = (uint8_t) timerVal;
-    }
-}
-
-void TMR1_Reload(void)
-{
-
-    TMR1H = (timer1ReloadVal >> 8);
-    TMR1L = (uint8_t) timer1ReloadVal;
-}
-
-void TMR1_ISR(void)
-{
-
-
-    PIR1bits.TMR1IF = 0;
-
-
-     TMR1H = (timer1ReloadVal >> 8);
-     TMR1L = (uint8_t) timer1ReloadVal;
-
-    if(TMR1_InterruptHandler)
-    {
-        TMR1_InterruptHandler();
+        if (button3HoldTime < 1000)
+        {
+            button3PressCount++;
+            if (button3PressCount == 5)
+            {
+                saveTimeToFlash();
+                button3PressCount = 0;
+            }
+        }
+        button3HoldTime = 0;
     }
 }
 
 
-void TMR1_SetInterruptHandler(void (* InterruptHandler)(void)){
-    TMR1_InterruptHandler = InterruptHandler;
+
+void saveTimeToFlash(void)
+{
+    uint32_t flashAddress = 0x1F80;
+    uint8_t flashBuffer[64];
+
+
+    for (uint8_t i = 0; i < 64; i++) {
+        flashBuffer[i] = FLASH_ReadByte(flashAddress + i);
+    }
+
+
+    flashBuffer[0] = hours;
+    flashBuffer[1] = minutes;
+    flashBuffer[2] = alarmHours;
+    flashBuffer[3] = alarmMinutes;
+    flashBuffer[4] = alarmSet;
+
+
+    FLASH_WriteBlock(flashAddress, flashBuffer);
 }
 
-void TMR1_DefaultInterruptHandler(void){
 
+void loadTimeFromFlash(void)
+{
+    uint32_t flashAddress = 0x1F80;
+    hours = FLASH_ReadByte(flashAddress);
+    minutes = FLASH_ReadByte(flashAddress + 1);
+    alarmHours = FLASH_ReadByte(flashAddress + 2);
+    alarmMinutes = FLASH_ReadByte(flashAddress + 3);
+    alarmSet = FLASH_ReadByte(flashAddress + 4);
 
-    calculateTime();
+    if (hours >= 24) hours = 0;
+    if (minutes >= 60) minutes = 0;
+}
+
+void btGetData(char rcv) {
+    if(rcv == 'H' && uartBufferIndex == 0) {
+        uartBuffer[uartBufferIndex] = 'H';
+        uartBufferIndex++;
+    }
+    else if(uartBufferIndex != 0 && uartBufferIndex < 7) {
+        uartBuffer[uartBufferIndex++] = rcv;
+    }
+    else if(uartBufferIndex == 7) {
+        if(rcv == ';') {
+            uartBuffer[6] = ';';
+            uartBufferIndex = 0;
+            btTimeSet = 1;
+        }
+    }
 }

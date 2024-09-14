@@ -5079,7 +5079,7 @@ void TMR1_Initialize(void)
 
     uint8_t tmr1Offset = roundf((0.000008+(20.0/(8000000/4)))*32768);
     timer1ReloadVal += tmr1Offset;
-    timer1ReloadVal += 0xC1;
+    timer1ReloadVal += 5;
 
 
     PIR1bits.TMR1IF = 0;

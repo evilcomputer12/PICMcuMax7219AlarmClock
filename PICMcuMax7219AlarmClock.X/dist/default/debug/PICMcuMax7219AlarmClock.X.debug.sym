@@ -2,7 +2,7 @@ ___lwdiv@dividend C 0 COMRAM 1
 ___awdiv@counter A 0 COMRAM 1
 ___lwdiv@counter 10 0 COMRAM 1
 FLASH_WriteBlock@blockStartAddr 10 0 COMRAM 1
-__S0 10000 0 ABS 0
+__S0 FD30 0 ABS 0
 __S1 120 0 ABS 0
 __S4 0 0 ABS 0
 __S5 0 0 ABS 0
@@ -50,7 +50,7 @@ _ANSEL F7E 0 ABS 0
 _EEADR FA9 0 ABS 0
 __LRAM 1 0 ABS 0
 _T1CON FCD 0 ABS 0
-_MAX7219_Dot_Matrix_font F7F5 0 MEDIUMCONST 0
+_MAX7219_Dot_Matrix_font F525 0 MEDIUMCONST 0
 _alarmMinutes AC 0 BANK0 1
 ttemp5 5A 0 COMRAM 1
 _printString ADA 0 CODE 0
@@ -129,8 +129,8 @@ __Lstruct 0 0 COMRAM 1
 __Hbigdata 0 0 BIGRAM 1
 __end_of_displayTime 1502 0 CODE 0
 __Lbigdata 0 0 BIGRAM 1
-__Hmediumconst 10000 0 MEDIUMCONST 0
-__Lmediumconst F7F4 0 MEDIUMCONST 0
+__Hmediumconst FD30 0 MEDIUMCONST 0
+__Lmediumconst F524 0 MEDIUMCONST 0
 _SPI_Exchange8bit 1C08 0 CODE 0
 _SPBRGH FB0 0 ABS 0
 _ANSELH F7F 0 ABS 0
@@ -138,7 +138,7 @@ _ANSELH F7F 0 ABS 0
 _EEADRH FAA 0 ABS 0
 __Hfarbss 0 0 FARRAM 0
 __Lfarbss 0 0 FARRAM 0
-__pmediumconst F7F4 0 MEDIUMCONST 0
+__pmediumconst F524 0 MEDIUMCONST 0
 __end_of_loadTimeFromFlash 144E 0 CODE 0
 __Hintcode AA 0 CODE 0
 _SSPBUF FC9 0 ABS 0
@@ -367,7 +367,7 @@ __Lstack 0 0 STACK 2
 ___awmod 15B6 0 CODE 0
 __Hparam 0 0 COMRAM 1
 __Lparam 0 0 COMRAM 1
-__Hspace_0 10000 0 ABS 0
+__Hspace_0 FD30 0 ABS 0
 ___flsub 19CC 0 CODE 0
 __HcstackCOMRAM 0 0 ABS 0
 __Lspace_0 0 0 ABS 0
@@ -397,7 +397,7 @@ __pcinit 1B68 0 CODE 0
 ___awdiv 1156 0 CODE 0
 _minutes AF 0 BANK0 1
 __ramtop 1000 0 RAM 0
-__mediumconst F7F4 0 MEDIUMCONST 0
+__mediumconst F524 0 MEDIUMCONST 0
 ___lwdiv 17F6 0 CODE 0
 __end_of_INTERRUPT_InterruptManager AA 0 CODE 0
 __Hconst 0 0 CONST 0
@@ -410,7 +410,7 @@ printString@strindx B6 0 BANK0 1
 ___stack_lo 0 0 STACK 2
 _PIN_MANAGER_Initialize 1BE6 0 CODE 0
 btGetData@rcv 1 0 COMRAM 1
-__end_of_toint FFF9 0 MEDIUMCONST 0
+__end_of_toint FD29 0 MEDIUMCONST 0
 ___fltol@exp1 46 0 COMRAM 1
 max7219_cmd@Addr A 0 COMRAM 1
 _uartBuffer 80 0 BANK0 1
@@ -613,7 +613,7 @@ displayAlarmTime@displayString BE 0 BANK0 1
 max7219_cmd@data 7 0 COMRAM 1
 flushBuffer@dev 3E 0 COMRAM 1
 __initialization 1B68 0 CODE 0
-__end_of_MAX7219_Dot_Matrix_font FFF5 0 MEDIUMCONST 0
+__end_of_MAX7219_Dot_Matrix_font FD25 0 MEDIUMCONST 0
 ___flsub@a 1A 0 COMRAM 1
 _eusartRxTail B2 0 BANK0 1
 _eusartTxTail 57 0 COMRAM 1
@@ -628,13 +628,13 @@ ___awdiv@dividend 6 0 COMRAM 1
 %segments
 reset_vec 0 3 CODE 0 0
 intcode 8 1C9D CODE 8 0
-mediumconst F7F4 FFFF MEDIUMCONST F7F4 0
+mediumconst F524 FD2F MEDIUMCONST F524 0
 cstackCOMRAM 1 59 COMRAM 1 1
 bssBANK0 60 FF BANK0 60 1
 bssBANK1 100 11F BANK1 100 1
 %locals
-dist/default/production\PICMcuMax7219AlarmClock.X.production.o
-C:\Users\martin\AppData\Local\Temp\xcAs9n4.\driver_tmp_1.s
+dist/default/debug\PICMcuMax7219AlarmClock.X.debug.o
+C:\Users\martin\AppData\Local\Temp\xcAsf6o.\driver_tmp_1.s
 4958 1B68 0 CODE 0
 4960 1B68 0 CODE 0
 4963 1B68 0 CODE 0
@@ -1315,8 +1315,8 @@ mcc_generated_files/eusart.c
 216 1C86 0 CODE 0
 217 1C86 0 CODE 0
 218 1C8E 0 CODE 0
-C:\Users\martin\AppData\Local\Temp\xcAs9n4.\driver_tmp_1.s
-13202 8 0 CODE 0
+C:\Users\martin\AppData\Local\Temp\xcAsf6o.\driver_tmp_1.s
+13220 8 0 CODE 0
 mcc_generated_files/interrupt_manager.c
 58 8 0 CODE 0
 61 1A 0 CODE 0
