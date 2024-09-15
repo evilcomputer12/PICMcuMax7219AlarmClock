@@ -66,19 +66,14 @@ void TMR1_Initialize(void)
 {
     //Set the Timer to the options selected in the GUI
 	
-	// TMR1H 128; 
-		TMR1H = 0x80;
+	// TMR1H 127; 
+		TMR1H = 0x7F;
 	
-	// TMR1L 0; 
-		TMR1L = 0x00;
+	// TMR1L 62; 
+		TMR1L = 0x3E;
 
     // Load the TMR value to reload variable
-    timer1ReloadVal=(TMR1H << 8) | TMR1L;
-    
-    // Add an approximate Timer1 offset value derived from wake-up, interrupts, and other latencies
-    uint8_t tmr1Offset = round((0.000008+(20.0/(_XTAL_FREQ/4)))*32768);
-    timer1ReloadVal += tmr1Offset;
-    timer1ReloadVal += 0xC1;
+    timer1ReloadVal=TMR1;
 
     // Clearing IF flag before enabling the interrupt.
     PIR1bits.TMR1IF = 0;

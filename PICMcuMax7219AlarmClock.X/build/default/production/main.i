@@ -4685,11 +4685,11 @@ void parseCommand(const char* command);
 uint8_t bufferCol[4 * 8];
 
 
-uint8_t hours = 0;
-uint8_t minutes = 0;
-uint8_t seconds = 0;
-uint8_t alarmHours = 0;
-uint8_t alarmMinutes = 0;
+volatile uint8_t hours = 0;
+volatile uint8_t minutes = 0;
+volatile uint8_t seconds = 0;
+volatile uint8_t alarmHours = 0;
+volatile uint8_t alarmMinutes = 0;
 _Bool alarmSet = 0;
 _Bool alarmActive = 0;
 
@@ -4698,7 +4698,7 @@ _Bool alarmTriggered = 0;
 
 
 
-char uartBuffer[10];
+char uartBuffer[10] = {0};
 uint8_t uartBufferIndex = 0;
 
 
@@ -4722,6 +4722,13 @@ _Bool btTimeSet = 0;
 void main(void)
 {
     SYSTEM_Initialize();
+
+    hours = 0;
+    minutes = 0;
+    seconds = 0;
+    alarmHours = 0;
+    alarmMinutes = 0;
+
     matrixInit();
     clearDisplay();
     loadTimeFromFlash();
@@ -4805,17 +4812,27 @@ void displayTime(void)
 }
 void calculateTime(void) {
 
-    if (++seconds >= 60) {
+    seconds++;
+    if (seconds >= 60) {
         seconds = 0;
 
-        if (++minutes >= 60) {
+
+        minutes++;
+        if (minutes >= 60) {
             minutes = 0;
 
-            if (++hours >= 24) {
+
+            hours++;
+            if (hours >= 24) {
                 hours = 0;
             }
         }
     }
+
+
+    seconds = (seconds < 60) ? seconds : 0;
+    minutes = (minutes < 60) ? minutes : 0;
+    hours = (hours < 24) ? hours : 0;
 }
 void displayAlarmTime(void)
 {

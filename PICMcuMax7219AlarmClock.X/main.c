@@ -9,11 +9,11 @@
 uint8_t bufferCol[NUM_DEV * 8];
 
 // Time and alarm variables
-uint8_t hours = 0;
-uint8_t minutes = 0;
-uint8_t seconds = 0;
-uint8_t alarmHours = 0;
-uint8_t alarmMinutes = 0;
+volatile uint8_t hours = 0;
+volatile uint8_t minutes = 0;
+volatile uint8_t seconds = 0;
+volatile uint8_t alarmHours = 0;
+volatile uint8_t alarmMinutes = 0;
 bool alarmSet = false;
 bool alarmActive = false;
 
@@ -22,7 +22,7 @@ bool alarmTriggered = false;
 #define UART_BUFFER_SIZE 10
 
 // Buffer to store incoming UART data
-char uartBuffer[UART_BUFFER_SIZE];
+char uartBuffer[UART_BUFFER_SIZE] = {0};
 uint8_t uartBufferIndex = 0;
 
 // Function prototypes
@@ -46,6 +46,13 @@ bool btTimeSet = false;
 void main(void)
 {
     SYSTEM_Initialize(); // Initialize system and peripherals
+    
+    hours = 0;
+    minutes = 0;
+    seconds = 0;
+    alarmHours = 0;
+    alarmMinutes = 0;
+    
     matrixInit();       // Initialize MAX7219 matrix display
     clearDisplay();     // Clear display at the beginning
     loadTimeFromFlash();
@@ -127,19 +134,29 @@ void displayTime(void)
 
     printString(displayString); // Show the time on the display
 }
-void calculateTime(void) { 
+void calculateTime(void) {
     // Increment seconds
-    if (++seconds >= 60) {
+    seconds++;
+    if (seconds >= 60) {
         seconds = 0;  // Reset seconds
+
         // Increment minutes
-        if (++minutes >= 60) {
+        minutes++;
+        if (minutes >= 60) {
             minutes = 0;  // Reset minutes
+
             // Increment hours
-            if (++hours >= 24) {
+            hours++;
+            if (hours >= 24) {
                 hours = 0;  // Reset hours
             }
         }
     }
+
+    // Additional safety checks to ensure values stay within valid ranges
+    seconds = (seconds < 60) ? seconds : 0;
+    minutes = (minutes < 60) ? minutes : 0;
+    hours = (hours < 24) ? hours : 0;
 }
 void displayAlarmTime(void)
 {
